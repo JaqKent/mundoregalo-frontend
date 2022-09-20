@@ -1,0 +1,26 @@
+@import 'scss/colors';
+@import 'scss/mixins';
+@import 'scss/variable';
+
+.container {
+  background-color: $primary;
+  height: 100px;
+  min-width: 375px;
+  .topItems {
+    @include flex(space-between, center, row);
+    .menu {
+      cursor: pointer;
+      padding: 3px 0 0 14px;
+    }
+    .logo {
+      cursor: pointer;
+      height: 38px;
+      padding-top: 6px;
+      width: 50px;
+    }
+    .cart {
+      cursor: pointer;
+      padding: 3px 14px 0 0;
+    }
+  }
+}

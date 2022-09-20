@@ -1,0 +1,27 @@
+@import 'scss/colors';
+@import 'scss/mixins';
+@import 'scss/variable';
+
+.container {
+  @include flex(center, center, row);
+  background-color: $primary;
+  height: 42px;
+
+  .input {
+    background-color: $white;
+    border-style: none;
+    height: 40px;
+    min-width: 70%;
+    outline: none;
+    padding-left: 30px;
+  }
+  .lupaContainer {
+    background-color: $white;
+    height: 42px;
+    .lupa {
+      cursor: pointer;
+      object-fit: contain;
+      padding: 10px 10px 0 0;
+    }
+  }
+}
