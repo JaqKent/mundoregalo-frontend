@@ -1,0 +1,15 @@
+@import 'scss/colors';
+@import 'scss/mixins';
+@import 'scss/variable';
+
+.container {
+  @include flex(center, flex-start, column);
+  padding-left: 20px;
+  background-color: $white;
+  width: 350px;
+
+  .line {
+    border-bottom: 2px solid $black;
+    width: 300px;
+  }
+}
