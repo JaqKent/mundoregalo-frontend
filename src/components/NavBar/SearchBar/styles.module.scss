@@ -5,23 +5,23 @@
 .container {
   @include flex(center, center, row);
   background-color: $primary;
-  height: 42px;
+  height: 4.2rem;
 
   .input {
     background-color: $white;
     border-style: none;
-    height: 40px;
+    height: 4rem;
     min-width: 70%;
     outline: none;
-    padding-left: 30px;
+    padding-left: 3rem;
   }
   .lupaContainer {
     background-color: $white;
-    height: 42px;
+    height: 4.2rem;
     .lupa {
       cursor: pointer;
       object-fit: contain;
-      padding: 10px 10px 0 0;
+      padding: 1rem 1rem 0 0;
     }
   }
 }

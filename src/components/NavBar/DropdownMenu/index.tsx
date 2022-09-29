@@ -23,40 +23,42 @@ function DropsdownMenu() {
     <div className={styles.container}>
       <div className={styles.topMenu}>
         <div>
-          <h4 onClick={handleLogin}>Iniciar Sesión</h4>
-          <div className={styles.line}></div>
+          <h2 onClick={handleLogin}>Iniciar Sesión</h2>
+          <hr />
         </div>
         <div>
           <div>
-            <h4>Servicios</h4>
-            <div className={styles.line}></div>
+            <h2>Servicios</h2>
+            <hr />
           </div>
           {SERVICES.map((sort) => (
             <div>
-              <NavItem onClick={handleLink} label={sort.name} />{' '}
+              <NavItem onClick={handleLink} label={sort.name} />
+
             </div>
           ))}
         </div>
-        <div className={styles.line}></div>
+        <hr />
       </div>
       <div className={styles.midMenu}>
         <div>
-          <h4>Categorias</h4>
-          <div className={styles.line}></div>
+          <h2>Categorias</h2>
+          <hr />
         </div>
         {CATEGORIES.map((sort) => (
           <div>
-            <NavItem onClick={handleCategory} label={sort.name} />{' '}
+            <NavItem onClick={handleCategory} label={sort.name} />
+
           </div>
         ))}
+        <hr />
       </div>
-      <div className={styles.line}></div>
-      <div onClick={handleContact}>
-        <h4>Contacto</h4>
-        <div className={styles.line}></div>
+      <div>
+        <h2 onClick={handleContact}>Contacto</h2>
+        <hr />
       </div>
-      <div onClick={handleAbout}>
-        <h4>Sobre Nosotros</h4>
+      <div>
+        <h2 onClick={handleAbout}>Sobre Nosotros</h2>
       </div>
     </div>
   );

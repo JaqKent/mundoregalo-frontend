@@ -1,9 +1,7 @@
 export const SERVICES = [
   { id: 0, name: 'servicio 1' },
   { id: 1, name: 'servicio 2' },
-
   { id: 2, name: 'servicio 3' },
-
   { id: 3, name: 'servicio 4' },
   { id: 4, name: 'servicio 5' },
 ];
