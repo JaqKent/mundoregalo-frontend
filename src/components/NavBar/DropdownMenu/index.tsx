@@ -1,3 +1,4 @@
+import CustomButton from 'components/CustomButton';
 import NavItem from '../NavItem';
 import { DROPDOWN } from './constants';
 import styles from './styles.module.scss';
@@ -14,7 +15,7 @@ function DropsdownMenu() {
     <div className={styles.container}>
       <div className={styles.topMenu}>
         <div>
-          <h2 onClick={handleLogin}>Iniciar Sesión</h2>
+          <CustomButton onClick={handleLogin}>Iniciar Sesión</CustomButton>
           <hr />
         </div>
         <div>
