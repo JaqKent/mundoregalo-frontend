@@ -1,0 +1,29 @@
+@import "scss/colors";
+@import "scss/mixins";
+@import "scss/variable";
+.image {
+    margin-top: 10px;
+    background-size: cover;
+    background-position: center;
+   width: 30em;
+    height: 200px;
+    border-radius: 10px;
+    @include responsive(sm) {
+      width: 40em;
+      
+    }
+    @include responsive(md) {
+        width: 60em;
+        height: 25em;
+        
+      }
+      @include responsive(lg) {
+        width: 100em;
+        height: 35em;
+        
+      }@include responsive(xlg) {
+        width: 150em;
+        height: 40em;
+        
+      }
+  }

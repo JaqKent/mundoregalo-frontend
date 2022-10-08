@@ -9,9 +9,10 @@ import styles from './styles.module.scss';
 
 interface Props {
   slides: any;
+  className?:string;
 }
 
-function Carousel({ slides }: Props) {
+function Carousel({ slides, className }: Props) {
   const [current, setCurrent] = useState(0);
   const slideLength = slides.length;
 
@@ -33,7 +34,7 @@ function Carousel({ slides }: Props) {
 
   return (
     <>
-      <section className={styles.slider}>
+      <div className={styles.slider}>
         {slideLength >= 2 && (
           <FontAwesomeIcon
             icon={faChevronLeft}
@@ -47,7 +48,7 @@ function Carousel({ slides }: Props) {
             key={slide}
           >
             {index === current && (
-              <img src={slide.img} className={styles.image} alt={slide} />
+              <img src={slide.img} className={className} alt={slide} />
             )}
           </div>
         ))}
@@ -58,12 +59,14 @@ function Carousel({ slides }: Props) {
             onClick={nextSlide}
           />
         )}
-      </section>
-      {slides.length >= 2 && (
+      </div>
+      <div>
+        {slides.length >= 2 && (
         <div className={styles.miniatures}>
           {slides.map((slide, index) => (
             <ul>
               <li
+                tabIndex={-1}
                 key={slide}
                 className={styles.mini}
                 onClick={() => changeToSlide(index)}
@@ -72,7 +75,9 @@ function Carousel({ slides }: Props) {
             </ul>
           ))}
         </div>
-      )}
+        )}
+
+      </div>
     </>
   );
 }

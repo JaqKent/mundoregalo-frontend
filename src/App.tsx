@@ -3,13 +3,15 @@ import Slider from 'components/Slider';
 import { ITEMS } from 'constants/constants';
 import Navbar from './components/NavBar';
 
+import styles from './styles.module.scss';
+
 function App() {
   return (
-    <div>
+    <>
       <Navbar />
-      <Slider slides={ITEMS} />
+      <Slider slides={ITEMS} className={styles.image} />
       <h1>mundo regalo</h1>
-    </div>
+    </>
   );
 }
 
