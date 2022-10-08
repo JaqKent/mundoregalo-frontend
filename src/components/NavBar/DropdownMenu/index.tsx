@@ -1,5 +1,5 @@
 import NavItem from '../NavItem';
-import { CATEGORIES, SERVICES } from './constants';
+import { DROPDOWN } from './constants';
 import styles from './styles.module.scss';
 
 function DropsdownMenu() {
@@ -8,15 +8,6 @@ function DropsdownMenu() {
   };
   const handleLogin = () => {
     console.log('login');
-  };
-  const handleCategory = () => {
-    console.log('category');
-  };
-  const handleAbout = () => {
-    console.log('about');
-  };
-  const handleContact = () => {
-    console.log('contact');
   };
 
   return (
@@ -27,39 +18,18 @@ function DropsdownMenu() {
           <hr />
         </div>
         <div>
-          <div>
-            <h2>Servicios</h2>
-            <hr />
-          </div>
-          {SERVICES.map((sort) => (
+
+          {DROPDOWN.map((sort) => (
             <div>
               <NavItem onClick={handleLink} label={sort.name} />
+              <hr />
 
             </div>
           ))}
         </div>
-        <hr />
-      </div>
-      <div className={styles.midMenu}>
-        <div>
-          <h2>Categorias</h2>
-          <hr />
-        </div>
-        {CATEGORIES.map((sort) => (
-          <div>
-            <NavItem onClick={handleCategory} label={sort.name} />
 
-          </div>
-        ))}
-        <hr />
       </div>
-      <div>
-        <h2 onClick={handleContact}>Contacto</h2>
-        <hr />
-      </div>
-      <div>
-        <h2 onClick={handleAbout}>Sobre Nosotros</h2>
-      </div>
+
     </div>
   );
 }
