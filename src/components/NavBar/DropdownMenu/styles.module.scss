@@ -4,7 +4,6 @@
 
 .container {
   @include flex(center, flex-start, column);
-  padding-left: 2rem;
   background-color: $white;
   width: 35rem;
   position: fixed;
@@ -12,5 +11,12 @@
 
   hr{
     width: 30rem;
+  }
+  .button{
+    @include flex(space-around, center, row);
+    padding-top: 0.5em;
+  }
+  .links{
+   padding-left: 2em;
   }
 }

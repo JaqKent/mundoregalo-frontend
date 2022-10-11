@@ -3,19 +3,19 @@ import styles from './styles.module.scss';
 
 interface Props{
     className?:string;
-    onClick?: () => void;
-    label:string;
-    small?: boolean;
-    isSubmit?:boolean;
     disabled?:boolean;
+    isSubmit?:boolean;
+    label:string;
+    onClick?: () => void;
     secondary?:boolean;
+    small?: boolean;
 }
 
 function CustomButton({
   label, onClick, className, small, isSubmit, disabled, secondary,
 }: Props) {
   return (
-    <div>
+    <div className={className}>
       <button
         disabled={disabled}
         className={`${small ? styles.small : styles.big} ${styles.primaryButton} ${
