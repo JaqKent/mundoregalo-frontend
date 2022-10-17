@@ -9,14 +9,18 @@
   position: fixed;
   z-index: 9999;
 
+
   hr{
+    margin-left: 2em;
     width: 30rem;
   }
   .button{
     @include flex(space-around, center, row);
-    padding-top: 0.5em;
+    padding: 0.5em 0 0 2em;
   }
   .links{
    padding-left: 2em;
   }
+  .logOut{
+    @include flex(center, center, column);}
 }

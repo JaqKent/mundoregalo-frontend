@@ -1,4 +1,5 @@
-import { useState } from 'react';
+/* eslint-disable no-unused-vars */
+import { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faChevronLeft,
@@ -14,7 +15,20 @@ interface Props {
 
 function Carousel({ slides, className }: Props) {
   const [current, setCurrent] = useState(0);
+  const [autoPlay, setAutoPlay] = useState(true);
+
   const slideLength = slides.length;
+
+  useEffect(() => {
+    let timeOut = null;
+    timeOut = autoPlay && setTimeout(() => {
+      nextSlide();
+      return () => {
+        timeOut = false;
+      };
+    }, 2500);
+    console.log(current);
+  });
 
   const nextSlide = () => {
     setCurrent((prevState) => (prevState === slideLength - 1 ? 0 : current + 1));
@@ -28,13 +42,13 @@ function Carousel({ slides, className }: Props) {
     return null;
   }
 
-  const changeToSlide = (index: number) => {
-    setCurrent(index);
-  };
-
   return (
     <>
-      <div className={styles.slider}>
+      <div
+        className={styles.slider}
+        onMouseEnter={() => { setAutoPlay(false); }}
+        onMouseLeave={() => { setAutoPlay(true); }}
+      >
         {slideLength >= 2 && (
           <FontAwesomeIcon
             icon={faChevronLeft}
@@ -63,17 +77,19 @@ function Carousel({ slides, className }: Props) {
       <div>
         {slides.length >= 2 && (
         <div className={styles.miniatures}>
-          {slides.map((slide, index) => (
-            <ul>
+          <ul>
+            {slides.map((slide, index) => (
+
               <li
                 tabIndex={-1}
                 key={slide}
-                className={styles.mini}
-                onClick={() => changeToSlide(index)}
+                className={index === current ? styles.miniActive : styles.mini}
+                onClick={() => setCurrent(index)}
               />
 
-            </ul>
-          ))}
+            ))}
+
+          </ul>
         </div>
         )}
 

@@ -17,6 +17,9 @@ function DropdownMenu() {
 
     setLoged(true);
   };
+  const handleLogOut = () => {
+    setLoged(false);
+  };
   const handleSignin = () => {
     console.log('signin');
   };
@@ -45,7 +48,8 @@ function DropdownMenu() {
 
           ))}
         </div>
-
+        { loged
+          ? <div className={styles.logOut}><CustomButton small label="Cerrar Sesión" onClick={handleLogOut} /></div> : ''}
       </div>
 
     </div>
