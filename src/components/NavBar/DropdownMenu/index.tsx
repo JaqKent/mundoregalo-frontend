@@ -1,65 +1,55 @@
+import { useState } from 'react';
+import CustomButton from 'components/CustomButton';
+import profilePic from 'assets/profilepic.jpg';
+import LogedIn from './LogedinFront';
 import NavItem from '../NavItem';
-import { CATEGORIES, SERVICES } from './constants';
+import { DROPDOWN } from './constants';
 import styles from './styles.module.scss';
 
-function DropsdownMenu() {
+function DropdownMenu() {
+  const [loged, setLoged] = useState(false);
+
   const handleLink = () => {
     console.log('links');
   };
   const handleLogin = () => {
     console.log('login');
+
+    setLoged(true);
   };
-  const handleCategory = () => {
-    console.log('category');
-  };
-  const handleAbout = () => {
-    console.log('about');
-  };
-  const handleContact = () => {
-    console.log('contact');
+  const handleSignin = () => {
+    console.log('signin');
   };
 
   return (
     <div className={styles.container}>
-      <div className={styles.topMenu}>
-        <div>
-          <h4 onClick={handleLogin}>Iniciar Sesión</h4>
-          <div className={styles.line}></div>
-        </div>
-        <div>
+      <div>
+        {loged ? (
           <div>
-            <h4>Servicios</h4>
-            <div className={styles.line}></div>
+            <LogedIn show={loged} image={profilePic} label="Pierre Bernal" />
           </div>
-          {SERVICES.map((sort) => (
+        ) : (
+          <div className={styles.button}>
+            <CustomButton small label="Iniciar Sesión" onClick={handleLogin} />
+            <CustomButton small label="Crear Cuenta" onClick={handleSignin} secondary />
+          </div>
+        )}
+
+        <hr />
+        <div>
+          {DROPDOWN.map((sort) => (
             <div>
-              <NavItem onClick={handleLink} label={sort.name} />{' '}
+              <div className={styles.links}><NavItem onClick={handleLink} label={sort.name} /></div>
+              <hr />
             </div>
+
           ))}
         </div>
-        <div className={styles.line}></div>
+
       </div>
-      <div className={styles.midMenu}>
-        <div>
-          <h4>Categorias</h4>
-          <div className={styles.line}></div>
-        </div>
-        {CATEGORIES.map((sort) => (
-          <div>
-            <NavItem onClick={handleCategory} label={sort.name} />{' '}
-          </div>
-        ))}
-      </div>
-      <div className={styles.line}></div>
-      <div onClick={handleContact}>
-        <h4>Contacto</h4>
-        <div className={styles.line}></div>
-      </div>
-      <div onClick={handleAbout}>
-        <h4>Sobre Nosotros</h4>
-      </div>
+
     </div>
   );
 }
 
-export default DropsdownMenu;
+export default DropdownMenu;

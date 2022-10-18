@@ -4,12 +4,19 @@
 
 .container {
   @include flex(center, flex-start, column);
-  padding-left: 20px;
   background-color: $white;
-  width: 350px;
+  width: 35rem;
+  position: fixed;
+  z-index: 9999;
 
-  .line {
-    border-bottom: 2px solid $black;
-    width: 300px;
+  hr{
+    width: 30rem;
+  }
+  .button{
+    @include flex(space-around, center, row);
+    padding-top: 0.5em;
+  }
+  .links{
+   padding-left: 2em;
   }
 }

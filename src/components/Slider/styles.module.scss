@@ -1,0 +1,70 @@
+@import "scss/colors";
+@import "scss/mixins";
+@import "scss/variable";
+
+
+.slider {
+  @include flex(center, center, row);
+  background-color: rgba($white, 0.1);
+  border-radius: 20px;
+
+
+  .arrow {
+    padding: 15px;
+    font-size: 50px;
+    color: $primary;
+    cursor: pointer;
+
+  }
+
+  .slide {
+    opacity: 0;
+    transition-duration: 2s ease;
+    transform: scale(0.9);
+  }
+
+  .slideActive {
+    opacity: 1;
+    transition-duration: 2s;
+    transform: scale(1);
+  }
+
+  
+}
+.miniatures {
+  @include flex(center, center, row);
+
+  ul{
+   padding: 0 10px 0 10px;
+  }
+ 
+  li{
+	  background-position: left center;
+	  background-repeat: no-repeat;
+	  background-size: 5px;
+    background-image: url("../../assets/selector.png");
+    list-style: none;
+    margin: 0;
+    
+}
+
+  .mini {
+    @include flex(center, center, row);
+    width: 2em;
+    height: 2em;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    transition-duration: 0.2s;
+   
+    
+  
+    &:hover {
+      opacity: 0.5;
+    }
+    &:focus{
+      filter: opacity(0.5) drop-shadow(0 0 0 $selectedblue);
+    }
+   
+  } 
+}

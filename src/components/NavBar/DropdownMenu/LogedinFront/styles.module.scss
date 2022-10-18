@@ -1,0 +1,25 @@
+@import 'scss/colors';
+@import 'scss/mixins';
+@import 'scss/variable';
+
+.container{
+    @include flex(flex-start, center, row);
+    background-color: $primary;
+    border-top: 0.1em solid;
+    color: $white;
+    gap:1.5em;
+    height: 5.5em;
+    width: 35em;
+
+    .img{
+        border-radius: 50px ;
+        height: 4em;
+        margin-left: 2rem;
+        width: 4em;
+    }
+    h3{
+        font-size: 1.5em;
+    }
+  
+
+}

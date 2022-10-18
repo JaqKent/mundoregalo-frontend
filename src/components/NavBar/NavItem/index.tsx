@@ -13,7 +13,7 @@ function NavItem({ onClick, label, isActive }: Props) {
     onClick();
   };
   return (
-    <div title='item' onClick={activation} role='alert'>
+    <div title="item" onClick={activation} role="alert">
       {label && (
         <p className={`${isActive ? styles.active : ''}${styles.label}`}>
           {label}
