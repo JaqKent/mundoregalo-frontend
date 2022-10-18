@@ -1,13 +1,13 @@
 import { useState } from 'react';
 import CustomButton from 'components/CustomButton';
 import profilePic from 'assets/profilepic.jpg';
-import LogedIn from './LogedinFront';
+import LoggedIn from './LogedinFront';
 import NavItem from '../NavItem';
 import { DROPDOWN } from './constants';
 import styles from './styles.module.scss';
 
 function DropdownMenu() {
-  const [loged, setLoged] = useState(false);
+  const [logged, setLogged] = useState(false);
 
   const handleLink = () => {
     console.log('links');
@@ -15,10 +15,10 @@ function DropdownMenu() {
   const handleLogin = () => {
     console.log('login');
 
-    setLoged(true);
+    setLogged(true);
   };
   const handleLogOut = () => {
-    setLoged(false);
+    setLogged(false);
   };
   const handleSignin = () => {
     console.log('signin');
@@ -27,9 +27,9 @@ function DropdownMenu() {
   return (
     <div className={styles.container}>
       <div>
-        {loged ? (
+        {logged ? (
           <div>
-            <LogedIn show={loged} image={profilePic} label="Pierre Bernal" />
+            <LoggedIn show={logged} image={profilePic} label="Pierre Bernal" />
           </div>
         ) : (
           <div className={styles.button}>
@@ -41,14 +41,21 @@ function DropdownMenu() {
         <hr />
         <div>
           {DROPDOWN.map((sort) => (
-            <div>
-              <div className={styles.links}><NavItem onClick={handleLink} label={sort.name} /></div>
-              <hr />
+            <div key={sort.id}>
+              {(((logged && sort.requiresLoggedInUser) || !sort.requiresLoggedInUser) && (
+                <>
+                  <div className={styles.links}>
+                    <NavItem onClick={handleLink} label={sort.name} />
+                  </div>
+                  <hr />
+                </>
+              ))}
+
             </div>
 
           ))}
         </div>
-        { loged
+        { logged
           ? <div className={styles.logOut}><CustomButton small label="Cerrar Sesión" onClick={handleLogOut} /></div> : ''}
       </div>
 

@@ -1,3 +1,6 @@
+/* eslint-disable react-hooks/rules-of-hooks */
+/* eslint-disable @typescript-eslint/no-unused-expressions */
+/* eslint-disable no-unused-expressions */
 /* eslint-disable no-unused-vars */
 import { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -11,24 +14,24 @@ import styles from './styles.module.scss';
 interface Props {
   slides: any;
   className?:string;
+  auto?:boolean;
 }
 
-function Carousel({ slides, className }: Props) {
+function Carousel({ slides, className, auto }: Props) {
   const [current, setCurrent] = useState(0);
   const [autoPlay, setAutoPlay] = useState(true);
 
   const slideLength = slides.length;
 
-  useEffect(() => {
-    let timeOut = null;
-    timeOut = autoPlay && setTimeout(() => {
+  auto ? (useEffect(() => {
+    const timeOut = autoPlay ? setTimeout(() => {
       nextSlide();
-      return () => {
-        timeOut = false;
-      };
-    }, 2500);
-    console.log(current);
-  });
+    }, 2500) : undefined;
+
+    return () => {
+      clearTimeout(timeOut);
+    };
+  })) : '';
 
   const nextSlide = () => {
     setCurrent((prevState) => (prevState === slideLength - 1 ? 0 : current + 1));
@@ -59,7 +62,7 @@ function Carousel({ slides, className }: Props) {
         {slides.map((slide, index) => (
           <div
             className={index === current ? styles.slideActive : styles.slide}
-            key={slide}
+            key={slide.id}
           >
             {index === current && (
               <img src={slide.img} className={className} alt={slide} />
@@ -79,16 +82,13 @@ function Carousel({ slides, className }: Props) {
         <div className={styles.miniatures}>
           <ul>
             {slides.map((slide, index) => (
-
               <li
-                tabIndex={-1}
-                key={slide}
+                tabIndex={slide.id - 1}
+                key={slide.id}
                 className={index === current ? styles.miniActive : styles.mini}
                 onClick={() => setCurrent(index)}
               />
-
             ))}
-
           </ul>
         </div>
         )}

@@ -1,4 +1,3 @@
-/* import Slider from 'components/Slider'; */
 import Slider from 'components/Slider';
 import { ITEMS } from 'constants/constants';
 import Navbar from './components/NavBar';
@@ -9,7 +8,7 @@ function App() {
   return (
     <>
       <Navbar />
-      <Slider slides={ITEMS} className={styles.image} />
+      <Slider auto slides={ITEMS} className={styles.image} />
       <h1>mundo regalo</h1>
     </>
   );
