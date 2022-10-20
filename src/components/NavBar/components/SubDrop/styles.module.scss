@@ -1,0 +1,27 @@
+@import "scss/colors";
+@import "scss/mixins";
+@import "scss/variable";
+
+.dropdown{
+
+  display: none;
+  
+} 
+.show{
+    
+    left: 89%;
+    position: absolute;
+   
+    display: block;
+
+   
+}
+.menuItems{
+    @include flex( center,flex-start, column);
+    list-style: none;
+    width: 20em;
+    height: 3em;
+    background-color: $gray;
+
+
+} 

@@ -23,7 +23,7 @@ function DropdownMenu() {
   const handleSignin = () => {
     console.log('signin');
   };
-
+  const depthLevel = 1;
   return (
     <div className={styles.container}>
       <div>
@@ -40,16 +40,24 @@ function DropdownMenu() {
 
         <hr />
         <div>
-          {DROPDOWN.map((sort) => (
-            <div key={sort.id}>
-              {(((logged && sort.requiresLoggedInUser) || !sort.requiresLoggedInUser) && (
+          {DROPDOWN.map((menu) => (
+
+            <div key={menu.id}>
+              {
+              (((logged && menu.requiresLoggedInUser) || !menu.requiresLoggedInUser) && (
                 <>
                   <div className={styles.links}>
-                    <NavItem onClick={handleLink} label={sort.name} />
+                    <NavItem
+                      items={menu}
+                      onClick={handleLink}
+                      label={menu.name}
+                      depthLevel={depthLevel}
+                    />
                   </div>
                   <hr />
                 </>
-              ))}
+              ))
+}
 
             </div>
 
