@@ -12,26 +12,28 @@ import {
 import styles from './styles.module.scss';
 
 interface Props {
-  slides: any;
+  slides:{id:number, img:string}[];
   className?:string;
   auto?:boolean;
+  setAuto:(auto:boolean)=> void;
 }
 
-function Carousel({ slides, className, auto }: Props) {
+function Carousel({
+  slides, className, auto, setAuto,
+} : Props) {
   const [current, setCurrent] = useState(0);
-  const [autoPlay, setAutoPlay] = useState(true);
 
   const slideLength = slides.length;
 
-  auto ? (useEffect(() => {
-    const timeOut = autoPlay ? setTimeout(() => {
+  useEffect(() => {
+    const timeOut = auto ? setTimeout(() => {
       nextSlide();
     }, 2500) : undefined;
 
     return () => {
       clearTimeout(timeOut);
     };
-  })) : '';
+  });
 
   const nextSlide = () => {
     setCurrent((prevState) => (prevState === slideLength - 1 ? 0 : current + 1));
@@ -49,8 +51,8 @@ function Carousel({ slides, className, auto }: Props) {
     <>
       <div
         className={styles.slider}
-        onMouseEnter={() => { setAutoPlay(false); }}
-        onMouseLeave={() => { setAutoPlay(true); }}
+        onMouseEnter={() => { setAuto(false); }}
+        onMouseLeave={() => { setAuto(true); }}
       >
         {slideLength >= 2 && (
           <FontAwesomeIcon
@@ -65,7 +67,7 @@ function Carousel({ slides, className, auto }: Props) {
             key={slide.id}
           >
             {index === current && (
-              <img src={slide.img} className={className} alt={slide} />
+              <img src={slide.img} className={className} alt="diapositiva" />
             )}
           </div>
         ))}

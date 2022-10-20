@@ -1,4 +1,3 @@
-/* eslint-disable react/button-has-type */
 import styles from './styles.module.scss';
 
 interface Props{

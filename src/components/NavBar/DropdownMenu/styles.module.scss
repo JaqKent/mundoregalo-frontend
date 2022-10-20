@@ -5,14 +5,14 @@
 .container {
   @include flex(center, flex-start, column);
   background-color: $white;
-  width: 35rem;
+  width: 35em;
   position: fixed;
   z-index: 9999;
 
 
   hr{
     margin-left: 2em;
-    width: 30rem;
+    width: 30em;
   }
   .button{
     @include flex(space-around, center, row);
