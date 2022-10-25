@@ -1,4 +1,8 @@
-import { useState } from 'react';
+/* eslint-disable react-hooks/rules-of-hooks */
+/* eslint-disable @typescript-eslint/no-unused-expressions */
+/* eslint-disable no-unused-expressions */
+/* eslint-disable no-unused-vars */
+import { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faChevronLeft,
@@ -8,13 +12,28 @@ import {
 import styles from './styles.module.scss';
 
 interface Props {
-  slides: any;
+  slides:{id:number, img:string}[];
   className?:string;
+  auto?:boolean;
+  setAuto:(auto:boolean)=> void;
 }
 
-function Carousel({ slides, className }: Props) {
+function Carousel({
+  slides, className, auto, setAuto,
+} : Props) {
   const [current, setCurrent] = useState(0);
+
   const slideLength = slides.length;
+
+  useEffect(() => {
+    const timeOut = auto ? setTimeout(() => {
+      nextSlide();
+    }, 2500) : undefined;
+
+    return () => {
+      clearTimeout(timeOut);
+    };
+  });
 
   const nextSlide = () => {
     setCurrent((prevState) => (prevState === slideLength - 1 ? 0 : current + 1));
@@ -28,13 +47,13 @@ function Carousel({ slides, className }: Props) {
     return null;
   }
 
-  const changeToSlide = (index: number) => {
-    setCurrent(index);
-  };
-
   return (
     <>
-      <div className={styles.slider}>
+      <div
+        className={styles.slider}
+        onMouseEnter={() => { setAuto(false); }}
+        onMouseLeave={() => { setAuto(true); }}
+      >
         {slideLength >= 2 && (
           <FontAwesomeIcon
             icon={faChevronLeft}
@@ -45,10 +64,10 @@ function Carousel({ slides, className }: Props) {
         {slides.map((slide, index) => (
           <div
             className={index === current ? styles.slideActive : styles.slide}
-            key={slide}
+            key={slide.id}
           >
             {index === current && (
-              <img src={slide.img} className={className} alt={slide} />
+              <img src={slide.img} className={className} alt="diapositiva" />
             )}
           </div>
         ))}
@@ -63,17 +82,16 @@ function Carousel({ slides, className }: Props) {
       <div>
         {slides.length >= 2 && (
         <div className={styles.miniatures}>
-          {slides.map((slide, index) => (
-            <ul>
+          <ul>
+            {slides.map((slide, index) => (
               <li
-                tabIndex={-1}
-                key={slide}
-                className={styles.mini}
-                onClick={() => changeToSlide(index)}
+                tabIndex={slide.id - 1}
+                key={slide.id}
+                className={index === current ? styles.miniActive : styles.mini}
+                onClick={() => setCurrent(index)}
               />
-
-            </ul>
-          ))}
+            ))}
+          </ul>
         </div>
         )}
 

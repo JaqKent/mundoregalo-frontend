@@ -10,10 +10,18 @@
 
 
   .arrow {
-    padding: 15px;
-    font-size: 50px;
+    padding: 1rem;
+    font-size: 3rem;
     color: $primary;
     cursor: pointer;
+
+    opacity: 0.2;
+
+
+    &:hover {
+      opacity: 1;
+      transition:0.6s;
+    }
 
   }
 
@@ -32,11 +40,12 @@
   
 }
 .miniatures {
-  @include flex(center, center, row);
-
+ 
   ul{
-   padding: 0 10px 0 10px;
-  }
+     @include flex(center, center, row);
+     padding: 0 1em 0 0.5em; 
+    }
+  
  
   li{
 	  background-position: left center;
@@ -44,27 +53,39 @@
 	  background-size: 5px;
     background-image: url("../../assets/selector.png");
     list-style: none;
-    margin: 0;
+    margin: 0.5em;
     
 }
 
   .mini {
     @include flex(center, center, row);
-    width: 2em;
-    height: 2em;
-    background-size: cover;
     background-position: center;
+    background-size: cover;
     cursor: pointer;
+    height: 2em;
     transition-duration: 0.2s;
+    width: 2em;
    
     
   
     &:hover {
       opacity: 0.5;
     }
-    &:focus{
-      filter: opacity(0.5) drop-shadow(0 0 0 $selectedblue);
+    &:active{
+      filter: opacity(0.3) drop-shadow(0 0 0 $selectedblue);
     }
+   
+  } 
+  .miniActive {
+    @include flex(center, center, row);
+    background-position: center;
+    background-size: cover;
+    cursor: pointer;
+    filter: opacity(0.5) drop-shadow(0 0 0 $selectedblue);
+    height: 2em;
+    transition-duration: 0.2s;
+    width: 2em;
+    
    
   } 
 }
