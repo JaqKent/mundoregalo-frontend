@@ -13,8 +13,6 @@ function DropdownMenu() {
     console.log('links');
   };
   const handleLogin = () => {
-    console.log('login');
-
     setLogged(true);
   };
   const handleLogOut = () => {
