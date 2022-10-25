@@ -1,3 +1,5 @@
+import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useState } from 'react';
 import SubDrop from '../components/SubDrop';
 import styles from './styles.module.scss';
@@ -27,11 +29,11 @@ function NavItem({
           <p
             className={`${isActive ? styles.active : ''}${styles.label}`}
             aria-haspopup="menu"
-            aria-expanded={dropdown ? 'true' : 'false'}
             onClick={() => setDropdown((prevState:boolean) => !prevState)}
           >
             {items.name}
-            {depthLevel > 0 ? <span>&raquo;</span> : <span />}
+            {depthLevel > 0 ? <span><FontAwesomeIcon icon={faChevronDown} /></span>
+              : <span />}
           </p>
           <SubDrop
             submenus={items.submenu}
