@@ -1,4 +1,4 @@
-import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
+import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useState } from 'react';
 import SubDrop from '../components/SubDrop';
@@ -9,10 +9,10 @@ interface Props {
   onClick: () => void;
   isActive?: boolean;
   items?:any;
-  depthLevel:number;
+
 }
 function NavItem({
-  onClick, label, isActive, items, depthLevel,
+  onClick, label, isActive, items,
 }: Props) {
   const [dropdown, setDropdown] = useState(false);
   const activation = () => {
@@ -32,8 +32,11 @@ function NavItem({
             onClick={() => setDropdown((prevState:boolean) => !prevState)}
           >
             {items.name}
-            {depthLevel > 0 ? <span><FontAwesomeIcon icon={faChevronDown} /></span>
-              : <span />}
+            {
+            dropdown
+              ? <span><FontAwesomeIcon icon={faChevronUp} /></span>
+              : <span><FontAwesomeIcon icon={faChevronDown} /></span>
+}
           </p>
           <SubDrop
             submenus={items.submenu}

@@ -49,10 +49,10 @@ function DropdownMenu() {
                       items={menu}
                       onClick={handleLink}
                       label={menu.name}
-                      depthLevel={depthLevel}
+
                     />
                   </div>
-                  <hr />
+                  <hr className={styles.bottomLine} />
                 </>
               ))
 }
