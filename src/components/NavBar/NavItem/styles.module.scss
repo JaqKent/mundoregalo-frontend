@@ -3,9 +3,10 @@
 @import 'scss/variable';
 
 .label {
-  padding-left: 1.5rem;
+  @include flex(space-between,center,row);
   font-size: 1.6rem;
   font-weight: bold;
+  padding-left: 1.5rem;
 
   &:hover {
     color: $gray;
@@ -15,6 +16,7 @@
   &:active {
     color: lighter($primary, 35%);
   }
+
 }
 
 .active {

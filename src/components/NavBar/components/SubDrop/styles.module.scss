@@ -1,0 +1,36 @@
+@import "scss/colors";
+@import "scss/mixins";
+@import "scss/variable";
+
+.dropdown{
+
+  display: none;
+  
+} 
+.show{
+    display: block;
+    width: 25rem;
+   
+    
+}
+.menuItems{
+    @include flex( center,flex-start, column);
+    background-color: $white;
+    font-size: 1.4rem;
+    font-weight: bold;
+    height: 4rem;
+    padding-left: 1rem;
+    width: 15rem;
+
+    a:link,
+    a:visited,
+    a:active {
+      color: $black;
+      text-decoration: none;
+    }
+    a:hover{
+      color: $gray;
+    }
+ 
+
+} 

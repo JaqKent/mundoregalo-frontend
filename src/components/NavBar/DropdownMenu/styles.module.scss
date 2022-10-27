@@ -7,12 +7,13 @@
   background-color: $white;
   width: 35em;
   position: fixed;
-  z-index: 9999;
+  z-index: 99;
 
 
-  hr{
-    margin-left: 2em;
-    width: 30em;
+  .bottomLine{
+    position:relative;
+    margin-left: 2rem;
+    width: 30rem;
   }
   .button{
     @include flex(space-around, center, row);
