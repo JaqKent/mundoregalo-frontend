@@ -21,7 +21,7 @@ function DropdownMenu() {
   const handleSignin = () => {
     console.log('signin');
   };
-  const depthLevel = 1;
+
   return (
     <div className={styles.container}>
       <div>

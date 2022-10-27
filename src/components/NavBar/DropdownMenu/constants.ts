@@ -1,4 +1,6 @@
-export const DROPDOWN = [
+import { Items } from 'interfaces/interfaces';
+
+export const DROPDOWN:Items[] = [
   { id: 1, name: 'Mis Compras', requiresLoggedInUser: true },
   { id: 2, name: 'Historial', requiresLoggedInUser: true },
   { id: 3, name: 'Inicio' },

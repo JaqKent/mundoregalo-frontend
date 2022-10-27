@@ -1,6 +1,7 @@
+import { useState } from 'react';
 import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useState } from 'react';
+import { Items } from 'interfaces/interfaces';
 import SubDrop from '../components/SubDrop';
 import styles from './styles.module.scss';
 
@@ -8,7 +9,7 @@ interface Props {
   label?: string;
   onClick: () => void;
   isActive?: boolean;
-  items?:any;
+  items?:Items;
 
 }
 function NavItem({
@@ -27,7 +28,7 @@ function NavItem({
       {items?.submenu ? (
         <>
           <p
-            className={`${isActive ? styles.active : ''}${styles.label}`}
+            className={`${isActive ? styles.active : ''} ${styles.label}`}
             aria-haspopup="menu"
             onClick={() => setDropdown((prevState:boolean) => !prevState)}
           >
@@ -39,12 +40,12 @@ function NavItem({
 }
           </p>
           <SubDrop
-            submenus={items.submenu}
+            submenu={items.submenu}
             dropdown={dropdown}
           />
         </>
       ) : label && (
-      <p className={`${isActive ? styles.active : ''}${styles.label}`}>
+      <p className={`${isActive ? styles.active : ''} ${styles.label}`}>
         {label}
       </p>
       )}
