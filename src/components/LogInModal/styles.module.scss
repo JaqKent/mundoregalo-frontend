@@ -1,0 +1,57 @@
+@import 'scss/colors';
+@import 'scss/mixins';
+@import 'scss/variable';
+
+.container{
+    @include flex(flex-start, center, column);
+    background: $white;
+    width: 35rem;
+    height: 55rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
+    position: fixed;
+    border-radius: 4px;
+   
+
+    .close{
+        @include flex(flex-end, flex-end, row);
+        color:$red;
+        cursor: pointer;
+        font-size: 2rem;
+        font-weight: bold;
+        padding-left: 29rem;
+        margin-top: 1.5rem;
+       
+
+    }
+
+ .input{
+    @include flex(space-around, flex-start, column);
+    height: 10rem;
+    padding: 3.5rem 0;
+    width: 26rem;
+    font-size: 1.4rem;
+    input{
+        width: 25rem;
+    }
+    }
+    .button{
+        padding: 3.5rem 0 2rem 0;
+    }
+    .logo{
+        @include flex(space-around, flex-start, row);
+        padding: 2.5rem;
+      
+        .img{
+            height: 4rem;
+            width: 4rem;
+            cursor: pointer;
+            padding: 2rem .3rem;
+        }
+    }
+  .log{
+    padding-left: 2rem;
+    font-size: 1.2rem;
+  }
+    
+
+}

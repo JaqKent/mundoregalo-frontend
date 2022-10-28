@@ -7,8 +7,14 @@
   background-color: $white;
   width: 35em;
   position: fixed;
-  z-index: 99;
-
+  z-index: 9;
+ 
+  .modal{
+    position: fixed;
+    left: 25%;
+    z-index: 99;
+    
+  }
 
   .bottomLine{
     position:relative;

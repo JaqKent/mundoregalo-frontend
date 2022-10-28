@@ -35,8 +35,8 @@ function NavItem({
             {items.name}
             {
             dropdown
-              ? <span><FontAwesomeIcon icon={faChevronUp} /></span>
-              : <span><FontAwesomeIcon icon={faChevronDown} /></span>
+              ? <span className={styles.arrow}><FontAwesomeIcon icon={faChevronUp} /></span>
+              : <span className={styles.arrow}><FontAwesomeIcon icon={faChevronDown} /></span>
 }
           </p>
           <SubDrop
