@@ -15,10 +15,16 @@ function DropdownMenu() {
   const handleLink = () => {
     console.log('links');
   };
-  const handleLogin = () => {
+
+  const openLogin = () => {
     setShowModal(true);
-    setLogged(true);
     setSign(true);
+  };
+  const handleLogin = () => {
+    setLogged(true);
+  };
+  const handleSignin = () => {
+    console.log('logged');
   };
   const handleLogOut = () => {
     setLogged(false);
@@ -27,16 +33,31 @@ function DropdownMenu() {
     setShowModal(false);
   };
 
-  const handleSignin = () => {
+  const openSignin = () => {
     setSign(false);
     setShowModal(true);
+  };
+
+  const handleOnClick = () => {
+    if (logged) {
+      handleSignin();
+    } else {
+      handleLogin();
+    }
+    handleClose();
   };
 
   return (
     <div className={styles.container}>
       <div>
         <div className={styles.modal}>
-          <LogInModal show={showModal} onClick={handleClose} signIn={sign} />
+          <LogInModal
+            link={sign ? openSignin : openLogin}
+            show={showModal}
+            onClick={handleOnClick}
+            onClose={handleClose}
+            signIn={sign}
+          />
 
         </div>
         {logged ? (
@@ -45,8 +66,8 @@ function DropdownMenu() {
           </div>
         ) : (
           <div className={styles.button}>
-            <CustomButton small label="Iniciar Sesión" onClick={handleLogin} />
-            <CustomButton small label="Crear Cuenta" onClick={handleSignin} secondary />
+            <CustomButton small label="Iniciar Sesión" onClick={openLogin} />
+            <CustomButton small label="Crear Cuenta" onClick={openSignin} secondary />
           </div>
         )}
 

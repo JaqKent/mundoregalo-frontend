@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unknown-property */
 import styles from './styles.module.scss';
 
 interface Props{
@@ -8,6 +9,7 @@ interface Props{
     onClick?: () => void;
     secondary?:boolean;
     small?: boolean;
+
 }
 
 function CustomButton({
