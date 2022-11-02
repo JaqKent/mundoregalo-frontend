@@ -22,8 +22,7 @@ function LogInModal({
       <div className={styles.container}>
         <p className={styles.close} onClick={onClose}>x</p>
         <div>
-          {signIn
-            ? <h2>Iniciar sesión</h2> : <h2>Crear Cuenta</h2>}
+          <h2>{signIn ? 'Iniciar sesión' : 'Crear Cuenta'}</h2>
         </div>
         <div className={styles.input}>
           <p>Email</p>

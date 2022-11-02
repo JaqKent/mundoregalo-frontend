@@ -1,4 +1,3 @@
-/* eslint-disable react/no-unknown-property */
 import styles from './styles.module.scss';
 
 interface Props{

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import CustomButton from 'components/CustomButton';
-import profilePic from 'assets/profilepic.jpg';
 import LogInModal from 'components/LogInModal';
+import profilePic from 'assets/profilepic.jpg';
 import LoggedIn from './LogedinFront';
 import NavItem from '../NavItem';
 import { DROPDOWN } from './constants';
@@ -23,7 +23,7 @@ function DropdownMenu() {
   const handleLogin = () => {
     setLogged(true);
   };
-  const handleSignin = () => {
+  const handleSignup = () => {
     console.log('logged');
   };
   const handleLogOut = () => {
@@ -33,14 +33,14 @@ function DropdownMenu() {
     setShowModal(false);
   };
 
-  const openSignin = () => {
+  const openSignup = () => {
     setSign(false);
     setShowModal(true);
   };
 
   const handleOnClick = () => {
     if (logged) {
-      handleSignin();
+      handleSignup();
     } else {
       handleLogin();
     }
@@ -52,7 +52,7 @@ function DropdownMenu() {
       <div>
         <div className={styles.modal}>
           <LogInModal
-            link={sign ? openSignin : openLogin}
+            link={sign ? openSignup : openLogin}
             show={showModal}
             onClick={handleOnClick}
             onClose={handleClose}
@@ -67,7 +67,7 @@ function DropdownMenu() {
         ) : (
           <div className={styles.button}>
             <CustomButton small label="Iniciar Sesión" onClick={openLogin} />
-            <CustomButton small label="Crear Cuenta" onClick={openSignin} secondary />
+            <CustomButton small label="Crear Cuenta" onClick={openSignup} secondary />
           </div>
         )}
 
