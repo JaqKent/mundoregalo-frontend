@@ -1,0 +1,21 @@
+@import 'scss/colors';
+@import 'scss/mixins';
+@import 'scss/variable';
+
+.container{
+    @include flex(center, center, column);
+    min-width: 35rem;
+
+    .topSection{
+        @include flex(center, center, column);
+        text-align: center;
+        border: $primary solid 1px;
+        width: 35rem;
+        .radio{
+            width: 30rem;
+            @include flex(center, space-between, row);
+            padding: 1rem;
+         
+        }
+    }
+}
