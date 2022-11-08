@@ -5,11 +5,13 @@
 .container{
     @include flex(center, center, column);
     min-width: 35rem;
+   
 
     .topSection{
         @include flex(center, center, column);
         text-align: center;
         border: $primary solid 1px;
+        background-color: $bonewhite;
         width: 35rem;
         .radio{
             width: 30rem;
