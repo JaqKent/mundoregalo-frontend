@@ -8,6 +8,7 @@ interface Props{
     onClick?: () => void;
     secondary?:boolean;
     small?: boolean;
+
 }
 
 function CustomButton({
