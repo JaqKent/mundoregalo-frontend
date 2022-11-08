@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/no-static-element-interactions */
 import CustomButton from 'components/CustomButton';
 
 import facebook from 'assets/facebook-color.png';
@@ -45,14 +44,14 @@ function LogInModal({
                 <p>
                   Aun no tienes cuenta?
                   {' '}
-                  <span className={styles.link} onClick={link}>Crear Cuenta</span>
+                  <span role="button" tabIndex={0} className={styles.link} onClick={link}>Crear Cuenta</span>
                 </p>
               )
               : (
                 <p>
                   ¿Ya tienes una cuenta?
                   {' '}
-                  <span className={styles.link} onClick={link}>Iniciar sesión</span>
+                  <span role="button" tabIndex={0} className={styles.link} onClick={link}>Iniciar sesión</span>
                 </p>
               )}
 
@@ -60,7 +59,7 @@ function LogInModal({
         </div>
 
       </div>
-    ) : <></>
+    ) : null
   );
 }
 
