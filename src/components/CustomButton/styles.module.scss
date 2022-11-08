@@ -10,11 +10,13 @@
 .primaryButton {
   background-color: $primary;
   border-color: $primary;
+  border-radius: 4px;
   color: $white;
   cursor: pointer;
   display: inline-flex;
   font-weight: bold;
   text-align: center;
+
 
   &:hover {
     background-color: lighten($primary, 5);
@@ -32,6 +34,7 @@
 
 .secondaryButton {
   background-color: $white;
+  border-radius: 4px;
   color: $primary;
   cursor: pointer;
   display: inline-flex;
@@ -53,6 +56,9 @@
 }
 
 .big {
-  padding: 1.5em 6em;
-  font-size: 1.8em;
+  @include flex(center,center,row);
+  border-radius: 4px;
+  font-size: 1.2em;
+  height: 4rem;
+  width: 30rem;
 }

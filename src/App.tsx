@@ -8,6 +8,7 @@ import styles from './styles.module.scss';
 
 function App() {
   const [auto, setAuto] = useState(false);
+
   return (
     <>
       <Navbar />
