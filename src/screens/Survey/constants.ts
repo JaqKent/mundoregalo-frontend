@@ -63,10 +63,12 @@ export const SURVEY:Form[] = [
     radio: false,
     inValue: [
       {
-        type: 'textarea',
-        value: 'recomendacion',
+        type: 'textArea',
+        value: '',
         name: 'points',
         label: '',
+        placeholder: 'Recomendacion',
+
       },
 
     ],

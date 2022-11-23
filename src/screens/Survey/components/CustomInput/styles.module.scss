@@ -6,16 +6,16 @@
     @include flex(space-between, center, row);
     padding: 1rem;
 }
-.label{
-   display: block;
+ .label{
+    cursor: pointer;
+    display: block;
     padding: 3rem 2rem  ;
     position: relative;
-    cursor: pointer;
 
-input {
+    input {
     display: none;
-}
-span {
+     }
+    span {
     border-radius: 100%; 
     border: 1px solid $primary; 
     font-size: 1.5rem;
@@ -27,8 +27,15 @@ span {
     text-align: center; 
     top: 50%;
     width: 2.3rem; 
-    }
-input:checked + span {
-    background:$gray; 
+     }
+    input:checked + span {
+    background:rgba(lighten($primary, 35%), 0.7);
     border-color: $black;}
-}
+    }
+
+    .textArea{
+        height: 10rem;
+        width: 30rem;
+        background:$gray; 
+        text-align: center;
+    }

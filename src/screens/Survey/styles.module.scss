@@ -4,15 +4,22 @@
 
 .container{
     @include flex(center, center, column);
-    gap:10px;
     min-width: 35rem;
-   
+   .formContainer{
+    @include flex(space-between, center, column);
+     gap:1.5rem;
+   }
 
     .topSection{
         @include flex(center, center, column);
-        text-align: center;
+        background-color: rgba(lighten($gray, 15%), 0.7);
         border: $primary solid 1px;
+        text-align: center;
         width: 35rem;
+        @include responsive(md) {
+            width: 70rem;
+            height: 20rem;
+          }
 
     }
 }

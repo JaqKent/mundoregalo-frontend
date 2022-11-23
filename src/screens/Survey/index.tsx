@@ -7,15 +7,17 @@ function Survey() {
   return (
     <>
       <div className={styles.container}>
-        {SURVEY.map((form) => (
-          <form>
-            <div className={styles.topSection}>
-              <h2>{form.question}</h2>
-              <CustomInput inValue={form.inValue} isRadio={form.radio} />
+        <form className={styles.formContainer}>
+          {SURVEY.map((form) => (
+            <div>
+              <div className={styles.topSection}>
+                <h2>{form.question}</h2>
+                <CustomInput inValue={form.inValue} isRadio={form.radio} />
+              </div>
             </div>
-          </form>
-        ))}
-        <CustomButton small label="Enviar" isSubmit />
+          ))}
+          <CustomButton small label="Enviar" isSubmit />
+        </form>
       </div>
 
     </>

@@ -14,6 +14,7 @@ export interface Input {
     value:string;
     name:string;
     label:string;
+    placeholder?:string;
 }
 export interface Form {
     id:number;
