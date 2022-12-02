@@ -9,3 +9,9 @@ export interface Items {
      requiresLoggedInUser?: boolean,
      submenu?: Submenu[]
    }
+export interface Form {
+    id:number;
+    label:string;
+    value:string;
+    type:string;
+}
