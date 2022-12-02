@@ -4,13 +4,7 @@
 
 .input{
     @include flex(space-between, center, row);
-    padding: 1rem;
 }
  
 
-    .textArea{
-        height: 10rem;
-        width: 30rem;
-        background:$gray; 
-        text-align: center;
-    }
+

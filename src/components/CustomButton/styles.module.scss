@@ -5,6 +5,13 @@
 .small {
   font-size: 1.2em;
   padding: 0.5em 1.5em;
+  @include responsive(md) {
+    @include flex(center,center,row);
+    border-radius: 4px;
+    font-size: 1.2em;
+    height: 4rem;
+    width: 30rem;}
+    
 }
 
 .primaryButton {

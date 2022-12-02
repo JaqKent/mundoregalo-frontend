@@ -17,11 +17,11 @@
   }
 
   &:active {
-    color: lighter($primary, 35%);
+    color: lighten($primary, 35%);
   }
 
 }
 
 .active {
-  color: lighter($primary, 35%);
+  color: lighten($primary, 35%);
 }
