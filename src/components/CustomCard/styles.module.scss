@@ -1,0 +1,89 @@
+@import 'scss/colors';
+@import 'scss/mixins';
+@import 'scss/variable';
+
+.containerLarge {
+  @include flex(space-between, center, Row);
+  border: 2px solid $gray;
+  cursor: pointer;
+  gap: 1.5rem;
+  height: 12rem;
+  width: 37rem;
+  @include responsive(md) {
+    height: 17rem;
+    width: 60rem;
+  }
+  @include responsive(lg) {
+    width: 75rem;
+  }
+}
+.containerSmall {
+  @include flex(space-between, center, column);
+  border: 2px solid $gray;
+  cursor: pointer;
+  gap: 1.5rem;
+  height: 17rem;
+  width: 15rem;
+
+  @include responsive(md) {
+    height: 22rem;
+    width: 19rem;
+  }
+}
+
+.imgLarge {
+  height: 5rem;
+  width: auto;
+  @include responsive(md) {
+    height: 10rem;
+  }
+}
+.imgSmall {
+  height: 5rem;
+  width: auto;
+  @include responsive(md) {
+    height: 9rem;
+  }
+}
+
+.description {
+  padding: 0 1.5em 0 1.5rem;
+
+  .titleLarge {
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-align: center;
+    width: 25rem;
+    @include responsive(md) {
+      font-size: 1.5rem;
+      width: 40rem;
+    }
+  }
+
+  .titleSmall {
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    width: 15rem;
+    @include responsive(md) {
+      font-size: 1.2rem;
+      width: 20rem;
+    }
+  }
+  .priceLarge {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    @include responsive(md) {
+      font-size: 1.4rem;
+    }
+  }
+  .priceSmall {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    @include responsive(md) {
+      font-size: 1.3rem;
+    }
+  }
+}
