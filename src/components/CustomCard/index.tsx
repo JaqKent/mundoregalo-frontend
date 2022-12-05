@@ -12,12 +12,12 @@ function CustomCard({
   image, name, price, small,
 } : Props) {
   return (
-    <div className={`${small ? styles.containerSmall : styles.containerLarge}`}>
+    <div className={small ? styles.containerSmall : styles.containerLarge}>
       <div>
-        <img className={`${small ? styles.imgSmall : styles.imgLarge}`} src={image} alt={name} />
+        <img className={small ? styles.imgSmall : styles.imgLarge} src={image} alt={name} />
       </div>
       <div className={styles.description}>
-        <div className={`${small ? styles.titleSmall : styles.titleLarge}`}>
+        <div className={small ? styles.titleSmall : styles.titleLarge}>
           <h3>
             {name}
           </h3>
