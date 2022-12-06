@@ -7,7 +7,7 @@ import styles from './styles.module.scss';
 function PublicityHeader() {
   const [auto, setAuto] = useState(false);
   return (
-    <div>
+    <div style={{ width: '100%' }}>
       <Slider hide auto={auto} setAuto={setAuto} slides={ITEMS} className={styles.image} />
 
     </div>

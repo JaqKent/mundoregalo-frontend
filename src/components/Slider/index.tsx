@@ -52,7 +52,7 @@ function Carousel({
         onMouseEnter={() => { setAuto(false); }}
         onMouseLeave={() => { setAuto(true); }}
       >
-        {hide ? '' : slideLength >= 2 && (
+        {(!hide && slideLength >= 2) && (
           <FontAwesomeIcon
             icon={faChevronLeft}
             className={styles.arrow}
