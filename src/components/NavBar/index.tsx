@@ -1,14 +1,14 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { animated, useTransition } from 'react-spring';
 import menu from 'assets/menu.svg';
 import logo from 'assets/logoBlanco.png';
 import cart from 'assets/carro.svg';
 import close from 'assets/x.svg';
-import { useNavigate } from 'react-router-dom';
-import { ANIMATION_CONFIG } from './constants';
-import DropsdownMenu from './DropdownMenu';
 import SearchBar from './SearchBar';
+import DropsdownMenu from './DropdownMenu';
+import { ANIMATION_CONFIG } from './constants';
 
 import styles from './styles.module.scss';
 
@@ -17,7 +17,7 @@ function Navbar() {
   const transition = useTransition(open, ANIMATION_CONFIG);
   const navigate = useNavigate();
 
-  const handleOpen = () => { setOpen(!open); };
+  const handleOpen = () => { setOpen((prevState) => !prevState); };
   const handleHome = () => { navigate('/'); };
 
   return (

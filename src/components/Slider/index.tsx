@@ -60,16 +60,22 @@ function Carousel({
           />
         )}
         {slides.map((slide, index) => (
+
           <div
             className={index === current ? styles.slideActive : styles.slide}
             key={slide.id}
           >
             {index === current && (
-              <img src={slide.img} className={className} alt="diapositiva" />
+            <div
+              className={className}
+              style={{
+                backgroundImage: `url(${slide.img})`,
+              }}
+            />
             )}
           </div>
         ))}
-        {hide ? '' : slideLength >= 2 && (
+        {(!hide && slideLength >= 2) && (
           <FontAwesomeIcon
             icon={faChevronRight}
             className={styles.arrow}

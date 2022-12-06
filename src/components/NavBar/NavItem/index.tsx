@@ -30,7 +30,7 @@ function NavItem({
           <p
             className={`${isActive ? styles.active : ''} ${styles.label}`}
             aria-haspopup="menu"
-            onClick={() => setDropdown((prevState:boolean) => !prevState)}
+            onClick={() => setDropdown((prevState) => !prevState)}
           >
             {items.name}
             {
