@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/no-static-element-interactions */
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { animated, useTransition } from 'react-spring';
@@ -24,7 +23,7 @@ function Navbar() {
     <>
       <div className={styles.container}>
         <div className={styles.topItems}>
-          <div onClick={handleOpen}>
+          <div role="button" tabIndex={0} onClick={handleOpen}>
             <img className={styles.menu} src={`${open ? close : menu}`} alt="menu" />
           </div>
           <div>
