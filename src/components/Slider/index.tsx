@@ -12,11 +12,12 @@ interface Props {
   slides:{id:number, img:string}[];
   className?:string;
   auto?:boolean;
+  hide?:boolean
   setAuto:(auto:boolean)=> void;
 }
 
 function Carousel({
-  slides, className, auto, setAuto,
+  slides, className, auto, setAuto, hide,
 } : Props) {
   const [current, setCurrent] = useState(0);
 
@@ -51,7 +52,7 @@ function Carousel({
         onMouseEnter={() => { setAuto(false); }}
         onMouseLeave={() => { setAuto(true); }}
       >
-        {slideLength >= 2 && (
+        {hide ? '' : slideLength >= 2 && (
           <FontAwesomeIcon
             icon={faChevronLeft}
             className={styles.arrow}
@@ -68,7 +69,7 @@ function Carousel({
             )}
           </div>
         ))}
-        {slideLength >= 2 && (
+        {hide ? '' : slideLength >= 2 && (
           <FontAwesomeIcon
             icon={faChevronRight}
             className={styles.arrow}

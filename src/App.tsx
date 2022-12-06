@@ -1,19 +1,18 @@
-import Slider from 'components/Slider';
-import { ITEMS } from 'constants/constants';
-import { useState } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import HomePage from 'screens/Home';
+import Survey from 'screens/Survey';
 import Navbar from './components/NavBar';
 
-import styles from './styles.module.scss';
-
 function App() {
-  const [auto, setAuto] = useState(false);
-
   return (
-    <>
+    <Router>
       <Navbar />
-      <Slider auto={auto} setAuto={setAuto} slides={ITEMS} className={styles.image} />
-      <h1>mundo regalo</h1>
-    </>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/survey" element={<Survey />} />
+      </Routes>
+
+    </Router>
   );
 }
 

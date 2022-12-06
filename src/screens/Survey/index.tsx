@@ -62,7 +62,7 @@ function Survey() {
             </div>
             <textarea className={styles.textArea} value={currentText} onChange={handleChange} placeholder="Sugerencia" />
           </div>
-          <CustomButton className={styles.button} small label="Enviar" isSubmit />
+          <CustomButton className={styles.button} label="Enviar" isSubmit />
         </form>
       </div>
 

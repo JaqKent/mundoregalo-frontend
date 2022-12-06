@@ -5,6 +5,7 @@ import menu from 'assets/menu.svg';
 import logo from 'assets/logoBlanco.png';
 import cart from 'assets/carro.svg';
 import close from 'assets/x.svg';
+import { useNavigate } from 'react-router-dom';
 import { ANIMATION_CONFIG } from './constants';
 import DropsdownMenu from './DropdownMenu';
 import SearchBar from './SearchBar';
@@ -14,8 +15,10 @@ import styles from './styles.module.scss';
 function Navbar() {
   const [open, setOpen] = useState(false);
   const transition = useTransition(open, ANIMATION_CONFIG);
+  const navigate = useNavigate();
 
   const handleOpen = () => { setOpen(!open); };
+  const handleHome = () => { navigate('/'); };
 
   return (
     <>
@@ -25,7 +28,7 @@ function Navbar() {
             <img className={styles.menu} src={`${open ? close : menu}`} alt="menu" />
           </div>
           <div>
-            <img className={styles.logo} src={logo} alt="logo-mundo-regalo" />
+            <img className={styles.logo} src={logo} alt="logo-mundo-regalo" onClick={handleHome} />
           </div>
           <div>
             <img className={styles.cart} src={cart} alt="carrito" />
