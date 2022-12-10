@@ -46,7 +46,7 @@ function Carousel({
   }
 
   return (
-    <>
+    <div className={styles.container}>
       <div
         className={styles.slider}
         onMouseEnter={() => { setAuto(false); }}
@@ -100,7 +100,7 @@ function Carousel({
         )}
 
       </div>
-    </>
+    </div>
   );
 }
 

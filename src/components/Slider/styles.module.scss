@@ -2,10 +2,12 @@
 @import "scss/mixins";
 @import "scss/variable";
 
-
+.container{
+  background-color: $white;
+  margin: .5rem .5rem 0 .5rem;
 .slider {
   @include flex(center, center, row);
-  
+ 
   .slide {
     opacity: 0;
     transition-duration: 2s ease;
@@ -38,6 +40,7 @@
 }
 
 .miniatures {
+  background-color: $white;
  
   ul{
      @include flex(center, center, row);
@@ -86,4 +89,5 @@
     
    
   } 
+}
 }

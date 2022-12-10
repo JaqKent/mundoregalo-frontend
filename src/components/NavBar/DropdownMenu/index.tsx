@@ -50,7 +50,7 @@ function DropdownMenu() {
   return (
     <div className={styles.container}>
       <div>
-        <div className={styles.modal}>
+        <div className={styles.modalIn}>
           <LogInModal
             link={sign ? openSignup : openLogin}
             show={showModal}

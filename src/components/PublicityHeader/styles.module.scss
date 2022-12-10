@@ -2,13 +2,11 @@
 @import 'scss/mixins';
 @import 'scss/variable';
 .image {
-  width: 99vw;
-  height: 300px;
   background-Repeat: no-repeat; 
   background-Size: cover;
-  border-radius: 10px;
+  height: 200px;
+  width: 99vw;
 
-  
   @include responsive(md) {
     height: 28rem;
   }
@@ -17,5 +15,27 @@
   }
   @include responsive(xlg) {
     height: 45rem;
+  }
+}
+.services{
+  @include flex(space-around,center,row);
+  background-color: $white;
+  margin: 0 .5rem 0 .5rem;
+  padding: 1rem;
+}
+.bannerContainer{
+  @include flex(space-between,center,row);
+  gap:10px;
+  padding: .5rem;
+
+  .bannerImage{
+    height: 14rem;
+    width: 50%;
+    @include responsive(md) {
+     height: 20rem;
+    }
+    @include responsive(lg) {
+      height: 30rem;
+     }
   }
 }
