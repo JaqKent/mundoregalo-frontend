@@ -9,7 +9,7 @@ import InsideInfo from './components';
 function PublicityHeader() {
   const [auto, setAuto] = useState(false);
   return (
-    <>
+    <div className={styles.container}>
       <div>
         <Slider hide auto={auto} setAuto={setAuto} slides={ITEMS} className={styles.image} />
       </div>
@@ -25,7 +25,7 @@ function PublicityHeader() {
         ))}
       </div>
 
-    </>
+    </div>
   );
 }
 
