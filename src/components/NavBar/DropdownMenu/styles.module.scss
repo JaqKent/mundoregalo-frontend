@@ -8,26 +8,25 @@
   width: 35em;
   position: fixed;
   z-index: 9;
- 
-  .modal{
+
+  .modalIn {
     position: fixed;
-    left: 25%;
     z-index: 99;
-    
   }
 
-  .bottomLine{
-    position:relative;
+  .bottomLine {
+    position: relative;
     margin-left: 2rem;
     width: 30rem;
   }
-  .button{
+  .button {
     @include flex(space-around, center, row);
     padding: 0.5em 0 0 2em;
   }
-  .links{
-   padding-left: 2em;
+  .links {
+    padding-left: 2em;
   }
-  .logOut{
-    @include flex(center, center, column);}
+  .logOut {
+    @include flex(center, center, column);
+  }
 }
