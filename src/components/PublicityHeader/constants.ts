@@ -4,24 +4,26 @@ import payment from 'assets/payment-method.svg';
 import articulo1 from 'assets/articulo1.jpg';
 import articulo2 from 'assets/articulo2.jpg';
 
+const masInfo = 'Mas Informacion';
+
 export const SERVICES = [
   {
     id: 1,
     image: store,
     text1: 'PUNTO DE RETIRO',
-    text2: 'Mas información',
+    text2: masInfo,
   },
   {
     id: 2,
     image: delivery,
     text1: 'ENVIO A DOMICIO',
-    text2: 'Mas información',
+    text2: masInfo,
   },
   {
     id: 3,
     image: payment,
     text1: 'MEDIO DE PAGO',
-    text2: 'Mas información',
+    text2: masInfo,
   },
 ];
 

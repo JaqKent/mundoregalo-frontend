@@ -1,0 +1,42 @@
+@import 'scss/colors';
+@import 'scss/mixins';
+@import 'scss/variable';
+
+.iconsSection{
+    @include flex(space-between,center,row);
+    gap:1rem;
+    @include responsive(md) {
+      height: 10rem;
+    }
+  .icon{
+    width: 50px;
+    @include responsive(md) {
+      width: 60px;
+    }
+  }
+    
+  }
+  .text{
+    h2{
+      font-size: 1rem;
+      margin: 0;
+      @include responsive(md) {
+        font-size: 1.5rem;
+      }
+    }
+    h4{
+      color:$info;
+      font-weight: bold;
+      margin: 0;
+      word-break: break-all;
+      @include responsive(md) {
+        font-size: 1.2rem;
+      }
+    }
+    p{
+      margin: 0;
+      @include responsive(md) {
+        font-size: 1.2rem;
+      }
+    }
+  }

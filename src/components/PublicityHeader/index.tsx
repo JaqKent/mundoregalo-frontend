@@ -4,6 +4,7 @@ import { ITEMS } from 'constants/constants';
 import { BANNER, SERVICES } from './constants';
 
 import styles from './styles.module.scss';
+import InsideInfo from './components';
 
 function PublicityHeader() {
   const [auto, setAuto] = useState(false);
@@ -14,13 +15,7 @@ function PublicityHeader() {
       </div>
       <div className={styles.services}>
         {SERVICES.map((service) => (
-          <div className={styles.iconsSection}>
-            <img className={styles.icon} src={service.image} alt="" />
-            <div className={styles.text}>
-              <h2>{service.text1}</h2>
-              <p>{service.text2}</p>
-            </div>
-          </div>
+          <InsideInfo image={service.image} text1={service.text1} text2={service.text2} />
         ))}
 
       </div>
