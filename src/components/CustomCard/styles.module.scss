@@ -7,7 +7,7 @@
   border: 2px solid $gray;
   cursor: pointer;
   gap: 1.5rem;
-  height: 12rem;
+  height: 10rem;
   width: 90vw;
   @include responsive(md) {
     height: 17rem;
@@ -32,12 +32,14 @@
 
 .imgLarge {
   @include flex(center, center, row);
-  padding-left:1rem;
+  object-fit: fill;
+  padding-left:2rem;
   height: 5rem;
-  width: auto;
+  width: 5rem;
   @include responsive(md) {
     padding-left:1.5rem;
     height: 10rem;
+    width: 10rem;
   }
 }
 .imgSmall {

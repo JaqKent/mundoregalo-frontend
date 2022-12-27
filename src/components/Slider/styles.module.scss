@@ -6,9 +6,10 @@
   @include flex(center, center, column);
   background-color: $white;
   margin:.5rem;
+
 .slider {
-  @include flex(center, center, row);
- 
+  @include flex(center, center, column);
+
   .slide {
     opacity: 0;
     transition-duration: 2s ease;
@@ -41,17 +42,30 @@
 }
 
 .miniatures {
-  background-color: white;
-  width: 200px;
+  background-color: $white;
+  top:260px;
+  min-width: 18rem;
+  height: 4rem;
   border-radius: 50px;
   opacity: 0.5;
-  position: relative;
-  top:-45px;
+  position:absolute;
+  z-index: 9;
+  @include responsive(md) {
+   top:340px;
+   }
+    @include responsive(lg) {
+    top:410px;
+    }
+    @include responsive(xlg) {
+      top:510px;
+      }
+
   &:hover{
-    opacity: 1;
+    opacity: 0.8;
   }
   ul{
      @include flex(center, center, row);
+     margin: .5rem;
      padding: 0 1em 0 0.5em; 
   
     }

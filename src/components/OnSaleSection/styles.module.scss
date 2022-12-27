@@ -18,4 +18,25 @@
     @include flex (center,center,column);
     gap: 10px;
  }
+ .button{
+    @include flex (center,center,row);
+    background-color:$gray;
+    border: 2px solid $black;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 4px;
+    min-width: 88vw;
+    padding: 5px;;
+    @include responsive(sm) {
+        width: 92%;
+    }
+    @include responsive(md) {
+        width: 92%;
+    }
+    @include responsive(lg) {
+        width: 80vw;
+    }
+    
+ }
 }
