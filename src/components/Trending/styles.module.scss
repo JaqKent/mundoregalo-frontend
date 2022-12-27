@@ -1,0 +1,42 @@
+@import "scss/colors";
+@import "scss/mixins";
+@import "scss/variable";
+
+.container{
+    @include flex(center, center, column);
+    background-color: $white;
+    margin:.5rem;
+  
+  .slider {
+    @include flex(center, center, row);
+  
+    .slide {
+      opacity: 0;
+      transition-duration: 3s ease;
+      transform: translateX(90%);
+    }
+  
+    .slideActive {
+      opacity: 1;
+      transition-duration: 3s;
+      transform: translateX(-100%);
+    }
+  
+    
+  }
+  
+  .arrow {
+    padding: 1rem;
+    font-size: 3rem;
+    color: $primary;
+    cursor: pointer;
+  
+    opacity: 0.2;
+  
+  
+    &:hover {
+      opacity: 1;
+      transition:0.6s;
+    }
+  
+  }}
