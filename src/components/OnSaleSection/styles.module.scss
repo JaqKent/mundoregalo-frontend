@@ -26,15 +26,18 @@
     font-size: 14px;
     font-weight: bold;
     margin: 4px;
-    min-width: 88vw;
+    width: 88vw;
     padding: 5px;;
     @include responsive(sm) {
-        width: 92%;
+        width: 70vw;
     }
     @include responsive(md) {
-        width: 92%;
+        width:89vw;
     }
     @include responsive(lg) {
+        width: 79vw;
+    }
+    @include responsive(xlg) {
         width: 80vw;
     }
     

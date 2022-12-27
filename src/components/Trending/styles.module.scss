@@ -13,13 +13,13 @@
     .slide {
       opacity: 0;
       transition-duration: 3s ease;
-      transform: translateX(90%);
+      transform: translateX(30%);
     }
   
     .slideActive {
       opacity: 1;
       transition-duration: 3s;
-      transform: translateX(-100%);
+      transform: translateX(-30%);
     }
   
     
