@@ -10,7 +10,7 @@
   padding:1rem ;
   
   .links {
-    @include flex(center, center, row);
+    @include flex(flex-start, center, row);
     gap:2rem;
     li {
         cursor: pointer;
