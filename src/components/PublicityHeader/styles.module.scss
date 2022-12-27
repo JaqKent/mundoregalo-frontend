@@ -4,17 +4,20 @@
 .image {
   background-Repeat: no-repeat; 
   background-Size: cover;
-  height: 200px;
-  width: 99vw;
+  height: 20rem;
+  width: 95vw;
 
   @include responsive(md) {
     height: 28rem;
+    width: 96vw;
   }
   @include responsive(lg) {
     height: 35rem;
+    width: 97vw;
   }
   @include responsive(xlg) {
     height: 45rem;
+    width: 98vw;
   }
 }
 .services{

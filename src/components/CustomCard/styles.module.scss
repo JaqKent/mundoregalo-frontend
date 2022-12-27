@@ -3,18 +3,17 @@
 @import 'scss/variable';
 
 .containerLarge {
-  @include flex(space-between, center, Row);
+  @include flex(space-around, center, Row);
   border: 2px solid $gray;
   cursor: pointer;
   gap: 1.5rem;
-  height: 12rem;
-  width: 37rem;
+  height: 10rem;
+  width: 90vw;
   @include responsive(md) {
     height: 17rem;
-    width: 60rem;
   }
   @include responsive(lg) {
-    width: 75rem;
+    width: 80vw;
   }
 }
 .containerSmall {
@@ -32,10 +31,15 @@
 }
 
 .imgLarge {
+  @include flex(center, center, row);
+  object-fit: fill;
+  padding-left:2rem;
   height: 5rem;
-  width: auto;
+  width: 5rem;
   @include responsive(md) {
+    padding-left:1.5rem;
     height: 10rem;
+    width: 10rem;
   }
 }
 .imgSmall {

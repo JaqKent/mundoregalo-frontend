@@ -82,8 +82,6 @@ function Carousel({
             onClick={nextSlide}
           />
         )}
-      </div>
-      <div>
         {slides.length >= 2 && (
         <div className={styles.miniatures}>
           <ul>

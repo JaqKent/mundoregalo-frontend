@@ -3,7 +3,7 @@ import styles from './styles.module.scss';
 interface Props {
     image: string;
     name:string;
-    price:string;
+    price:number;
     small?:boolean;
 
 }
@@ -23,7 +23,10 @@ function CustomCard({
           </h3>
         </div>
         <div className={`${small ? styles.priceSmall : styles.priceLarge}`}>
-          <p>{price}</p>
+          <p>
+            $
+            {price}
+          </p>
         </div>
       </div>
     </div>

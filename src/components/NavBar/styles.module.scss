@@ -9,9 +9,7 @@
 
   .topItems {
     @include flex(space-between, center, row);
-    @include responsive(md) {
     
-    }
     .menu {
       cursor: pointer;
       padding: 0.3rem 0 0 1.4rem;

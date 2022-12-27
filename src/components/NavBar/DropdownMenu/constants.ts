@@ -28,28 +28,6 @@ export const DROPDOWN:Items[] = [
       },
     ],
   },
-  {
-    id: 7,
-    name: 'Servicios',
-    submenu: [
-      {
-        name: 'Servicio 1',
-        url: 'servicio 1',
-      },
-      {
-        name: 'Servicio 2',
-        url: 'servicio 2',
-      },
-      {
-        name: 'Servicio 3',
-        url: 'servicio 3',
-      },
-      {
-        name: 'Servicio 4',
-        url: 'servicio 4',
-      },
-    ],
-  },
   { id: 8, name: 'MR Creditos', requiresLoggedInUser: true },
   { id: 9, name: 'Mis Datos', requiresLoggedInUser: true },
   { id: 10, name: 'Ayuda' },
