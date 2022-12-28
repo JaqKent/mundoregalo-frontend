@@ -6,7 +6,6 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 
 import { PRODUCTS } from 'components/OnSaleSection/constants';
-import CustomCard from 'components/CustomCard';
 import styles from './styles.module.scss';
 
 interface Props {
@@ -33,7 +32,7 @@ function Trending({
   });
 
   const nextSlide = () => {
-    setCurrent((prevState) => (prevState === slideLength - 1 ? 0 : current + 1));
+    setCurrent((prevState) => (prevState === slideLength - 1 ? 0 : current + 2));
   };
 
   const prevSlide = () => {
@@ -43,7 +42,17 @@ function Trending({
   if (!Array.isArray(PRODUCTS) || PRODUCTS.length <= 0) {
     return null;
   }
+  const slideshowSlides = [];
 
+  for (let i = 0; i < PRODUCTS.length; i += 2) {
+    slideshowSlides.push(
+      <>
+        {PRODUCTS[i]}
+        {PRODUCTS[i + 1]}
+
+      </>,
+    );
+  }
   return (
     <div className={styles.container}>
       <div
@@ -58,17 +67,13 @@ function Trending({
             onClick={prevSlide}
           />
         )}
-        {PRODUCTS.map((slide, index) => (
-
-          <div
-            className={index === current ? styles.slideActive : styles.slide}
-            key={slide.id}
-          >
-            {index === current && (
-              <CustomCard small image={slide.image} name={slide.description} price={slide.price} />
-            )}
+        {slideshowSlides.map((i, index) => (
+          <div className={index === current ? styles.slideActive : styles.slide}>
+            $
+            {i}
           </div>
         ))}
+
         {(!hide && slideLength >= 2) && (
           <FontAwesomeIcon
             icon={faChevronRight}
