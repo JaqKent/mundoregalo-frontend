@@ -6,6 +6,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 
 import { PRODUCTS } from 'components/OnSaleSection/constants';
+import CustomCard from 'components/CustomCard';
 import styles from './styles.module.scss';
 
 interface Props {
@@ -44,13 +45,23 @@ function Trending({
   }
   const slideshowSlides = [];
 
-  for (let i = 0; i < PRODUCTS.length; i += 2) {
+  for (let i = 0; i < slideLength; i += 2) {
     slideshowSlides.push(
-      <>
-        {PRODUCTS[i]}
-        {PRODUCTS[i + 1]}
 
-      </>,
+      <div className={styles.card}>
+        <CustomCard
+          small
+          image={PRODUCTS[i].image}
+          name={PRODUCTS[i].description}
+          price={PRODUCTS[i].price}
+        />
+        <CustomCard
+          small
+          image={PRODUCTS[i + 1].image}
+          name={PRODUCTS[i + 1].description}
+          price={PRODUCTS[i + 1].price}
+        />
+      </div>,
     );
   }
   return (
@@ -69,7 +80,6 @@ function Trending({
         )}
         {slideshowSlides.map((i, index) => (
           <div className={index === current ? styles.slideActive : styles.slide}>
-            $
             {i}
           </div>
         ))}

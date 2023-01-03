@@ -3,7 +3,7 @@
 @import "scss/variable";
 
 .container{
-    @include flex(center, center, column);
+    @include flex(center, center, row);
     background-color: $white;
     margin:.5rem;
   
@@ -11,17 +11,20 @@
     @include flex(center, center, row);
   
     .slide {
-      opacity: 0;
-      transition-duration: 3s ease;
-      transform: translateX(30%);
+      opacity: 1;
+      transition-duration: 2s ease;
+      transform: scale(0.9);
     }
   
     .slideActive {
       opacity: 1;
-      transition-duration: 3s;
-      transform: translateX(-30%);
+      transition-duration: 2s;
+      transform: scale(1);
     }
-  
+   .card{
+    @include flex(center, center, row);
+    gap:1.5rem;
+   }
     
   }
   
