@@ -7,7 +7,7 @@ function HomePage() {
     <>
       <PublicityHeader />
       <OnSaleSection />
-      <Trending />
+      <Trending hide />
     </>
   );
 }

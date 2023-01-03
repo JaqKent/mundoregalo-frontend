@@ -7,6 +7,9 @@ import {
 
 import { PRODUCTS } from 'components/OnSaleSection/constants';
 import CustomCard from 'components/CustomCard';
+
+import trending from 'assets/tendencias.svg';
+
 import styles from './styles.module.scss';
 
 interface Props {
@@ -31,19 +34,18 @@ function Trending({
       clearTimeout(timeOut);
     };
   });
-
+  const slideshowSlides = [];
   const nextSlide = () => {
-    setCurrent((prevState) => (prevState === slideLength - 1 ? 0 : current + 2));
+    setCurrent((prevState) => (prevState === slideshowSlides.length - 1 ? 0 : current + 1));
   };
 
   const prevSlide = () => {
-    setCurrent((prevState) => (prevState === 0 ? slideLength - 1 : current - 1));
+    setCurrent((prevState) => (prevState === 0 ? slideshowSlides.length - 1 : current - 1));
   };
 
   if (!Array.isArray(PRODUCTS) || PRODUCTS.length <= 0) {
     return null;
   }
-  const slideshowSlides = [];
 
   for (let i = 0; i < slideLength; i += 2) {
     slideshowSlides.push(
@@ -55,17 +57,28 @@ function Trending({
           name={PRODUCTS[i].description}
           price={PRODUCTS[i].price}
         />
+        {
+        PRODUCTS[i + 1] && (
         <CustomCard
           small
           image={PRODUCTS[i + 1].image}
           name={PRODUCTS[i + 1].description}
           price={PRODUCTS[i + 1].price}
         />
+        )
+}
       </div>,
     );
   }
+
   return (
     <div className={styles.container}>
+
+      <div className={styles.title}>
+        Tendencias
+        {' '}
+        <img src={trending} alt="tendencias" />
+      </div>
       <div
         className={styles.slider}
         onMouseEnter={() => { setAuto(false); }}
