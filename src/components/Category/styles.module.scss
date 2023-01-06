@@ -4,8 +4,8 @@
 
 .container {
     background-color: $white;
-    margin:.5rem;
     height: 12rem;
+    margin:.5rem;
 
     .title{
         @include flex(space-around, center, Row);
@@ -20,10 +20,10 @@
     
 
         .img{
-            width: 6rem;
-            height: 6rem;
             border-radius: 50%;
             cursor: pointer;
+            height: 6rem;
+            width: 6rem;
 
             &:hover {
                 transition-duration: 0.7s;
