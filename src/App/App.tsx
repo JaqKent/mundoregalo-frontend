@@ -1,3 +1,4 @@
+import Footer from 'components/Footer';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 import Navbar from '../components/NavBar';
@@ -12,6 +13,7 @@ function App() {
           <Route key={path.id} path={path.path} element={path.element} />
         ))}
       </Routes>
+      <Footer />
     </Router>
   );
 }
