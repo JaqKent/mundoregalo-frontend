@@ -2,114 +2,119 @@
 @import "scss/mixins";
 @import "scss/variable";
 
-.container{
+.container {
   @include flex(center, center, column);
   background-color: $white;
-  margin:.5rem;
 
-.slider {
-  @include flex(center, center, column);
+  .slider {
+    @include flex(center, center, column);
 
-  .slide {
-    opacity: 0;
-    transition-duration: 2s ease;
-    transform: scale(0.9);
-  }
-
-  .slideActive {
-    opacity: 1;
-    transition-duration: 2s;
-    transform: scale(1);
-  }
-
-  
-}
-
-.arrow {
-  padding: 1rem;
-  font-size: 3rem;
-  color: $primary;
-  cursor: pointer;
-
-  opacity: 0.2;
-
-
-  &:hover {
-    opacity: 1;
-    transition:0.6s;
-  }
-
-}
-
-.miniatures {
-  background-color: $white;
-  top:260px;
-  min-width: 18rem;
-  height: 4rem;
-  border-radius: 50px;
-  opacity: 0.5;
-  position:absolute;
-  @include responsive(md) {
-   top:340px;
-   }
-    @include responsive(lg) {
-    top:410px;
+    .slide {
+      opacity: 0;
+      transition-duration: 2s ease;
+      transform: scale(0.9);
     }
+
+    .slideActive {
+      opacity: 1;
+      transition-duration: 2s;
+      transform: scale(1);
+    }
+
+
+  }
+
+  .arrow {
+    padding: 1rem;
+    font-size: 3rem;
+    color: $primary;
+    cursor: pointer;
+
+    opacity: 0.2;
+
+
+    &:hover {
+      opacity: 1;
+      transition: 0.6s;
+    }
+
+  }
+
+  .miniatures {
+    background-color: $white;
+    top: 260px;
+    min-width: 18rem;
+    height: 4rem;
+    border-radius: 50px;
+    opacity: 0.5;
+    position: absolute;
+
+    @include responsive(md) {
+      top: 340px;
+    }
+
+    @include responsive(lg) {
+      top: 410px;
+    }
+
     @include responsive(xlg) {
-      top:510px;
+      top: 510px;
+    }
+
+    &:hover {
+      opacity: 0.8;
+    }
+
+    ul {
+      @include flex(center, center, row);
+      margin: .5rem;
+      padding: 0 1em 0 0.5em;
+
+    }
+
+
+    li {
+      background-position: left center;
+      background-repeat: no-repeat;
+      background-size: 5px;
+      background-image: url("../../assets/selector.png");
+      list-style: none;
+      margin: 0.5em;
+
+    }
+
+    .mini {
+      @include flex(center, center, row);
+      background-position: center;
+      background-size: cover;
+      cursor: pointer;
+      height: 2em;
+      transition-duration: 0.2s;
+      width: 2em;
+
+
+
+      &:hover {
+        opacity: 0.5;
       }
 
-  &:hover{
-    opacity: 0.8;
-  }
-  ul{
-     @include flex(center, center, row);
-     margin: .5rem;
-     padding: 0 1em 0 0.5em; 
-  
-    }
-  
- 
-  li{
-	  background-position: left center;
-	  background-repeat: no-repeat;
-	  background-size: 5px;
-    background-image: url("../../assets/selector.png");
-    list-style: none;
-    margin: 0.5em;
-    
-}
+      &:active {
+        filter: opacity(0.3) drop-shadow(0 0 0 $selectedblue);
+      }
 
-  .mini {
-    @include flex(center, center, row);
-    background-position: center;
-    background-size: cover;
-    cursor: pointer;
-    height: 2em;
-    transition-duration: 0.2s;
-    width: 2em;
-   
-    
-  
-    &:hover {
-      opacity: 0.5;
     }
-    &:active{
-      filter: opacity(0.3) drop-shadow(0 0 0 $selectedblue);
+
+    .miniActive {
+      @include flex(center, center, row);
+      background-position: center;
+      background-size: cover;
+      cursor: pointer;
+      filter: opacity(0.5) drop-shadow(0 0 0 $selectedblue);
+      height: 2em;
+      transition-duration: 0.2s;
+      width: 2em;
+
+
     }
-   
-  } 
-  .miniActive {
-    @include flex(center, center, row);
-    background-position: center;
-    background-size: cover;
-    cursor: pointer;
-    filter: opacity(0.5) drop-shadow(0 0 0 $selectedblue);
-    height: 2em;
-    transition-duration: 0.2s;
-    width: 2em;
-    
-   
-  } 
-}
+  }
 }

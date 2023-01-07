@@ -4,6 +4,7 @@
   align-items: $align;
   flex-direction: $direction;
 }
+
 @mixin responsive($breakpoint) {
   @media screen and (min-width: map-get($available-breakpoints, $breakpoint)) {
     @content;

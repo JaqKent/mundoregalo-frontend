@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import CategorySection from 'components/Category';
 import OnSaleSection from 'components/OnSaleSection';
 import PublicityFooter from 'components/PublicityFooter';
