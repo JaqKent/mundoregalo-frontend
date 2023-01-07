@@ -7,13 +7,13 @@
   background-color: $primary;
   color: $white;
   font-size: 1.2rem;
-  padding:1rem ;
-  
+  padding: 1rem;
+
   .links {
     @include flex(flex-start, center, row);
-    gap:2rem;
+    gap: 2rem;
     li {
-        cursor: pointer;
+      cursor: pointer;
       list-style: none;
     }
   }
@@ -21,7 +21,7 @@
     @include flex(flex-start, center, row);
     width: 20rem;
     li {
-        cursor: pointer;
+      cursor: pointer;
       list-style: none;
     }
   }
