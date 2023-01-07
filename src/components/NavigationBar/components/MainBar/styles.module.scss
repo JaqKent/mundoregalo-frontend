@@ -1,0 +1,41 @@
+@import 'scss/colors.scss';
+@import 'scss/mixins.scss';
+
+.container {
+    @include flex(space-between, center, row);
+    width: 100%;
+}
+
+.icon {
+    font-size: 3rem;
+    color: $white;
+    cursor: pointer;
+    transition: 0.2s;
+
+    &:hover {
+        color: $gray;
+        scale: 1.1;
+    }
+
+    &:active {
+        color: dark($gray, 10);
+    }
+}
+
+.logoIcon {
+    height: 4rem;
+}
+
+.button {
+    background: transparent;
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+.img {
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+    margin-right: 2rem;
+}

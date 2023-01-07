@@ -1,0 +1,23 @@
+@import 'scss/colors.scss';
+
+.container {
+    width: 100%;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.input {
+    width: 80%;
+    padding: 1rem 2rem;
+    border-radius: 0.7rem 0 0 0.7rem;
+    border: none;
+}
+
+.button {
+    border-radius: 0 0.7rem 0.7rem 0;
+    padding: 1rem 2rem;
+    border: none;
+    color: $white;
+    background-color: darken($primary, 10);
+    cursor: pointer;
+}

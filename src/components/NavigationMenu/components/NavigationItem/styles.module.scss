@@ -1,0 +1,31 @@
+@import 'scss/colors.scss';
+
+.link {
+    text-decoration: none;
+}
+
+.container {
+    border-bottom: 1px solid $gray;
+    padding: 0.5rem 3rem;
+    transition: 0.2s;
+    color: $black;
+
+    &:hover {
+        background: $primary;
+        color: $gray;
+        cursor: pointer;
+    }
+
+    &:active {
+        background: darken($primary, 10)
+    }
+}
+
+.text {
+    font-size: 1.4rem;
+    text-decoration: none;
+}
+
+.icon {
+    margin-right: 2rem;
+}
