@@ -27,6 +27,7 @@ function OnSaleSection() {
                 {slicedData.map((product) => (
                     <CustomCard
                         image={product.image}
+                        key={product.id}
                         name={product.description}
                         price={product.price}
                     />

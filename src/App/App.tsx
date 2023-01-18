@@ -9,6 +9,7 @@ import { UserProvider } from '~context/User/UserContext';
 
 import { ROUTES } from './constants';
 import NotFound from './NotFound';
+import { login } from '~services/auth';
 
 function App() {
     const [showNavbar, setShowNavbar] = useState(false);
@@ -29,6 +30,9 @@ function App() {
             window.removeEventListener('keydown', handleCloseWindow);
         };
     }, [showNavbar]);
+    useEffect(() => {
+        login(12345678, 'asd123123').then((response) => console.log(response));
+    }, []);
 
     return (
         <UserProvider>
@@ -41,7 +45,11 @@ function App() {
                 />
                 <Routes>
                     {ROUTES.map((route) => (
-                        <Route path={route.path} element={route.element} />
+                        <Route
+                            path={route.path}
+                            key={route.id}
+                            element={route.element}
+                        />
                     ))}
                     <Route path="*" element={<NotFound />} />
                 </Routes>
