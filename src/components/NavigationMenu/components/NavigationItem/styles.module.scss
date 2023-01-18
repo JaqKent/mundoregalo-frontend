@@ -1,4 +1,4 @@
-@import 'scss/colors.scss';
+@import '~scss/colors.scss';
 
 .link {
     text-decoration: none;
@@ -17,7 +17,7 @@
     }
 
     &:active {
-        background: darken($primary, 10)
+        background: darken($primary, 10);
     }
 }
 

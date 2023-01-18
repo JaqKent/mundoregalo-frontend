@@ -1,25 +1,24 @@
-@import 'scss/colors';
-@import 'scss/mixins';
-@import 'scss/variable';
+@import '~scss/colors.scss';
+@import '~scss/mixins.scss';
+@import '~scss/variable';
 
 .container {
     background-color: $white;
     height: 12rem;
-    margin:.5rem;
+    margin: 0.5rem;
 
-    .title{
+    .title {
         @include flex(space-around, center, Row);
         font-size: 2rem;
         font-weight: bold;
-        padding:1rem;
+        padding: 1rem;
     }
 
-    .category{
+    .category {
         @include flex(center, center, Row);
         gap: 2rem;
-    
 
-        .img{
+        .img {
             border-radius: 50%;
             cursor: pointer;
             height: 6rem;

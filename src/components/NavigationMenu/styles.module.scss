@@ -1,6 +1,6 @@
-@import 'scss/colors.scss';
-@import 'scss/mixins.scss';
-@import 'scss/variable';
+@import '~scss/colors.scss';
+@import '~scss/mixins.scss';
+@import '~scss/variable';
 
 .container {
     height: 100vh;
@@ -15,7 +15,6 @@
     @include responsive(lg) {
         width: 30vw;
     }
-
 }
 
 .backdrop {

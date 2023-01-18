@@ -1,45 +1,42 @@
-@import "scss/colors";
-@import "scss/mixins";
-@import "scss/variable";
-
+@import '~scss/colors.scss';
+@import '~scss/mixins.scss';
+@import '~scss/variable';
 
 .container {
-    @include flex (center,center,column);
+    @include flex(center, center, column);
     background-color: $white;
-   
-    margin: .5rem;
-    h2{
+
+    margin: 0.5rem;
+    h2 {
         font-size: 2rem;
         font-weight: bold;
-        margin: .5rem;
- 
+        margin: 0.5rem;
     }
- .product{
-    @include flex (center,center,column);
-    gap: 10px;
- }
- .button{
-    @include flex (center,center,row);
-    background-color:$gray;
-    border: 2px solid $black;
-    cursor: pointer;
-    font-size: 14px;
-    font-weight: bold;
-    margin: 4px;
-    width: 88vw;
-    padding: 5px;;
-    @include responsive(sm) {
-        width: 70vw;
+    .product {
+        @include flex(center, center, column);
+        gap: 10px;
     }
-    @include responsive(md) {
-        width:89vw;
+    .button {
+        @include flex(center, center, row);
+        background-color: $gray;
+        border: 2px solid $black;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: bold;
+        margin: 4px;
+        width: 88vw;
+        padding: 5px;
+        @include responsive(sm) {
+            width: 70vw;
+        }
+        @include responsive(md) {
+            width: 89vw;
+        }
+        @include responsive(lg) {
+            width: 79vw;
+        }
+        @include responsive(xlg) {
+            width: 80vw;
+        }
     }
-    @include responsive(lg) {
-        width: 79vw;
-    }
-    @include responsive(xlg) {
-        width: 80vw;
-    }
-    
- }
 }

@@ -1,46 +1,46 @@
-@import 'scss/colors';
-@import 'scss/mixins';
-@import 'scss/variable';
+@import '~scss/colors.scss';
+@import '~scss/mixins.scss';
+@import '~scss/variable';
 
 .container {
-  @include flex(space-between, center, row);
-  background-color: $white;
-  margin: 0.5rem;
+    @include flex(space-between, center, row);
+    background-color: $white;
+    margin: 0.5rem;
 
-  .img {
-    height: 10rem;
-    width: 10rem;
-    @include responsive(md) {
-      height: 15rem;
-      width: 25rem;
+    .img {
+        height: 10rem;
+        width: 10rem;
+        @include responsive(md) {
+            height: 15rem;
+            width: 25rem;
+        }
+        @include responsive(lg) {
+            height: 20rem;
+            width: 35rem;
+        }
+        @include responsive(xlg) {
+            height: 25rem;
+            width: 45rem;
+        }
     }
-    @include responsive(lg) {
-      height: 20rem;
-      width: 35rem;
-    }
-    @include responsive(xlg) {
-      height: 25rem;
-      width: 45rem;
-    }
-  }
-  .text {
-    @include flex(center, center, row);
-    p {
-      font-size: 2rem;
-      font-weight: bold;
-      padding-left: 0.5rem;
-      word-wrap: break-word;
+    .text {
+        @include flex(center, center, row);
+        p {
+            font-size: 2rem;
+            font-weight: bold;
+            padding-left: 0.5rem;
+            word-wrap: break-word;
 
-      @include responsive(lg) {
-        font-size: 3rem;
-        font-weight: bold;
-        padding-left: 0.5rem;
-      }
+            @include responsive(lg) {
+                font-size: 3rem;
+                font-weight: bold;
+                padding-left: 0.5rem;
+            }
 
-      @include responsive(xlg) {
-        font-size: 4rem;
-        font-weight: bold;
-      }
+            @include responsive(xlg) {
+                font-size: 4rem;
+                font-weight: bold;
+            }
+        }
     }
-  }
 }

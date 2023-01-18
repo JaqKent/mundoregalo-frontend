@@ -1,93 +1,93 @@
-@import 'scss/colors';
-@import 'scss/mixins';
-@import 'scss/variable';
+@import '~scss/colors.scss';
+@import '~scss/mixins.scss';
+@import '~scss/variable';
 
 .containerLarge {
-  @include flex(space-around, center, Row);
-  border: 2px solid $gray;
-  cursor: pointer;
-  gap: 1.5rem;
-  height: 10rem;
-  width: 90vw;
-  @include responsive(md) {
-    height: 17rem;
-  }
-  @include responsive(lg) {
-    width: 80vw;
-  }
+    @include flex(space-around, center, Row);
+    border: 2px solid $gray;
+    cursor: pointer;
+    gap: 1.5rem;
+    height: 10rem;
+    width: 90vw;
+    @include responsive(md) {
+        height: 17rem;
+    }
+    @include responsive(lg) {
+        width: 80vw;
+    }
 }
 .containerSmall {
-  @include flex(space-between, center, column);
-  border: 2px solid $gray;
-  cursor: pointer;
-  gap: 1.5rem;
-  height: 17rem;
-  width: 15rem;
+    @include flex(space-between, center, column);
+    border: 2px solid $gray;
+    cursor: pointer;
+    gap: 1.5rem;
+    height: 17rem;
+    width: 15rem;
 
-  @include responsive(md) {
-    height: 22rem;
-    width: 19rem;
-  }
+    @include responsive(md) {
+        height: 22rem;
+        width: 19rem;
+    }
 }
 
 .imgLarge {
-  @include flex(center, center, row);
-  object-fit: fill;
-  padding-left:2rem;
-  height: 5rem;
-  width: 5rem;
-  @include responsive(md) {
-    padding-left:1.5rem;
-    height: 10rem;
-    width: 10rem;
-  }
+    @include flex(center, center, row);
+    object-fit: fill;
+    padding-left: 2rem;
+    height: 5rem;
+    width: 5rem;
+    @include responsive(md) {
+        padding-left: 1.5rem;
+        height: 10rem;
+        width: 10rem;
+    }
 }
 .imgSmall {
-  height: 5rem;
-  width: auto;
-  @include responsive(md) {
-    height: 9rem;
-  }
+    height: 5rem;
+    width: auto;
+    @include responsive(md) {
+        height: 9rem;
+    }
 }
 
 .description {
-  padding: 0 1.5em 0 1.5rem;
+    padding: 0 1.5em 0 1.5rem;
 
-  .titleLarge {
-    font-size: 1.3rem;
-    font-weight: bold;
-    text-align: center;
-    width: 25rem;
-    @include responsive(md) {
-      font-size: 1.5rem;
-      width: 40rem;
+    .titleLarge {
+        font-size: 1.3rem;
+        font-weight: bold;
+        text-align: center;
+        width: 25rem;
+        @include responsive(md) {
+            font-size: 1.5rem;
+            width: 40rem;
+        }
     }
-  }
 
-  .titleSmall {
-    font-size: 1rem;
-    font-weight: bold;
-    text-align: center;
-    width: 15rem;
-    @include responsive(md) {
-      font-size: 1.2rem;
-      width: 20rem;
+    .titleSmall {
+        font-size: 1rem;
+        font-weight: bold;
+        text-align: center;
+        width: 15rem;
+        @include responsive(md) {
+            font-size: 1.2rem;
+            width: 20rem;
+        }
     }
-  }
-  .priceLarge {
-    font-size: 1.2rem;
-    font-weight: bold;
-    text-align: center;
-    @include responsive(md) {
-      font-size: 1.4rem;
+    .priceLarge {
+        font-size: 1.2rem;
+        font-weight: bold;
+        text-align: center;
+        @include responsive(md) {
+            font-size: 1.4rem;
+        }
     }
-  }
-  .priceSmall {
-    font-size: 1.2rem;
-    font-weight: bold;
-    text-align: center;
-    @include responsive(md) {
-      font-size: 1.3rem;
+    .priceSmall {
+        font-size: 1.2rem;
+        font-weight: bold;
+        text-align: center;
+        @include responsive(md) {
+            font-size: 1.3rem;
+        }
     }
-  }
 }

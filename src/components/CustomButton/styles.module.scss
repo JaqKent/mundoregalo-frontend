@@ -1,72 +1,70 @@
-@import 'scss/colors';
-@import 'scss/mixins';
-@import 'scss/variable';
+@import '~scss/colors.scss';
+@import '~scss/mixins.scss';
+@import '~scss/variable';
 
 .small {
-  font-size: 1.2em;
-  padding: 0.5em 1.5em;
-  
+    font-size: 1.2em;
+    padding: 0.5em 1.5em;
 }
 
 .primaryButton {
-  background-color: $primary;
-  border-color: $primary;
-  border-radius: 4px;
-  color: $white;
-  cursor: pointer;
-  display: inline-flex;
-  font-weight: bold;
-  text-align: center;
+    background-color: $primary;
+    border-color: $primary;
+    border-radius: 4px;
+    color: $white;
+    cursor: pointer;
+    display: inline-flex;
+    font-weight: bold;
+    text-align: center;
 
+    &:hover {
+        background-color: lighten($primary, 5);
+    }
 
-  &:hover {
-    background-color: lighten($primary, 5);
-  }
+    &:active {
+        background-color: darken($primary, 10);
+    }
 
-  &:active {
-    background-color: darken($primary, 10);
-  }
-
-  &:disabled {
-    cursor: auto;
-    background-color: $disabled;
-  }
+    &:disabled {
+        cursor: auto;
+        background-color: $disabled;
+    }
 }
 
 .secondaryButton {
-  background-color: $white;
-  border-radius: 4px;
-  color: $primary;
-  cursor: pointer;
-  display: inline-flex;
-  font-weight: bold;
-  text-align: center;
+    background-color: $white;
+    border-radius: 4px;
+    color: $primary;
+    cursor: pointer;
+    display: inline-flex;
+    font-weight: bold;
+    text-align: center;
 
-  &:hover {
-    background-color: $bonewhite;
-  }
+    &:hover {
+        background-color: $bonewhite;
+    }
 
-  &:active {
-    background-color: lighten($primary, 25);
-  }
+    &:active {
+        background-color: lighten($primary, 25);
+    }
 
-  &:disabled {
-    cursor: auto;
-    background-color: $disabled;
-  }
+    &:disabled {
+        cursor: auto;
+        background-color: $disabled;
+    }
 }
 
 .big {
-  @include flex(center,center,row);
-  border-radius: 4px;
-  font-size: 1.2em;
-  height: 4rem;
-  width: 10rem;
-  @include responsive(md) {
-    @include flex(center,center,row);
+    @include flex(center, center, row);
     border-radius: 4px;
     font-size: 1.2em;
     height: 4rem;
-    width: 30rem;}
-    
+    width: 10rem;
+    @include responsive(md) {
+        @include flex(center, center, row);
+        border-radius: 4px;
+        font-size: 1.2em;
+        height: 4rem;
+        width: 30rem;
+    }
 }
