@@ -37,24 +37,27 @@
     }
 
     .miniatures {
+        @include flex(center, center, column);
         background-color: $white;
-        top: 260px;
-        min-width: 18rem;
-        height: 4rem;
+        top: 29rem;
+        width: 15rem;
+        height: 3.2rem;
         border-radius: 50px;
         opacity: 0.5;
         position: absolute;
 
         @include responsive(md) {
-            top: 340px;
+            height: 3.5rem;
+            top: 36rem;
+            width: 18rem;
         }
 
         @include responsive(lg) {
-            top: 410px;
+            top: 44rem;
         }
 
         @include responsive(xlg) {
-            top: 510px;
+            top: 54rem;
         }
 
         &:hover {
@@ -68,10 +71,10 @@
         }
 
         li {
+            background-image: url('../../assets/selector.png');
             background-position: left center;
             background-repeat: no-repeat;
             background-size: 5px;
-            background-image: url('../../assets/selector.png');
             list-style: none;
             margin: 0.5em;
         }
