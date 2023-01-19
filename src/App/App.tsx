@@ -30,9 +30,6 @@ function App() {
             window.removeEventListener('keydown', handleCloseWindow);
         };
     }, [showNavbar]);
-    useEffect(() => {
-        login(12345678, 'asd123123').then((response) => console.log(response));
-    }, []);
 
     return (
         <UserProvider>

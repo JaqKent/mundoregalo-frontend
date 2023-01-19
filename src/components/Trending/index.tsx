@@ -95,6 +95,7 @@ function Trending({ hide }: Props) {
                 )}
                 {slideshowSlides.map((i, index) => (
                     <div
+                        key={index}
                         className={
                             index === current
                                 ? styles.slideActive
