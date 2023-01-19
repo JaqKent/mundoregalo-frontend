@@ -38,23 +38,23 @@
 
     .miniatures {
         background-color: $white;
-        top: 260px;
-        min-width: 18rem;
-        height: 4rem;
         border-radius: 50px;
+        height: 3.5rem;
         opacity: 0.5;
         position: absolute;
+        top: 290px;
+        width: 15rem;
 
         @include responsive(md) {
-            top: 340px;
+            top: 370px;
         }
 
         @include responsive(lg) {
-            top: 410px;
+            top: 440px;
         }
 
         @include responsive(xlg) {
-            top: 510px;
+            top: 540px;
         }
 
         &:hover {
@@ -68,10 +68,10 @@
         }
 
         li {
+            background-image: url('../../assets/selector.png');
             background-position: left center;
             background-repeat: no-repeat;
             background-size: 5px;
-            background-image: url('../../assets/selector.png');
             list-style: none;
             margin: 0.5em;
         }

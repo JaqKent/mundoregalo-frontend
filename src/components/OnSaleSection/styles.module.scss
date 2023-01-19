@@ -5,6 +5,9 @@
 .container {
     @include flex(center, center, column);
     background-color: $white;
+    @include responsive(md) {
+        width: 47vw;
+    }
 
     margin: 0.5rem;
     h2 {
@@ -24,19 +27,19 @@
         font-size: 14px;
         font-weight: bold;
         margin: 4px;
-        width: 88vw;
         padding: 5px;
+        width: 88vw;
         @include responsive(sm) {
             width: 70vw;
         }
         @include responsive(md) {
-            width: 89vw;
+            width: 44vw;
         }
         @include responsive(lg) {
-            width: 79vw;
+            width: 39vw;
         }
         @include responsive(xlg) {
-            width: 80vw;
+            width: 40vw;
         }
     }
 }

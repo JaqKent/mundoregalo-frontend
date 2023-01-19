@@ -1,0 +1,18 @@
+@import '~scss/colors.scss';
+@import '~scss/mixins.scss';
+@import '~scss/variable';
+
+.container {
+    @include responsive(md) {
+        @include flex(center, center, row);
+        padding: 1rem;
+        width: 94vw;
+    }
+
+    .trending {
+        @include flex(space-around, center, column);
+        @include responsive(md) {
+            width: 98vw;
+        }
+    }
+}

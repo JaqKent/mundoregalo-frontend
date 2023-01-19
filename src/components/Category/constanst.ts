@@ -3,6 +3,7 @@ import category2 from '~assets/articulo2.jpg';
 import category3 from '~assets/articulo3.jpg';
 import category4 from '~assets/articulo4.jpg';
 import category5 from '~assets/sillaOficina.jpg';
+import category6 from '~assets/lapices.jpg';
 
 export const CATEGORY = [
     {
@@ -29,5 +30,10 @@ export const CATEGORY = [
         id: 5,
         image: category5,
         name: 'categoria 5',
+    },
+    {
+        id: 6,
+        image: category6,
+        name: 'categoria 6',
     },
 ];

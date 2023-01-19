@@ -5,9 +5,13 @@
 .container {
     @include flex(center, center, column);
     background-color: $white;
-    margin: 0.5rem;
-    min-width: 37.5rem;
     height: 23rem;
+    margin: 0.5rem;
+    width: 94vw;
+    @include responsive(md) {
+        width: 48vw;
+        height: 30rem;
+    }
 
     .title {
         @include flex(center, center, row);
@@ -52,10 +56,10 @@
     }
 
     .arrow {
-        padding: 1rem;
-        font-size: 3rem;
         color: $primary;
         cursor: pointer;
+        font-size: 3rem;
+        padding: 1rem;
 
         opacity: 0.2;
 

@@ -15,7 +15,7 @@ function OnSaleSection() {
     const handleView = () => {
         setViewMore((prevState) => !prevState);
     };
-    const slicedData = data.slice(0, viewMore ? 8 : 4);
+    const slicedData = data.slice(0, viewMore ? 8 : 3);
     const handleOfert = () => {
         navigate('/');
     };
