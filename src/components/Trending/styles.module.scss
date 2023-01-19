@@ -6,9 +6,11 @@
     @include flex(center, center, column);
     background-color: $white;
     margin: 0.5rem;
-    min-width: 37.5rem;
-    height: 23rem;
-
+    min-width: 35rem;
+    height: 24rem;
+    @include responsive(sm) {
+        height: 30rem;
+    }
     .title {
         @include flex(center, center, row);
         font-size: 2rem;

@@ -1,6 +1,9 @@
 @import '~scss/colors.scss';
+@import '~scss/mixins.scss';
+@import '~scss/variable';
 
 .container {
+    @include flex(center, center, row);
     width: 100%;
     text-align: center;
     margin-top: 2rem;
