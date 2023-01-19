@@ -57,6 +57,7 @@ function Trending({ hide }: Props) {
                     image={PRODUCTS[i].image}
                     name={PRODUCTS[i].description}
                     price={PRODUCTS[i].price}
+                    key={PRODUCTS[i].id}
                 />
                 {PRODUCTS[i + 1] && (
                     <CustomCard
@@ -64,6 +65,7 @@ function Trending({ hide }: Props) {
                         image={PRODUCTS[i + 1].image}
                         name={PRODUCTS[i + 1].description}
                         price={PRODUCTS[i + 1].price}
+                        key={PRODUCTS[i + 1].id}
                     />
                 )}
             </div>
@@ -93,6 +95,7 @@ function Trending({ hide }: Props) {
                 )}
                 {slideshowSlides.map((i, index) => (
                     <div
+                        key={index}
                         className={
                             index === current
                                 ? styles.slideActive

@@ -24,6 +24,7 @@ function PublicityHeader() {
             <div className={styles.services}>
                 {SERVICES.map((service) => (
                     <InsideInfo
+                        key={service.id}
                         image={service.image}
                         text1={service.text1}
                         text2={service.text2}
@@ -34,6 +35,7 @@ function PublicityHeader() {
                 {BANNER.map((header) => (
                     <img
                         className={styles.bannerImage}
+                        key={header.id}
                         src={header.image}
                         alt="publicidad"
                     />

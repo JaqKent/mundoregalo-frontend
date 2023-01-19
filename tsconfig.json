@@ -25,7 +25,9 @@
             "~screens/*": ["./screens/*"],
             "~hooks/*": ["./hooks/*"],
             "~interfaces/*": ["./interfaces/*"],
-            "~constants/*": ["./constants/*"]
+            "~constants/*": ["./constants/*"],
+            "~services/*": ["./services/*"],
+            "~configs/*": ["./configs/*"]
         }
     },
     "include": ["src", ".eslintrc.cjs"],
