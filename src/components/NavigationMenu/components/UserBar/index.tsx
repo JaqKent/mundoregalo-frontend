@@ -1,4 +1,4 @@
-import UserContext from '~context/User/UserContext';
+import UserContext from '~context/UserContext/UserContext';
 import { useContext } from 'react';
 import styles from './styles.module.scss';
 

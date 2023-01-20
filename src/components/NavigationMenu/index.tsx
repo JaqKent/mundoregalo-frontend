@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { useTransition, animated, config } from 'react-spring';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
-import UserContext from '~context/User/UserContext';
+import UserContext from '~context/UserContext/UserContext';
 import useBreakpoint from '~hooks/useBreakpoint';
 import UserBar from './components/UserBar';
 import NavigationItem from './components/NavigationItem';

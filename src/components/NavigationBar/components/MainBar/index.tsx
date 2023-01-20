@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import { faBars, faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Logo from '~assets/logoBlanco.png';
-import UserContext from '~context/User/UserContext';
+import UserContext from '~context/UserContext/UserContext';
 import styles from './styles.module.scss';
 
 interface Props {
