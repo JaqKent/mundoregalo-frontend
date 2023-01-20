@@ -23,26 +23,25 @@ export const ProductContext = createContext<ContextProps>({
 
 export default function ProductProvider({ children }: { children: ReactNode }) {
     const [products, setProducts] = useState<Product[]>([]);
-    const [loading, setLoading] = useState('');
+    const [loading, setLoading] = useState(false);
 
     const gatherProducts = useCallback(() => {
-        setLoading('Obteniendo Productos');
+        setLoading(true);
         getProducts()
             .then(({ data }) => {
                 if (data) {
                     setProducts(data.response);
-
-                    setLoading('');
                 } else {
                     toast.error(
                         'Ocurrió un error trayendo los datos,por favor refresque la página'
                     );
-                    setLoading('');
                 }
             })
             .catch(() => {
                 toast.error('Ocurrió un error trayendo los datos');
-                setLoading('');
+            })
+            .finally(() => {
+                setLoading(false);
             });
     }, []);
 
@@ -52,7 +51,7 @@ export default function ProductProvider({ children }: { children: ReactNode }) {
 
     const value = {
         products,
-        isLoading: !!loading,
+        isLoading: loading,
         gatherProducts,
     };
     return (

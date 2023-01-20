@@ -6,11 +6,11 @@ import NavigationMenu from '~components/NavigationMenu';
 import Footer from '~components/Footer';
 import NavigationBar from '~components/NavigationBar';
 import { UserProvider } from '~context/UserContext/UserContext';
+import ProductProvider from '~context/ProductContext';
 
 import { ROUTES } from './constants';
 import NotFound from './NotFound';
 import 'react-toastify/dist/ReactToastify.css';
-import ProductProvider from '~context/ProductContext';
 
 function App() {
     const [showNavbar, setShowNavbar] = useState(false);
@@ -34,9 +34,9 @@ function App() {
 
     return (
         <UserProvider>
-            <ToastContainer />
-            <Router>
-                <ProductProvider>
+            <ProductProvider>
+                <ToastContainer />
+                <Router>
                     <NavigationBar toggleNavbar={toggleNavbar} />
                     <NavigationMenu
                         showNavbar={showNavbar}
@@ -52,9 +52,9 @@ function App() {
                         ))}
                         <Route path="*" element={<NotFound />} />
                     </Routes>
-                </ProductProvider>
-                <Footer />
-            </Router>
+                    <Footer />
+                </Router>
+            </ProductProvider>
         </UserProvider>
     );
 }
