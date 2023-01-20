@@ -1,5 +1,5 @@
-import UserContext from '~context/User/UserContext';
 import { useContext } from 'react';
+import UserContext from '~context/UserContext/UserContext';
 import styles from './styles.module.scss';
 
 function UserBar() {
