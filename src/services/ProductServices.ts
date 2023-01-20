@@ -1,4 +1,5 @@
 import { api } from '~configs/api';
+import { Product } from '~interfaces/Products';
 
 interface getProducts {
     success: boolean;
