@@ -35,7 +35,7 @@
 
 .bannerContainer {
     @include flex(space-between, center, row);
-    gap: 10px;
+    gap: 1rem;
     padding: 0.5rem;
 
     .bannerImage {

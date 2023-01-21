@@ -50,7 +50,7 @@
         height: 3.2rem;
 
         background-color: $white;
-        border-radius: 50px;
+        border-radius: 5rem;
         opacity: 0.5;
 
         @include responsive(md) {
@@ -75,23 +75,23 @@
         ul {
             @include flex(center, center, row);
             margin: 0.5rem;
-            padding: 0 1em 0 0.5em;
+            padding: 0 1rem 0 0.5rem;
         }
 
         li {
             @include background-image('~assets/selector.png');
-            margin: 0.5em;
+            margin: 0.5rem;
 
             list-style: none;
             background-repeat: no-repeat;
             background-position: left center;
-            background-size: 5px;
+            background-size: 0.5rem;
         }
 
         .mini {
             @include flex(center, center, row);
-            width: 2em;
-            height: 2em;
+            width: 0.2rem;
+            height: 0.2rem;
 
             background-position: center;
             background-size: cover;
@@ -110,8 +110,8 @@
 
         .miniActive {
             @include flex(center, center, row);
-            width: 2em;
-            height: 2em;
+            width: 0.2rem;
+            height: 0.2rem;
 
             background-position: center;
             background-size: cover;

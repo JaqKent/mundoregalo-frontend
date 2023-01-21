@@ -21,6 +21,7 @@
     "declaration-block-no-duplicate-properties": true,
     "selector-class-pattern": null,
     "selector-id-pattern": null,
-    "selector-pseudo-class-no-unknown": null
+    "selector-pseudo-class-no-unknown": null,
+    "unit-disallowed-list": ["px", "em"]
   }
 }
