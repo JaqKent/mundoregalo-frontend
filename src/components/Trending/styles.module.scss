@@ -4,7 +4,6 @@
 
 .container {
     @include flex(center, center, column);
-    min-width: 35rem;
     height: 24rem;
     margin: 0.5rem;
 

@@ -21,8 +21,8 @@
         gap: 2rem;
 
         .img {
-            width: 6rem;
-            height: 6rem;
+            width: 5rem;
+            height: 5rem;
 
             border-radius: 50%;
             cursor: pointer;
@@ -30,7 +30,7 @@
             &:hover {
                 transform: scale(1.2);
 
-                transition-duration: 0.7s;
+                transition-duration: 0.3s;
             }
         }
     }
