@@ -1,40 +1,51 @@
-@import '~scss/colors.scss';
-@import '~scss/mixins.scss';
+@import '~scss/colors';
+@import '~scss/mixins';
 @import '~scss/variable';
 
 .container {
     @include flex(center, center, column);
-    background-color: $white;
 
     margin: 0.5rem;
+
+    background-color: $white;
+
     h2 {
-        font-size: 2rem;
-        font-weight: bold;
         margin: 0.5rem;
+
+        font-weight: bold;
+        font-size: 2rem;
     }
+
     .product {
         @include flex(center, center, column);
         gap: 10px;
     }
+
     .button {
         @include flex(center, center, row);
+        width: 88vw;
+        margin: 4px;
+        padding: 5px;
+
+        font-weight: bold;
+        font-size: 14px;
+
         background-color: $gray;
         border: 2px solid $black;
         cursor: pointer;
-        font-size: 14px;
-        font-weight: bold;
-        margin: 4px;
-        width: 88vw;
-        padding: 5px;
+
         @include responsive(sm) {
             width: 70vw;
         }
+
         @include responsive(md) {
             width: 89vw;
         }
+
         @include responsive(lg) {
             width: 79vw;
         }
+
         @include responsive(xlg) {
             width: 80vw;
         }

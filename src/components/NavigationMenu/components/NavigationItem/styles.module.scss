@@ -1,23 +1,29 @@
-@import '~scss/colors.scss';
+@use "sass:color";
+@import '~scss/colors';
+
 
 .link {
     text-decoration: none;
 }
 
 .container {
-    border-bottom: 1px solid $gray;
     padding: 0.5rem 3rem;
-    transition: 0.2s;
+
     color: $black;
 
+    border-bottom: 1px solid $gray;
+
+    transition: 0.2s;
+
     &:hover {
-        background: $primary;
         color: $gray;
+
+        background: $primary;
         cursor: pointer;
     }
 
     &:active {
-        background: darken($primary, 10);
+        background: color.adjust($primary, $lightness: -10);
     }
 }
 

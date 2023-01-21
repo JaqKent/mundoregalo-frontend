@@ -1,70 +1,81 @@
-@import '~scss/colors.scss';
-@import '~scss/mixins.scss';
+@use "sass:color";
+@import '~scss/colors';
+@import '~scss/mixins';
 @import '~scss/variable';
 
 .small {
-    font-size: 1.2em;
     padding: 0.5em 1.5em;
+
+    font-size: 1.2em;
 }
 
 .primaryButton {
-    background-color: $primary;
-    border-color: $primary;
-    border-radius: 4px;
-    color: $white;
-    cursor: pointer;
     display: inline-flex;
+
+    color: $white;
     font-weight: bold;
     text-align: center;
 
+    background-color: $primary;
+    border-color: $primary;
+    border-radius: 4px;
+    cursor: pointer;
+
     &:hover {
-        background-color: lighten($primary, 5);
+        background-color: color.adjust($primary, $lightness: 5);
     }
 
     &:active {
-        background-color: darken($primary, 10);
+        background-color: color.adjust($primary, $lightness: -10);
     }
 
     &:disabled {
-        cursor: auto;
         background-color: $disabled;
+        cursor: auto;
     }
 }
 
 .secondaryButton {
-    background-color: $white;
-    border-radius: 4px;
-    color: $primary;
-    cursor: pointer;
     display: inline-flex;
+
+    color: $primary;
     font-weight: bold;
     text-align: center;
+
+    background-color: $white;
+    border-radius: 4px;
+    cursor: pointer;
 
     &:hover {
         background-color: $bonewhite;
     }
 
     &:active {
-        background-color: lighten($primary, 25);
+        background-color: color.adjust($primary, $lightness: 25);
     }
 
     &:disabled {
-        cursor: auto;
         background-color: $disabled;
+        cursor: auto;
     }
 }
 
 .big {
     @include flex(center, center, row);
-    border-radius: 4px;
-    font-size: 1.2em;
-    height: 4rem;
     width: 10rem;
+    height: 4rem;
+
+    font-size: 1.2em;
+
+    border-radius: 4px;
+
     @include responsive(md) {
         @include flex(center, center, row);
-        border-radius: 4px;
-        font-size: 1.2em;
-        height: 4rem;
         width: 30rem;
+        height: 4rem;
+
+        font-size: 1.2em;
+
+        border-radius: 4px;
     }
 }

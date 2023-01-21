@@ -7640,7 +7640,14 @@
   "resolved" "https://registry.npmjs.org/style-search/-/style-search-0.1.0.tgz"
   "version" "0.1.0"
 
-"stylelint-config-prettier@^9.0.4":
+"stylelint-config-prettier-scss@^0.0.1":
+  "integrity" "sha512-lBAYG9xYOh2LeWEPC/64xeUxwOTnQ8nDyBijQoWoJb10/bMGrUwnokpt8jegGck2Vbtxh6XGwH63z5qBcVHreQ=="
+  "resolved" "https://registry.npmjs.org/stylelint-config-prettier-scss/-/stylelint-config-prettier-scss-0.0.1.tgz"
+  "version" "0.0.1"
+  dependencies:
+    "stylelint-config-prettier" ">=9.0.3"
+
+"stylelint-config-prettier@^9.0.4", "stylelint-config-prettier@>=9.0.3":
   "integrity" "sha512-38nIGTGpFOiK5LjJ8Ma1yUgpKENxoKSOhbDNSemY7Ep0VsJoXIW9Iq/2hSt699oB9tReynfWicTAoIHiq8Rvbg=="
   "resolved" "https://registry.npmjs.org/stylelint-config-prettier/-/stylelint-config-prettier-9.0.4.tgz"
   "version" "9.0.4"
