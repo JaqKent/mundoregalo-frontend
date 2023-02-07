@@ -1,42 +1,56 @@
-@import '~scss/colors.scss';
-@import '~scss/mixins.scss';
+@import '~scss/colors';
+@import '~scss/mixins';
 @import '~scss/variable';
 
 .container {
     @include flex(space-around, center, column);
-    background-color: $primary;
-    color: $white;
-    font-size: 1.2rem;
-    padding: 1rem;
-    position: fixed;
-    width: 100vw;
-    height: 13rem;
+    position: absolute;
     bottom: 0;
     left: 0;
+
+    width: 100vw;
+    height: 14.5rem;
+
+
+    color: $white;
+    font-size: 1.2rem;
+
+    background-color: $primary;
 
     .links {
         @include flex(flex-start, center, row);
         gap: 2rem;
+        height: 3rem;
+        padding-top: 1.3rem;
+
         li {
-            cursor: pointer;
             list-style: none;
+            cursor: pointer;
         }
     }
+
     .down {
         @include flex(flex-start, center, row);
         width: 20rem;
+        height: 3rem;
+
+
         li {
-            cursor: pointer;
             list-style: none;
+            cursor: pointer;
         }
     }
+
     .imgSection {
         @include flex(center, center, row);
         gap: 1rem;
         width: 20rem;
+        padding-bottom: 1.5rem;
+
         .image {
-            cursor: pointer;
             height: 3rem;
+
+            cursor: pointer;
         }
     }
 }

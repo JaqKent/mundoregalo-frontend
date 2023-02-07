@@ -1,34 +1,36 @@
-@import '~scss/colors.scss';
-@import '~scss/mixins.scss';
+@import '~scss/colors';
+@import '~scss/mixins';
 @import '~scss/variable';
 
 .image {
+    width: 95vw;
+    height: 20rem;
+
     background-repeat: no-repeat;
     background-size: cover;
-    height: 20rem;
-    width: 95vw;
 
     @include responsive(md) {
-        height: 28rem;
         width: 96vw;
+        height: 28rem;
     }
 
     @include responsive(lg) {
-        height: 35rem;
         width: 97vw;
+        height: 35rem;
     }
 
     @include responsive(xlg) {
-        height: 45rem;
         width: 98vw;
+        height: 45rem;
     }
 }
 
 .services {
     @include flex(space-around, center, row);
-    background-color: $white;
-    margin: 0 0.5rem 0 0.5rem;
+    margin: 0 0.5rem;
     padding: 1rem;
+
+    background-color: $white;
 }
 
 .bannerContainer {
@@ -37,10 +39,11 @@
     padding: 0.5rem;
 
     .bannerImage {
+        width: 48%;
         height: 14rem;
-        width: 50%;
 
         @include responsive(md) {
+            width: 50%;
             height: 20rem;
         }
 
