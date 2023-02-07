@@ -1,4 +1,5 @@
 import { CATEGORY } from './constanst';
+
 import styles from './styles.module.scss';
 
 function CategorySection() {
