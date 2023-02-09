@@ -1,8 +1,9 @@
-@import '~scss/colors.scss';
-@import '~scss/mixins.scss';
+@import '~scss/colors';
+@import '~scss/mixins';
 
 .container {
     @include flex(center, center, column);
     padding: 2rem;
+
     background-color: $primary;
 }

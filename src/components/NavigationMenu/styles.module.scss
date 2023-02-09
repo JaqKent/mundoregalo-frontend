@@ -8,8 +8,11 @@
     width: 100vw;
     height: 100vh;
 
+<<<<<<< HEAD
     overflow-y: auto;
 
+=======
+>>>>>>> origin/master
     background-color: $white;
 
     @include responsive(md) {
@@ -33,7 +36,11 @@
     background-color: $backdrop;
 }
 
+<<<<<<< HEAD
 .navbar-toggle-button {
+=======
+.navbarToggleButton {
+>>>>>>> origin/master
     position: fixed;
     top: 2rem;
     left: 2rem;

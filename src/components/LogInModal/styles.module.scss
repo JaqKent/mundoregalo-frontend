@@ -1,39 +1,47 @@
-@import '~scss/colors.scss';
-@import '~scss/mixins.scss';
+@import '~scss/colors';
+@import '~scss/mixins';
 @import '~scss/variable';
 
 .container {
     @include flex(flex-start, center, column);
-    background: $white;
-    border-radius: 4px;
-    box-shadow: $boxShadow;
-    height: 55rem;
     position: fixed;
+
     width: 35rem;
+    height: 55rem;
+
+    background: $white;
+    border-radius: 0.4rem;
+    box-shadow: $boxShadow;
 
     .close {
         @include flex(flex-end, flex-end, row);
-        color: $red;
-        cursor: pointer;
-        font-size: 2rem;
-        font-weight: bold;
         margin-top: 1.5rem;
         padding-left: 29rem;
+
+        color: $red;
+        font-weight: bold;
+        font-size: 2rem;
+
+        cursor: pointer;
     }
 
     .input {
         @include flex(space-around, flex-start, column);
-        font-size: 1.4rem;
+        width: 26rem;
         height: 10rem;
         padding: 3.5rem 0;
-        width: 26rem;
+
+        font-size: 1.4rem;
+
         input {
             width: 25rem;
         }
     }
+
     .button {
-        padding: 3.5rem 0 2rem 0;
+        padding: 3.5rem 0 2rem;
     }
+
     .downData {
         @include flex(space-between, center, column);
 
@@ -41,21 +49,26 @@
             padding: 2rem;
 
             .img {
-                cursor: pointer;
+                width: 4rem;
                 height: 4rem;
                 padding: 1rem 0.3rem;
-                width: 4rem;
+
+                cursor: pointer;
             }
         }
+
         .log {
             @include flex(flex-start, flex-start, row);
-            font-size: 1.2rem;
+            width: 25rem;
             padding-left: 2rem;
-            width: 250px;
+
+            font-size: 1.2rem;
+
             .link {
                 color: $blue;
-                cursor: pointer;
                 text-decoration: underline;
+
+                cursor: pointer;
             }
         }
     }

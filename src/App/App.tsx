@@ -1,16 +1,17 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 
-import NavigationMenu from '~components/NavigationMenu';
-import Footer from '~components/Footer';
-import NavigationBar from '~components/NavigationBar';
-import { UserProvider } from '~context/UserContext/UserContext';
-import ProductProvider from '~context/ProductContext';
-
 import { ROUTES } from './constants';
 import NotFound from './NotFound';
+
 import 'react-toastify/dist/ReactToastify.css';
+
+import Footer from '~components/Footer';
+import NavigationBar from '~components/NavigationBar';
+import NavigationMenu from '~components/NavigationMenu';
+import ProductProvider from '~context/ProductContext';
+import { UserProvider } from '~context/UserContext/UserContext';
 
 function App() {
     const [showNavbar, setShowNavbar] = useState(false);

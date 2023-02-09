@@ -3,9 +3,12 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import CustomCard from '~components/CustomCard';
+
 import { PRODUCTS } from './constants';
+
 import styles from './styles.module.scss';
+
+import CustomCard from '~components/CustomCard';
 
 function OnSaleSection() {
     const [data, setData] = useState(PRODUCTS);
@@ -38,6 +41,7 @@ function OnSaleSection() {
                 role="button"
                 tabIndex={0}
                 onClick={viewMore ? handleOfert : handleView}
+                onKeyDown={viewMore ? handleOfert : handleView}
             >
                 {viewMore ? (
                     <span>Ir a Ofertas</span>
