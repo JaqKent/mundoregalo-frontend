@@ -1,36 +1,44 @@
-@import '~scss/colors.scss';
-@import '~scss/mixins.scss';
+@use"sass:color";
+@import '~scss/colors';
+@import '~scss/mixins';
 
 .container {
     @include flex(space-between, center, row);
     padding: 0.5rem 1.5rem;
-    transition: 0.2s;
+
     color: $black;
+
     background-color: $nav-header;
+
+    transition: 0.2s;
 }
 
 .usernameContainer {
-    @include flex();
+    @include flex;
     gap: 2rem;
 }
 
 .username {
+    color: $white;
     font-weight: bolder;
     font-size: 1.4rem;
-    color: $white;
 }
 
 .img {
-    height: 4.5rem;
     width: 4.5rem;
+    height: 4.5rem;
+
     border-radius: 50%;
 }
 
 %button {
-    border: 1px solid $primary;
-    border-radius: 0.5rem;
     padding: 0.5rem 0.8rem;
+
     color: $white;
+
+    border: 0.1rem solid $primary;
+    border-radius: 0.5rem;
+
     transition: 0.2s;
 
     &:hover {
@@ -39,8 +47,8 @@
     }
 
     &:active {
-        background-color: darken($primary, 10);
-        border-color: darken($primary, 10);
+        background-color: color.adjust($primary, $lightness: -10);
+        border-color: color.adjust($primary, $lightness: -10);
     }
 }
 
@@ -52,7 +60,7 @@
 
 .buttonWithoutSession {
     @extend %button;
+    font-weight: bold;
 
     background-color: $primary;
-    font-weight: bold;
 }
