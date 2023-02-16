@@ -9,7 +9,7 @@ import InsideInfo from './components';
 import { ITEMS } from '~constants/constants';
 
 function PublicityHeader() {
-    const [auto, setAuto] = useState(false);
+    const [auto, setAuto] = useState(true);
     return (
         <div className={styles.container}>
             <div>
