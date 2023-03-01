@@ -18,15 +18,16 @@ function CustomCard({
       </div>
       <div className={styles.description}>
         <div className={small ? styles.titleSmall : styles.titleLarge}>
-          <h3>
+          <span>
             {name}
-          </h3>
+          </span>
         </div>
         <div className={`${small ? styles.priceSmall : styles.priceLarge}`}>
-          <p>
+          <span>4.8(15999)</span>
+          <span>
             $
             {price}
-          </p>
+          </span>
         </div>
       </div>
     </div>
