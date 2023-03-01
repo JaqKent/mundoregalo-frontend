@@ -26,6 +26,8 @@ function OnSaleSection() {
             <div className={styles.product}>
                 {slicedData.map((product) => (
                     <CustomCard
+                    votes={product.votes}
+                    stars={product.stars}
                         image={product.image}
                         key={product.id}
                         name={product.description}
