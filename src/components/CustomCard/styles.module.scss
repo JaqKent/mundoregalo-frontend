@@ -103,7 +103,8 @@
     }
 
     .priceSmall {
-        @include flex(flex-start, center, column);
+        @include flex(space-between, center, row);
+        width: 15rem;
         padding-top: 5px;
 
         font-weight: bold;
@@ -113,5 +114,17 @@
         @include responsive(md) {
             font-size: 1.3rem;
         }
+    }
+
+    .rating {
+        font-size: 1.2rem;
+    }
+
+    .block {
+        display: none;
+    }
+
+    .info {
+        @include flex(space-between, center, column);
     }
 }
