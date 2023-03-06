@@ -3,9 +3,12 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import CustomCard from '~components/CustomCard';
+
 import { PRODUCTS } from './constants';
+
 import styles from './styles.module.scss';
+
+import CustomCard from '~components/CustomCard';
 
 function OnSaleSection() {
     const [data, setData] = useState(PRODUCTS);
@@ -26,8 +29,9 @@ function OnSaleSection() {
             <div className={styles.product}>
                 {slicedData.map((product) => (
                     <CustomCard
-                    votes={product.votes}
-                    stars={product.stars}
+                        info
+                        votes={product.votes}
+                        stars={product.stars}
                         image={product.image}
                         key={product.id}
                         name={product.description}
@@ -37,6 +41,7 @@ function OnSaleSection() {
             </div>
             <div
                 className={styles.button}
+                onKeyDown={viewMore ? handleOfert : handleView}
                 role="button"
                 tabIndex={0}
                 onClick={viewMore ? handleOfert : handleView}

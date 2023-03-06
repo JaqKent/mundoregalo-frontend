@@ -9,7 +9,7 @@ module.exports = {
     'airbnb/hooks',
     'plugin:react/recommended',
     'plugin:@typescript-eslint/recommended',
-    "plugin:prettier/recommended",
+    'plugin:prettier/recommended',
   ],
   overrides: [
     // override "simple-import-sort" config - requires 'eslint-plugin-simple-import-sort'
@@ -42,14 +42,9 @@ module.exports = {
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
-    './tsconfig.json'
+    project: ['./tsconfig.json'],
   },
-  plugins: [
-    'react',
-    '@typescript-eslint',
-    "simple-import-sort",
-    "prettier",
-  ],
+  plugins: ['react', '@typescript-eslint', 'simple-import-sort', 'prettier'],
   rules: {
     'simple-import-sort/imports': 'warn',
     'simple-import-sort/exports': 'error',
@@ -72,6 +67,5 @@ module.exports = {
     'import/resolver': {
       typescript: {},
     },
-
   },
 };

@@ -3,13 +3,20 @@
 @import '~scss/variable';
 
 .containerLarge {
-    @include flex(space-around, center, Row);
-    gap: 1.5rem;
-    width: 90vw;
-    height: 10rem;
+    @include flex(flex-start, center, row);
+    gap: 1rem;
+
+    width: 37.5rem;
+    min-height: 11.2rem;
+    padding-left: 1rem;
 
     border: 2px solid $gray;
     cursor: pointer;
+
+    @include responsive(xs) {
+        min-width: 40rem;
+        height: 17rem;
+    }
 
     @include responsive(md) {
         height: 17rem;
@@ -30,20 +37,18 @@
 
     @include responsive(md) {
         width: 19rem;
+        height: 22rem;
     }
 }
 
 .imgLarge {
-    @include flex(flex-start, start, column);
-    width: 5rem;
-    height: 5rem;
-    padding-left: 2rem;
+    @include flex(center, center, row);
+    width: 10.6rem;
+    height: 10.6rem;
     object-fit: fill;
 
     @include responsive(md) {
-        width: 10rem;
-        height: 10rem;
-        padding-left: 1.5rem;
+        padding-left: 2rem;
     }
 }
 
@@ -57,74 +62,89 @@
 
 .description {
     @include flex(flex-start, flex-start, column);
-
-    .titleLarge {
-        width: 25rem;
+}
 
 
-        font-weight: bold;
+
+.titleLarge {
+    @include flex(space-between, flex-start, row);
+    width: 19rem;
+    height: 7rem;
+
+    overflow: hidden;
+
+    font-weight: bold;
+    font-size: 1.4rem;
+    text-align: flex-start;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+
+    @include responsive(md) {
+        width: 40rem;
+
+        font-size: 1.5rem;
+    }
+}
+
+.titleSmall {
+    display: -webkit-box;
+
+    width: 15rem;
+    overflow: hidden;
+
+    font-weight: bold;
+    font-size: 1.4rem;
+    text-align: center;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+
+    @include responsive(md) {
+        width: 20rem;
+
+    }
+}
+
+.priceLarge {
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-align: center;
+
+    @include responsive(md) {
+        font-size: 1.4rem;
+    }
+}
+
+.priceSmall {
+    @include flex(space-between, center, row);
+    width: 15rem;
+    padding-top: 5px;
+
+    font-weight: bold;
+    font-size: 1.4rem;
+    text-align: center;
+
+    @include responsive(md) {
         font-size: 1.3rem;
-        text-align: center;
-
-        @include responsive(md) {
-            width: 40rem;
-
-            font-size: 1.5rem;
-        }
     }
+}
 
-    .titleSmall {
-        display: -webkit-box;
+.rating {
+    font-size: 1.2rem;
+}
 
-        width: 15rem;
-        overflow: hidden;
+.block {
+    display: none;
+}
 
-        font-weight: bold;
-        font-size: 1.4rem;
-        text-align: center;
-        text-overflow: ellipsis;
-        -webkit-line-clamp: 2;
-        -webkit-box-orient: vertical;
+.info {
+    @include flex(space-between, center, column);
+    font-weight: bold;
+    font-size: 1.2rem;
+}
 
-        @include responsive(md) {
-            width: 20rem;
-
-        }
-    }
-
-    .priceLarge {
-        font-weight: bold;
-        font-size: 1.2rem;
-        text-align: center;
-
-        @include responsive(md) {
-            font-size: 1.4rem;
-        }
-    }
-
-    .priceSmall {
-        @include flex(space-between, center, row);
-        width: 15rem;
-        padding-top: 5px;
-
-        font-weight: bold;
-        font-size: 1.4rem;
-        text-align: center;
-
-        @include responsive(md) {
-            font-size: 1.3rem;
-        }
-    }
-
-    .rating {
-        font-size: 1.2rem;
-    }
-
-    .block {
-        display: none;
-    }
-
-    .info {
-        @include flex(space-between, center, column);
-    }
+.largeSection {
+    @include flex(center, flex-start, row);
+    padding-top: .5rem;
 }

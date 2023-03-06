@@ -1,15 +1,15 @@
 import { useEffect, useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
     faChevronLeft,
     faChevronRight,
 } from '@fortawesome/free-solid-svg-icons';
-import CustomCard from '~components/CustomCard';
-import { PRODUCTS } from '~components/OnSaleSection/constants';
-
-import trending from '~assets/tendencias.svg';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import styles from './styles.module.scss';
+
+import trending from '~assets/tendencias.svg';
+import CustomCard from '~components/CustomCard';
+import { PRODUCTS } from '~components/OnSaleSection/constants';
 
 interface Props {
     hide?: boolean;
@@ -52,7 +52,7 @@ function Trending({ hide }: Props) {
     for (let i = 0; i < slideLength; i += 2) {
         slideshowSlides.push(
             <div className={styles.card}>
-                <CustomCard info
+                <CustomCard
                     small
                     image={PRODUCTS[i].image}
                     name={PRODUCTS[i].description}
@@ -62,7 +62,7 @@ function Trending({ hide }: Props) {
                     key={PRODUCTS[i].id}
                 />
                 {PRODUCTS[i + 1] && (
-                    <CustomCard info
+                    <CustomCard
                         small
                         image={PRODUCTS[i + 1].image}
                         name={PRODUCTS[i + 1].description}
