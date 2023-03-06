@@ -3,7 +3,7 @@
 @import '~scss/variable';
 
 .containerLarge {
-    @include flex(space-around, center, Row);
+    @include flex(flex-start center, Row);
     gap: 1.5rem;
     min-width: 40rem;
     min-height: 11.2rem;
@@ -57,12 +57,14 @@
 }
 
 .description {
+    @include flex(flex-start, flex-start, column);
+
     .titleLarge {
-        width: 25rem;
+        width: 20rem;
 
         font-weight: bold;
         font-size: 1.4rem;
-        text-align: center;
+        text-align: flex-start;
 
         @include responsive(md) {
             width: 40rem;
