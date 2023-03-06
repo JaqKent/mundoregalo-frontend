@@ -1,15 +1,15 @@
 import { useEffect, useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
     faChevronLeft,
     faChevronRight,
 } from '@fortawesome/free-solid-svg-icons';
-import CustomCard from '~components/CustomCard';
-import { PRODUCTS } from '~components/OnSaleSection/constants';
-
-import trending from '~assets/tendencias.svg';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import styles from './styles.module.scss';
+
+import trending from '~assets/tendencias.svg';
+import CustomCard from '~components/CustomCard';
+import { PRODUCTS } from '~components/OnSaleSection/constants';
 
 interface Props {
     hide?: boolean;
@@ -57,6 +57,8 @@ function Trending({ hide }: Props) {
                     image={PRODUCTS[i].image}
                     name={PRODUCTS[i].description}
                     price={PRODUCTS[i].price}
+                    stars={PRODUCTS[i].stars}
+                    votes={PRODUCTS[i].votes}
                     key={PRODUCTS[i].id}
                 />
                 {PRODUCTS[i + 1] && (
@@ -65,6 +67,8 @@ function Trending({ hide }: Props) {
                         image={PRODUCTS[i + 1].image}
                         name={PRODUCTS[i + 1].description}
                         price={PRODUCTS[i + 1].price}
+                        stars={PRODUCTS[i + 1].stars}
+                        votes={PRODUCTS[i + 1].votes}
                         key={PRODUCTS[i + 1].id}
                     />
                 )}

@@ -3,13 +3,20 @@
 @import '~scss/variable';
 
 .containerLarge {
-    @include flex(flex-start center, Row);
-    gap: 1.5rem;
-    min-width: 40rem;
+    @include flex(flex-start, center, row);
+    gap: 1rem;
+
+    width: 37.5rem;
     min-height: 11.2rem;
+    padding-left: 1rem;
 
     border: 2px solid $gray;
     cursor: pointer;
+
+    @include responsive(xs) {
+        min-width: 40rem;
+        height: 17rem;
+    }
 
     @include responsive(md) {
         height: 17rem;
@@ -21,10 +28,9 @@
 }
 
 .containerSmall {
-    @include flex(space-between, center, column);
-    gap: 1.5rem;
-    width: 15rem;
-    height: 17rem;
+    @include flex(center, center, column);
+    width: 16.5rem;
+    height: 25.8rem;
 
     border: 2px solid $gray;
     cursor: pointer;
@@ -36,10 +42,9 @@
 }
 
 .imgLarge {
-    @include flex(center, center, column);
+    @include flex(center, center, row);
     width: 10.6rem;
     height: 10.6rem;
-    padding-left: 1rem;
     object-fit: fill;
 
     @include responsive(md) {
@@ -48,67 +53,98 @@
 }
 
 .imgSmall {
-    width: auto;
-    height: 5rem;
+    @include flex(flex-end, flex-end, column);
+    width: 15.5rem;
+    height: 15.5rem;
+    object-fit: fill;
 
-    @include responsive(md) {
-        height: 9rem;
-    }
 }
 
 .description {
     @include flex(flex-start, flex-start, column);
+}
 
-    .titleLarge {
-        width: 15rem;
-        height: 7rem;
-        overflow: hidden;
 
-        font-weight: bold;
+
+.titleLarge {
+    @include flex(space-between, flex-start, row);
+    width: 19rem;
+    height: 7rem;
+
+    overflow: hidden;
+
+    font-weight: bold;
+    font-size: 1.4rem;
+    text-align: flex-start;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+
+    @include responsive(md) {
+        width: 40rem;
+
+        font-size: 1.5rem;
+    }
+}
+
+.titleSmall {
+    display: -webkit-box;
+
+    width: 15rem;
+    overflow: hidden;
+
+    font-weight: bold;
+    font-size: 1.4rem;
+    text-align: center;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+
+    @include responsive(md) {
+        width: 20rem;
+
+    }
+}
+
+.priceLarge {
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-align: center;
+
+    @include responsive(md) {
         font-size: 1.4rem;
-        text-align: flex-start;
-        text-overflow: ellipsis;
-        -webkit-line-clamp: 2;
-        -webkit-box-orient: vertical;
-
-        @include responsive(md) {
-            width: 40rem;
-
-            font-size: 1.5rem;
-        }
     }
+}
 
-    .titleSmall {
-        width: 15rem;
+.priceSmall {
+    @include flex(space-between, center, row);
+    width: 15rem;
+    padding-top: 5px;
 
-        font-weight: bold;
-        font-size: 1rem;
-        text-align: center;
+    font-weight: bold;
+    font-size: 1.4rem;
+    text-align: center;
 
-        @include responsive(md) {
-            width: 20rem;
-
-            font-size: 1.2rem;
-        }
+    @include responsive(md) {
+        font-size: 1.3rem;
     }
+}
 
-    .priceLarge {
-        font-weight: bold;
-        font-size: 1.2rem;
-        text-align: center;
+.rating {
+    font-size: 1.2rem;
+}
 
-        @include responsive(md) {
-            font-size: 1.4rem;
-        }
-    }
+.block {
+    display: none;
+}
 
-    .priceSmall {
-        font-weight: bold;
-        font-size: 1.2rem;
-        text-align: center;
+.info {
+    @include flex(space-between, center, column);
+    font-weight: bold;
+    font-size: 1.2rem;
+}
 
-        @include responsive(md) {
-            font-size: 1.3rem;
-        }
-    }
+.largeSection {
+    @include flex(center, flex-start, row);
+    padding-top: .5rem;
 }
