@@ -1,93 +1,130 @@
-@import '~scss/colors.scss';
-@import '~scss/mixins.scss';
+@import '~scss/colors';
+@import '~scss/mixins';
 @import '~scss/variable';
 
 .containerLarge {
     @include flex(space-around, center, Row);
+    gap: 1.5rem;
+    width: 90vw;
+    height: 10rem;
+
     border: 2px solid $gray;
     cursor: pointer;
-    gap: 1.5rem;
-    height: 10rem;
-    width: 90vw;
+
     @include responsive(md) {
         height: 17rem;
     }
+
     @include responsive(lg) {
         width: 80vw;
     }
 }
+
 .containerSmall {
-    @include flex(space-between, center, column);
+    @include flex(center, center, column);
+    width: 16.5rem;
+    height: 25.8rem;
+
     border: 2px solid $gray;
     cursor: pointer;
-    gap: 1.5rem;
-    height: 17rem;
-    width: 15rem;
 
     @include responsive(md) {
-        height: 22rem;
         width: 19rem;
     }
 }
 
 .imgLarge {
-    @include flex(center, center, row);
-    object-fit: fill;
-    padding-left: 2rem;
-    height: 5rem;
+    @include flex(flex-start, start, column);
     width: 5rem;
+    height: 5rem;
+    padding-left: 2rem;
+    object-fit: fill;
+
     @include responsive(md) {
-        padding-left: 1.5rem;
-        height: 10rem;
         width: 10rem;
+        height: 10rem;
+        padding-left: 1.5rem;
     }
 }
+
 .imgSmall {
-    height: 5rem;
-    width: auto;
-    @include responsive(md) {
-        height: 9rem;
-    }
+    @include flex(flex-end, flex-end, column);
+    width: 15.5rem;
+    height: 15.5rem;
+    object-fit: fill;
+
 }
 
 .description {
-    padding: 0 1.5em 0 1.5rem;
+    @include flex(flex-start, flex-start, column);
 
     .titleLarge {
-        font-size: 1.3rem;
-        font-weight: bold;
-        text-align: center;
         width: 25rem;
+
+
+        font-weight: bold;
+        font-size: 1.3rem;
+        text-align: center;
+
         @include responsive(md) {
-            font-size: 1.5rem;
             width: 40rem;
+
+            font-size: 1.5rem;
         }
     }
 
     .titleSmall {
-        font-size: 1rem;
-        font-weight: bold;
-        text-align: center;
+        display: -webkit-box;
+
         width: 15rem;
+        overflow: hidden;
+
+        font-weight: bold;
+        font-size: 1.4rem;
+        text-align: center;
+        text-overflow: ellipsis;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+
         @include responsive(md) {
-            font-size: 1.2rem;
             width: 20rem;
+
         }
     }
+
     .priceLarge {
-        font-size: 1.2rem;
         font-weight: bold;
+        font-size: 1.2rem;
         text-align: center;
+
         @include responsive(md) {
             font-size: 1.4rem;
         }
     }
+
     .priceSmall {
-        font-size: 1.2rem;
+        @include flex(space-between, center, row);
+        width: 15rem;
+        padding-top: 5px;
+
         font-weight: bold;
+        font-size: 1.4rem;
         text-align: center;
+
         @include responsive(md) {
             font-size: 1.3rem;
         }
+    }
+
+    .rating {
+        font-size: 1.2rem;
+    }
+
+    .block {
+        display: none;
+    }
+
+    .info {
+        @include flex(space-between, center, column);
     }
 }

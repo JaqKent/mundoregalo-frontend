@@ -52,19 +52,23 @@ function Trending({ hide }: Props) {
     for (let i = 0; i < slideLength; i += 2) {
         slideshowSlides.push(
             <div className={styles.card}>
-                <CustomCard
+                <CustomCard info
                     small
                     image={PRODUCTS[i].image}
                     name={PRODUCTS[i].description}
                     price={PRODUCTS[i].price}
+                    stars={PRODUCTS[i].stars}
+                    votes={PRODUCTS[i].votes}
                     key={PRODUCTS[i].id}
                 />
                 {PRODUCTS[i + 1] && (
-                    <CustomCard
+                    <CustomCard info
                         small
                         image={PRODUCTS[i + 1].image}
                         name={PRODUCTS[i + 1].description}
                         price={PRODUCTS[i + 1].price}
+                        stars={PRODUCTS[i + 1].stars}
+                        votes={PRODUCTS[i + 1].votes}
                         key={PRODUCTS[i + 1].id}
                     />
                 )}
