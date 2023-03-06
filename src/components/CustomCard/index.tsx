@@ -45,13 +45,11 @@ function CustomCard({
                         <span>{name}</span>
                     </div>
                     <div className={styles.info}>
-                        {info ? (
+                        {info && (
                             <div className={styles.info}>
                                 <span>{onSale}</span>
                                 <span>{delivery}</span>
                             </div>
-                        ) : (
-                            ''
                         )}
                     </div>
                 </div>
@@ -66,13 +64,11 @@ function CustomCard({
                             {price}
                         </span>
                     </div>
-                    {small ? (
+                    {small && (
                         <div className={styles.info}>
                             <span>{onSale}</span>
                             <span>{delivery}</span>
                         </div>
-                    ) : (
-                        ''
                     )}
                 </div>
             </div>
