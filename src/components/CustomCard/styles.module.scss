@@ -1,91 +1,105 @@
-@import '~scss/colors.scss';
-@import '~scss/mixins.scss';
+@import '~scss/colors';
+@import '~scss/mixins';
 @import '~scss/variable';
 
 .containerLarge {
     @include flex(space-around, center, Row);
+    gap: 1.5rem;
+    min-width: 40rem;
+    min-height: 11.2rem;
+
     border: 2px solid $gray;
     cursor: pointer;
-    gap: 1.5rem;
-    height: 10rem;
-    width: 90vw;
+
     @include responsive(md) {
         height: 17rem;
     }
+
     @include responsive(lg) {
         width: 80vw;
     }
 }
+
 .containerSmall {
     @include flex(space-between, center, column);
+    gap: 1.5rem;
+    width: 15rem;
+    height: 17rem;
+
     border: 2px solid $gray;
     cursor: pointer;
-    gap: 1.5rem;
-    height: 17rem;
-    width: 15rem;
 
     @include responsive(md) {
-        height: 22rem;
         width: 19rem;
+        height: 22rem;
     }
 }
 
 .imgLarge {
-    @include flex(center, center, row);
+    @include flex(flex-start, center, row);
+    width: 10.6rem;
+    height: 10.6rem;
+    padding-left: 1rem;
     object-fit: fill;
-    padding-left: 2rem;
-    height: 5rem;
-    width: 5rem;
+
     @include responsive(md) {
-        padding-left: 1.5rem;
-        height: 10rem;
-        width: 10rem;
+        padding-left: 2rem;
     }
 }
+
 .imgSmall {
-    height: 5rem;
     width: auto;
+    height: 5rem;
+
     @include responsive(md) {
         height: 9rem;
     }
 }
 
 .description {
-    padding: 0 1.5em 0 1.5rem;
-
     .titleLarge {
-        font-size: 1.3rem;
-        font-weight: bold;
-        text-align: center;
         width: 25rem;
+
+        font-weight: bold;
+        font-size: 1.4rem;
+        text-align: center;
+
         @include responsive(md) {
-            font-size: 1.5rem;
             width: 40rem;
+
+            font-size: 1.5rem;
         }
     }
 
     .titleSmall {
-        font-size: 1rem;
-        font-weight: bold;
-        text-align: center;
         width: 15rem;
+
+        font-weight: bold;
+        font-size: 1rem;
+        text-align: center;
+
         @include responsive(md) {
-            font-size: 1.2rem;
             width: 20rem;
+
+            font-size: 1.2rem;
         }
     }
+
     .priceLarge {
-        font-size: 1.2rem;
         font-weight: bold;
+        font-size: 1.2rem;
         text-align: center;
+
         @include responsive(md) {
             font-size: 1.4rem;
         }
     }
+
     .priceSmall {
-        font-size: 1.2rem;
         font-weight: bold;
+        font-size: 1.2rem;
         text-align: center;
+
         @include responsive(md) {
             font-size: 1.3rem;
         }
