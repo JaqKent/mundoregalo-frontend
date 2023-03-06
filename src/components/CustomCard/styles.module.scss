@@ -36,7 +36,7 @@
 }
 
 .imgLarge {
-    @include flex(flex-start, center, row);
+    @include flex(center, center, column);
     width: 10.6rem;
     height: 10.6rem;
     padding-left: 1rem;
@@ -60,11 +60,16 @@
     @include flex(flex-start, flex-start, column);
 
     .titleLarge {
-        width: 20rem;
+        width: 15rem;
+        height: 7rem;
+        overflow: hidden;
 
         font-weight: bold;
         font-size: 1.4rem;
         text-align: flex-start;
+        text-overflow: ellipsis;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
 
         @include responsive(md) {
             width: 40rem;
