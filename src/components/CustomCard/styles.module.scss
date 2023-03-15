@@ -5,6 +5,7 @@
 .containerLarge {
     @include flex(flex-start, center, row);
     gap: 1rem;
+    background-color: $white;
 
     width: 37.5rem;
     min-height: 11.2rem;
@@ -75,7 +76,7 @@
 
     overflow: hidden;
 
-    font-weight: bold;
+    font-weight: 500;
     font-size: 1.4rem;
     text-align: flex-start;
     text-overflow: ellipsis;
@@ -136,6 +137,12 @@
     font-weight: 800;
 }
 
+.largeRating {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+
 .block {
     display: none;
 }
@@ -149,9 +156,17 @@
     padding-top: .5rem;
 }
 
+.largeVotes {
+    font-size: 1.2rem;
+}
 
 .smallVotes {
     font-size: 1.2rem;
+}
+
+.largePrice {
+    font-size: 1.4rem;
+    font-weight: 800;
 }
 
 .smallPrice {
