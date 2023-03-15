@@ -53,13 +53,34 @@ function CustomCard({
                         )}
                     </div>
                 </div>
-                <div className={small ? styles.priceSmall : styles.priceLarge}>
+                <div className={small ? styles.dataSmall : styles.dataLarge}>
                     <div className={styles.info}>
-                        <span className={styles.rating}>
-                            <FontAwesomeIcon icon={faStar} />
-                            {stars}({votes}){' '}
-                        </span>
-                        <span>
+                        <div>
+                            <span
+                                className={
+                                    small
+                                        ? styles.smallRating
+                                        : styles.largeRating
+                                }
+                            >
+                                <FontAwesomeIcon icon={faStar} />
+                                {stars}{' '}
+                            </span>
+                            <span
+                                className={
+                                    small
+                                        ? styles.smallVotes
+                                        : styles.largeVotes
+                                }
+                            >
+                                ({votes})
+                            </span>{' '}
+                        </div>
+                        <span
+                            className={
+                                small ? styles.smallPrice : styles.largePrice
+                            }
+                        >
                             <FontAwesomeIcon icon={faDollarSign} />
                             {price}
                         </span>
