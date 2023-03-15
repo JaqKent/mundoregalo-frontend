@@ -5,11 +5,10 @@
 .containerLarge {
     @include flex(flex-start, center, row);
     gap: 1rem;
-
+    background-color: $white;
     width: 37.5rem;
     min-height: 11.2rem;
     padding-left: 1rem;
-
     border: 2px solid $gray;
     cursor: pointer;
 
@@ -33,7 +32,6 @@
     width: 16.5rem;
     height: 25.8rem;
     background-color: $white;
-
     border: 2px solid $gray;
     cursor: pointer;
 
@@ -59,23 +57,18 @@
     width: 15.5rem;
     height: 15.5rem;
     object-fit: cover;
-
 }
 
 .description {
     @include flex(flex-start, flex-start, column);
 }
 
-
-
 .titleLarge {
     @include flex(space-between, flex-start, row);
     width: 19rem;
     height: 7rem;
-
     overflow: hidden;
-
-    font-weight: bold;
+    font-weight: 500;
     font-size: 1.4rem;
     text-align: flex-start;
     text-overflow: ellipsis;
@@ -84,18 +77,15 @@
 
     @include responsive(md) {
         width: 40rem;
-
         font-size: 1.5rem;
     }
 }
 
 .titleSmall {
     display: -webkit-box;
-
     width: 15rem;
     height: 4rem;
     overflow: hidden;
-
     font-weight: 500;
     font-size: 1.4rem;
     text-align: center;
@@ -109,8 +99,8 @@
     }
 }
 
-.dataLarge {
 
+.dataLarge {
     text-align: center;
 
     @include responsive(md) {
@@ -122,8 +112,6 @@
     @include flex(space-between, center, row);
     width: 15rem;
     padding-top: 5px;
-
-
     text-align: center;
 
     @include responsive(md) {
@@ -134,6 +122,11 @@
 .smallRating {
     font-size: 1.2rem;
     font-weight: 800;
+}
+
+.largeRating {
+    font-size: 1.2rem;
+    font-weight: 500;
 }
 
 .block {
@@ -149,12 +142,19 @@
     padding-top: .5rem;
 }
 
+.largeVotes {
+    font-size: 1.2rem;
+}
 
 .smallVotes {
     font-size: 1.2rem;
 }
 
+.largePrice {
+    font-size: 1.4rem;
+    font-weight: 800;
+}
+
 .smallPrice {
     font-size: 1.4rem;
-
 }

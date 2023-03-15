@@ -64,7 +64,7 @@ function CustomCard({
                                 }
                             >
                                 <FontAwesomeIcon icon={faStar} />
-                                {stars}{' '}
+                                {stars}
                             </span>
                             <span
                                 className={
@@ -74,7 +74,7 @@ function CustomCard({
                                 }
                             >
                                 ({votes})
-                            </span>{' '}
+                            </span>
                         </div>
                         <span
                             className={
