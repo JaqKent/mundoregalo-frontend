@@ -28,9 +28,11 @@
 }
 
 .containerSmall {
-    @include flex(center, center, column);
+    @include flex(flex-start, center, column);
+    padding-top: 1rem;
     width: 16.5rem;
     height: 25.8rem;
+    background-color: $white;
 
     border: 2px solid $gray;
     cursor: pointer;
@@ -53,10 +55,10 @@
 }
 
 .imgSmall {
-    @include flex(flex-end, flex-end, column);
+    @include flex(space-between, flex-start, column);
     width: 15.5rem;
     height: 15.5rem;
-    object-fit: fill;
+    object-fit: cover;
 
 }
 
@@ -91,9 +93,10 @@
     display: -webkit-box;
 
     width: 15rem;
+    height: 4rem;
     overflow: hidden;
 
-    font-weight: bold;
+    font-weight: 500;
     font-size: 1.4rem;
     text-align: center;
     text-overflow: ellipsis;
@@ -106,9 +109,8 @@
     }
 }
 
-.priceLarge {
-    font-weight: bold;
-    font-size: 1.2rem;
+.dataLarge {
+
     text-align: center;
 
     @include responsive(md) {
@@ -116,13 +118,12 @@
     }
 }
 
-.priceSmall {
+.dataSmall {
     @include flex(space-between, center, row);
     width: 15rem;
     padding-top: 5px;
 
-    font-weight: bold;
-    font-size: 1.4rem;
+
     text-align: center;
 
     @include responsive(md) {
@@ -130,8 +131,9 @@
     }
 }
 
-.rating {
+.smallRating {
     font-size: 1.2rem;
+    font-weight: 800;
 }
 
 .block {
@@ -139,12 +141,20 @@
 }
 
 .info {
-    @include flex(space-between, center, column);
-    font-weight: bold;
-    font-size: 1.2rem;
+    @include flex(space-between, flex-start, column);
 }
 
 .largeSection {
     @include flex(center, flex-start, row);
     padding-top: .5rem;
+}
+
+
+.smallVotes {
+    font-size: 1.2rem;
+}
+
+.smallPrice {
+    font-size: 1.4rem;
+
 }
