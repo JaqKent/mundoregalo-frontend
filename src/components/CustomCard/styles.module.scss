@@ -6,11 +6,9 @@
     @include flex(flex-start, center, row);
     gap: 1rem;
     background-color: $white;
-
     width: 37.5rem;
     min-height: 11.2rem;
     padding-left: 1rem;
-
     border: 2px solid $gray;
     cursor: pointer;
 
@@ -31,12 +29,9 @@
 .containerSmall {
     @include flex(flex-start, center, column);
     padding-top: 1rem;
-    @include flex(flex-start, center, column);
-    padding-top: 1rem;
     width: 16.5rem;
     height: 25.8rem;
     background-color: $white;
-
     border: 2px solid $gray;
     cursor: pointer;
 
@@ -59,11 +54,9 @@
 
 .imgSmall {
     @include flex(space-between, flex-start, column);
-    @include flex(space-between, flex-start, column);
     width: 15.5rem;
     height: 15.5rem;
     object-fit: cover;
-
 }
 
 .description {
@@ -74,9 +67,7 @@
     @include flex(space-between, flex-start, row);
     width: 19rem;
     height: 7rem;
-
     overflow: hidden;
-
     font-weight: 500;
     font-size: 1.4rem;
     text-align: flex-start;
@@ -86,19 +77,15 @@
 
     @include responsive(md) {
         width: 40rem;
-
         font-size: 1.5rem;
     }
 }
 
 .titleSmall {
     display: -webkit-box;
-
     width: 15rem;
     height: 4rem;
-    height: 4rem;
     overflow: hidden;
-
     font-weight: 500;
     font-size: 1.4rem;
     text-align: center;
@@ -113,9 +100,7 @@
 }
 
 
-
 .dataLarge {
-
     text-align: center;
 
     @include responsive(md) {
@@ -127,9 +112,6 @@
     @include flex(space-between, center, row);
     width: 15rem;
     padding-top: 5px;
-
-
-
     text-align: center;
 
     @include responsive(md) {
@@ -147,14 +129,12 @@
     font-weight: 500;
 }
 
-
 .block {
     display: none;
 }
 
 .info {
     @include flex(space-between, flex-start, column);
-
 }
 
 .largeSection {
@@ -177,5 +157,4 @@
 
 .smallPrice {
     font-size: 1.4rem;
-
 }
