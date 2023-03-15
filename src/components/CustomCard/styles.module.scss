@@ -31,6 +31,8 @@
 .containerSmall {
     @include flex(flex-start, center, column);
     padding-top: 1rem;
+    @include flex(flex-start, center, column);
+    padding-top: 1rem;
     width: 16.5rem;
     height: 25.8rem;
     background-color: $white;
@@ -57,6 +59,7 @@
 
 .imgSmall {
     @include flex(space-between, flex-start, column);
+    @include flex(space-between, flex-start, column);
     width: 15.5rem;
     height: 15.5rem;
     object-fit: cover;
@@ -66,8 +69,6 @@
 .description {
     @include flex(flex-start, flex-start, column);
 }
-
-
 
 .titleLarge {
     @include flex(space-between, flex-start, row);
@@ -95,6 +96,7 @@
 
     width: 15rem;
     height: 4rem;
+    height: 4rem;
     overflow: hidden;
 
     font-weight: 500;
@@ -110,6 +112,8 @@
     }
 }
 
+
+
 .dataLarge {
 
     text-align: center;
@@ -123,6 +127,7 @@
     @include flex(space-between, center, row);
     width: 15rem;
     padding-top: 5px;
+
 
 
     text-align: center;
@@ -149,6 +154,7 @@
 
 .info {
     @include flex(space-between, flex-start, column);
+
 }
 
 .largeSection {
