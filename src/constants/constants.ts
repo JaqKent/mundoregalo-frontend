@@ -1,7 +1,7 @@
-import item1 from '~assets/articulo1.jpg';
-import item2 from '~assets/articulo2.jpg';
-import item3 from '~assets/articulo3.jpg';
-import item4 from '~assets/articulo4.jpg';
+import item4 from '~assets/bottomBanner.png';
+import item3 from '~assets/middleBaner1.png';
+import item2 from '~assets/middleBaner2.png';
+import item1 from '~assets/topBaner.png';
 
 export const ITEMS = [
     {

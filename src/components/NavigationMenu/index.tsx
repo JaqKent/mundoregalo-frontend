@@ -1,13 +1,15 @@
 import { useContext } from 'react';
-import { useTransition, animated, config } from 'react-spring';
+import { animated, config, useTransition } from 'react-spring';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
+
+import NavigationItem from './components/NavigationItem';
+import UserBar from './components/UserBar';
+import { DROPDOWN, LOGGED_USER_OPTIONS } from './constants';
+
+import styles from './styles.module.scss';
+
 import UserContext from '~context/UserContext/UserContext';
 import useBreakpoint from '~hooks/useBreakpoint';
-import UserBar from './components/UserBar';
-import NavigationItem from './components/NavigationItem';
-
-import { DROPDOWN, LOGGED_USER_OPTIONS } from './constants';
-import styles from './styles.module.scss';
 
 const ANIMATION_CONFIG = {
     from: { x: -100, opacity: 0 },

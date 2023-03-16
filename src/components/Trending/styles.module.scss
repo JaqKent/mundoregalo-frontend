@@ -7,21 +7,14 @@
     min-width: 35rem;
     height: 32rem;
     margin: 0.5rem;
-
     background-color: $white;
-
-    @include responsive(sm) {
-        height: 30rem;
-    }
 
     .title {
         @include flex(center, center, row);
-
         gap: 0.5rem;
         padding-bottom: 0.5rem;
-
         font-weight: bold;
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
 
     .slider {
@@ -33,7 +26,6 @@
 
         .slideActive {
             display: block;
-
             animation: fade-in 1s;
         }
 
@@ -65,17 +57,13 @@
 
     .arrow {
         padding: 1rem;
-
         color: $primary;
         font-size: 3rem;
-
         cursor: pointer;
-
         opacity: 0.2;
 
         &:hover {
             opacity: 1;
-
             transition: 0.6s;
         }
     }

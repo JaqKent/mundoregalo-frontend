@@ -3,25 +3,26 @@
 @import '~scss/variable';
 
 .image {
-    width: 95vw;
+    width: 100vw;
     height: 20rem;
 
     background-repeat: no-repeat;
     background-size: cover;
 
+    @include responsive(sm) {
+        height: 25rem;
+    }
+
     @include responsive(md) {
-        width: 96vw;
-        height: 28rem;
+        height: 30rem;
     }
 
     @include responsive(lg) {
-        width: 97vw;
         height: 35rem;
     }
 
     @include responsive(xlg) {
-        width: 98vw;
-        height: 45rem;
+        height: 65rem;
     }
 }
 
@@ -34,16 +35,20 @@
 }
 
 .bannerContainer {
-    @include flex(space-between, center, row);
-    gap: 10px;
-    padding: 0.5rem;
+    @include flex(center, center, row);
+    gap: 1.4rem;
 
     .bannerImage {
-        width: 48%;
-        height: 14rem;
+        width: 47%;
+        height: 9rem;
+
+        @include responsive(xs) {
+            width: 50%;
+            height: 10rem;
+        }
 
         @include responsive(md) {
-            width: 50%;
+            width: 49%;
             height: 20rem;
         }
 

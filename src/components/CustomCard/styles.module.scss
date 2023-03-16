@@ -18,11 +18,12 @@
     }
 
     @include responsive(md) {
-        height: 17rem;
+        height: 20rem;
     }
 
     @include responsive(lg) {
         width: 80vw;
+        height: 25rem;
     }
 }
 
@@ -36,8 +37,7 @@
     cursor: pointer;
 
     @include responsive(md) {
-        width: 19rem;
-        height: 22rem;
+        width: 21rem;
     }
 }
 
@@ -46,10 +46,6 @@
     width: 10.6rem;
     height: 10.6rem;
     object-fit: fill;
-
-    @include responsive(md) {
-        padding-left: 2rem;
-    }
 }
 
 .imgSmall {
@@ -157,4 +153,5 @@
 
 .smallPrice {
     font-size: 1.4rem;
+    font-weight: 800;
 }

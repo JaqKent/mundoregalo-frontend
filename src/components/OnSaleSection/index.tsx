@@ -25,7 +25,7 @@ function OnSaleSection() {
 
     return (
         <div className={styles.container}>
-            <h2>Oferta Del Dia</h2>
+            <p className={styles.onSale}>Oferta Del Dia</p>
             <div className={styles.product}>
                 {slicedData.map((product) => (
                     <CustomCard
