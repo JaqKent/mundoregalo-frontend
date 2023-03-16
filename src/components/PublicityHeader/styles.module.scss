@@ -10,22 +10,18 @@
     background-size: cover;
 
     @include responsive(sm) {
-
         height: 25rem;
     }
 
     @include responsive(md) {
-
         height: 30rem;
     }
 
     @include responsive(lg) {
-
         height: 35rem;
     }
 
     @include responsive(xlg) {
-
         height: 65rem;
     }
 }
@@ -42,7 +38,6 @@
     @include flex(center, center, row);
     gap: 1.4rem;
 
-
     .bannerImage {
         width: 47%;
         height: 9rem;
@@ -58,7 +53,6 @@
         }
 
         @include responsive(lg) {
-
             height: 30rem;
         }
     }

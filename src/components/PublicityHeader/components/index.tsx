@@ -4,14 +4,15 @@ interface Props {
     image: string;
     text1: string;
     text2?: string;
+    textInfo?: boolean;
 }
-function InsideInfo({ image, text1, text2 }: Props) {
+function InsideInfo({ image, text1, text2, textInfo }: Props) {
     return (
         <div className={styles.iconsSection}>
             <img className={styles.icon} src={image} alt="" />
             <div className={styles.text}>
                 <h2>{text1}</h2>
-                <p>{text2}</p>
+                {textInfo && <p>{text2}</p>}
             </div>
         </div>
     );
@@ -20,5 +21,6 @@ function InsideInfo({ image, text1, text2 }: Props) {
 export default InsideInfo;
 
 InsideInfo.defaultProps = {
-    text2: '',
+    text2: undefined,
+    textInfo: false,
 };
