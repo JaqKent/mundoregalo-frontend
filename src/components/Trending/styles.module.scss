@@ -10,9 +10,7 @@
 
     background-color: $white;
 
-    @include responsive(sm) {
-        height: 30rem;
-    }
+
 
     .title {
         @include flex(center, center, row);
@@ -21,7 +19,7 @@
         padding-bottom: 0.5rem;
 
         font-weight: bold;
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
 
     .slider {

@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
+import InsideInfo from './components';
 import { BANNER, SERVICES } from './constants';
 
 import styles from './styles.module.scss';
 
 import Slider from '~components/Slider';
-import InsideInfo from './components';
 import { ITEMS } from '~constants/constants';
 
 function PublicityHeader() {
@@ -27,7 +27,6 @@ function PublicityHeader() {
                         key={service.id}
                         image={service.image}
                         text1={service.text1}
-                        text2={service.text2}
                     />
                 ))}
             </div>

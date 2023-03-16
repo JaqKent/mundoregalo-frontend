@@ -5,42 +5,16 @@
 .container {
     @include flex(space-between, center, row);
     background-color: $white;
-    margin: 0.5rem;
+
 
     .img {
+        width: 100%;
         height: 10rem;
-        width: 10rem;
-        @include responsive(md) {
-            height: 15rem;
-            width: 25rem;
-        }
+
         @include responsive(lg) {
-            height: 20rem;
-            width: 35rem;
+            height: 22em;
         }
-        @include responsive(xlg) {
-            height: 25rem;
-            width: 45rem;
-        }
-    }
-    .text {
-        @include flex(center, center, row);
-        p {
-            font-size: 2rem;
-            font-weight: bold;
-            padding-left: 0.5rem;
-            word-wrap: break-word;
 
-            @include responsive(lg) {
-                font-size: 3rem;
-                font-weight: bold;
-                padding-left: 0.5rem;
-            }
-
-            @include responsive(xlg) {
-                font-size: 4rem;
-                font-weight: bold;
-            }
-        }
     }
+
 }

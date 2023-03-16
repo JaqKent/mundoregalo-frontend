@@ -1,16 +1,18 @@
 import { useContext } from 'react';
 import { faBars, faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+import styles from './styles.module.scss';
+
 import Logo from '~assets/logoBlanco.png';
 import UserContext from '~context/UserContext/UserContext';
-import styles from './styles.module.scss';
 
 interface Props {
     toggleNavbar: () => void;
 }
 
 function MainBar({ toggleNavbar }: Props) {
-    const SIZE = 30;
+    const SIZE = 28;
 
     const { isLoggedIn } = useContext(UserContext);
 

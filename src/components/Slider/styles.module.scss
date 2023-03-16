@@ -39,25 +39,29 @@
     .miniatures {
         @include flex(center, center, column);
         background-color: $white;
-        top: 29rem;
+        top: 27rem;
         width: 15rem;
         height: 3.2rem;
         border-radius: 50px;
         opacity: 0.5;
         position: absolute;
 
+        @include responsive(sm) {
+            top: 31.5rem;
+        }
+
         @include responsive(md) {
             height: 3.5rem;
-            top: 36rem;
+            top: 36.5rem;
             width: 18rem;
         }
 
         @include responsive(lg) {
-            top: 44rem;
+            top: 41rem;
         }
 
         @include responsive(xlg) {
-            top: 54rem;
+            top: 70rem;
         }
 
         &:hover {
