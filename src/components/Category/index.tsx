@@ -1,4 +1,5 @@
 import { CATEGORY } from './constanst';
+
 import styles from './styles.module.scss';
 
 function CategorySection() {
@@ -16,6 +17,7 @@ function CategorySection() {
                         alt={item.name}
                         key={item.id}
                         onClick={handleCategory}
+                        onKeyDown={handleCategory}
                     />
                 ))}
             </div>

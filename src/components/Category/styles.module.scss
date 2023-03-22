@@ -9,8 +9,7 @@
 
     .title {
         @include flex(space-around, center, Row);
-        font-size: 2rem;
-        font-weight: bold;
+        font-size: 1.8rem;
         padding: 1rem;
     }
 
@@ -23,6 +22,11 @@
             cursor: pointer;
             height: 5rem;
             width: 5rem;
+
+            @include responsive(xs) {
+                height: 6rem;
+                width: 6rem;
+            }
 
             &:hover {
                 transition-duration: 0.7s;
