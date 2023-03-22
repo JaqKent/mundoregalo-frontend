@@ -36,7 +36,8 @@
 
 .bannerContainer {
     @include flex(center, center, row);
-    gap: 1.4rem;
+    gap: 0.4rem;
+    margin: 0.5rem;
 
     .bannerImage {
         width: 47%;

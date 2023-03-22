@@ -6,15 +6,14 @@
     @include flex(flex-start, center, row);
     gap: 1rem;
     background-color: $white;
-    width: 37.5rem;
-    min-height: 11.2rem;
+    min-width: 35.5rem;
+    height: 10.8rem;
     padding-left: 1rem;
     border: 2px solid $gray;
     cursor: pointer;
 
     @include responsive(xs) {
         min-width: 40rem;
-        height: 17rem;
     }
 
     @include responsive(md) {
@@ -23,13 +22,13 @@
 
     @include responsive(lg) {
         width: 80vw;
-        height: 25rem;
+        height: 20rem;
     }
 }
 
 .containerSmall {
-    @include flex(flex-start, center, column);
-    padding-top: 1rem;
+    @include flex(space-between, center, column);
+    padding-top: 0.5rem;
     width: 16.5rem;
     height: 25.8rem;
     background-color: $white;
@@ -55,14 +54,19 @@
     object-fit: cover;
 }
 
-.description {
+.largeDescription {
     @include flex(flex-start, flex-start, column);
+}
+
+.smallDescription {
+    @include flex(flex-start, flex-start, column);
+    gap: 1.4rem;
 }
 
 .titleLarge {
     @include flex(space-between, flex-start, row);
     width: 19rem;
-    height: 7rem;
+    height: 5.5rem;
     overflow: hidden;
     font-weight: 500;
     font-size: 1.4rem;

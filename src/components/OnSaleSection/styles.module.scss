@@ -9,6 +9,8 @@
     margin: 0.5rem;
 
     .onSale {
+        @include flex(center, center, row);
+        gap: 0.5rem;
         font-size: 1.8rem;
         font-weight: bold;
         margin: 0.5rem;
@@ -21,29 +23,15 @@
 
     .button {
         @include flex(center, center, row);
-        background-color: $gray;
-        border: 2px solid $black;
         cursor: pointer;
-        font-size: 14px;
-        font-weight: bold;
-        margin: 4px;
-        width: 88vw;
+        font-size: 1.2rem;
         padding: 5px;
+        width: 25rem;
 
-        @include responsive(sm) {
-            width: 70vw;
-        }
 
-        @include responsive(md) {
-            width: 89vw;
-        }
+    }
 
-        @include responsive(lg) {
-            width: 79vw;
-        }
-
-        @include responsive(xlg) {
-            width: 80vw;
-        }
+    .icon {
+        width: 2rem;
     }
 }
