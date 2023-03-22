@@ -4,17 +4,17 @@
 
 .container {
     @include flex(center, center, column);
-    min-width: 35rem;
+    background-color: $white;
     height: 32rem;
     margin: 0.5rem;
-    background-color: $white;
+    min-width: 35rem;
 
     .title {
         @include flex(center, center, row);
+        font-size: 1.8rem;
+        font-weight: bold;
         gap: 0.5rem;
         padding-bottom: 0.5rem;
-        font-weight: bold;
-        font-size: 1.8rem;
     }
 
     .slider {
@@ -56,11 +56,11 @@
     }
 
     .arrow {
-        padding: 1rem;
         color: $primary;
-        font-size: 3rem;
         cursor: pointer;
+        font-size: 3rem;
         opacity: 0.2;
+        padding: 1rem;
 
         &:hover {
             opacity: 1;
