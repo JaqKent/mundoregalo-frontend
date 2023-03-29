@@ -26,11 +26,7 @@ function OnSaleSection() {
         <div className={styles.container}>
             <p className={styles.onSale}>
                 Ofertas
-                <img
-                    className={styles.icon}
-                    src={sale}
-                    alt="ofertas-icon"
-                />{' '}
+                <img className={styles.icon} src={sale} alt="ofertas-icon" />
             </p>
             <div className={styles.product}>
                 {slicedData.map((product) => (
