@@ -4,17 +4,16 @@
 
 .containerLarge {
     @include flex(flex-start, center, row);
-    gap: 1rem;
     background-color: $white;
-    width: 37.5rem;
-    min-height: 11.2rem;
-    padding-left: 1rem;
     border: 2px solid $gray;
     cursor: pointer;
+    gap: 1rem;
+    height: 10.8rem;
+    min-width: 35.5rem;
+    padding-left: 1rem;
 
     @include responsive(xs) {
         min-width: 40rem;
-        height: 17rem;
     }
 
     @include responsive(md) {
@@ -23,18 +22,18 @@
 
     @include responsive(lg) {
         width: 80vw;
-        height: 25rem;
+        height: 20rem;
     }
 }
 
 .containerSmall {
-    @include flex(flex-start, center, column);
-    padding-top: 1rem;
-    width: 16.5rem;
-    height: 25.8rem;
+    @include flex(space-between, center, column);
     background-color: $white;
     border: 2px solid $gray;
     cursor: pointer;
+    height: 25.8rem;
+    padding-top: 0.5rem;
+    width: 16.5rem;
 
     @include responsive(md) {
         width: 21rem;
@@ -43,31 +42,36 @@
 
 .imgLarge {
     @include flex(center, center, row);
-    width: 10.6rem;
     height: 10.6rem;
     object-fit: fill;
+    width: 10.6rem;
 }
 
 .imgSmall {
     @include flex(space-between, flex-start, column);
-    width: 15.5rem;
     height: 15.5rem;
     object-fit: cover;
+    width: 15.5rem;
 }
 
-.description {
+.largeDescription {
     @include flex(flex-start, flex-start, column);
+}
+
+.smallDescription {
+    @include flex(flex-start, flex-start, column);
+    gap: 1.4rem;
 }
 
 .titleLarge {
     @include flex(space-between, flex-start, row);
-    width: 19rem;
-    height: 7rem;
-    overflow: hidden;
-    font-weight: 500;
     font-size: 1.4rem;
+    font-weight: 500;
+    height: 5.5rem;
+    overflow: hidden;
     text-align: flex-start;
     text-overflow: ellipsis;
+    width: 19rem;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
 
@@ -79,13 +83,13 @@
 
 .titleSmall {
     display: -webkit-box;
-    width: 15rem;
+    font-size: 1.4rem;
+    font-weight: 500;
     height: 4rem;
     overflow: hidden;
-    font-weight: 500;
-    font-size: 1.4rem;
     text-align: center;
     text-overflow: ellipsis;
+    width: 15rem;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
 
@@ -106,9 +110,9 @@
 
 .dataSmall {
     @include flex(space-between, center, row);
-    width: 15rem;
     padding-top: 5px;
     text-align: center;
+    width: 15rem;
 
     @include responsive(md) {
         font-size: 1.3rem;

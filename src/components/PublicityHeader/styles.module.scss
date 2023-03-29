@@ -3,11 +3,10 @@
 @import '~scss/variable';
 
 .image {
-    width: 100vw;
-    height: 20rem;
-
     background-repeat: no-repeat;
     background-size: cover;
+    height: 20rem;
+    width: 100vw;
 
     @include responsive(sm) {
         height: 25rem;
@@ -36,20 +35,16 @@
 
 .bannerContainer {
     @include flex(center, center, row);
-    gap: 1.4rem;
+    gap: 0.4rem;
+    margin: 0.5rem;
 
     .bannerImage {
-        width: 47%;
-        height: 9rem;
-
-        @include responsive(xs) {
-            width: 50%;
-            height: 10rem;
-        }
+        height: 10rem;
+        width: 50%;
 
         @include responsive(md) {
-            width: 49%;
             height: 20rem;
+            width: 49%;
         }
 
         @include responsive(lg) {

@@ -1,13 +1,12 @@
 /* eslint-disable no-unused-vars */
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { PRODUCTS } from './constants';
 
 import styles from './styles.module.scss';
 
+import sale from '~assets/etiqueta.svg';
 import CustomCard from '~components/CustomCard';
 
 function OnSaleSection() {
@@ -25,7 +24,10 @@ function OnSaleSection() {
 
     return (
         <div className={styles.container}>
-            <p className={styles.onSale}>Oferta Del Dia</p>
+            <p className={styles.onSale}>
+                Ofertas
+                <img className={styles.icon} src={sale} alt="ofertas-icon" />
+            </p>
             <div className={styles.product}>
                 {slicedData.map((product) => (
                     <CustomCard
@@ -46,14 +48,7 @@ function OnSaleSection() {
                 tabIndex={0}
                 onClick={viewMore ? handleOfert : handleView}
             >
-                {viewMore ? (
-                    <span>Ir a Ofertas</span>
-                ) : (
-                    <span>
-                        {' '}
-                        Mostar Mas <FontAwesomeIcon icon={faChevronDown} />
-                    </span>
-                )}
+                {viewMore ? <span>Ir a Ofertas</span> : <span>Ver Mas</span>}
             </div>
         </div>
     );

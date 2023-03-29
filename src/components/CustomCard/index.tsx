@@ -1,7 +1,9 @@
-import { faDollarSign, faStar } from '@fortawesome/free-solid-svg-icons';
+import { faDollarSign } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import styles from './styles.module.scss';
+
+import star from '~assets/star.svg';
 
 interface Props {
     image: string;
@@ -35,7 +37,11 @@ function CustomCard({
                     alt={name}
                 />
             </div>
-            <div className={styles.description}>
+            <div
+                className={
+                    small ? styles.smallDescription : styles.largeDescription
+                }
+            >
                 <div className={small ? '' : styles.largeSection}>
                     <div
                         className={
@@ -63,7 +69,7 @@ function CustomCard({
                                         : styles.largeRating
                                 }
                             >
-                                <FontAwesomeIcon icon={faStar} />
+                                <img src={star} alt="estrella-icon" />
                                 {stars}
                             </span>
                             <span
