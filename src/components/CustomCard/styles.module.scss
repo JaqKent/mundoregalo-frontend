@@ -60,7 +60,8 @@
 
 .smallDescription {
     @include flex(flex-start, flex-start, column);
-    gap: 1.4rem;
+    gap: .7rem;
+    padding-bottom: 1.2rem;
 }
 
 .titleLarge {
@@ -135,6 +136,7 @@
 
 .info {
     @include flex(space-between, flex-start, column);
+
 }
 
 .largeSection {
@@ -158,4 +160,5 @@
 .smallPrice {
     font-size: 1.4rem;
     font-weight: 800;
+
 }
