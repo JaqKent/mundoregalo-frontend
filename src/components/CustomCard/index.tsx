@@ -71,7 +71,8 @@ function CustomCard({
                             >
                                 <img src={star} alt="estrella-icon" />
                                 {stars}
-                            </span>
+                            </span>{' '}
+                            <span>&nbsp;</span>
                             <span
                                 className={
                                     small
