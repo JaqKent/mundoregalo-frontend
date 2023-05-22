@@ -15,7 +15,7 @@ export const ROUTES = [
     },
     {
         id: 3,
-        path: '/productPage',
+        path: '/productpage',
         element: <ProductPage />,
     },
 ];
