@@ -1,4 +1,5 @@
 import { useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { faBars, faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -13,8 +14,10 @@ interface Props {
 
 function MainBar({ toggleNavbar }: Props) {
     const SIZE = 28;
+    const navigate = useNavigate();
 
     const { isLoggedIn } = useContext(UserContext);
+    const handleHome = () => navigate('/');
 
     return (
         <div className={styles.container}>
@@ -30,7 +33,13 @@ function MainBar({ toggleNavbar }: Props) {
                     className={styles.icon}
                 />
             </button>
-            <img src={Logo} alt="Mundo Regalo" className={styles.logoIcon} />
+            <img
+                src={Logo}
+                alt="Mundo Regalo"
+                className={styles.logoIcon}
+                onClick={handleHome}
+                onKeyDown={handleHome}
+            />
             <div>
                 {isLoggedIn && (
                     <img

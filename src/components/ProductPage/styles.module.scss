@@ -1,0 +1,157 @@
+@import '~scss/colors';
+@import '~scss/mixins';
+@import '~scss/variable';
+
+
+.container {
+    @include flex(center, center, column);
+    background-color: $white;
+    gap: 2rem;
+    overflow-y: auto;
+
+}
+
+.title {
+    @include flex(space-between, flex-start, row);
+    font-size: 1.4rem;
+    font-weight: 400;
+    width: 38.5rem;
+    padding-top: 2.6rem;
+
+    .text {
+        width: 27.4rem;
+    }
+
+    .stars {
+        font-size: 1.28rem;
+
+    }
+
+    .rating {
+        padding-left: 0.4rem;
+    }
+}
+
+.image {
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 27.6rem;
+    width: 38.5rem;
+
+}
+
+.slider {
+    height: 27.6rem;
+    width: 38.5rem;
+}
+
+.miniatures {
+
+    top: 45rem;
+    width: 15rem;
+    height: 3.2rem;
+    border-radius: 50px;
+    position: absolute;
+
+    &:hover {
+        opacity: 0.8;
+    }
+
+    ul {
+        @include flex(center, center, row);
+        margin: 0.5rem;
+        padding: 0 1em 0 0.5em;
+    }
+
+    li {
+        @include background-image('~assets/selector.png');
+        background-position: left center;
+        background-repeat: no-repeat;
+        background-size: 5px;
+        list-style: none;
+        margin: 0.5em;
+    }
+
+    .mini {
+        @include flex(center, center, row);
+        background-position: center;
+        background-size: cover;
+        cursor: pointer;
+        height: 0.5em;
+        transition-duration: 0.2s;
+        width: 0.5em;
+
+        &:hover {
+            opacity: 0.5;
+        }
+
+        &:active {
+            filter: opacity(0.3) drop-shadow(0 0 0 $selectedblue);
+        }
+    }
+
+    .miniActive {
+        @include flex(center, center, row);
+        background-position: center;
+        background-size: cover;
+        cursor: pointer;
+        filter: opacity(0.5) drop-shadow(0 0 0 $selectedblue);
+        height: 0.5em;
+        transition-duration: 0.2s;
+        width: 0.5em;
+    }
+
+
+
+
+}
+
+.price {
+    @include flex(center, flex-start, column);
+    min-width: 38.5rem;
+    height: 6rem;
+    gap: 1rem;
+
+    h4 {
+        font-size: 1.4rem;
+        font-weight: 600;
+        padding-right: 0.5rem;
+    }
+
+    .priceNumber {
+        @include flex(flex-start, center, row);
+        height: 2rem;
+
+        h3 {
+            font-size: 2rem;
+            font-weight: 400;
+        }
+
+    }
+
+    .delivery {
+        @include flex(flex-start, center, row);
+        height: 2rem;
+
+        p {
+            font-size: 1.48rem;
+            font-weight: 300;
+        }
+    }
+}
+
+.buttons {
+    @include flex(flex-start, center, column);
+
+
+    .buttonCart {
+        font-size: 1.6rem;
+        font-weight: 400;
+        padding-bottom: 0.4rem;
+    }
+
+    .buttonNow {
+        font-size: 1.6rem;
+        font-weight: 400;
+    }
+}

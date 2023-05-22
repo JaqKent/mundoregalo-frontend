@@ -3,11 +3,12 @@ import { Rating } from 'react-simple-star-rating';
 
 interface Props {
     initialValue: number;
-    onClick: () => void;
+    onClick?: () => void;
     readonly?: boolean;
+    size: number;
 }
 
-function StarRating({ initialValue, readonly, onClick }: Props) {
+function StarRating({ initialValue, readonly, onClick, size }: Props) {
     const [ratingValue, setRatingValue] = useState(0);
 
     const handleRating = (rate: number) => {
@@ -18,6 +19,7 @@ function StarRating({ initialValue, readonly, onClick }: Props) {
             onClick={onClick}
             initialValue={initialValue}
             readonly={readonly}
+            size={size}
         />
     );
 }

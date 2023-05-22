@@ -10,13 +10,25 @@ import styles from './styles.module.scss';
 
 interface Props {
     slides: { id: number; img: string }[];
-    className?: string;
+    className: string;
+    minClassName: string;
     auto?: boolean;
     hide?: boolean;
+    miniActive: string;
+    mini: string;
     setAuto: (auto: boolean) => void;
 }
 
-function Carousel({ slides, className, auto, setAuto, hide }: Props) {
+function Carousel({
+    slides,
+    className,
+    auto,
+    setAuto,
+    hide,
+    minClassName,
+    miniActive,
+    mini,
+}: Props) {
     const [current, setCurrent] = useState(0);
 
     const slideLength = slides.length;
@@ -94,16 +106,14 @@ function Carousel({ slides, className, auto, setAuto, hide }: Props) {
                     />
                 )}
                 {slides.length >= 2 && (
-                    <div className={styles.miniatures}>
+                    <div className={minClassName}>
                         <ul>
                             {slides.map((slide, index) => (
                                 <li
                                     tabIndex={slide.id - 1}
                                     key={slide.id}
                                     className={
-                                        index === current
-                                            ? styles.miniActive
-                                            : styles.mini
+                                        index === current ? miniActive : mini
                                     }
                                     onClick={() => setCurrent(index)}
                                     onKeyDown={() => setCurrent(index)}

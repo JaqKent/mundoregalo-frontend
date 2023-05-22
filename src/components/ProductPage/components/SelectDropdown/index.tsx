@@ -1,4 +1,7 @@
+/* eslint-disable no-param-reassign */
 import React, { useState } from 'react';
+
+import { OPTIONS } from '../constants';
 
 import styles from './styles.module.scss';
 
@@ -11,24 +14,14 @@ function SelectDropdown() {
     };
     return (
         <div className={styles.container}>
+            <span className={styles.colorText}>Color:</span>
             <select onChange={selectChange} className={styles.select}>
-                <option selected disabled>
-                    Color:
-                </option>
-                <option value="blue">
-                    <div>
-                        <div>Color:</div>
-                        <div>Blue</div>
-                    </div>
-                </option>
-                <option value="red">Red</option>
-                <option value="green">Green</option>
-                <option value="yellow">Yellow</option>
-                <option value="kindacode.com">Kindacode.com</option>
+                {OPTIONS.map((item) => (
+                    <option key={item.id} value={item.value}>
+                        {item.text}
+                    </option>
+                ))}
             </select>
-            {selectedOption && (
-                <h2 className={styles.result}>{selectedOption}</h2>
-            )}
         </div>
     );
 }

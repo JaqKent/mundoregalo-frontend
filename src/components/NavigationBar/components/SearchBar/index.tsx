@@ -1,6 +1,7 @@
+import { ChangeEvent, useState } from 'react';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { ChangeEvent, useState } from 'react';
+
 import styles from './styles.module.scss';
 
 function SearchBar() {
