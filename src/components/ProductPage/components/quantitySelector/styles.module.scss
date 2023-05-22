@@ -29,6 +29,15 @@
     background-color: $lightgray;
     border: none;
 
+    &:hover {
+        cursor: pointer;
+        background-color: $gray;
+    }
+
+    &:active {
+        background-color: darken($gray, 5);
+    }
+
 }
 
 .stock {
