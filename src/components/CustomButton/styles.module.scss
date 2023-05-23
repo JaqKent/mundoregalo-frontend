@@ -8,21 +8,19 @@
 }
 
 .primaryButton {
-    background-color: $primary;
-    border-color: $primary;
+    background-color: $buttonPrimary;
+    border-color: $lightgray;
     border-radius: 4px;
-    color: $white;
     cursor: pointer;
     display: inline-flex;
-    font-weight: bold;
     text-align: center;
 
     &:hover {
-        background-color: lighten($primary, 5);
+        background-color: lighten($buttonPrimary, 5);
     }
 
     &:active {
-        background-color: darken($primary, 10);
+        background-color: darken($buttonPrimary, 10);
     }
 
     &:disabled {
@@ -33,11 +31,10 @@
 
 .secondaryButton {
     background-color: $white;
+    border-color: $buttonPrimary;
     border-radius: 4px;
-    color: $primary;
     cursor: pointer;
     display: inline-flex;
-    font-weight: bold;
     text-align: center;
 
     &:hover {
@@ -45,7 +42,7 @@
     }
 
     &:active {
-        background-color: lighten($primary, 25);
+        background-color: lighten($gray, 25);
     }
 
     &:disabled {
@@ -56,15 +53,10 @@
 
 .big {
     @include flex(center, center, row);
-    border-radius: 4px;
+    border-radius: 1.5rem;
     font-size: 1.2em;
-    height: 4rem;
-    width: 10rem;
-    @include responsive(md) {
-        @include flex(center, center, row);
-        border-radius: 4px;
-        font-size: 1.2em;
-        height: 4rem;
-        width: 30rem;
-    }
+    height: 4.5rem;
+    width: 38.2rem;
+
+
 }

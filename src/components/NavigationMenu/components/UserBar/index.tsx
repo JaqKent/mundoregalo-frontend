@@ -1,6 +1,8 @@
 import { useContext } from 'react';
-import UserContext from '~context/UserContext/UserContext';
+
 import styles from './styles.module.scss';
+
+import UserContext from '~context/UserContext/UserContext';
 
 function UserBar() {
     const { isLoggedIn, setIsLoggedIn } = useContext(UserContext);
@@ -22,9 +24,7 @@ function UserBar() {
                         <p className={styles.username}>Pierre Bernel</p>
                     </>
                 ) : (
-                    <>
-                        <p className={styles.username}>Bienvenido!</p>
-                    </>
+                    <p className={styles.username}>Bienvenido!</p>
                 )}
             </div>
             <button

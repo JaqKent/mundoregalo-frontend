@@ -19,6 +19,9 @@ function PublicityHeader() {
                     setAuto={setAuto}
                     slides={ITEMS}
                     className={styles.image}
+                    minClassName={styles.miniatures}
+                    mini={styles.mini}
+                    miniActive={styles.miniActive}
                 />
             </div>
             <div className={styles.services}>

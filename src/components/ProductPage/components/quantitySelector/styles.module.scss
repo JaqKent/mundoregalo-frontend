@@ -1,0 +1,52 @@
+@import '~scss/colors';
+@import '~scss/mixins';
+@import '~scss/variable';
+
+.container {
+    @include flex(flex-start, center, column);
+}
+
+.selector {
+    @include flex(space-between, center, row);
+    width: 38.2rem;
+    border-radius: 1.5rem;
+    border: 0.15rem solid $lightgray;
+    padding: 0.5rem;
+    height: 4rem;
+
+    p {
+        font-size: 1.6rem;
+        font-weight: 400;
+    }
+}
+
+.button {
+    @include flex(center, center, row);
+    font-size: 2.3rem;
+    border-radius: 50px;
+    height: 3rem;
+    width: 3rem;
+    background-color: $lightgray;
+    border: none;
+
+    &:hover {
+        cursor: pointer;
+        background-color: $gray;
+    }
+
+    &:active {
+        background-color: darken($gray, 5);
+    }
+
+}
+
+.stock {
+    font-size: 1.28rem;
+
+
+    .spanStock {
+        font-size: 1.2rem;
+        color: $gray;
+        padding-left: 0.3rem;
+    }
+}
