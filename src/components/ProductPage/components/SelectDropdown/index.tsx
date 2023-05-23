@@ -1,14 +1,13 @@
-/* eslint-disable no-param-reassign */
-import React, { useState } from 'react';
+import { ChangeEvent, useState } from 'react';
 
 import { OPTIONS } from '../constants';
 
 import styles from './styles.module.scss';
 
 function SelectDropdown() {
-    const [selectedOption, setSelectedOption] = useState<string>();
+    const [selectedOption, setSelectedOption] = useState<string | null>(null);
 
-    const selectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    const selectChange = (event: ChangeEvent<HTMLSelectElement>) => {
         const { value } = event.target;
         setSelectedOption(value);
     };

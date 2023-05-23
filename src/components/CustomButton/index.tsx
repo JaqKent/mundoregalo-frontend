@@ -23,9 +23,9 @@ function CustomButton({
         <div className={className}>
             <button
                 disabled={disabled}
-                className={`${small ? styles.small : styles.big} ${
-                    styles.primaryButton
-                } ${secondary ? styles.secondaryButton : styles.primaryButton}`}
+                className={`${small ? styles.small : styles.big}  ${
+                    secondary ? styles.secondaryButton : styles.primaryButton
+                }`}
                 type={isSubmit ? 'submit' : 'button'}
                 onClick={isSubmit ? undefined : onClick}
             >

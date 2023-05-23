@@ -2,6 +2,8 @@ import { useState } from 'react';
 
 import styles from './styles.module.scss';
 
+import { getFormattedQuantity } from '~constants/utils';
+
 function QuantitySelector() {
     const [quantity, setQuantity] = useState(0);
     const add = () => {
@@ -10,9 +12,7 @@ function QuantitySelector() {
     const subtract = () => {
         setQuantity(quantity - 1);
     };
-    const getFormattedQuantity = () => {
-        return quantity.toString().padStart(2, '0');
-    };
+
     return (
         <div className={styles.container}>
             <div className={styles.stock}>
@@ -23,7 +23,7 @@ function QuantitySelector() {
                 <button type="button" onClick={add} className={styles.button}>
                     +
                 </button>
-                <p>{getFormattedQuantity()}</p>
+                <p>{getFormattedQuantity(quantity)}</p>
 
                 <button
                     type="button"

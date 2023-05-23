@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import { useEffect, useState } from 'react';
 import {
     faChevronLeft,
@@ -8,8 +7,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import styles from './styles.module.scss';
 
+type Slides = { id: number; img: string };
+
 interface Props {
-    slides: { id: number; img: string }[];
+    slides: Slides[];
     className: string;
     minClassName: string;
     auto?: boolean;
