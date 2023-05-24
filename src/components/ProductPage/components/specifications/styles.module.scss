@@ -1,0 +1,62 @@
+@import '~scss/colors';
+@import '~scss/mixins';
+@import '~scss/variable';
+
+.specifications {
+    @include flex (flex-start, flex-start, column);
+    background-color: $white;
+
+}
+
+.specsTitle {
+    border-bottom: 0.1rem solid $gray;
+    min-width: 41.4rem;
+    font-size: 1.4rem;
+    font-weight: 400;
+
+    h3 {
+        padding-left: 1.6rem;
+    }
+}
+
+.specsData {
+    @include flex (space-around, center, row);
+
+
+    p {
+        height: 1.5rem
+    }
+
+    .specsItem {
+        @include flex (flex-start, flex-start, column);
+        padding-left: 1.6rem;
+        font-size: 1.28rem;
+        font-weight: 600;
+        width: 20rem;
+    }
+
+    .specsText {
+        @include flex (flex-start, flex-start, column);
+        font-size: 1.28rem;
+        font-weight: 300;
+        overflow: hidden;
+        text-align: flex-start;
+        text-overflow: ellipsis;
+        width: 19rem;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+
+
+
+    }
+}
+
+.button {
+    @include flex(center, center, row);
+    cursor: pointer;
+    font-size: 1.2rem;
+    padding: 5px;
+    width: 25rem;
+
+
+}
