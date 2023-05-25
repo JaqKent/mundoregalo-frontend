@@ -77,7 +77,7 @@ function ProductPage() {
                     </div>
                 </div>
             </div>
-            <div>
+            <div className={styles.specifications}>
                 <Specifications />
             </div>
         </>

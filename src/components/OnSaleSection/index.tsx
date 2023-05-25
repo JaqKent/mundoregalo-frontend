@@ -49,7 +49,6 @@ function OnSaleSection() {
                 onClick={viewMore ? handleOfert : handleView}
             >
                 {viewMore ? <span>Ir a Ofertas</span> : <span>Ver Mas</span>}
-                <FontAwesomeIcon icon={faChevronDown} />
             </div>
         </div>
     );

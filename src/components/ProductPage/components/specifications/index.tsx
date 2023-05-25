@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { DATA } from './constants';
 
@@ -12,11 +14,11 @@ function Specifications() {
         setViewMore((prevState) => !prevState);
     };
 
-    const INFO = data.slice(0, viewMore ? 8 : 4);
+    const INFO = data.slice(0, viewMore ? 10 : 7);
     return (
         <div className={styles.specifications}>
             <div className={styles.specsTitle}>
-                <h3>Especificacis</h3>
+                <h3>Especificaciones</h3>
             </div>
             <div>
                 {INFO.map((item) => (
@@ -29,9 +31,13 @@ function Specifications() {
                             <p>{item.data5}</p>
                             <p>{item.data6}</p>
                             <p>{item.data7}</p>
-                            <p>{item.data8}</p>
-                            <p>{item.data9}</p>
-                            <p>{item.data10}</p>
+                            {viewMore ? (
+                                <>
+                                    <p>{item.data8}</p>
+                                    <p>{item.data9}</p>
+                                    <p>{item.data10}</p>
+                                </>
+                            ) : null}
                         </div>
                         <div className={styles.specsText} key={item.id}>
                             <p>{item.text1}</p>
@@ -41,23 +47,33 @@ function Specifications() {
                             <p>{item.text5}</p>
                             <p>{item.text6}</p>
                             <p>{item.text7}</p>
-                            <p>{item.text8}</p>
-                            <p>{item.text9}</p>
-                            <p>{item.text10}</p>
+                            {viewMore ? (
+                                <>
+                                    <p>{item.text8}</p>
+                                    <p>{item.text9}</p>
+                                    <p>{item.text10}</p>
+                                </>
+                            ) : null}
                         </div>
                     </div>
                 ))}
                 <div
                     className={styles.button}
-                    onKeyDown={viewMore ? undefined : handleView}
+                    onKeyDown={handleView}
                     role="button"
                     tabIndex={0}
-                    onClick={viewMore ? undefined : handleView}
+                    onClick={handleView}
                 >
                     {viewMore ? (
-                        <span>Ir a Ofertas</span>
+                        <>
+                            <span>Ver Menos</span>
+                            <FontAwesomeIcon icon={faChevronUp} />
+                        </>
                     ) : (
-                        <span>Ver Mas</span>
+                        <>
+                            <span>Ver Más</span>
+                            <FontAwesomeIcon icon={faChevronDown} />
+                        </>
                     )}
                 </div>
             </div>

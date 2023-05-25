@@ -10,7 +10,7 @@
 
 .specsTitle {
     border-bottom: 0.1rem solid $gray;
-    min-width: 41.4rem;
+    min-width: 100%;
     font-size: 1.4rem;
     font-weight: 400;
 
@@ -21,10 +21,12 @@
 
 .specsData {
     @include flex (space-around, center, row);
+    margin-bottom: 1.6rem;
 
 
     p {
-        height: 1.5rem
+        height: 2.1rem;
+
     }
 
     .specsItem {
@@ -42,9 +44,10 @@
         overflow: hidden;
         text-align: flex-start;
         text-overflow: ellipsis;
-        width: 19rem;
+        width: 20rem;
         -webkit-line-clamp: 2;
         -webkit-box-orient: vertical;
+
 
 
 
@@ -52,11 +55,13 @@
 }
 
 .button {
-    @include flex(center, center, row);
+    @include flex(flex-start, center, row);
     cursor: pointer;
     font-size: 1.2rem;
-    padding: 5px;
+    font-weight: 600;
+    padding: .5rem 1.6rem;
     width: 25rem;
+    gap: 0.7rem;
 
 
 }
