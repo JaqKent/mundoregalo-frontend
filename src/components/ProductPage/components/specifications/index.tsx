@@ -14,46 +14,21 @@ function Specifications() {
         setViewMore((prevState) => !prevState);
     };
 
-    const INFO = data.slice(0, viewMore ? 10 : 7);
+    const output = viewMore ? data : data.slice(0, 7);
+
     return (
         <div className={styles.specifications}>
             <div className={styles.specsTitle}>
                 <h3>Especificaciones</h3>
             </div>
             <div>
-                {INFO.map((item) => (
+                {output.map((item) => (
                     <div className={styles.specsData} key={item.id}>
                         <div className={styles.specsItem}>
-                            <p>{item.data1}</p>
-                            <p>{item.data2}</p>
-                            <p>{item.data3}</p>
-                            <p>{item.data4}</p>
-                            <p>{item.data5}</p>
-                            <p>{item.data6}</p>
-                            <p>{item.data7}</p>
-                            {viewMore ? (
-                                <>
-                                    <p>{item.data8}</p>
-                                    <p>{item.data9}</p>
-                                    <p>{item.data10}</p>
-                                </>
-                            ) : null}
+                            <p>{item.key}</p>
                         </div>
                         <div className={styles.specsText} key={item.id}>
-                            <p>{item.text1}</p>
-                            <p>{item.text2}</p>
-                            <p>{item.text3}</p>
-                            <p>{item.text4}</p>
-                            <p>{item.text5}</p>
-                            <p>{item.text6}</p>
-                            <p>{item.text7}</p>
-                            {viewMore ? (
-                                <>
-                                    <p>{item.text8}</p>
-                                    <p>{item.text9}</p>
-                                    <p>{item.text10}</p>
-                                </>
-                            ) : null}
+                            <p>{item.value}</p>
                         </div>
                     </div>
                 ))}
