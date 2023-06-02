@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import QuantitySelector from './components/quantitySelector';
+import QuantitySelector from './components/QuantitySelector';
 import SelectDropdown from './components/SelectDropdown';
 import StarRating from './components/StarRating';
 
