@@ -1,5 +1,10 @@
 import { useState } from 'react';
-import { faThumbsDown, faThumbsUp } from '@fortawesome/free-solid-svg-icons';
+import {
+    faChevronDown,
+    faChevronUp,
+    faThumbsDown,
+    faThumbsUp,
+} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import StarRating from '../StarRating';
@@ -9,6 +14,14 @@ import { COMMENTS } from './constant';
 import styles from './styles.module.scss';
 
 function ProductComments() {
+    const [data, setData] = useState(COMMENTS);
+    const [viewMore, setViewMore] = useState(false);
+
+    const handleView = () => {
+        setViewMore((prevState) => !prevState);
+    };
+
+    const output = viewMore ? data : data.slice(0, 1);
     return (
         <div className={styles.container}>
             <div className={styles.title}>
@@ -19,7 +32,7 @@ function ProductComments() {
                 </div>
             </div>
             <div className={styles.commentbox}>
-                {COMMENTS.map((item) => (
+                {output.map((item) => (
                     <div key={item.id}>
                         <div className={styles.user}>
                             <img
@@ -58,6 +71,25 @@ function ProductComments() {
                         </div>
                     </div>
                 ))}
+                <div
+                    className={styles.button}
+                    onKeyDown={handleView}
+                    role="button"
+                    tabIndex={0}
+                    onClick={handleView}
+                >
+                    {viewMore ? (
+                        <>
+                            <span>Ver Menos</span>
+                            <FontAwesomeIcon icon={faChevronUp} />
+                        </>
+                    ) : (
+                        <>
+                            <span>Ver Más</span>
+                            <FontAwesomeIcon icon={faChevronDown} />
+                        </>
+                    )}
+                </div>
             </div>
         </div>
     );

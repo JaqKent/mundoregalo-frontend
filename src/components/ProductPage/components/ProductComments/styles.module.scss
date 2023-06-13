@@ -3,8 +3,10 @@
 @import '~scss/variable';
 
 .container {
+
     background-color: $white;
     padding: 1.1rem;
+
 
     .title {
         @include flex(space-between, center, row);
@@ -28,6 +30,12 @@
         width: 37.6rem;
         border-radius: 0.5rem;
         padding: 0.7rem;
+    }
+
+    .commentText {
+        font-size: 1.2rem;
+        font-weight: 300;
+        padding-bottom: 1.9rem;
     }
 
     .user {
@@ -118,5 +126,12 @@
         border-radius: 1.5rem;
         height: 2.2rem;
         width: 3rem;
+    }
+
+    .button {
+        padding-top: 1.2rem;
+        font-size: 1.2rem;
+        font-weight: 600;
+        cursor: pointer;
     }
 }

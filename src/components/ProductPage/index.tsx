@@ -76,8 +76,11 @@ function ProductPage() {
                         />
                     </div>
                 </div>
+                <div>
+                    <ProductComments />
+                </div>
             </div>
-            <ProductComments />
+
             <div />
         </>
     );
