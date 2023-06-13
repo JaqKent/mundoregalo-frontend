@@ -1,3 +1,122 @@
 @import '~scss/colors';
 @import '~scss/mixins';
 @import '~scss/variable';
+
+.container {
+    background-color: $white;
+    padding: 1.1rem;
+
+    .title {
+        @include flex(space-between, center, row);
+        font-size: 1.4rem;
+        font-weight: 400;
+    }
+
+    .stars {
+        @include flex(center, center, row);
+
+        .rating {
+            padding-left: 0.57rem;
+            font-size: 1.28rem;
+            font-weight: 300;
+        }
+    }
+
+    .commentbox {
+        border: 0.1rem solid $lightgray;
+        height: auto;
+        width: 37.6rem;
+        border-radius: 0.5rem;
+        padding: 0.7rem;
+    }
+
+    .user {
+        @include flex(flex-start, center, row);
+        gap: 0.8rem;
+
+
+        .username {
+            font-weight: 400;
+            font-size: 1.4rem;
+
+        }
+
+        .img {
+            height: 2.8rem;
+            width: 2.8rem;
+            border-radius: 50%;
+        }
+
+
+    }
+
+    .thumbsUp {
+        color: $lightgray;
+        height: 1.59rem;
+        width: 1.59;
+
+        &:hover {
+            cursor: pointer;
+            color: $gray;
+        }
+
+        &:active {
+            color: darken($thumbsup, 5);
+        }
+    }
+
+    .thumbsUpClicked {
+        color: $thumbsup;
+        height: 1.59rem;
+        width: 1.59;
+
+
+    }
+
+    .thumbsDown {
+        color: $lightgray;
+        height: 1.59rem;
+        width: 1.59;
+
+        &:hover {
+            cursor: pointer;
+            color: $gray;
+        }
+
+        &:active {
+            color: darken($red, 5);
+        }
+    }
+
+    .thumbsDownClicked {
+        color: $red;
+        height: 1.59rem;
+        width: 1.59;
+
+
+    }
+
+    .like {
+        @include flex(flex-start, center, row);
+        gap: 0.8rem;
+    }
+
+    .help {
+        @include flex(flex-start, center, row);
+        gap: 0.8rem;
+        height: 2.2rem;
+        border: 0.1rem solid $lightgray;
+        border-radius: 1.5rem;
+        font-size: 1rem;
+        font-weight: 400;
+        padding: 0 0.3rem 0 0.3rem;
+    }
+
+    .dislike {
+        @include flex(center, center, row);
+        border: 0.1rem solid $lightgray;
+        border-radius: 1.5rem;
+        height: 2.2rem;
+        width: 3rem;
+    }
+}
