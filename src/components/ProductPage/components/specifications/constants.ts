@@ -18,3 +18,11 @@ export const DATA = [
     { id: 9, key: 'loren ipsum', value: 'loren ipsum' },
     { id: 10, key: 'loren ipsum', value: 'loren ipsum' },
 ];
+
+export const DESCRIPTION = [
+    {
+        id: 1,
+        description:
+            'Exercitation tempor et laborum pariatur sunt sit commodo ad non ipsum irure sunt dolor. Quis eiusmod consectetur ad dolore sunt tempor id consectetur incididunt aliqua velit aute esse. Aliquip exercitation cupidatat aute in duis culpa aliquip aliquip magna qui. Sunt dolore sint cupidatat nisi ut adipisicing. Exercitation nostrud magna et aute esse ad culpa sit. Do excepteur consequat minim non elit aliqua velit. Tempor voluptate minim pariatur elit anim duis consectetur non.',
+    },
+];

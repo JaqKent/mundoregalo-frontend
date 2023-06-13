@@ -2,9 +2,14 @@
 @import '~scss/mixins';
 @import '~scss/variable';
 
+
+
+
+
 .specifications {
     @include flex (flex-start, flex-start, column);
     background-color: $white;
+    border-bottom: 0.6rem solid $gray;
 
 }
 
@@ -64,4 +69,32 @@
     gap: 0.7rem;
 
 
+}
+
+.description {
+    @include flex(flex-start, flex-start, column);
+    background-color: $white;
+    border-bottom: 0.6rem solid $gray;
+
+
+
+    .text {
+        padding-left: 1.6rem;
+        font-size: 1.28rem;
+        font-weight: 300;
+        width: 36.8rem;
+    }
+
+    .hide {
+        padding-left: 1.6rem;
+        display: -webkit-box;
+        font-size: 1.28rem;
+        font-weight: 300;
+        width: 36.8rem;
+        overflow: hidden;
+        text-align: flex-start;
+        text-overflow: ellipsis;
+        -webkit-line-clamp: 6;
+        -webkit-box-orient: vertical;
+    }
 }
