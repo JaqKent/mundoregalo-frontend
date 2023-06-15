@@ -1,6 +1,8 @@
 import { useState } from 'react';
 
+import ProductComments from './components/ProductComments';
 import QuantitySelector from './components/quantitySelector';
+import RelatedProducts from './components/RelatedProducts';
 import SelectDropdown from './components/SelectDropdown';
 import Specifications from './components/specifications';
 import StarRating from './components/StarRating';
@@ -79,6 +81,12 @@ function ProductPage() {
             </div>
             <div className={styles.specifications}>
                 <Specifications />
+            </div>
+            <div>
+                <RelatedProducts />
+            </div>
+            <div>
+                <ProductComments />
             </div>
         </>
     );
