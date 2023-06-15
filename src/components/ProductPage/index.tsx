@@ -2,10 +2,10 @@ import { useState } from 'react';
 
 import ProductComments from './components/ProductComments';
 import QuantitySelector from './components/QuantitySelector';
+import RelatedProducts from './components/RelatedProducts';
 import SelectDropdown from './components/SelectDropdown';
 import Specifications from './components/specifications';
 import StarRating from './components/StarRating';
-import RelatedProducts from './RelatedProducts';
 
 import styles from './styles.module.scss';
 
