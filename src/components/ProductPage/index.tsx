@@ -5,6 +5,7 @@ import QuantitySelector from './components/QuantitySelector';
 import SelectDropdown from './components/SelectDropdown';
 import Specifications from './components/specifications';
 import StarRating from './components/StarRating';
+import RelatedProducts from './RelatedProducts';
 
 import styles from './styles.module.scss';
 
@@ -27,11 +28,7 @@ function ProductPage() {
                         left poppinText
                     </div>
                     <div className={styles.stars}>
-<<<<<<< HEAD
-                        <StarRating initialValue={4} readonly size={11.38} />
-=======
                         <StarRating initialValue={3} readonly size={11.38} />
->>>>>>> master
                         <span className={styles.rating}>51.215</span>
                     </div>
                 </div>
@@ -63,32 +60,6 @@ function ProductPage() {
                 </div>
                 <div>
                     <QuantitySelector />
-<<<<<<< HEAD
-                </div>
-                <div className={styles.buttons}>
-                    <div>
-                        <CustomButton
-                            className={styles.buttonCart}
-                            label="Agregar al Carrito"
-                            onClick={handleAddToCart}
-                        />
-                    </div>
-                    <div>
-                        <CustomButton
-                            className={styles.buttonNow}
-                            label="Comprar ahora"
-                            secondary
-                            onClick={handleBuyNow}
-                        />
-                    </div>
-                </div>
-                <div>
-                    <ProductComments />
-                </div>
-            </div>
-
-            <div />
-=======
                 </div>
                 <div className={styles.buttons}>
                     <div>
@@ -111,7 +82,12 @@ function ProductPage() {
             <div className={styles.specifications}>
                 <Specifications />
             </div>
->>>>>>> master
+            <div>
+                <RelatedProducts />
+            </div>
+            <div>
+                <ProductComments />
+            </div>
         </>
     );
 }

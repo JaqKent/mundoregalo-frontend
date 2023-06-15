@@ -1,0 +1,71 @@
+@import '~scss/colors';
+@import '~scss/mixins';
+@import '~scss/variable';
+
+.container {
+    background-color: $anothergray;
+    height: 33.8rem;
+
+
+    .title {
+        @include flex(flex-start, center, row);
+        font-size: 1.4rem;
+        font-weight: 400;
+        padding-left: 1.6rem;
+        background-color: $white;
+        min-width: 39.8rem;
+        height: 3.5rem
+    }
+
+    .slider {
+        @include flex(center, center, row);
+        padding-top: 0.8rem;
+
+        .slide {
+            display: none;
+        }
+
+        .slideActive {
+            display: block;
+            animation: fade-in 1s;
+        }
+
+        @keyframes fade-in {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fade-out {
+            from {
+                opacity: 1;
+            }
+
+            to {
+                opacity: 0;
+            }
+        }
+
+        .card {
+            @include flex(center, center, row);
+            gap: 1.5rem;
+        }
+    }
+
+    .arrow {
+        color: $primary;
+        cursor: pointer;
+        font-size: 3rem;
+        opacity: 0.2;
+        padding: 1rem;
+
+        &:hover {
+            opacity: 1;
+            transition: 0.6s;
+        }
+    }
+}
