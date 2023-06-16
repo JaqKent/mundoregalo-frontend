@@ -1,3 +1,5 @@
+import { useNavigate } from 'react-router-dom';
+
 import { LIST, REDES } from './constants';
 
 import styles from './styles.module.scss';
