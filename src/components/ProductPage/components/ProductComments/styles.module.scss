@@ -10,7 +10,7 @@
     .title {
         @include flex(space-between, center, row);
         font-size: 1.4rem;
-        font-weight: 400;
+        font-weight: 500;
     }
 
     .stars {
@@ -19,31 +19,40 @@
         .rating {
             padding-left: 0.57rem;
             font-size: 1.28rem;
-            font-weight: 300;
+            font-weight: 400;
         }
     }
 
     .commentbox {
         border: 0.1rem solid $lightgray;
         height: auto;
-        width: 37.6rem;
+        width: 35rem;
         border-radius: 0.5rem;
         padding: 0.7rem;
+
+        @include responsive(xs) {
+            width: 38.5rem;
+        }
     }
 
     .commentText {
         font-size: 1.2rem;
-        font-weight: 300;
+        font-weight: 400;
         padding-bottom: 1.9rem;
+        width: 35.5rem;
+
+        @include responsive(xs) {
+            width: 38.5rem;
+        }
     }
 
     .user {
         @include flex(flex-start, center, row);
         gap: 0.8rem;
-
+        width: 35.5rem;
 
         .username {
-            font-weight: 400;
+            font-weight: 500;
             font-size: 1.4rem;
 
         }
@@ -106,6 +115,11 @@
     .like {
         @include flex(flex-start, center, row);
         gap: 0.8rem;
+        width: 35rem;
+
+        @include responsive(xs) {
+            width: 38.5rem;
+        }
     }
 
     .help {
@@ -115,7 +129,7 @@
         border: 0.1rem solid $lightgray;
         border-radius: 1.5rem;
         font-size: 1rem;
-        font-weight: 400;
+        font-weight: 500;
         padding: 0 0.3rem 0 0.3rem;
     }
 
@@ -132,5 +146,10 @@
         font-size: 1.2rem;
         font-weight: 600;
         cursor: pointer;
+        width: 35rem;
+
+        @include responsive(xs) {
+            width: 38.5rem;
+        }
     }
 }
