@@ -41,12 +41,12 @@
 }
 
 .slider {
+    position: relative;
     height: 27.6rem;
     width: 38.5rem;
 }
 
 .miniatures {
-
     top: 45rem;
     width: 15rem;
     height: 3.2rem;
@@ -158,4 +158,39 @@
 
 .specifications {
     padding-top: 0.6rem;
+}
+
+.arrowLeft {
+
+    position: absolute;
+    z-index: 9;
+    left: 0.1rem;
+    padding: 1rem;
+    font-size: 3rem;
+    color: $primary;
+    cursor: pointer;
+
+    opacity: 1;
+
+    &:hover {
+        opacity: 1;
+        transition: 0.6s;
+    }
+}
+
+.arrowRight {
+    position: absolute;
+    z-index: 9;
+    right: 0.1rem;
+    padding: 1rem;
+    font-size: 3rem;
+    color: $primary;
+    cursor: pointer;
+
+    opacity: 1;
+
+    &:hover {
+        opacity: 1;
+        transition: 0.6s;
+    }
 }

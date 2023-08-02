@@ -7,7 +7,7 @@
     background-color: $white;
 
     .slider {
-        @include flex(center, center, column);
+        @include flex(center, center, row);
 
         .slide {
             opacity: 0;
@@ -22,19 +22,7 @@
         }
     }
 
-    .arrow {
-        padding: 1rem;
-        font-size: 3rem;
-        color: $primary;
-        cursor: pointer;
 
-        opacity: 0.2;
-
-        &:hover {
-            opacity: 1;
-            transition: 0.6s;
-        }
-    }
 
 
 }

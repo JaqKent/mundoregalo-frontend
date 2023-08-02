@@ -14,14 +14,12 @@ import Slider from '~components/Slider';
 import { ITEMS } from '~constants/constants';
 
 function ProductPage() {
-    const [auto, setAuto] = useState(true);
-
     const handleAddToCart = () => console.log('cart');
     const handleBuyNow = () => console.log('buy now');
 
     return (
-        <>
-            <div className={styles.container}>
+        <div div className={styles.container}>
+            <div>
                 <div className={styles.title}>
                     <div className={styles.text}>
                         Text wieght 400 align left poppin Text wieght 400 align
@@ -34,14 +32,13 @@ function ProductPage() {
                 </div>
                 <div className={styles.slider}>
                     <Slider
-                        hide
-                        auto={auto}
-                        setAuto={setAuto}
                         slides={ITEMS}
                         className={styles.image}
                         minClassName={styles.miniatures}
                         mini={styles.mini}
                         miniActive={styles.miniActive}
+                        arrowClassLeft={styles.arrowLeft}
+                        arrowClassRight={styles.arrowRight}
                     />
                 </div>
 
@@ -83,12 +80,12 @@ function ProductPage() {
                 <Specifications />
             </div>
             <div>
-                <RelatedProducts />
+                <RelatedProducts hide />
             </div>
             <div>
                 <ProductComments />
             </div>
-        </>
+        </div>
     );
 }
 
