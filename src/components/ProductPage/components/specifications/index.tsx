@@ -27,7 +27,7 @@ function Specifications() {
                 <div className={styles.specsTitle}>
                     <h3>Especificaciones</h3>
                 </div>
-                <div>
+                <div className={styles.specsContainer}>
                     {output.map((item) => (
                         <div className={styles.specsData} key={item.id}>
                             <div className={styles.specsItem}>

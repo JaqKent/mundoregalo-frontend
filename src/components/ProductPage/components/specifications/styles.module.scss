@@ -11,6 +11,16 @@
     background-color: $white;
     border-bottom: 0.6rem solid $gray;
 
+
+}
+
+.specsContainer {
+    padding-top: 1.6rem;
+    width: 37;
+
+    @include responsive(xs) {
+        width: 38.5rem;
+    }
 }
 
 .specsTitle {
@@ -27,6 +37,7 @@
 .specsData {
     @include flex (space-around, center, row);
     margin-bottom: 1.6rem;
+    height: 2rem;
 
 
     p {
@@ -39,7 +50,12 @@
         padding-left: 1.6rem;
         font-size: 1.28rem;
         font-weight: 600;
-        width: 20rem;
+        width: 15rem;
+
+
+        @include responsive(xs) {
+            width: 20rem;
+        }
     }
 
     .specsText {
@@ -52,10 +68,6 @@
         width: 20rem;
         -webkit-line-clamp: 2;
         -webkit-box-orient: vertical;
-
-
-
-
     }
 }
 
@@ -75,6 +87,11 @@
     @include flex(flex-start, flex-start, column);
     background-color: $white;
     border-bottom: 0.6rem solid $gray;
+    width: 37.5rem;
+
+    @include responsive(xs) {
+        width: 41.4rem;
+    }
 
 
 
@@ -82,7 +99,11 @@
         padding-left: 1.6rem;
         font-size: 1.28rem;
         font-weight: 300;
-        width: 36.8rem;
+        width: 35.5rem;
+
+        @include responsive(xs) {
+            width: 38.5rem;
+        }
     }
 
     .hide {
@@ -90,11 +111,15 @@
         display: -webkit-box;
         font-size: 1.28rem;
         font-weight: 300;
-        width: 36.8rem;
+        width: 35.5rem;
         overflow: hidden;
         text-align: flex-start;
         text-overflow: ellipsis;
         -webkit-line-clamp: 6;
         -webkit-box-orient: vertical;
+
+        @include responsive(xs) {
+            width: 38.5rem;
+        }
     }
 }
