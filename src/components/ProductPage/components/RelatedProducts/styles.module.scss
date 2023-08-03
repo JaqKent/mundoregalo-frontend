@@ -13,8 +13,12 @@
         font-weight: 500;
         padding-left: 1.6rem;
         background-color: $white;
-        min-width: 39.8rem;
-        height: 3.5rem
+        min-width: 36rem;
+        height: 3.5rem;
+
+        @include responsive(xs) {
+            width: 38.5rem;
+        }
     }
 
     .slider {

@@ -5,17 +5,25 @@
 .container {
     @include flex(flex-start, flex-start, column);
     background-color: $white;
-    width: 38.2rem;
+    width: 37rem;
     height: 4.7rem;
     border-radius: 0.5rem;
     border: 0.15rem solid $lightgray;
+
+    @include responsive(xs) {
+        width: 38.5rem;
+    }
 }
 
 .select {
     border: none;
-    min-width: 38.2rem;
+    min-width: 37rem;
     font-size: 1.28rem;
     font-weight: 400;
+
+    @include responsive(xs) {
+        width: 38.5rem;
+    }
 
 
 }

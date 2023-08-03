@@ -14,8 +14,8 @@ interface Props {
     slides: Slides[];
     className: string;
     minClassName: string;
-    arrowClassLeft: string;
-    arrowClassRight: string;
+    arrowClassLeft?: string;
+    arrowClassRight?: string;
     auto?: boolean;
     hide?: boolean;
     miniActive: string;

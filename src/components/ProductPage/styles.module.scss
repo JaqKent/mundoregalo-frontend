@@ -12,14 +12,22 @@
 }
 
 .title {
+
     @include flex(space-between, flex-start, row);
     font-size: 1.4rem;
+<<<<<<< HEAD
     font-weight: 500;
     width: 38.5rem;
+=======
+    font-weight: 400;
+    width: 37.5rem;
+>>>>>>> master
     padding-top: 2.6rem;
+
 
     .text {
         width: 27.4rem;
+        padding-left: 0.7rem;
     }
 
     .stars {
@@ -28,22 +36,37 @@
     }
 
     .rating {
-        padding-left: 0.4rem;
+        padding-left: 0.1rem;
+        padding-right: 0.1rem;
     }
+
+
+    @include responsive(xs) {
+        width: 38.5rem;
+    }
+
+
 }
 
 .image {
     background-repeat: no-repeat;
     background-size: cover;
     height: 27.6rem;
-    width: 38.5rem;
+    width: 37rem;
 
+    @include responsive(xs) {
+        width: 38.5rem;
+    }
 }
 
 .slider {
     position: relative;
     height: 27.6rem;
-    width: 38.5rem;
+    width: 37rem;
+
+    @include responsive(xs) {
+        width: 38.5rem;
+    }
 }
 
 .miniatures {
@@ -108,9 +131,13 @@
 
 .price {
     @include flex(center, flex-start, column);
-    min-width: 38.5rem;
+    min-width: 37rem;
     height: 6rem;
     gap: 1rem;
+
+    @include responsive(xs) {
+        width: 38.5rem;
+    }
 
     h4 {
         font-size: 1.4rem;
@@ -142,7 +169,6 @@
 
 .buttons {
     @include flex(flex-start, center, column);
-
 
     .buttonCart {
         font-size: 1.6rem;
