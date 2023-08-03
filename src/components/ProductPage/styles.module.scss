@@ -182,36 +182,34 @@
 }
 
 .arrowLeft {
-
-    position: absolute;
-    z-index: 9;
-    left: 0.1rem;
-    padding: 1rem;
-    font-size: 3rem;
     color: $primary;
     cursor: pointer;
-
+    font-size: 3rem;
+    left: 0.1rem;
     opacity: 1;
+    padding: 1rem;
+    position: absolute;
+    z-index: 9;
 
     &:hover {
-        opacity: 1;
+        transform: scale(1.2);
         transition: 0.6s;
     }
 }
 
 .arrowRight {
-    position: absolute;
-    z-index: 9;
-    right: 0.1rem;
-    padding: 1rem;
-    font-size: 3rem;
     color: $primary;
     cursor: pointer;
+    font-size: 3rem;
+    padding: 1rem;
+    position: absolute;
+    right: 0.1rem;
+    z-index: 9;
 
     opacity: 1;
 
     &:hover {
-        opacity: 1;
+        transform: scale(1.2);
         transition: 0.6s;
     }
 }
