@@ -18,7 +18,7 @@ function ProductPage() {
     const handleBuyNow = () => console.log('buy now');
 
     return (
-        <div div className={styles.container}>
+        <div className={styles.container}>
             <div>
                 <div className={styles.title}>
                     <div className={styles.text}>

@@ -15,13 +15,8 @@
 
     @include flex(space-between, flex-start, row);
     font-size: 1.4rem;
-<<<<<<< HEAD
-    font-weight: 500;
-    width: 38.5rem;
-=======
     font-weight: 400;
     width: 37.5rem;
->>>>>>> master
     padding-top: 2.6rem;
 
 
@@ -70,7 +65,7 @@
 }
 
 .miniatures {
-    top: 45rem;
+    top: 25rem;
     width: 15rem;
     height: 3.2rem;
     border-radius: 50px;
