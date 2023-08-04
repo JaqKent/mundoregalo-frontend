@@ -4,7 +4,7 @@
 
 .container {
     background-color: $anothergray;
-    height: 33.8rem;
+    height: 38.1rem;
 
 
     .title {
@@ -24,6 +24,7 @@
     .slider {
         @include flex(center, center, row);
         padding-top: 0.8rem;
+
 
         .slide {
             display: none;

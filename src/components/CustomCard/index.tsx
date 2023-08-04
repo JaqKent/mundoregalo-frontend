@@ -4,17 +4,18 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styles from './styles.module.scss';
 
 import star from '~assets/star.svg';
+import StarRating from '~components/ProductPage/components/StarRating';
 
 interface Props {
     image: string;
     name: string;
     price: number;
     small?: boolean;
-    stars: number;
-    votes: number;
     onSale?: string;
     delivery?: string;
-    info?: boolean;
+    moreSold?: string;
+    discountPrice?: number;
+    discount?: boolean;
 }
 
 function CustomCard({
@@ -22,11 +23,11 @@ function CustomCard({
     name,
     price,
     small,
-    stars,
-    votes,
     onSale,
     delivery,
-    info,
+    moreSold,
+    discountPrice,
+    discount,
 }: Props) {
     return (
         <div className={small ? styles.containerSmall : styles.containerLarge}>
@@ -37,12 +38,8 @@ function CustomCard({
                     alt={name}
                 />
             </div>
-            <div
-                className={
-                    small ? styles.smallDescription : styles.largeDescription
-                }
-            >
-                <div className={small ? '' : styles.largeSection}>
+            <div className={small ? styles.smallSection : styles.largeSection}>
+                <div>
                     <div
                         className={
                             small ? styles.titleSmall : styles.titleLarge
@@ -50,17 +47,9 @@ function CustomCard({
                     >
                         <span>{name}</span>
                     </div>
-                    <div className={styles.info}>
-                        {info && (
-                            <div className={styles.info}>
-                                <span>{onSale}</span>
-                                <span>{delivery}</span>
-                            </div>
-                        )}
-                    </div>
                 </div>
                 <div className={small ? styles.dataSmall : styles.dataLarge}>
-                    <div className={styles.info}>
+                    <div className={styles.price}>
                         <div>
                             <span
                                 className={
@@ -69,35 +58,41 @@ function CustomCard({
                                         : styles.largeRating
                                 }
                             >
-                                <img src={star} alt="estrella-icon" />
-                                {stars}
+                                <StarRating
+                                    initialValue={4}
+                                    readonly
+                                    size={15.34}
+                                />
                             </span>{' '}
-                            <span>&nbsp;</span>
-                            <span
-                                className={
-                                    small
-                                        ? styles.smallVotes
-                                        : styles.largeVotes
-                                }
-                            >
-                                ({votes})
+                        </div>
+                        <div>
+                            <span className={styles.smallPrice}>
+                                <FontAwesomeIcon icon={faDollarSign} />
+                                {price}
                             </span>
                         </div>
-                        <span
-                            className={
-                                small ? styles.smallPrice : styles.largePrice
-                            }
-                        >
-                            <FontAwesomeIcon icon={faDollarSign} />
-                            {price}
-                        </span>
-                    </div>
-                    {small && (
-                        <div className={styles.info}>
-                            <span>{onSale}</span>
-                            <span>{delivery}</span>
+                        <div>
+                            {onSale ? (
+                                <span className={styles.discountPrice}>
+                                    <FontAwesomeIcon icon={faDollarSign} />
+                                    {discountPrice}
+                                </span>
+                            ) : (
+                                ''
+                            )}
                         </div>
-                    )}
+                    </div>
+                    <div className={styles.info}>
+                        {delivery && (
+                            <span className={styles.delivery}>{delivery}</span>
+                        )}
+                        {moreSold && (
+                            <span className={styles.moreSold}>{moreSold}</span>
+                        )}
+                        {onSale && (
+                            <span className={styles.onSale}>{onSale}</span>
+                        )}
+                    </div>
                 </div>
             </div>
         </div>
@@ -107,8 +102,10 @@ function CustomCard({
 export default CustomCard;
 
 CustomCard.defaultProps = {
-    info: false,
     delivery: '',
     small: false,
     onSale: '',
+    moreSold: '',
+    discountPrice: '',
+    discount: false,
 };
