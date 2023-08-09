@@ -5,7 +5,7 @@
 .container {
     @include flex(center, center, column);
     background-color: $white;
-    height: 32rem;
+    height: 39rem;
     margin: 0.5rem;
     min-width: 35rem;
 
@@ -51,7 +51,7 @@
 
         .card {
             @include flex(center, center, row);
-            gap: 1.5rem;
+            gap: 0.5rem;
         }
     }
 

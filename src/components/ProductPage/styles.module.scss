@@ -8,7 +8,7 @@
     background-color: $white;
     gap: 2rem;
     overflow-y: auto;
-    padding-bottom: 3.3rem
+    padding-bottom: 3.3rem;
 }
 
 .title {
@@ -47,7 +47,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     height: 27.6rem;
-    width: 37rem;
+    width: 38rem;
 
     @include responsive(xs) {
         width: 38.5rem;
@@ -57,7 +57,7 @@
 .slider {
     position: relative;
     height: 27.6rem;
-    width: 37rem;
+    width: 37.5rem;
 
     @include responsive(xs) {
         width: 38.5rem;
@@ -129,9 +129,11 @@
     min-width: 37rem;
     height: 6rem;
     gap: 1rem;
+    margin-left: 1.2rem;
 
     @include responsive(xs) {
         width: 38.5rem;
+        margin-left: 0.3rem;
     }
 
     h4 {
@@ -155,6 +157,7 @@
         @include flex(flex-start, center, row);
         height: 2rem;
 
+
         p {
             font-size: 1.48rem;
             font-weight: 400;
@@ -164,6 +167,7 @@
 
 .buttons {
     @include flex(flex-start, center, column);
+    padding-top: 0.6rem;
 
     .buttonCart {
         font-size: 1.6rem;

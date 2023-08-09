@@ -3,48 +3,35 @@
 @import '~scss/variable';
 
 .containerLarge {
-    @include flex(flex-start, center, row);
+    @include flex(space-between, center, row);
     background-color: $white;
-    border: 2px solid $gray;
     cursor: pointer;
-    gap: 1rem;
-    height: 10.8rem;
-    min-width: 35.5rem;
-    padding-left: 1rem;
+    height: 13.3rem;
+    width: 37rem;
 
     @include responsive(xs) {
-        min-width: 40rem;
-    }
-
-    @include responsive(md) {
-        height: 20rem;
-    }
-
-    @include responsive(lg) {
-        width: 80vw;
-        height: 20rem;
+        width: 39.6rem;
     }
 }
 
 .containerSmall {
     @include flex(space-between, center, column);
     background-color: $white;
-    border: 2px solid $gray;
     cursor: pointer;
-    height: 25.8rem;
-    padding-top: 0.5rem;
-    width: 16.5rem;
+    height: 32.25rem;
+    width: 18rem;
 
-    @include responsive(md) {
-        width: 21rem;
+    @include responsive(xs) {
+        width: 19.78rem;
     }
 }
 
 .imgLarge {
     @include flex(center, center, row);
-    height: 10.6rem;
+    height: 12.1rem;
     object-fit: fill;
-    width: 10.6rem;
+    width: 12.1rem;
+    margin: 0.9rem;
 }
 
 .imgSmall {
@@ -52,6 +39,12 @@
     height: 15.5rem;
     object-fit: cover;
     width: 15.5rem;
+    margin: 0.8rem;
+
+    @include responsive(xs) {
+        height: 18.2rem;
+        width: 18.2rem;
+    }
 }
 
 .largeDescription {
@@ -60,24 +53,23 @@
 
 .smallDescription {
     @include flex(flex-start, flex-start, column);
-    gap: .7rem;
-    padding-bottom: 1.2rem;
+    gap: 0.7rem;
 }
 
 .titleLarge {
-    @include flex(space-between, flex-start, row);
+    display: -webkit-box;
     font-size: 1.4rem;
     font-weight: 500;
-    height: 5.5rem;
+    height: 4.4rem;
     overflow: hidden;
     text-align: flex-start;
     text-overflow: ellipsis;
-    width: 19rem;
-    -webkit-line-clamp: 2;
+    width: 22rem;
     -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
 
-    @include responsive(md) {
-        width: 40rem;
+    @include responsive(xs) {
+        width: 24.4rem;
         font-size: 1.5rem;
     }
 }
@@ -90,9 +82,9 @@
     overflow: hidden;
     text-align: center;
     text-overflow: ellipsis;
-    width: 15rem;
-    -webkit-line-clamp: 2;
+    width: 17.7rem;
     -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
 
     @include responsive(md) {
         width: 20rem;
@@ -102,32 +94,36 @@
 
 
 .dataLarge {
-    text-align: center;
-
-    @include responsive(md) {
-        font-size: 1.4rem;
-    }
+    @include flex(space-between, space-between, row);
+    margin-top: 5px;
+    width: 22.5rem;
 }
 
 .dataSmall {
     @include flex(space-between, center, row);
-    padding-top: 5px;
+    margin-top: 5px;
     text-align: center;
-    width: 15rem;
-
-    @include responsive(md) {
-        font-size: 1.3rem;
-    }
+    width: 17rem;
 }
 
-.smallRating {
-    font-size: 1.2rem;
-    font-weight: 800;
+.smallSection {
+    @include flex(center, center, column);
 }
 
-.largeRating {
-    font-size: 1.2rem;
-    font-weight: 500;
+.price {
+    @include flex(space-between, flex-start, column);
+}
+
+.smallPrice {
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.discountPrice {
+    font-size: 1.4rem;
+    font-weight: 300;
+    color: #858688;
+    text-decoration-line: line-through;
 }
 
 .block {
@@ -135,13 +131,14 @@
 }
 
 .info {
-    @include flex(space-between, flex-start, column);
-
+    @include flex(center, space-between, column);
+    gap: 0.3rem
 }
 
 .largeSection {
-    @include flex(center, flex-start, row);
-    padding-top: .5rem;
+    @include flex(center, flex-start, column);
+    margin-top: .5rem;
+    width: 24.4rem;
 }
 
 .largeVotes {
@@ -152,13 +149,34 @@
     font-size: 1.2rem;
 }
 
-.largePrice {
-    font-size: 1.4rem;
-    font-weight: 800;
+.delivery {
+    @include flex(center, center, row);
+    background-color: #188754;
+    color: $white;
+    border-radius: 0.38rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    width: 6.8rem;
+    height: 2rem;
 }
 
-.smallPrice {
-    font-size: 1.4rem;
-    font-weight: 800;
+.moreSold {
+    @include flex(center, center, row);
+    background-color: #DB3646;
+    color: $white;
+    border-radius: 0.38rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    width: 6.8rem;
+    height: 2rem;
+}
 
+.onSale {
+    @include flex(center, center, row);
+    background-color: #FCC10B;
+    border-radius: 0.38rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    width: 6.8rem;
+    height: 2rem;
 }

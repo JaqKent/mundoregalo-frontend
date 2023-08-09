@@ -31,13 +31,14 @@ function OnSaleSection() {
             <div className={styles.product}>
                 {slicedData.map((product) => (
                     <CustomCard
-                        info
-                        votes={product.votes}
-                        stars={product.stars}
                         image={product.image}
-                        key={product.id}
                         name={product.description}
                         price={product.price}
+                        onSale={product.onSale || undefined}
+                        moreSold={product.moreSold || undefined}
+                        delivery={product.delivery || undefined}
+                        discountPrice={product.discountPrice || undefined}
+                        key={product.id}
                     />
                 ))}
             </div>

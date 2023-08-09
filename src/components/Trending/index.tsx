@@ -57,8 +57,10 @@ function Trending({ hide }: Props) {
                     image={PRODUCTS[i].image}
                     name={PRODUCTS[i].description}
                     price={PRODUCTS[i].price}
-                    stars={PRODUCTS[i].stars}
-                    votes={PRODUCTS[i].votes}
+                    onSale={PRODUCTS[i].onSale || undefined}
+                    moreSold={PRODUCTS[i].moreSold || undefined}
+                    delivery={PRODUCTS[i].delivery || undefined}
+                    discountPrice={PRODUCTS[i].discountPrice || undefined}
                     key={PRODUCTS[i].id}
                 />
                 {PRODUCTS[i + 1] && (
@@ -67,9 +69,13 @@ function Trending({ hide }: Props) {
                         image={PRODUCTS[i + 1].image}
                         name={PRODUCTS[i + 1].description}
                         price={PRODUCTS[i + 1].price}
-                        stars={PRODUCTS[i + 1].stars}
-                        votes={PRODUCTS[i + 1].votes}
                         key={PRODUCTS[i + 1].id}
+                        onSale={PRODUCTS[i + 1].onSale || undefined}
+                        moreSold={PRODUCTS[i + 1].moreSold || undefined}
+                        delivery={PRODUCTS[i + 1].delivery || undefined}
+                        discountPrice={
+                            PRODUCTS[i + 1].discountPrice || undefined
+                        }
                     />
                 )}
             </div>
