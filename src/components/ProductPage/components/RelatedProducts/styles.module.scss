@@ -10,7 +10,7 @@
     .title {
         @include flex(flex-start, center, row);
         font-size: 1.4rem;
-        font-weight: 400;
+        font-weight: 500;
         padding-left: 1.6rem;
         background-color: $white;
         min-width: 36rem;
@@ -23,6 +23,7 @@
 
     .slider {
         @include flex(center, center, row);
+        position: relative;
         padding-top: 0.8rem;
 
         .slide {
@@ -60,16 +61,36 @@
         }
     }
 
-    .arrow {
+    .arrowLeft {
         color: $primary;
         cursor: pointer;
         font-size: 3rem;
-        opacity: 0.2;
+        left: 0.8rem;
+        opacity: 1;
         padding: 1rem;
+        position: absolute;
+        z-index: 9;
 
         &:hover {
-            opacity: 1;
             transition: 0.6s;
+            transform: scale(1.2);
+        }
+    }
+
+    .arrowRight {
+        color: $primary;
+        cursor: pointer;
+        font-size: 3rem;
+        opacity: 1;
+        padding: 1rem;
+        position: absolute;
+        right: 0.8rem;
+        z-index: 9;
+        z-index: 9;
+
+        &:hover {
+            transition: 0.6s;
+            transform: scale(1.2);
         }
     }
 }

@@ -19,7 +19,7 @@
     border: none;
     min-width: 37rem;
     font-size: 1.28rem;
-    font-weight: 200;
+    font-weight: 400;
 
     @include responsive(xs) {
         width: 38.5rem;
@@ -30,6 +30,6 @@
 
 .colorText {
     font-size: 1.4rem;
-    font-weight: 400;
+    font-weight: 500;
     padding-left: 0.4rem;
 }

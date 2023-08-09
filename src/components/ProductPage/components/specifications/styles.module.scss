@@ -27,7 +27,7 @@
     border-bottom: 0.1rem solid $gray;
     min-width: 100%;
     font-size: 1.4rem;
-    font-weight: 400;
+    font-weight: 500;
 
     h3 {
         padding-left: 1.6rem;
@@ -61,7 +61,7 @@
     .specsText {
         @include flex (flex-start, flex-start, column);
         font-size: 1.28rem;
-        font-weight: 300;
+        font-weight: 400;
         overflow: hidden;
         text-align: flex-start;
         text-overflow: ellipsis;
