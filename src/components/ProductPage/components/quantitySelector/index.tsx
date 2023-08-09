@@ -1,4 +1,4 @@
-import { ChangeEvent, useState } from 'react';
+import { ChangeEvent, useRef, useState } from 'react';
 
 import styles from './styles.module.scss';
 
@@ -7,8 +7,9 @@ import { getFormattedQuantity } from '~constants/utils';
 const QUANTITY = 993;
 
 function QuantitySelector() {
-    const [quantity, setQuantity] = useState(0);
+    const [quantity, setQuantity] = useState(1);
     const [customQuantity, setCustomQuantity] = useState(quantity.toString());
+    const inputRef = useRef<HTMLInputElement>(null);
 
     const updateQuantity = (operation: boolean, value?: string) => {
         if (value) {
@@ -49,6 +50,11 @@ function QuantitySelector() {
             updateQuantity(false, customQuantity);
         }
     };
+    const handleInputFocus = () => {
+        if (inputRef.current) {
+            inputRef.current.select();
+        }
+    };
 
     return (
         <div className={styles.container}>
@@ -60,7 +66,7 @@ function QuantitySelector() {
             </div>
             <div className={styles.selector}>
                 <button
-                    disabled={quantity <= 0}
+                    disabled={quantity <= 1}
                     type="button"
                     onClick={() => updateQuantity(false)}
                     className={styles.button}
@@ -68,11 +74,13 @@ function QuantitySelector() {
                     -
                 </button>
                 <input
+                    ref={inputRef}
                     type="text"
                     value={getFormattedQuantity(customQuantity)}
                     onChange={handleCustomQuantityChange}
                     onBlur={handleCustomQuantityBlur}
                     className={styles.input}
+                    onFocus={handleInputFocus}
                 />
                 <button
                     type="button"

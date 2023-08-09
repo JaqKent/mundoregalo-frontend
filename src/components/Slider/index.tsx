@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 import { useEffect, useState } from 'react';
 import {
     faChevronLeft,
@@ -13,11 +14,13 @@ interface Props {
     slides: Slides[];
     className: string;
     minClassName: string;
+    arrowClassLeft?: string;
+    arrowClassRight?: string;
     auto?: boolean;
     hide?: boolean;
     miniActive: string;
     mini: string;
-    setAuto: (auto: boolean) => void;
+    setAuto?: (auto: boolean) => void;
 }
 
 function Carousel({
@@ -29,6 +32,8 @@ function Carousel({
     minClassName,
     miniActive,
     mini,
+    arrowClassLeft,
+    arrowClassRight,
 }: Props) {
     const [current, setCurrent] = useState(0);
 
@@ -67,16 +72,16 @@ function Carousel({
             <div
                 className={styles.slider}
                 onMouseEnter={() => {
-                    setAuto(false);
+                    if (setAuto) setAuto(false);
                 }}
                 onMouseLeave={() => {
-                    setAuto(true);
+                    if (setAuto) setAuto(true);
                 }}
             >
                 {!hide && slideLength >= 2 && (
                     <FontAwesomeIcon
                         icon={faChevronLeft}
-                        className={styles.arrow}
+                        className={arrowClassLeft}
                         onClick={prevSlide}
                     />
                 )}
@@ -102,7 +107,7 @@ function Carousel({
                 {!hide && slideLength >= 2 && (
                     <FontAwesomeIcon
                         icon={faChevronRight}
-                        className={styles.arrow}
+                        className={arrowClassRight}
                         onClick={nextSlide}
                     />
                 )}

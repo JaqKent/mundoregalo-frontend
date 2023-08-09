@@ -10,7 +10,7 @@
     .title {
         @include flex(space-between, center, row);
         font-size: 1.4rem;
-        font-weight: 400;
+        font-weight: 500;
     }
 
     .stars {
@@ -19,7 +19,7 @@
         .rating {
             padding-left: 0.57rem;
             font-size: 1.28rem;
-            font-weight: 300;
+            font-weight: 400;
         }
     }
 
@@ -37,7 +37,7 @@
 
     .commentText {
         font-size: 1.2rem;
-        font-weight: 300;
+        font-weight: 400;
         padding-bottom: 1.9rem;
         width: 35.5rem;
 
@@ -51,9 +51,8 @@
         gap: 0.8rem;
         width: 35.5rem;
 
-
         .username {
-            font-weight: 400;
+            font-weight: 500;
             font-size: 1.4rem;
 
         }
@@ -130,7 +129,7 @@
         border: 0.1rem solid $lightgray;
         border-radius: 1.5rem;
         font-size: 1rem;
-        font-weight: 400;
+        font-weight: 500;
         padding: 0 0.3rem 0 0.3rem;
     }
 

@@ -16,21 +16,9 @@ interface Props {
 
 function RelatedProducts({ hide }: Props) {
     const [current, setCurrent] = useState(0);
-    const [auto, setAuto] = useState(false);
 
     const slideLength = PRODUCTS.length;
 
-    useEffect(() => {
-        const timeOut = auto
-            ? setTimeout(() => {
-                  nextSlide();
-              }, 2500)
-            : undefined;
-
-        return () => {
-            clearTimeout(timeOut);
-        };
-    });
     const slideshowSlides = [];
     const nextSlide = () => {
         setCurrent((prevState) =>
@@ -84,19 +72,11 @@ function RelatedProducts({ hide }: Props) {
     return (
         <div className={styles.container}>
             <div className={styles.title}>Tambien te puede interesar </div>
-            <div
-                className={styles.slider}
-                onMouseEnter={() => {
-                    setAuto(false);
-                }}
-                onMouseLeave={() => {
-                    setAuto(true);
-                }}
-            >
+            <div className={styles.slider}>
                 {hide && slideLength >= 2 && (
                     <FontAwesomeIcon
                         icon={faChevronLeft}
-                        className={styles.arrow}
+                        className={styles.arrowLeft}
                         onClick={prevSlide}
                     />
                 )}
@@ -116,7 +96,7 @@ function RelatedProducts({ hide }: Props) {
                 {hide && slideLength >= 2 && (
                     <FontAwesomeIcon
                         icon={faChevronRight}
-                        className={styles.arrow}
+                        className={styles.arrowRight}
                         onClick={nextSlide}
                     />
                 )}
