@@ -16,7 +16,7 @@
 
 .specsContainer {
     padding-top: 1.6rem;
-    width: 37;
+    width: 37rem;
 
     @include responsive(xs) {
         width: 41.4rem;
@@ -42,7 +42,6 @@
 
     p {
         height: 2.1rem;
-
     }
 
     .specsItem {
@@ -96,10 +95,10 @@
 
 
     .text {
-        padding-left: 1.6rem;
+        margin: 1.6rem;
         font-size: 1.28rem;
-        font-weight: 300;
-        width: 35.5rem;
+        font-weight: 400;
+        width: 34.5rem;
 
         @include responsive(xs) {
             width: 38.5rem;
@@ -107,11 +106,11 @@
     }
 
     .hide {
-        padding-left: 1.6rem;
+        margin: 1.6rem;
         display: -webkit-box;
         font-size: 1.28rem;
-        font-weight: 300;
-        width: 35.5rem;
+        font-weight: 400;
+        width: 34.5rem;
         overflow: hidden;
         text-align: flex-start;
         text-overflow: ellipsis;
