@@ -16,12 +16,12 @@ function SearchBar() {
     const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
         const { value } = e.target;
         setSearch(value);
-        setIsDropdownOpen(!!value); // Abre el dropdown si hay texto
+        setIsDropdownOpen(!!value);
     };
 
     const handleSearch = (searchItem: string) => {
         setSearch(searchItem);
-        setIsDropdownOpen(false); // Cierra el dropdown después de hacer clic en un elemento
+        setIsDropdownOpen(false);
         navigate(`/productsearch/${searchItem}`);
     };
 
