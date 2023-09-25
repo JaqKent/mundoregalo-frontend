@@ -22,7 +22,10 @@ function Specifications() {
     const output = viewMore ? data : data.slice(0, 7);
 
     return (
-        <>
+        <div className={styles.container}>
+            <div className={styles.borderLine}>
+                <br />
+            </div>
             <div className={styles.specifications}>
                 <div className={styles.specsTitle}>
                     <h3>Especificaciones</h3>
@@ -59,6 +62,9 @@ function Specifications() {
                     </div>
                 </div>
             </div>
+            <div className={styles.borderLine}>
+                <br />
+            </div>
             <div className={styles.description}>
                 <div className={styles.specsTitle}>
                     <h3>Descripción</h3>
@@ -93,7 +99,10 @@ function Specifications() {
                     )}
                 </div>
             </div>
-        </>
+            <div className={styles.borderLine}>
+                <br />
+            </div>
+        </div>
     );
 }
 

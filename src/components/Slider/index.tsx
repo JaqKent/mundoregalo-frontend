@@ -1,3 +1,4 @@
+/* eslint-disable react/require-default-props */
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 import { useEffect, useState } from 'react';
 import {
@@ -21,10 +22,14 @@ interface Props {
     miniActive: string;
     mini: string;
     setAuto?: (auto: boolean) => void;
+    slide: string;
+    slideActive: string;
 }
 
 function Carousel({
     slides,
+    slide,
+    slideActive,
     className,
     auto,
     setAuto,
@@ -85,20 +90,16 @@ function Carousel({
                         onClick={prevSlide}
                     />
                 )}
-                {slides.map((slide, index) => (
+                {slides.map((slider, index) => (
                     <div
-                        className={
-                            index === current
-                                ? styles.slideActive
-                                : styles.slide
-                        }
-                        key={slide.id}
+                        className={index === current ? slideActive : slide}
+                        key={slider.id}
                     >
                         {index === current && (
                             <div
                                 className={className}
                                 style={{
-                                    backgroundImage: `url(${slide.img})`,
+                                    backgroundImage: `url(${slider.img})`,
                                 }}
                             />
                         )}

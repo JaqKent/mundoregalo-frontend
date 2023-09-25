@@ -25,6 +25,20 @@
     }
 }
 
+.slider {
+    .slide {
+        opacity: 0;
+        transition-duration: 2s ease;
+        transform: scale(0.9);
+    }
+
+    .slideActive {
+        opacity: 1;
+        transition-duration: 2s;
+        transform: scale(1);
+    }
+}
+
 .miniatures {
     @include flex(center, center, column);
     background-color: $white;
@@ -100,6 +114,7 @@
         transition-duration: 0.2s;
         width: 2em;
     }
+
 }
 
 .services {

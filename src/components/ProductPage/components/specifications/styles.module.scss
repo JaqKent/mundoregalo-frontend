@@ -4,14 +4,13 @@
 
 
 
-
+.container {
+    @include flex (center, center, column);
+}
 
 .specifications {
     @include flex (flex-start, flex-start, column);
     background-color: $white;
-    border-bottom: 0.6rem solid $gray;
-
-
 }
 
 .specsContainer {
@@ -85,7 +84,6 @@
 .description {
     @include flex(flex-start, flex-start, column);
     background-color: $white;
-    border-bottom: 0.6rem solid $gray;
     width: 37.5rem;
 
     @include responsive(xs) {
@@ -121,4 +119,10 @@
             width: 38.5rem;
         }
     }
+}
+
+.borderLine {
+    @include flex(center, center, column);
+    border-bottom: 0.6rem solid $gray;
+    width: 100vw;
 }

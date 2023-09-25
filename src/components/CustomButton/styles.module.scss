@@ -49,6 +49,8 @@
         cursor: auto;
         background-color: $disabled;
     }
+
+
 }
 
 .big {
@@ -56,7 +58,20 @@
     border-radius: 1.5rem;
     font-size: 1.2em;
     height: 4.5rem;
-    width: 38.2rem;
 
+    @include responsive(xxs) {
+        width: 35rem;
+        margin: 0 1.6rem;
+    }
+
+    @include responsive(xxxs) {
+        width: 35rem;
+        margin: 0 1.6rem;
+    }
+
+    @include responsive(xs) {
+        width: 38.4rem;
+
+    }
 
 }

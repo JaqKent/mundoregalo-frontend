@@ -9,6 +9,7 @@ html {
     min-height: 100%;
 
     font-size: 10px;
+
 }
 
 body {
@@ -18,7 +19,7 @@ body {
 
     font-family: Poppins, sans-serif;
 
-    background-color: $gray;
+    background-color: $gray !important;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }

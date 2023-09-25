@@ -14,6 +14,7 @@
     padding: 1rem 2rem;
     border-radius: 0.7rem 0 0 0.7rem;
     border: none;
+
 }
 
 .button {
@@ -23,4 +24,42 @@
     color: $white;
     background-color: darken($primary, 10);
     cursor: pointer;
+}
+
+.dropdown {
+    background-color: rgba($primary, 0.91);
+    border-radius: 0 0 1rem 1rem;
+    color: $white;
+    border: 1px solid $lightgray;
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    z-index: 9;
+    position: absolute;
+    top: 95px;
+
+    @include responsive(xlg) {
+        width: 84%;
+    }
+
+    @include responsive(lg) {
+        width: 86%;
+    }
+
+    @include responsive(md) {
+        width: 89%;
+    }
+
+    &:empty {
+        border: none;
+    }
+}
+
+.dropdownRow {
+    cursor: pointer;
+    margin: 0.2rem 0;
+    height: 3.5rem;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 500;
 }

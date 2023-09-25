@@ -8,18 +8,6 @@
 
     .slider {
         @include flex(center, center, row);
-
-        .slide {
-            opacity: 0;
-            transition-duration: 2s ease;
-            transform: scale(0.9);
-        }
-
-        .slideActive {
-            opacity: 1;
-            transition-duration: 2s;
-            transform: scale(1);
-        }
     }
 
 
