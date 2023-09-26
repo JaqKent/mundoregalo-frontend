@@ -1,17 +1,18 @@
-/* eslint-disable jsx-a11y/no-static-element-interactions */
 import { ChangeEvent, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import { PRODUCTS } from '../../../OnSaleSection/constants';
-
 import styles from './styles.module.scss';
+
+import { PRODUCTS } from '~components/OnSaleSection/constants';
+import { filterProducts } from '~constants/utils';
 
 function SearchBar() {
     const [search, setSearch] = useState('');
     const navigate = useNavigate();
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+    const filteredProducts = filterProducts(PRODUCTS, search);
 
     const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
         const { value } = e.target;
@@ -19,17 +20,15 @@ function SearchBar() {
         setIsDropdownOpen(!!value);
     };
 
-    const handleSearch = (searchItem: string) => {
-        setSearch(searchItem);
+    const handleSearch = () => {
         setIsDropdownOpen(false);
-        navigate(`/productsearch/${searchItem}`);
+        navigate(`/productSearch/${search}`);
     };
 
-    const filteredProducts = PRODUCTS.filter((item) => {
-        const searchItem = search.toLowerCase();
-        const name = item.description.toLowerCase();
-        return searchItem && name.includes(searchItem);
-    }).slice(0, 10);
+    const handleDropdownItemClick = (selectedItem: string) => {
+        setIsDropdownOpen(false);
+        navigate(`/productSearch/${selectedItem}`);
+    };
 
     return (
         <>
@@ -46,7 +45,7 @@ function SearchBar() {
                     type="button"
                     aria-label="Search"
                     className={styles.button}
-                    onClick={() => handleSearch(search)}
+                    onClick={handleSearch}
                 >
                     <FontAwesomeIcon icon={faSearch} />
                 </button>
@@ -54,14 +53,17 @@ function SearchBar() {
             {isDropdownOpen && (
                 <div className={styles.dropdown}>
                     {filteredProducts.map((item) => (
-                        <div
-                            onClick={() => handleSearch(item.description)}
+                        <button
+                            type="button"
+                            onClick={() =>
+                                handleDropdownItemClick(item.description)
+                            }
                             className={styles.dropdownRow}
-                            onKeyDown={() => handleSearch(item.description)}
+                            onKeyDown={handleSearch}
                             key={item.id}
                         >
                             {item.description}
-                        </div>
+                        </button>
                     ))}
                 </div>
             )}

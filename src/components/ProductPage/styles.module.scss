@@ -23,7 +23,6 @@
     width: 37.5rem;
     padding-top: 2.6rem;
 
-
     .text {
         width: 27.4rem;
         padding-left: 0.7rem;
@@ -39,12 +38,9 @@
         padding-right: 0.1rem;
     }
 
-
     @include responsive(xs) {
         width: 38.5rem;
     }
-
-
 }
 
 .image {
@@ -136,10 +132,6 @@
         transition-duration: 0.2s;
         width: 0.5em;
     }
-
-
-
-
 }
 
 .price {
@@ -168,13 +160,11 @@
             font-size: 2rem;
             font-weight: 500;
         }
-
     }
 
     .delivery {
         @include flex(flex-start, center, row);
         height: 2rem;
-
 
         p {
             font-size: 1.48rem;
@@ -187,13 +177,10 @@
     @include flex(flex-start, center, column);
     padding-top: 0.6rem;
 
-
-
     .buttonCart {
         font-size: 1.6rem;
         font-weight: 500;
         margin-bottom: 0.5rem;
-
     }
 
     .buttonNow {
@@ -228,12 +215,11 @@
     color: $primary;
     cursor: pointer;
     font-size: 3rem;
+    opacity: 1;
     padding: 1rem;
     position: absolute;
     right: 0.1rem;
     z-index: 9;
-
-    opacity: 1;
 
     &:hover {
         transform: scale(1.2);

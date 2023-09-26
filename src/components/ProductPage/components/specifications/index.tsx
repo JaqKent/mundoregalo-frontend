@@ -23,9 +23,7 @@ function Specifications() {
 
     return (
         <div className={styles.container}>
-            <div className={styles.borderLine}>
-                <br />
-            </div>
+            <hr className={styles.borderLine} />
             <div className={styles.specifications}>
                 <div className={styles.specsTitle}>
                     <h3>Especificaciones</h3>
@@ -62,9 +60,7 @@ function Specifications() {
                     </div>
                 </div>
             </div>
-            <div className={styles.borderLine}>
-                <br />
-            </div>
+            <hr className={styles.borderLine} />
             <div className={styles.description}>
                 <div className={styles.specsTitle}>
                     <h3>Descripción</h3>
@@ -99,9 +95,7 @@ function Specifications() {
                     )}
                 </div>
             </div>
-            <div className={styles.borderLine}>
-                <br />
-            </div>
+            <hr className={styles.borderLine} />
         </div>
     );
 }

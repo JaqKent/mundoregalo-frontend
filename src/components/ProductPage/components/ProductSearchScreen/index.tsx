@@ -1,5 +1,7 @@
 import { useParams } from 'react-router-dom';
 
+import styles from './styles.module.scss';
+
 import CustomCard from '~components/CustomCard';
 import { PRODUCTS } from '~components/OnSaleSection/constants';
 
@@ -15,18 +17,19 @@ function ProductSearchScreen() {
     );
 
     return (
-        <div>
+        <div className={styles.container}>
             {filteredProducts.map((product) => (
-                <CustomCard
-                    image={product.image}
-                    name={product.description}
-                    price={product.price}
-                    onSale={product.onSale || undefined}
-                    moreSold={product.moreSold || undefined}
-                    delivery={product.delivery || undefined}
-                    discountPrice={product.discountPrice || undefined}
-                    key={product.id}
-                />
+                <div className={styles.card} key={product.id}>
+                    <CustomCard
+                        image={product.image}
+                        name={product.description}
+                        price={product.price}
+                        onSale={product.onSale}
+                        moreSold={product.moreSold}
+                        delivery={product.delivery}
+                        discountPrice={product.discountPrice}
+                    />
+                </div>
             ))}
         </div>
     );

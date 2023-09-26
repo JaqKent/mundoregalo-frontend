@@ -16,12 +16,12 @@ export const ROUTES = [
     },
     {
         id: 3,
-        path: '/productpage',
+        path: '/productPage',
         element: <ProductPage />,
     },
     {
         id: 4,
-        path: '/productsearch/:searchTerm',
+        path: '/productSearch/:searchTerm',
         element: <ProductSearchScreen />,
     },
 ];

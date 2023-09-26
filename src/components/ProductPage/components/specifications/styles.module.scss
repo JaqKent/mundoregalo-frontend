@@ -5,11 +5,11 @@
 
 
 .container {
-    @include flex (center, center, column);
+    @include flex(center, center, column);
 }
 
 .specifications {
-    @include flex (flex-start, flex-start, column);
+    @include flex(flex-start, flex-start, column);
     background-color: $white;
 }
 
@@ -34,7 +34,7 @@
 }
 
 .specsData {
-    @include flex (space-around, center, row);
+    @include flex(space-around, center, row);
     margin-bottom: 1.6rem;
     height: 2rem;
 
@@ -44,7 +44,7 @@
     }
 
     .specsItem {
-        @include flex (flex-start, flex-start, column);
+        @include flex(flex-start, flex-start, column);
         padding-left: 1.6rem;
         font-size: 1.28rem;
         font-weight: 600;
@@ -57,7 +57,7 @@
     }
 
     .specsText {
-        @include flex (flex-start, flex-start, column);
+        @include flex(flex-start, flex-start, column);
         font-size: 1.28rem;
         font-weight: 400;
         overflow: hidden;

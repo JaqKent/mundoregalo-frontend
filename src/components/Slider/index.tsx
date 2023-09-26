@@ -1,5 +1,3 @@
-/* eslint-disable react/require-default-props */
-/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 import { useEffect, useState } from 'react';
 import {
     faChevronLeft,
@@ -135,3 +133,11 @@ function Carousel({
 }
 
 export default Carousel;
+
+Carousel.defaultProps = {
+    arrowClassLeft: '',
+    hide: false,
+    arrowClassRight: '',
+    auto: false,
+    setAuto: false,
+};
