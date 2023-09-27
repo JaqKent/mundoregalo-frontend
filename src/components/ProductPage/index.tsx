@@ -19,7 +19,7 @@ function ProductPage() {
 
     return (
         <div className={styles.container}>
-            <div>
+            <div className={styles.containerSlider}>
                 <div className={styles.title}>
                     <div className={styles.text}>
                         Text wieght 400 align left poppin Text wieght 400 align
@@ -39,6 +39,8 @@ function ProductPage() {
                         miniActive={styles.miniActive}
                         arrowClassLeft={styles.arrowLeft}
                         arrowClassRight={styles.arrowRight}
+                        slide={styles.slide}
+                        slideActive={styles.slideActive}
                     />
                 </div>
 

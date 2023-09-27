@@ -4,11 +4,15 @@
 
 
 .container {
-    @include flex(center, center, column);
+    @include flex(flex-start, center, column);
     background-color: $white;
     gap: 2rem;
     overflow-y: auto;
     padding-bottom: 3.3rem;
+}
+
+.containerSlider {
+    @include flex(flex-start, center, column);
 }
 
 .title {
@@ -18,7 +22,6 @@
     font-weight: 500;
     width: 37.5rem;
     padding-top: 2.6rem;
-
 
     .text {
         width: 27.4rem;
@@ -35,12 +38,9 @@
         padding-right: 0.1rem;
     }
 
-
     @include responsive(xs) {
         width: 38.5rem;
     }
-
-
 }
 
 .image {
@@ -48,6 +48,7 @@
     background-size: cover;
     height: 27.6rem;
     width: 38rem;
+
 
     @include responsive(xs) {
         width: 38.5rem;
@@ -58,9 +59,20 @@
     position: relative;
     height: 27.6rem;
     width: 37.5rem;
+    margin-bottom: 2.4rem;
 
     @include responsive(xs) {
         width: 38.5rem;
+    }
+
+    .slide {
+        opacity: 0;
+        transition-duration: 1s ease;
+    }
+
+    .slideActive {
+        opacity: 1;
+        transition-duration: 1s;
     }
 }
 
@@ -118,10 +130,6 @@
         transition-duration: 0.2s;
         width: 0.5em;
     }
-
-
-
-
 }
 
 .price {
@@ -150,13 +158,11 @@
             font-size: 2rem;
             font-weight: 500;
         }
-
     }
 
     .delivery {
         @include flex(flex-start, center, row);
         height: 2rem;
-
 
         p {
             font-size: 1.48rem;
@@ -172,7 +178,7 @@
     .buttonCart {
         font-size: 1.6rem;
         font-weight: 500;
-        padding-bottom: 0.4rem;
+        margin-bottom: 0.5rem;
     }
 
     .buttonNow {
@@ -205,12 +211,11 @@
     color: $primary;
     cursor: pointer;
     font-size: 3rem;
+    opacity: 1;
     padding: 1rem;
     position: absolute;
     right: 0.1rem;
     z-index: 9;
-
-    opacity: 1;
 
     &:hover {
         transform: scale(1.2);

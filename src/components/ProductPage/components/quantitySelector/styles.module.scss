@@ -8,10 +8,10 @@
 
 .selector {
     @include flex(space-between, center, row);
-    width: 37rem;
+    width: 35rem;
     border-radius: 1.5rem;
     border: 0.15rem solid $lightgray;
-    margin: 0.5rem;
+    margin: 0.5rem 1.6rem;
     height: 4rem;
 
     @include responsive(xs) {

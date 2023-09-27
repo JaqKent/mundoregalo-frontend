@@ -4,13 +4,8 @@
 
 .container {
     @include flex(center, center, column);
-    background-color: $white;
+}
 
-    .slider {
-        @include flex(center, center, row);
-    }
-
-
-
-
+.card {
+    margin: 0.5rem;
 }

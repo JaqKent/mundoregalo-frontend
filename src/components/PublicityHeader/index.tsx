@@ -12,7 +12,7 @@ function PublicityHeader() {
     const [auto, setAuto] = useState(true);
     return (
         <div className={styles.container}>
-            <div>
+            <div className={styles.slider}>
                 <Slider
                     hide
                     auto={auto}
@@ -22,6 +22,8 @@ function PublicityHeader() {
                     minClassName={styles.miniatures}
                     mini={styles.mini}
                     miniActive={styles.miniActive}
+                    slide={styles.slide}
+                    slideActive={styles.slideActive}
                 />
             </div>
             <div className={styles.services}>
