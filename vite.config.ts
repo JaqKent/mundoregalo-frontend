@@ -1,6 +1,6 @@
-import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import path from 'path';
+import { defineConfig } from 'vite';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -48,5 +48,8 @@ export default defineConfig({
                 replacement: path.resolve(__dirname, 'src/configs'),
             },
         ],
+    },
+    define: {
+        'process.env': process.env,
     },
 });
