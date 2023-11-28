@@ -17,7 +17,7 @@ export interface Product {
     imageURL: string[];
     createdAt: Date;
     updatedAt: Date;
-    stars: number;
+    stars: number; 
     votes: number;
     delivery: string;
     moreSold: string;
