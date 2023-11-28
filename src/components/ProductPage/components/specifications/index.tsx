@@ -6,7 +6,11 @@ import { DATA, DESCRIPTION } from './constants';
 
 import styles from './styles.module.scss';
 
-function Specifications() {
+interface Props {
+    description: string;
+}
+
+function Specifications({ description }: Props) {
     const [data, setData] = useState(DATA);
     const [viewMore, setViewMore] = useState(false);
     const [more, setMore] = useState(false);
@@ -71,7 +75,7 @@ function Specifications() {
                             className={more ? styles.text : styles.hide}
                             key={text.id}
                         >
-                            {text.description}
+                            {description}
                         </p>
                     ))}
                 </div>

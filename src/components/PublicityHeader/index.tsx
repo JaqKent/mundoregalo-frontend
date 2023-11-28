@@ -17,7 +17,7 @@ function PublicityHeader() {
                     hide
                     auto={auto}
                     setAuto={setAuto}
-                    slides={ITEMS}
+                    slides={ITEMS.map((item) => item.img)}
                     className={styles.image}
                     minClassName={styles.miniatures}
                     mini={styles.mini}

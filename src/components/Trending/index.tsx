@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import {
     faChevronLeft,
     faChevronRight,
@@ -9,7 +9,7 @@ import styles from './styles.module.scss';
 
 import trending from '~assets/tendencias.svg';
 import CustomCard from '~components/CustomCard';
-import { PRODUCTS } from '~components/OnSaleSection/constants';
+import { ProductContext } from '~context/ProductContext';
 
 interface Props {
     hide?: boolean;
@@ -18,8 +18,9 @@ interface Props {
 function Trending({ hide }: Props) {
     const [current, setCurrent] = useState(0);
     const [auto, setAuto] = useState(false);
+    const { allProducts } = useContext(ProductContext);
 
-    const slideLength = PRODUCTS.length;
+    const slideLength = allProducts.length;
 
     useEffect(() => {
         const timeOut = auto
@@ -45,7 +46,7 @@ function Trending({ hide }: Props) {
         );
     };
 
-    if (!Array.isArray(PRODUCTS) || PRODUCTS.length <= 0) {
+    if (!Array.isArray(allProducts) || allProducts.length <= 0) {
         return null;
     }
 
@@ -54,28 +55,32 @@ function Trending({ hide }: Props) {
             <div className={styles.card}>
                 <CustomCard
                     small
-                    image={PRODUCTS[i].image}
-                    name={PRODUCTS[i].description}
-                    price={PRODUCTS[i].price}
-                    onSale={PRODUCTS[i].onSale || undefined}
-                    moreSold={PRODUCTS[i].moreSold || undefined}
-                    delivery={PRODUCTS[i].delivery || undefined}
-                    discountPrice={PRODUCTS[i].discountPrice || undefined}
-                    key={PRODUCTS[i].id}
+                    image={allProducts[i].imageURL}
+                    name={allProducts[i].description}
+                    price={allProducts[i].prices.web.value}
+                    onSale={allProducts[i].onSale || undefined}
+                    moreSold={allProducts[i].moreSold || undefined}
+                    delivery={allProducts[i].delivery || undefined}
+                    discountPrice={allProducts[i].discountPrice || undefined}
+                    key={allProducts[i].id}
+                    _id={allProducts[i].id}
+                    stock={allProducts[i].stock}
                 />
-                {PRODUCTS[i + 1] && (
+                {allProducts[i + 1] && (
                     <CustomCard
                         small
-                        image={PRODUCTS[i + 1].image}
-                        name={PRODUCTS[i + 1].description}
-                        price={PRODUCTS[i + 1].price}
-                        key={PRODUCTS[i + 1].id}
-                        onSale={PRODUCTS[i + 1].onSale || undefined}
-                        moreSold={PRODUCTS[i + 1].moreSold || undefined}
-                        delivery={PRODUCTS[i + 1].delivery || undefined}
+                        image={allProducts[i + 1].imageURL}
+                        name={allProducts[i + 1].description}
+                        price={allProducts[i + 1].prices.web.value}
+                        key={allProducts[i + 1].id}
+                        onSale={allProducts[i + 1].onSale || undefined}
+                        moreSold={allProducts[i + 1].moreSold || undefined}
+                        delivery={allProducts[i + 1].delivery || undefined}
                         discountPrice={
-                            PRODUCTS[i + 1].discountPrice || undefined
+                            allProducts[i + 1].discountPrice || undefined
                         }
+                        _id={allProducts[i].id}
+                        stock={allProducts[i].stock}
                     />
                 )}
             </div>

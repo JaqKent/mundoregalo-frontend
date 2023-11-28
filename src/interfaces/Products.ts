@@ -19,6 +19,10 @@ export interface Product {
     updatedAt: Date;
     stars: number;
     votes: number;
+    delivery: string;
+    moreSold: string;
+    onSale: string;
+    discountPrice: number;
 }
 
 export interface Category {

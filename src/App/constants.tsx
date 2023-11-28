@@ -1,5 +1,5 @@
-import ProductPage from '~components/ProductPage';
 import ProductSearchScreen from '~components/ProductPage/components/ProductSearchScreen';
+import ProductScreen from '~components/ProductPage/ProductScreen';
 import HomePage from '~screens/Home';
 import Survey from '~screens/Survey';
 
@@ -16,8 +16,8 @@ export const ROUTES = [
     },
     {
         id: 3,
-        path: '/productPage',
-        element: <ProductPage />,
+        path: '/productPage/:id',
+        element: <ProductScreen />,
     },
     {
         id: 4,

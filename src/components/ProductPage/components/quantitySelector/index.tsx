@@ -3,10 +3,13 @@ import { ChangeEvent, useRef, useState } from 'react';
 import styles from './styles.module.scss';
 
 import { getFormattedQuantity } from '~constants/utils';
+import { Product } from '~interfaces/Products';
 
-const QUANTITY = 993;
+interface Props {
+    QUANTITY: number;
+}
 
-function QuantitySelector() {
+function QuantitySelector({ QUANTITY }: Props) {
     const [quantity, setQuantity] = useState(1);
     const [customQuantity, setCustomQuantity] = useState(quantity.toString());
     const inputRef = useRef<HTMLInputElement>(null);

@@ -11,9 +11,13 @@ import styles from './styles.module.scss';
 
 import CustomButton from '~components/CustomButton';
 import Slider from '~components/Slider';
-import { ITEMS } from '~constants/constants';
+import { Product } from '~interfaces/Products';
 
-function ProductPage() {
+interface Props {
+    product: Product;
+}
+
+function ProductPage({ product }: Props) {
     const handleAddToCart = () => console.log('cart');
     const handleBuyNow = () => console.log('buy now');
 
@@ -21,18 +25,19 @@ function ProductPage() {
         <div className={styles.container}>
             <div className={styles.containerSlider}>
                 <div className={styles.title}>
-                    <div className={styles.text}>
-                        Text wieght 400 align left poppin Text wieght 400 align
-                        left poppinText
-                    </div>
+                    <div className={styles.text}>{product.name}</div>
                     <div className={styles.stars}>
-                        <StarRating initialValue={3} readonly size={11.38} />
-                        <span className={styles.rating}>51.215</span>
+                        <StarRating
+                            initialValue={product.stars}
+                            readonly
+                            size={11.38}
+                        />
+                        <span className={styles.rating}>{product.votes}</span>
                     </div>
                 </div>
                 <div className={styles.slider}>
                     <Slider
-                        slides={ITEMS}
+                        slides={product.imageURL}
                         className={styles.image}
                         minClassName={styles.miniatures}
                         mini={styles.mini}
@@ -50,7 +55,7 @@ function ProductPage() {
                 <div className={styles.price}>
                     <div className={styles.priceNumber}>
                         <h4>Precio:</h4>
-                        <h3>$56.094</h3>
+                        <h3>{product.prices.web.value}</h3>
                     </div>
                     <div className={styles.delivery}>
                         <h4>Envio: </h4>
@@ -58,7 +63,7 @@ function ProductPage() {
                     </div>
                 </div>
                 <div>
-                    <QuantitySelector />
+                    <QuantitySelector QUANTITY={product.stock} />
                 </div>
                 <div className={styles.buttons}>
                     <div>
@@ -79,7 +84,7 @@ function ProductPage() {
                 </div>
             </div>
             <div className={styles.specifications}>
-                <Specifications />
+                <Specifications description={product.description} />
             </div>
             <div>
                 <RelatedProducts hide />

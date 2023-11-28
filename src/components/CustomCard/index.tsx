@@ -1,13 +1,14 @@
+import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import { faDollarSign } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import styles from './styles.module.scss';
 
-import star from '~assets/star.svg';
 import StarRating from '~components/ProductPage/components/StarRating';
 
 interface Props {
-    image: string;
+    image: string[];
     name: string;
     price: number;
     small?: boolean;
@@ -15,7 +16,8 @@ interface Props {
     delivery?: string;
     moreSold?: string;
     discountPrice?: number;
-    discount?: boolean;
+    _id: string;
+    stock: number;
 }
 
 function CustomCard({
@@ -24,17 +26,31 @@ function CustomCard({
     price,
     small,
     onSale,
+    stock,
     delivery,
     moreSold,
     discountPrice,
-    discount,
+    _id,
 }: Props) {
+    const navigate = useNavigate();
+
+    const handleViewProduct = () => {
+        navigate(`/productPage/${_id}`);
+    };
+
+    const handleNoStock = () => toast.error('Sin Stock');
     return (
-        <div className={small ? styles.containerSmall : styles.containerLarge}>
+        <div
+            className={small ? styles.containerSmall : styles.containerLarge}
+            onClick={stock <= 0 ? handleNoStock : handleViewProduct}
+            onKeyDown={handleViewProduct}
+            role="button"
+            tabIndex={0}
+        >
             <div>
                 <img
                     className={small ? styles.imgSmall : styles.imgLarge}
-                    src={image}
+                    src={image[0]}
                     alt={name}
                 />
             </div>
@@ -107,5 +123,4 @@ CustomCard.defaultProps = {
     onSale: '',
     moreSold: '',
     discountPrice: '',
-    discount: false,
 };

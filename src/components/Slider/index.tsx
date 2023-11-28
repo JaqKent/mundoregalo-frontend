@@ -7,10 +7,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import styles from './styles.module.scss';
 
-type Slides = { id: number; img: string };
-
 interface Props {
-    slides: Slides[];
+    slides: string[];
     className: string;
     minClassName: string;
     arrowClassLeft?: string;
@@ -20,8 +18,8 @@ interface Props {
     miniActive: string;
     mini: string;
     setAuto?: (auto: boolean) => void;
-    slide: string;
     slideActive: string;
+    slide: string;
 }
 
 function Carousel({
@@ -90,14 +88,14 @@ function Carousel({
                 )}
                 {slides.map((slider, index) => (
                     <div
+                        key={index - 1}
                         className={index === current ? slideActive : slide}
-                        key={slider.id}
                     >
                         {index === current && (
                             <div
                                 className={className}
                                 style={{
-                                    backgroundImage: `url(${slider.img})`,
+                                    backgroundImage: `url(${slider})`,
                                 }}
                             />
                         )}
@@ -113,10 +111,9 @@ function Carousel({
                 {slides.length >= 2 && (
                     <div className={minClassName}>
                         <ul>
-                            {slides.map((slide, index) => (
+                            {slides.map((slider, index) => (
                                 <li
-                                    tabIndex={slide.id - 1}
-                                    key={slide.id}
+                                    key={index}
                                     className={
                                         index === current ? miniActive : mini
                                     }
