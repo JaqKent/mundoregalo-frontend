@@ -30,6 +30,6 @@
             "~configs/*": ["./configs/*"]
         }
     },
-    "include": ["src", ".eslintrc.cjs","vite.config.ts"],
+    "include": ["src", ".eslintrc.cjs"],
     "references": [{ "path": "./tsconfig.node.json" }]
 }
