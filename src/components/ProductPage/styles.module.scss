@@ -5,10 +5,11 @@
 
 .container {
     @include flex(flex-start, center, column);
-    background-color: $white;
     gap: 2rem;
-    overflow-y: auto;
     padding-bottom: 3.3rem;
+    overflow-y: auto;
+
+    background-color: $white;
 }
 
 .containerSlider {
@@ -18,10 +19,11 @@
 .title {
 
     @include flex(space-between, flex-start, row);
-    font-size: 1.4rem;
-    font-weight: 500;
     width: 37.5rem;
     padding-top: 2.6rem;
+
+    font-weight: 500;
+    font-size: 1.4rem;
 
     .text {
         width: 27.4rem;
@@ -34,8 +36,8 @@
     }
 
     .rating {
-        padding-left: 0.1rem;
         padding-right: 0.1rem;
+        padding-left: 0.1rem;
     }
 
     @include responsive(xs) {
@@ -44,10 +46,11 @@
 }
 
 .image {
+    width: 38rem;
+    height: 27.6rem;
+
     background-repeat: no-repeat;
     background-size: cover;
-    height: 27.6rem;
-    width: 38rem;
 
 
     @include responsive(xs) {
@@ -57,8 +60,9 @@
 
 .slider {
     position: relative;
-    height: 27.6rem;
+
     width: 37.5rem;
+    height: 27.6rem;
     margin-bottom: 2.4rem;
 
     @include responsive(xs) {
@@ -67,21 +71,25 @@
 
     .slide {
         opacity: 0;
+
         transition-duration: 1s ease;
     }
 
     .slideActive {
         opacity: 1;
+
         transition-duration: 1s;
     }
 }
 
 .miniatures {
+    position: absolute;
     top: 25rem;
+
     width: 15rem;
     height: 3.2rem;
+
     border-radius: 50px;
-    position: absolute;
 
     &:hover {
         opacity: 0.8;
@@ -95,21 +103,24 @@
 
     li {
         @include background-image('~assets/selector.png');
-        background-position: left center;
-        background-repeat: no-repeat;
-        background-size: 5px;
-        list-style: none;
         margin: 0.5em;
+
+        list-style: none;
+        background-repeat: no-repeat;
+        background-position: left center;
+        background-size: 5px;
     }
 
     .mini {
         @include flex(center, center, row);
+        width: 0.5em;
+        height: 0.5em;
+
         background-position: center;
         background-size: cover;
         cursor: pointer;
-        height: 0.5em;
+
         transition-duration: 0.2s;
-        width: 0.5em;
 
         &:hover {
             opacity: 0.5;
@@ -122,21 +133,23 @@
 
     .miniActive {
         @include flex(center, center, row);
+        width: 0.5em;
+        height: 0.5em;
+
         background-position: center;
         background-size: cover;
         cursor: pointer;
         filter: opacity(0.5) drop-shadow(0 0 0 $selectedblue);
-        height: 0.5em;
+
         transition-duration: 0.2s;
-        width: 0.5em;
     }
 }
 
 .price {
     @include flex(center, flex-start, column);
+    gap: 1rem;
     min-width: 37rem;
     height: 6rem;
-    gap: 1rem;
     margin-left: 1.2rem;
 
     @include responsive(xs) {
@@ -145,9 +158,10 @@
     }
 
     h4 {
-        font-size: 1.4rem;
-        font-weight: 600;
         padding-right: 0.5rem;
+
+        font-weight: 600;
+        font-size: 1.4rem;
     }
 
     .priceNumber {
@@ -155,8 +169,8 @@
         height: 2rem;
 
         h3 {
-            font-size: 2rem;
             font-weight: 500;
+            font-size: 2rem;
         }
     }
 
@@ -165,8 +179,8 @@
         height: 2rem;
 
         p {
-            font-size: 1.48rem;
             font-weight: 400;
+            font-size: 1.48rem;
         }
     }
 }
@@ -176,14 +190,15 @@
     padding-top: 0.6rem;
 
     .buttonCart {
-        font-size: 1.6rem;
-        font-weight: 500;
         margin-bottom: 0.5rem;
+
+        font-weight: 500;
+        font-size: 1.6rem;
     }
 
     .buttonNow {
-        font-size: 1.6rem;
         font-weight: 500;
+        font-size: 1.6rem;
     }
 }
 
@@ -192,33 +207,41 @@
 }
 
 .arrowLeft {
-    color: $primary;
-    cursor: pointer;
-    font-size: 3rem;
-    left: 0.1rem;
-    opacity: 1;
-    padding: 1rem;
     position: absolute;
+    left: 0.1rem;
     z-index: 9;
+
+    padding: 1rem;
+
+    color: $primary;
+    font-size: 3rem;
+
+    cursor: pointer;
+    opacity: 1;
 
     &:hover {
         transform: scale(1.2);
+
         transition: 0.6s;
     }
 }
 
 .arrowRight {
-    color: $primary;
-    cursor: pointer;
-    font-size: 3rem;
-    opacity: 1;
-    padding: 1rem;
     position: absolute;
     right: 0.1rem;
     z-index: 9;
 
+    padding: 1rem;
+
+    color: $primary;
+    font-size: 3rem;
+
+    cursor: pointer;
+    opacity: 1;
+
     &:hover {
         transform: scale(1.2);
+
         transition: 0.6s;
     }
 }

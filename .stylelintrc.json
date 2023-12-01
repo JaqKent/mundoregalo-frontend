@@ -1,23 +1,26 @@
 {
-    "defaultSeverity": "warning",
-    "extends": [
-      "stylelint-config-standard-scss",
-      "stylelint-config-prettier-scss",
-      "stylelint-config-rational-order"
+  "defaultSeverity": "warning",
+  "extends": [
+    "stylelint-config-standard-scss",
+    "stylelint-config-prettier-scss",
+    "stylelint-config-rational-order"
+  ],
+  "ignoreFiles": ["**/*.js", "**/*.ts", "**/*.tsx", "**/*.jsx", "**/*.html", "**/*.svg", "**/*.cjs"],
+  "rules": {
+    "order/properties-order": [[], { "severity": "warning" }],
+    "plugin/rational-order": [
+      true,
+      {
+        "border-in-box-model": false,
+        "empty-line-between-groups": true,
+        "severity": "warning"
+      }
     ],
-    "ignoreFiles": ["**/*.js", "**/*.ts", "**/*.tsx", "**/*.jsx", "**/*.html"],
-    "rules": {
-      "order/properties-order": [[], { "severity": "warning" }],
-      "plugin/rational-order": [
-        true,
-        {
-          "border-in-box-model": false,
-          "empty-line-between-groups": true,
-          "severity": "warning"
-        }
-      ],
-      "declaration-empty-line-before": null,
-      "no-duplicate-selectors": true,
-      "declaration-block-no-duplicate-properties": true
-    }
+    "declaration-empty-line-before": null,
+    "no-duplicate-selectors": true,
+    "declaration-block-no-duplicate-properties": true,
+    "declaration-no-important": true, 
+    "color-named": "never",
+    "unit-disallowed-list": ["px"]
   }
+}

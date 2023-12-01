@@ -1,0 +1,36 @@
+import { Product } from '~interfaces/Products';
+
+export const DEFAULT_PRODUCT: Product = {
+  id: '',
+  name: '',
+  description: '',
+  stock: 0,
+  category: '',
+  subCategory: '',
+  barcode: '',
+  brand: '',
+  businessOwner: '',
+  dimensions: '',
+  weight: 0,
+  specifications: [],
+  variants: [],
+  prices: {
+    cost: 0,
+    web: {
+      value: 0,
+      lastModified: '',
+    },
+    cash: 0,
+    list: 0,
+  },
+  internalId: 0,
+  imageURL: [''],
+  createdAt: new Date(),
+  updatedAt: new Date(),
+  stars: 0,
+  votes: 0,
+  delivery: '',
+  moreSold: '',
+  onSale: '',
+  discountPrice: 0,
+};

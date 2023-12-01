@@ -3,14 +3,15 @@
 @import '~scss/variable';
 
 .container {
-    background-color: $white;
     padding: 1.1rem;
+
+    background-color: $white;
 
 
     .title {
         @include flex(space-between, center, row);
-        font-size: 1.4rem;
         font-weight: 500;
+        font-size: 1.4rem;
     }
 
     .stars {
@@ -18,17 +19,19 @@
 
         .rating {
             padding-left: 0.57rem;
-            font-size: 1.28rem;
+
             font-weight: 400;
+            font-size: 1.28rem;
         }
     }
 
     .commentbox {
-        border: 0.1rem solid $lightgray;
-        height: auto;
         width: 35rem;
-        border-radius: 0.5rem;
+        height: auto;
         padding: 0.7rem;
+
+        border: 0.1rem solid $lightgray;
+        border-radius: 0.5rem;
 
         @include responsive(xs) {
             width: 38.5rem;
@@ -36,10 +39,11 @@
     }
 
     .commentText {
-        font-size: 1.2rem;
-        font-weight: 400;
-        padding-bottom: 1.9rem;
         width: 35.5rem;
+        padding-bottom: 1.9rem;
+
+        font-weight: 400;
+        font-size: 1.2rem;
 
         @include responsive(xs) {
             width: 38.5rem;
@@ -58,8 +62,9 @@
         }
 
         .img {
-            height: 2.8rem;
             width: 2.8rem;
+            height: 2.8rem;
+
             border-radius: 50%;
         }
 
@@ -67,13 +72,15 @@
     }
 
     .thumbsUp {
-        color: $lightgray;
-        height: 1.59rem;
         width: 1.59;
+        height: 1.59rem;
+
+        color: $lightgray;
 
         &:hover {
-            cursor: pointer;
             color: $gray;
+
+            cursor: pointer;
         }
 
         &:active {
@@ -82,21 +89,24 @@
     }
 
     .thumbsUpClicked {
-        color: $thumbsup;
-        height: 1.59rem;
         width: 1.59;
+        height: 1.59rem;
+
+        color: $thumbsup;
 
 
     }
 
     .thumbsDown {
-        color: $lightgray;
-        height: 1.59rem;
         width: 1.59;
+        height: 1.59rem;
+
+        color: $lightgray;
 
         &:hover {
-            cursor: pointer;
             color: $gray;
+
+            cursor: pointer;
         }
 
         &:active {
@@ -105,9 +115,10 @@
     }
 
     .thumbsDownClicked {
-        color: $red;
-        height: 1.59rem;
         width: 1.59;
+        height: 1.59rem;
+
+        color: $red;
 
 
     }
@@ -126,27 +137,32 @@
         @include flex(flex-start, center, row);
         gap: 0.8rem;
         height: 2.2rem;
+        padding: 0 0.3rem;
+
+        font-weight: 500;
+        font-size: 1rem;
+
         border: 0.1rem solid $lightgray;
         border-radius: 1.5rem;
-        font-size: 1rem;
-        font-weight: 500;
-        padding: 0 0.3rem 0 0.3rem;
     }
 
     .dislike {
         @include flex(center, center, row);
+        width: 3rem;
+        height: 2.2rem;
+
         border: 0.1rem solid $lightgray;
         border-radius: 1.5rem;
-        height: 2.2rem;
-        width: 3rem;
     }
 
     .button {
-        padding-top: 1.2rem;
-        font-size: 1.2rem;
-        font-weight: 600;
-        cursor: pointer;
         width: 35rem;
+        padding-top: 1.2rem;
+
+        font-weight: 600;
+        font-size: 1.2rem;
+
+        cursor: pointer;
 
         @include responsive(xs) {
             width: 38.5rem;

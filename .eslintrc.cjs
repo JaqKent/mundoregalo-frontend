@@ -4,34 +4,49 @@ module.exports = {
     es2021: true,
   },
   extends: [
+    'eslint:recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:react/recommended',
     'airbnb',
     'airbnb-typescript',
     'airbnb/hooks',
-    'plugin:react/recommended',
-    'plugin:@typescript-eslint/recommended',
     'plugin:prettier/recommended',
   ],
   overrides: [
-    // override "simple-import-sort" config - requires 'eslint-plugin-simple-import-sort'
+    {
+      env: {
+        node: true,
+      },
+      files: ['.eslintrc.{js,cjs}'],
+      parserOptions: {
+        sourceType: 'script',
+      },
+    },
+    {
+      files: ['release.config.js'],
+      rules: {
+        'no-template-curly-in-string': 'off',
+      },
+    },
     {
       files: ['*.js', '*.jsx', '*.ts', '*.tsx'],
       rules: {
         'simple-import-sort/imports': [
-          'warn',
+          'error',
           {
             groups: [
               // Packages `react` related packages come first.
               ['^react', '^@?\\w'],
               // Internal packages.
-              ['^(@|components)(/.*|$)'],
-              // Side effect imports.
-              ['^\\u0000'],
+              ['^(@)(/.*|$)'],
+              // Absolute imports, starting with ~
+              ['^~.*(?:/|$)'],
               // Parent imports. Put `..` last.
-              ['^\\.\\.(?!/?$)', '^\\.\\./?$'],
-              // Other relative imports. Put same-folder imports and `.` last.
-              ['^\\./(?=.*/)(?!/?$)', '^\\.(?!/?$)', '^\\./?$'],
+              [
+                "^\\./(?=.*/)(?!/?$)', '^\\.(?!/?$)', '^\\./?$', '^\\.\\.(?!/?$)",
+              ],
               // Style imports.
-              ['^.+\\.?(css)$'],
+              ['^.+\\.?(scss|css)?inline$', '^.+\\.?(scss|css)$'],
             ],
           },
         ],
@@ -42,30 +57,23 @@ module.exports = {
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
-    project: ['./tsconfig.json'],
+    project: ['./tsconfig.json', 'release.config.js'],
   },
-  plugins: ['react', '@typescript-eslint', 'simple-import-sort', 'prettier'],
+  plugins: ['@typescript-eslint', 'react', 'simple-import-sort', 'prettier'],
   rules: {
-    'simple-import-sort/imports': 'warn',
-    'simple-import-sort/exports': 'error',
-    'react/react-in-jsx-scope': 0,
-    'import/prefer-default-export': 0,
+    'react/react-in-jsx-scope': 'off',
     'import/extensions': [
       'error',
-      'never',
+      'ignorePackages',
       {
+        '': 'never',
         js: 'never',
-        svg: 'always',
-        scss: 'always',
-        png: 'always',
-        css: 'always',
-        json: 'always',
+        jsx: 'never',
+        ts: 'never',
+        tsx: 'never',
       },
     ],
-  },
-  settings: {
-    'import/resolver': {
-      typescript: {},
-    },
+    'import/prefer-default-export': 'off',
+    'react/jsx-props-no-spreading': 'off',
   },
 };

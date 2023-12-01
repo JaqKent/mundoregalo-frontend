@@ -1,28 +1,44 @@
 import { ChangeEvent, useState } from 'react';
 
-import { OPTIONS } from '../constants';
+import { Variants } from '~interfaces/Products';
 
 import styles from './styles.module.scss';
 
-function SelectDropdown() {
-    const [selectedOption, setSelectedOption] = useState<string | null>(null);
+interface Props {
+  variant: Variants[];
+}
 
-    const selectChange = (event: ChangeEvent<HTMLSelectElement>) => {
-        const { value } = event.target;
-        setSelectedOption(value);
-    };
-    return (
-        <div className={styles.container}>
-            <span className={styles.colorText}>Color:</span>
-            <select onChange={selectChange} className={styles.select}>
-                {OPTIONS.map((item) => (
-                    <option key={item.id} value={item.value}>
-                        {item.text}
-                    </option>
-                ))}
-            </select>
-        </div>
-    );
+function SelectDropdown({ variant }: Props) {
+  const [selectedOption, setSelectedOption] = useState<string | null>(null);
+
+  const selectChange = (event: ChangeEvent<HTMLSelectElement>) => {
+    const { value } = event.target;
+    setSelectedOption(value);
+  };
+  const renderOptions = () => {
+    if (!variant || variant.length === 0) {
+      return (
+        <option key='unique' value='unique'>
+          Único color disponible
+        </option>
+      );
+    }
+
+    return variant.map((item) => (
+      <option key={item.barCode} value={item.color}>
+        {item.color}
+      </option>
+    ));
+  };
+
+  return (
+    <div className={styles.container}>
+      <span className={styles.colorText}>Color:</span>
+      <select onChange={selectChange} className={styles.select}>
+        {renderOptions()}
+      </select>
+    </div>
+  );
 }
 
 export default SelectDropdown;

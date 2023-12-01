@@ -1,16 +1,18 @@
-@import '~scss/colors.scss';
-@import '~scss/mixins.scss';
+@import '~scss/colors';
+@import '~scss/mixins';
 @import '~scss/variable';
 
 .container {
-    background-color: $white;
     height: 12rem;
     margin: 0.5rem;
 
+    background-color: $white;
+
     .title {
         @include flex(space-around, center, Row);
-        font-size: 1.8rem;
         padding: 1rem;
+
+        font-size: 1.8rem;
     }
 
     .category {
@@ -18,19 +20,21 @@
         gap: 2rem;
 
         .img {
+            width: 5rem;
+            height: 5rem;
+
             border-radius: 50%;
             cursor: pointer;
-            height: 5rem;
-            width: 5rem;
 
             @include responsive(xs) {
-                height: 6rem;
                 width: 6rem;
+                height: 6rem;
             }
 
             &:hover {
-                transition-duration: 0.7s;
                 transform: scale(1.2);
+
+                transition-duration: 0.7s;
             }
         }
     }

@@ -1,13 +1,14 @@
 import { ChangeEventHandler } from 'react';
+
 import styles from './styles.module.scss';
 
 interface Props {
-   currentValue:string;
-   id:string;
-   value:string;
-   label:string;
-   type:string
-   onChange:ChangeEventHandler<HTMLInputElement>;
+  currentValue: string;
+  id: string;
+  value: string;
+  label: string;
+  type: string;
+  onChange: ChangeEventHandler<HTMLInputElement>;
 }
 
 function CustomInput({
@@ -17,10 +18,10 @@ function CustomInput({
   onChange,
   id,
   type,
-} : Props) {
+}: Props) {
   return (
     <div className={styles.input}>
-      <label htmlFor="inputId" className={styles.label}>
+      <label htmlFor='inputId' className={styles.label}>
         <input
           id={id}
           checked={value === currentValue}
@@ -28,11 +29,8 @@ function CustomInput({
           type={type}
           value={value}
         />
-        <span>
-          {label}
-        </span>
+        <span>{label}</span>
       </label>
-
     </div>
   );
 }

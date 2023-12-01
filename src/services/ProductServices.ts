@@ -1,9 +1,36 @@
-import { api } from '~configs/api';
-import { Product } from '~interfaces/Products';
+import { toast } from 'react-toastify';
+import { initializeApp } from 'firebase/app';
+import { collection, getDocs, getFirestore } from 'firebase/firestore';
 
-interface GetProducts {
-    success: boolean;
-    response: Product[];
-}
+import { firebaseConfig } from '~configs/firebaseConfig';
 
-export const getProducts = () => api.get<GetProducts>('/products/get');
+const app = initializeApp(firebaseConfig);
+
+const db = getFirestore(app);
+
+export const getProducts = async () => {
+  try {
+    const productsCollection = collection(db, 'products');
+    const productsSnapshot = await getDocs(productsCollection);
+
+    const productsData = productsSnapshot.docs.map((doc) => {
+      return {
+        id: doc.id,
+        ...doc.data(),
+      };
+    });
+
+    return {
+      success: true,
+      response: productsData,
+    };
+  } catch (error) {
+    toast.error('Ocurrió un error trayendo los datos');
+    return {
+      success: false,
+      response: [],
+    };
+  }
+};
+
+// ...
