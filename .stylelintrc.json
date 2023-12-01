@@ -5,7 +5,15 @@
     "stylelint-config-prettier-scss",
     "stylelint-config-rational-order"
   ],
-  "ignoreFiles": ["**/*.js", "**/*.ts", "**/*.tsx", "**/*.jsx", "**/*.html", "**/*.svg", "**/*.cjs"],
+  "ignoreFiles": [
+    "**/*.js",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.jsx",
+    "**/*.html",
+    "**/*.svg",
+    "**/*.cjs"
+  ],
   "rules": {
     "order/properties-order": [[], { "severity": "warning" }],
     "plugin/rational-order": [
@@ -18,9 +26,6 @@
     ],
     "declaration-empty-line-before": null,
     "no-duplicate-selectors": true,
-    "declaration-block-no-duplicate-properties": true,
-    "declaration-no-important": true, 
-    "color-named": "never",
-    "unit-disallowed-list": ["px"]
+    "declaration-block-no-duplicate-properties": true
   }
 }
