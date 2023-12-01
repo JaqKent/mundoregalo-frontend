@@ -23,6 +23,12 @@ module.exports = {
       },
     },
     {
+      files: ['release.config.js'],
+      rules: {
+        'no-template-curly-in-string': 'off',
+      },
+    },
+    {
       files: ['*.js', '*.jsx', '*.ts', '*.tsx'],
       rules: {
         'simple-import-sort/imports': [
@@ -51,7 +57,7 @@ module.exports = {
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
-    project: ['./tsconfig.json'],
+    project: ['./tsconfig.json', 'release.config.js'],
   },
   plugins: ['@typescript-eslint', 'react', 'simple-import-sort', 'prettier'],
   rules: {
