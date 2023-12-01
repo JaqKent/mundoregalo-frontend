@@ -1,4 +1,4 @@
-import { api } from '~configs/api';
+/* import { api } from '~configs/api';
 
 interface LoginResponse {
     success: boolean;
@@ -12,3 +12,4 @@ export const login = (DNI: number, password: string) =>
             password,
         })
         .then((response) => response.data);
+ */

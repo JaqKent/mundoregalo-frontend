@@ -11,7 +11,12 @@ export interface Product {
     dimensions?: string;
     weight: number;
     specifications: Specifications[];
-    prices: number;
+    prices: {
+        cost: number;
+        web: number;
+        cash: number;
+        list: number;
+    };
     internalId: number; // 0
     imageURL: string[];
     createdAt: Date;
