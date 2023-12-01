@@ -3,7 +3,6 @@ import { ChangeEvent, useRef, useState } from 'react';
 import styles from './styles.module.scss';
 
 import { getFormattedQuantity } from '~constants/utils';
-import { Product } from '~interfaces/Products';
 
 interface Props {
     QUANTITY: number;

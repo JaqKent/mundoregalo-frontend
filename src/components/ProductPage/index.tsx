@@ -1,10 +1,8 @@
-import { useState } from 'react';
-
 import ProductComments from './components/ProductComments';
 import QuantitySelector from './components/quantitySelector';
 import RelatedProducts from './components/RelatedProducts';
 import SelectDropdown from './components/SelectDropdown';
-import Specifications from './components/specifications';
+import Specification from './components/specifications';
 import StarRating from './components/StarRating';
 
 import styles from './styles.module.scss';
@@ -20,7 +18,6 @@ interface Props {
 function ProductPage({ product }: Props) {
     const handleAddToCart = () => console.log('cart');
     const handleBuyNow = () => console.log('buy now');
-
     return (
         <div className={styles.container}>
             <div className={styles.containerSlider}>
@@ -50,12 +47,15 @@ function ProductPage({ product }: Props) {
                 </div>
 
                 <div>
-                    <SelectDropdown />
+                    <SelectDropdown variant={product.variants} />
                 </div>
                 <div className={styles.price}>
                     <div className={styles.priceNumber}>
                         <h4>Precio:</h4>
-                        <h3>{product.prices.web.value}</h3>
+                        <h3>
+                            {product.prices.web?.value ||
+                                'Precio no disponible'}
+                        </h3>
                     </div>
                     <div className={styles.delivery}>
                         <h4>Envio: </h4>
@@ -84,7 +84,10 @@ function ProductPage({ product }: Props) {
                 </div>
             </div>
             <div className={styles.specifications}>
-                <Specifications description={product.description} />
+                <Specification
+                    specs={product.specifications}
+                    description={product.description}
+                />
             </div>
             <div>
                 <RelatedProducts hide />

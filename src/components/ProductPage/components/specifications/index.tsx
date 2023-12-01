@@ -2,16 +2,16 @@ import { useState } from 'react';
 import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import { DATA, DESCRIPTION } from './constants';
-
 import styles from './styles.module.scss';
+
+import { Specifications } from '~interfaces/Products';
 
 interface Props {
     description: string;
+    specs: Specifications[];
 }
 
-function Specifications({ description }: Props) {
-    const [data, setData] = useState(DATA);
+function Specification({ description, specs }: Props) {
     const [viewMore, setViewMore] = useState(false);
     const [more, setMore] = useState(false);
 
@@ -23,7 +23,11 @@ function Specifications({ description }: Props) {
         setMore((prevState) => !prevState);
     };
 
-    const output = viewMore ? data : data.slice(0, 7);
+    let output: Specifications[] = [];
+
+    if (Array.isArray(specs)) {
+        output = viewMore ? specs : specs.slice(0, 7);
+    }
 
     return (
         <div className={styles.container}>
@@ -33,16 +37,23 @@ function Specifications({ description }: Props) {
                     <h3>Especificaciones</h3>
                 </div>
                 <div className={styles.specsContainer}>
-                    {output.map((item) => (
-                        <div className={styles.specsData} key={item.id}>
+                    {output.map((item, index) => (
+                        <div className={styles.specsData} key={index}>
                             <div className={styles.specsItem}>
-                                <p>{item.key}</p>
+                                <p>{item.title}</p>
                             </div>
-                            <div className={styles.specsText} key={item.id}>
-                                <p>{item.value}</p>
+                            <div className={styles.specsText} key={index}>
+                                <p>{item.description}</p>
                             </div>
                         </div>
                     ))}
+                    {specs && specs.length === 0 && (
+                        <div className={styles.specsData}>
+                            <div className={styles.specsItem}>
+                                <p>Sin Especificaciones del producto</p>
+                            </div>
+                        </div>
+                    )}
                     <div
                         className={styles.button}
                         onKeyDown={handleView}
@@ -70,14 +81,9 @@ function Specifications({ description }: Props) {
                     <h3>Descripción</h3>
                 </div>
                 <div>
-                    {DESCRIPTION.map((text) => (
-                        <p
-                            className={more ? styles.text : styles.hide}
-                            key={text.id}
-                        >
-                            {description}
-                        </p>
-                    ))}
+                    <p className={more ? styles.text : styles.hide}>
+                        {description || 'Sin descripción del producto'}
+                    </p>
                 </div>
                 <div
                     onClick={handleText}
@@ -104,4 +110,4 @@ function Specifications({ description }: Props) {
     );
 }
 
-export default Specifications;
+export default Specification;
