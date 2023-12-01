@@ -1,4 +1,8 @@
-/* import { api } from '~configs/api';
+function auth() {
+    return auth;
+}
+
+export default auth; /* import { api } from '~configs/api';
 
 interface LoginResponse {
     success: boolean;

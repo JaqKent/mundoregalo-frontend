@@ -18,6 +18,7 @@ interface Props {
 function ProductPage({ product }: Props) {
     const handleAddToCart = () => console.log('cart');
     const handleBuyNow = () => console.log('buy now');
+
     return (
         <div className={styles.container}>
             <div className={styles.containerSlider}>
@@ -53,8 +54,7 @@ function ProductPage({ product }: Props) {
                     <div className={styles.priceNumber}>
                         <h4>Precio:</h4>
                         <h3>
-                            {product.prices.web?.value ||
-                                'Precio no disponible'}
+                            {product.prices.web.value || 'Precio no disponible'}
                         </h3>
                     </div>
                     <div className={styles.delivery}>

@@ -16,7 +16,10 @@ export const DEFAULT_PRODUCT: Product = {
     variants: [],
     prices: {
         cost: 0,
-        web: 0,
+        web: {
+            value: 0,
+            lastModified: '',
+        },
         cash: 0,
         list: 0,
     },
