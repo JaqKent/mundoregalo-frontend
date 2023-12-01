@@ -16,75 +16,41 @@ interface Props {
 }
 
 function Trending({ hide }: Props) {
-    const [current, setCurrent] = useState(0);
     const [auto, setAuto] = useState(false);
     const { allProducts } = useContext(ProductContext);
 
     const slideLength = allProducts.length;
 
+    const [current, setCurrent] = useState(0);
+
     useEffect(() => {
-        const timeOut = auto
-            ? setTimeout(() => {
-                  nextSlide();
-              }, 2500)
-            : undefined;
+        let timeoutId: number;
+
+        if (auto) {
+            timeoutId = window.setTimeout(() => {
+                nextSlide();
+            }, 3000);
+        }
 
         return () => {
-            clearTimeout(timeOut);
+            clearTimeout(timeoutId);
         };
-    });
-    const slideshowSlides = [];
+    }, [current, auto]);
+
     const nextSlide = () => {
-        setCurrent((prevState) =>
-            prevState === slideshowSlides.length - 1 ? 0 : current + 1
+        setCurrent((prevIndex) =>
+            prevIndex === Math.floor(slideLength / 2) - 1 ? 0 : prevIndex + 1
         );
     };
 
     const prevSlide = () => {
-        setCurrent((prevState) =>
-            prevState === 0 ? slideshowSlides.length - 1 : current - 1
+        setCurrent((prevIndex) =>
+            prevIndex === 0 ? Math.floor(slideLength / 2) - 1 : prevIndex - 1
         );
     };
 
     if (!Array.isArray(allProducts) || allProducts.length <= 0) {
         return null;
-    }
-
-    for (let i = 0; i < slideLength; i += 2) {
-        slideshowSlides.push(
-            <div className={styles.card}>
-                <CustomCard
-                    small
-                    image={allProducts[i].imageURL}
-                    name={allProducts[i].description}
-                    price={allProducts[i].prices.web.value}
-                    onSale={allProducts[i].onSale || undefined}
-                    moreSold={allProducts[i].moreSold || undefined}
-                    delivery={allProducts[i].delivery || undefined}
-                    discountPrice={allProducts[i].discountPrice || undefined}
-                    key={allProducts[i].id}
-                    _id={allProducts[i].id}
-                    stock={allProducts[i].stock}
-                />
-                {allProducts[i + 1] && (
-                    <CustomCard
-                        small
-                        image={allProducts[i + 1].imageURL}
-                        name={allProducts[i + 1].description}
-                        price={allProducts[i + 1].prices.web.value}
-                        key={allProducts[i + 1].id}
-                        onSale={allProducts[i + 1].onSale || undefined}
-                        moreSold={allProducts[i + 1].moreSold || undefined}
-                        delivery={allProducts[i + 1].delivery || undefined}
-                        discountPrice={
-                            allProducts[i + 1].discountPrice || undefined
-                        }
-                        _id={allProducts[i].id}
-                        stock={allProducts[i].stock}
-                    />
-                )}
-            </div>
-        );
     }
 
     return (
@@ -108,19 +74,83 @@ function Trending({ hide }: Props) {
                         onClick={prevSlide}
                     />
                 )}
-                {slideshowSlides.map((i, index) => (
-                    <div
-                        key={index}
-                        className={
-                            index === current
-                                ? styles.slideActive
-                                : styles.slide
-                        }
-                    >
-                        {i}
-                    </div>
-                ))}
-
+                {Array.from({ length: Math.floor(slideLength / 2) }).map(
+                    (_, index) => (
+                        <div
+                            key={index}
+                            className={
+                                index === current
+                                    ? styles.slideActive
+                                    : styles.slide
+                            }
+                        >
+                            <div className={styles.card}>
+                                <CustomCard
+                                    small
+                                    image={allProducts[index * 2].imageURL}
+                                    name={allProducts[index * 2].description}
+                                    price={
+                                        allProducts[index * 2].prices.web.value
+                                    }
+                                    onSale={
+                                        allProducts[index * 2].onSale ||
+                                        undefined
+                                    }
+                                    moreSold={
+                                        allProducts[index * 2].moreSold ||
+                                        undefined
+                                    }
+                                    delivery={
+                                        allProducts[index * 2].delivery ||
+                                        undefined
+                                    }
+                                    discountPrice={
+                                        allProducts[index * 2].discountPrice ||
+                                        undefined
+                                    }
+                                    key={allProducts[index * 2].id}
+                                    _id={allProducts[index * 2].id}
+                                    stock={allProducts[index * 2].stock}
+                                />
+                                {allProducts[index * 2 + 1] && (
+                                    <CustomCard
+                                        small
+                                        image={
+                                            allProducts[index * 2 + 1].imageURL
+                                        }
+                                        name={
+                                            allProducts[index * 2 + 1]
+                                                .description
+                                        }
+                                        price={
+                                            allProducts[index * 2 + 1].prices
+                                                .web.value
+                                        }
+                                        key={allProducts[index * 2 + 1].id}
+                                        onSale={
+                                            allProducts[index * 2 + 1].onSale ||
+                                            undefined
+                                        }
+                                        moreSold={
+                                            allProducts[index * 2 + 1]
+                                                .moreSold || undefined
+                                        }
+                                        delivery={
+                                            allProducts[index * 2 + 1]
+                                                .delivery || undefined
+                                        }
+                                        discountPrice={
+                                            allProducts[index * 2 + 1]
+                                                .discountPrice || undefined
+                                        }
+                                        _id={allProducts[index * 2 + 1].id}
+                                        stock={allProducts[index * 2 + 1].stock}
+                                    />
+                                )}
+                            </div>
+                        </div>
+                    )
+                )}
                 {!hide && slideLength >= 2 && (
                     <FontAwesomeIcon
                         icon={faChevronRight}

@@ -90,7 +90,7 @@ function ProductPage({ product }: Props) {
                 />
             </div>
             <div>
-                <RelatedProducts hide />
+                <RelatedProducts />
             </div>
             <div>
                 <ProductComments />
