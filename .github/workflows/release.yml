@@ -15,8 +15,8 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 20
-      - run: npm ci
-      - run: npm run build
+      - run: yarn install --force
+      - run: yarn build
 
   semVer_bump:
     runs-on: ubuntu-latest
