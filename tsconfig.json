@@ -31,6 +31,6 @@
       "~utils/*": ["./utils/*"]
     }
   },
-  "include": ["src", ".eslintrc.cjs", "release.config.js"],
+  "include": ["src", ".eslintrc.cjs", "release.config.js", "vite.config.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
