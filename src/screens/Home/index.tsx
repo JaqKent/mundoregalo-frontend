@@ -1,4 +1,4 @@
-/* eslint-disable no-unused-vars */
+// FIXME: Porque los componetnes de home no estan en ./components? son reutilizados en otro lado?
 
 import CategorySection from '~components/Category';
 import OnSaleSection from '~components/OnSaleSection';

@@ -85,3 +85,5 @@ function Survey() {
 }
 
 export default Survey;
+
+// FIXME: Refactor usando react-hook-form y componentes reutilizables.

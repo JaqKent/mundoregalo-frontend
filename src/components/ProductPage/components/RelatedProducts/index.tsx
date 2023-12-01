@@ -1,4 +1,4 @@
-// TODO: This component is way too similar to trending
+// FIXME:This component is way too similar to trending
 
 import { useContext, useState } from 'react';
 import {

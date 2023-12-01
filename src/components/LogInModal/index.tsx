@@ -1,4 +1,4 @@
-// TODO: Wrap p in line 21 into a button so it can be clickable and add default props
+// FIXME:Wrap p in line 21 into a button so it can be clickable and add default props
 
 import facebook from 'assets/facebook-color.png';
 import google from 'assets/google-color.png';
