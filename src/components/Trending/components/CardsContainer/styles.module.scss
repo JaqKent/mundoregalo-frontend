@@ -1,0 +1,28 @@
+@import '~scss/colors';
+@import '~scss/mixins';
+@import '~scss/variable';
+
+.card {
+  @include flex(center, center, row);
+  gap: 0.5rem;
+}
+
+.slide {
+  display: none;
+}
+
+.slide-active {
+  display: block;
+
+  animation: fade-in 1s;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

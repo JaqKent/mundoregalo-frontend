@@ -1,41 +1,47 @@
-@import '~scss/colors.scss';
-@import '~scss/mixins.scss';
+@import '~scss/colors';
+@import '~scss/mixins';
 @import '~scss/variable';
 
 .container {
     @include flex(center, center, row);
     width: 100%;
-    text-align: center;
     margin-top: 2rem;
+
+    text-align: center;
 }
 
 .input {
     width: 80%;
     padding: 1rem 2rem;
-    border-radius: 0.7rem 0 0 0.7rem;
+
     border: none;
+    border-radius: 0.7rem 0 0 0.7rem;
 
 }
 
 .button {
-    border-radius: 0 0.7rem 0.7rem 0;
     padding: 1rem 2rem;
-    border: none;
+
     color: $white;
+
     background-color: darken($primary, 10);
+    border: none;
+    border-radius: 0 0.7rem 0.7rem 0;
     cursor: pointer;
 }
 
 .dropdown {
-    background-color: rgba($primary, 0.91);
-    border-radius: 0 0 1rem 1rem;
-    border: 1px solid $lightgray;
+    position: absolute;
+    top: 95px;
+    z-index: 9;
+
     display: flex;
     flex-direction: column;
     width: 95%;
-    z-index: 9;
-    position: absolute;
-    top: 95px;
+
+    background-color: rgba($primary, 0.91);
+    border: 1px solid $lightgray;
+    border-radius: 0 0 1rem 1rem;
 
 
     @include responsive(xlg) {
@@ -56,15 +62,16 @@
 }
 
 .dropdownRow {
-    color: $white;
-    cursor: pointer;
-    margin: 0.2rem 0;
     height: 3.5rem;
-    text-align: center;
-    font-size: 1.4rem;
-    font-weight: 500;
-    background: none;
-    border: none;
     margin: 0;
     padding: 0;
+
+    color: $white;
+    font-weight: 500;
+    font-size: 1.4rem;
+    text-align: center;
+
+    background: none;
+    border: none;
+    cursor: pointer;
 }

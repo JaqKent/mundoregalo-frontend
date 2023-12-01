@@ -1,19 +1,22 @@
-@import '~scss/colors.scss';
-@import '~scss/mixins.scss';
+@import '~scss/colors';
+@import '~scss/mixins';
 @import '~scss/variable';
 
 .small {
-    font-size: 1.2em;
     padding: 0.5em 1.5em;
+
+    font-size: 1.2em;
 }
 
 .primaryButton {
+    display: inline-flex;
+
+    text-align: center;
+
     background-color: $buttonPrimary;
     border-color: $lightgray;
     border-radius: 4px;
     cursor: pointer;
-    display: inline-flex;
-    text-align: center;
 
     &:hover {
         background-color: lighten($buttonPrimary, 5);
@@ -24,18 +27,20 @@
     }
 
     &:disabled {
-        cursor: auto;
         background-color: $disabled;
+        cursor: auto;
     }
 }
 
 .secondaryButton {
+    display: inline-flex;
+
+    text-align: center;
+
     background-color: $white;
     border-color: $buttonPrimary;
     border-radius: 4px;
     cursor: pointer;
-    display: inline-flex;
-    text-align: center;
 
     &:hover {
         background-color: $bonewhite;
@@ -46,8 +51,8 @@
     }
 
     &:disabled {
-        cursor: auto;
         background-color: $disabled;
+        cursor: auto;
     }
 
 
@@ -55,9 +60,11 @@
 
 .big {
     @include flex(center, center, row);
-    border-radius: 1.5rem;
-    font-size: 1.2em;
     height: 4.5rem;
+
+    font-size: 1.2em;
+
+    border-radius: 1.5rem;
 
     @include responsive(xxs) {
         width: 35rem;

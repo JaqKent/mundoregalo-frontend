@@ -47,6 +47,10 @@ export default defineConfig({
                 find: '~configs',
                 replacement: path.resolve(__dirname, 'src/configs'),
             },
+            {
+                find: '~utils',
+                replacement: path.resolve(__dirname, 'src/utils'),
+            },
         ],
     },
 });

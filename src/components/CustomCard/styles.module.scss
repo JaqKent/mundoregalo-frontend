@@ -4,10 +4,11 @@
 
 .containerLarge {
     @include flex(space-between, center, row);
+    width: 37rem;
+    height: 13.3rem;
+
     background-color: $white;
     cursor: pointer;
-    height: 13.3rem;
-    width: 37rem;
 
     @include responsive(xs) {
         width: 39.6rem;
@@ -16,10 +17,11 @@
 
 .containerSmall {
     @include flex(space-between, center, column);
+    width: 18rem;
+    height: 32.25rem;
+
     background-color: $white;
     cursor: pointer;
-    height: 32.25rem;
-    width: 18rem;
 
     @include responsive(xs) {
         width: 19.78rem;
@@ -28,22 +30,22 @@
 
 .imgLarge {
     @include flex(center, center, row);
-    height: 12.1rem;
-    object-fit: fill;
     width: 12.1rem;
+    height: 12.1rem;
     margin: 0.9rem;
+    object-fit: fill;
 }
 
 .imgSmall {
     @include flex(space-between, flex-start, column);
-    height: 15.5rem;
-    object-fit: cover;
     width: 15.5rem;
+    height: 15.5rem;
     margin: 0.8rem;
+    object-fit: cover;
 
     @include responsive(xs) {
-        height: 18.2rem;
         width: 18.2rem;
+        height: 18.2rem;
     }
 }
 
@@ -58,31 +60,34 @@
 
 .titleLarge {
     display: -webkit-box;
-    font-size: 1.4rem;
-    font-weight: 500;
+    width: 22rem;
     height: 4.4rem;
     overflow: hidden;
+
+    font-weight: 500;
+    font-size: 1.4rem;
     text-align: flex-start;
     text-overflow: ellipsis;
-    width: 22rem;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
 
     @include responsive(xs) {
         width: 24.4rem;
+
         font-size: 1.5rem;
     }
 }
 
 .titleSmall {
     display: -webkit-box;
-    font-size: 1.4rem;
-    font-weight: 500;
+    width: 17.7rem;
     height: 4rem;
     overflow: hidden;
+
+    font-weight: 500;
+    font-size: 1.4rem;
     text-align: center;
     text-overflow: ellipsis;
-    width: 17.7rem;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
 
@@ -95,15 +100,16 @@
 
 .dataLarge {
     @include flex(space-between, space-between, row);
-    margin-top: 5px;
     width: 22.5rem;
+    margin-top: 5px;
 }
 
 .dataSmall {
     @include flex(space-between, center, row);
-    margin-top: 5px;
-    text-align: center;
     width: 17rem;
+    margin-top: 5px;
+
+    text-align: center;
 }
 
 .smallSection {
@@ -115,14 +121,14 @@
 }
 
 .smallPrice {
-    font-size: 1.8rem;
     font-weight: 700;
+    font-size: 1.8rem;
 }
 
 .discountPrice {
-    font-size: 1.4rem;
-    font-weight: 300;
     color: #858688;
+    font-weight: 300;
+    font-size: 1.4rem;
     text-decoration-line: line-through;
 }
 
@@ -137,8 +143,8 @@
 
 .largeSection {
     @include flex(center, flex-start, column);
-    margin-top: .5rem;
     width: 24.4rem;
+    margin-top: .5rem;
 }
 
 .largeVotes {
@@ -151,32 +157,38 @@
 
 .delivery {
     @include flex(center, center, row);
-    background-color: #188754;
-    color: $white;
-    border-radius: 0.38rem;
-    font-size: 0.9rem;
-    font-weight: 600;
     width: 6.8rem;
     height: 2rem;
+
+    color: $white;
+    font-weight: 600;
+    font-size: 0.9rem;
+
+    background-color: #188754;
+    border-radius: 0.38rem;
 }
 
 .moreSold {
     @include flex(center, center, row);
-    background-color: #DB3646;
-    color: $white;
-    border-radius: 0.38rem;
-    font-size: 0.9rem;
-    font-weight: 600;
     width: 6.8rem;
     height: 2rem;
+
+    color: $white;
+    font-weight: 600;
+    font-size: 0.9rem;
+
+    background-color: #DB3646;
+    border-radius: 0.38rem;
 }
 
 .onSale {
     @include flex(center, center, row);
-    background-color: #FCC10B;
-    border-radius: 0.38rem;
-    font-size: 1.2rem;
-    font-weight: 600;
     width: 6.8rem;
     height: 2rem;
+
+    font-weight: 600;
+    font-size: 1.2rem;
+
+    background-color: #FCC10B;
+    border-radius: 0.38rem;
 }

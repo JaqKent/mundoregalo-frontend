@@ -9,10 +9,11 @@
 .selector {
     @include flex(space-between, center, row);
     width: 35rem;
-    border-radius: 1.5rem;
-    border: 0.15rem solid $lightgray;
-    margin: 0.5rem 1.6rem;
     height: 4rem;
+    margin: 0.5rem 1.6rem;
+
+    border: 0.15rem solid $lightgray;
+    border-radius: 1.5rem;
 
     @include responsive(xs) {
         width: 38.2rem;
@@ -23,17 +24,19 @@
 
 .button {
     @include flex(center, center, row);
-    font-size: 2.3rem;
-    border-radius: 50px;
-    height: 3rem;
     width: 3rem;
-    background-color: $lightgray;
-    border: none;
+    height: 3rem;
     margin: 0.5rem;
 
+    font-size: 2.3rem;
+
+    background-color: $lightgray;
+    border: none;
+    border-radius: 50px;
+
     &:hover {
-        cursor: pointer;
         background-color: $gray;
+        cursor: pointer;
     }
 
     &:active {
@@ -43,11 +46,12 @@
 }
 
 .input {
+    font-weight: 500;
 
     font-size: 1.6rem;
-    font-weight: 500;
-    border: none;
     text-align: center;
+
+    border: none;
 
 }
 
@@ -56,8 +60,9 @@
 
 
     .spanStock {
-        font-size: 1.2rem;
-        color: $gray;
         padding-left: 0.3rem;
+
+        color: $gray;
+        font-size: 1.2rem;
     }
 }

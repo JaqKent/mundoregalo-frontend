@@ -4,11 +4,12 @@
 
 .container {
     @include flex(flex-start, flex-start, column);
-    background-color: $white;
     width: 35rem;
     height: 4.7rem;
-    border-radius: 0.5rem;
+
+    background-color: $white;
     border: 0.15rem solid $lightgray;
+    border-radius: 0.5rem;
 
 
     @include responsive(xs) {
@@ -20,10 +21,12 @@
 }
 
 .select {
-    border: none;
     min-width: 35rem;
-    font-size: 1.28rem;
+
     font-weight: 400;
+    font-size: 1.28rem;
+
+    border: none;
 
     @include responsive(xs) {
         width: 38.5rem;
@@ -33,9 +36,10 @@
 }
 
 .colorText {
-    font-size: 1.4rem;
-    font-weight: 500 !important;
     padding-left: 0.4rem;
+
+    font-weight: 500 !important;
+    font-size: 1.4rem;
 
     @include responsive(xxxs) {
         width: 35rem;

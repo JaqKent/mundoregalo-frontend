@@ -2,16 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import * as firebase from 'firebase/app';
 
-import App from './App/App';
+import { firebaseConfig } from '~configs/firebaseConfig';
 
 import '~scss/main.scss';
 
-import { firebaseConfig } from '~configs/firebaseConfig';
+import App from './App/App';
 
 firebase.initializeApp(firebaseConfig);
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
-    <React.StrictMode>
-        <App />
-    </React.StrictMode>
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
 );
