@@ -1,18 +1,19 @@
-import { ChangeEvent, useState } from 'react';
+import { ChangeEvent, useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import styles from './styles.module.scss';
 
-import { PRODUCTS } from '~components/OnSaleSection/constants';
 import { filterProducts } from '~constants/utils';
+import { ProductContext } from '~context/ProductContext';
 
 function SearchBar() {
+    const { allProducts } = useContext(ProductContext);
     const [search, setSearch] = useState('');
     const navigate = useNavigate();
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-    const filteredProducts = filterProducts(PRODUCTS, search);
+    const filteredProducts = filterProducts(allProducts, search);
 
     const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
         const { value } = e.target;
@@ -55,14 +56,12 @@ function SearchBar() {
                     {filteredProducts.map((item) => (
                         <button
                             type="button"
-                            onClick={() =>
-                                handleDropdownItemClick(item.description)
-                            }
+                            onClick={() => handleDropdownItemClick(item.name)}
                             className={styles.dropdownRow}
                             onKeyDown={handleSearch}
                             key={item.id}
                         >
-                            {item.description}
+                            {item.name}
                         </button>
                     ))}
                 </div>
