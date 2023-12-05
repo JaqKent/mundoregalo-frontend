@@ -1,4 +1,4 @@
-// TODO: Fix default imports on this file
+// FIXME:Fix default props on this file
 
 import styles from './styles.module.scss';
 
@@ -38,3 +38,5 @@ function CustomButton({
 }
 
 export default CustomButton;
+
+// FIXME: https://www.youtube.com/watch?v=MSq_DCRxOxw&t=24s Open Close Principle!

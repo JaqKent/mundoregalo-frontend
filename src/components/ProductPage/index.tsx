@@ -17,8 +17,8 @@ interface Props {
 }
 
 function ProductPage({ product }: Props) {
-  const handleAddToCart = toBeImplemented();
-  const handleBuyNow = toBeImplemented();
+  const handleAddToCart = toBeImplemented;
+  const handleBuyNow = toBeImplemented;
 
   return (
     <div className={styles.container}>

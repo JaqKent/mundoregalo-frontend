@@ -20,6 +20,7 @@ interface Props {
   stock: number;
 }
 
+// FIXME:En vez de poner un prop por cada item de product, pedi unicamente Product como prop y lo destructuras acá dentro, es menos codigo y mas legible :)
 function CustomCard({
   image,
   name,
@@ -39,12 +40,37 @@ function CustomCard({
   };
 
   const handleNoStock = () => toast.error('Sin Stock');
+
+  /* FIXME:Hay mucho codigo repetido aca para manejar la logica de small y large. 
+  Podrias en un archivo constants.ts, importar todos los styles (que tengan nombres consistentes... por favor)
+  al estilo:
+
+  export const customStyles = {
+    large: {
+      container: styles.containerLarge,
+      img: styles.imgLarge
+    },
+    small: {
+      container: styles.containerSmall,
+      img: styles.imgSmall
+    }
+  }
+
+  de ahi acá haces otra constante que utilice uno u otro dependiendo de 'small'
+
+  const dynamicStyles = customStyles[small ? 'small' : 'large']
+
+  y reemplazar cada styles abajo por el que corresponda de dynamicStyles 
+
+  ejemplo: styles.containerSmall => dynamicStyles.container
+*/
+
   return (
     <div
       className={small ? styles.containerSmall : styles.containerLarge}
       onClick={stock <= 0 ? handleNoStock : handleViewProduct}
       onKeyDown={handleViewProduct}
-      role='button'
+      role='button' // Si tiene que tener un rol de boton... pone un boton, no un div.
       tabIndex={0}
     >
       <div>
@@ -67,6 +93,7 @@ function CustomCard({
                 <StarRating initialValue={4} readonly size={15.34} />
               </span>{' '}
             </div>
+            {/* Estos dos siguientes divs son iguales, pueden ser su propio componente */}
             <div>
               <span className={styles.smallPrice}>
                 <FontAwesomeIcon icon={faDollarSign} />
@@ -84,6 +111,7 @@ function CustomCard({
               )}
             </div>
           </div>
+          {/* Delivery, moreSold y onsale es EL MISMO COMPONENTE pero con colores distintos... de estos tres, lo haces uno solo. */}
           <div className={styles.info}>
             {delivery && <span className={styles.delivery}>{delivery}</span>}
             {moreSold && <span className={styles.moreSold}>{moreSold}</span>}

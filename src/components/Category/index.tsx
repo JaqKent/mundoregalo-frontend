@@ -1,11 +1,11 @@
-import { toBeImplemented } from 'utils/logicNotImplemented';
+import { toBeImplemented } from '~utils/logicNotImplemented';
 
 import styles from './styles.module.scss';
 
 import { CATEGORY } from './constanst';
 
 function CategorySection() {
-  const handleCategory = toBeImplemented();
+  const handleCategory = toBeImplemented;
   return (
     <div className={styles.container}>
       <div className={styles.title}>Explora nuestras categorias</div>
@@ -18,7 +18,7 @@ function CategorySection() {
             key={item.id}
             onClick={handleCategory}
             onKeyDown={handleCategory}
-          /> // TODO: Assign the onClick to a button that wraps this image
+          /> // FIXME:Envolve el img en un boton y a ese boton ponele el onClick... onKeyDown hace falta?
         ))}
       </div>
     </div>
