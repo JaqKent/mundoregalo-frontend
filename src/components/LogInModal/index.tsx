@@ -1,5 +1,3 @@
-// FIXME:Wrap p in line 21 into a button so it can be clickable and add default props
-
 import facebook from 'assets/facebook-color.png';
 import google from 'assets/google-color.png';
 import linkedin from 'assets/linkedin-color.png';
@@ -18,9 +16,14 @@ interface Props {
 function LogInModal({ signIn, onClick, show, link, onClose }: Props) {
   return show ? (
     <div className={styles.container}>
-      <p className={styles.close} onClick={onClose} onKeyDown={onClose}>
+      <button
+        type='button'
+        className={styles.close}
+        onClick={onClose}
+        onKeyDown={onClose}
+      >
         x
-      </p>
+      </button>
       <div>
         <h2>{signIn ? 'Iniciar sesión' : 'Crear Cuenta'}</h2>
       </div>
@@ -77,3 +80,8 @@ function LogInModal({ signIn, onClick, show, link, onClose }: Props) {
 }
 
 export default LogInModal;
+
+LogInModal.defaultProps = {
+  signIn: false,
+  show: false,
+};

@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import React, { useContext } from 'react';
 import { animated, config, useTransition } from 'react-spring';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 

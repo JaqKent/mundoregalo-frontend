@@ -11,14 +11,14 @@ function CategorySection() {
       <div className={styles.title}>Explora nuestras categorias</div>
       <div className={styles.category}>
         {CATEGORY.map((item) => (
-          <img
-            className={styles.img}
-            src={item.image}
-            alt={item.name}
+          <button
             key={item.id}
+            className={styles.button}
             onClick={handleCategory}
-            onKeyDown={handleCategory}
-          /> // FIXME:Envolve el img en un boton y a ese boton ponele el onClick... onKeyDown hace falta?
+            type='button'
+          >
+            <img className={styles.img} src={item.image} alt={item.name} />
+          </button>
         ))}
       </div>
     </div>

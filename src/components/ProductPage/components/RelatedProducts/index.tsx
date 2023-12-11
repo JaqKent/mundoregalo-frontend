@@ -48,41 +48,21 @@ function RelatedProducts() {
         )}
         {Array.from({ length: Math.floor(slideLength / 2) }).map((_, index) => (
           <div
-            key={index}
+            key={allProducts[index].id}
             className={index === current ? styles.slideActive : styles.slide}
           >
             {' '}
             <div className={styles.card}>
               <CustomCard
                 small
-                image={allProducts[index * 2].imageURL}
-                name={allProducts[index * 2].description}
-                price={allProducts[index * 2].prices.web.value}
-                onSale={allProducts[index * 2].onSale || undefined}
-                moreSold={allProducts[index * 2].moreSold || undefined}
-                delivery={allProducts[index * 2].delivery || undefined}
-                discountPrice={
-                  allProducts[index * 2].discountPrice || undefined
-                }
+                product={allProducts[index * 2]}
                 key={allProducts[index * 2].id}
-                _id={allProducts[index * 2].id}
-                stock={allProducts[index * 2].stock}
               />
               {allProducts[index * 2 + 1] && (
                 <CustomCard
                   small
-                  image={allProducts[index * 2 + 1].imageURL}
-                  name={allProducts[index * 2 + 1].description}
-                  price={allProducts[index * 2 + 1].prices.web.value}
+                  product={allProducts[index * 2 + 1]}
                   key={allProducts[index * 2 + 1].id}
-                  onSale={allProducts[index * 2 + 1].onSale || undefined}
-                  moreSold={allProducts[index * 2 + 1].moreSold || undefined}
-                  delivery={allProducts[index * 2 + 1].delivery || undefined}
-                  discountPrice={
-                    allProducts[index * 2 + 1].discountPrice || undefined
-                  }
-                  _id={allProducts[index * 2 + 1].id}
-                  stock={allProducts[index * 2 + 1].stock}
                 />
               )}
             </div>

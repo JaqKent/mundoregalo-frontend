@@ -40,3 +40,12 @@ function CustomButton({
 export default CustomButton;
 
 // FIXME: https://www.youtube.com/watch?v=MSq_DCRxOxw&t=24s Open Close Principle!
+
+CustomButton.defaultProps = {
+  className: '',
+  disabled: false,
+  isSubmit: false,
+  secondary: false,
+  small: false,
+  onClick: () => null,
+};
