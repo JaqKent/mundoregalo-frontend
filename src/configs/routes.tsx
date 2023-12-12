@@ -1,18 +1,15 @@
-import { createBrowserRouter } from 'react-router-dom';
-
 import ProductSearchScreen from '~components/ProductPage/components/ProductSearchScreen';
 import ProductScreen from '~components/ProductPage/ProductScreen';
-import HomePage from '~screens/Home';
 
-import NotFound from './NotFound';
+import App from '../App/App';
+import NotFound from '../App/NotFound';
 
-export const router = createBrowserRouter([
+export const ROUTES = [
   {
     path: '/',
-    element: <HomePage />,
+    element: <App />,
     errorElement: <NotFound />,
   },
-
   {
     path: '/productPage/:id',
     element: <ProductScreen />,
@@ -21,4 +18,4 @@ export const router = createBrowserRouter([
     path: '/productSearch/:searchTerm',
     element: <ProductSearchScreen />,
   },
-]);
+];

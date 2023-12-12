@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Outlet } from 'react-router-dom';
 
 import NavigationBar from './components/NavigationBar';
 import NavigationMenu from './components/NavigationMenu';
@@ -27,6 +28,9 @@ function NavigationSection() {
     <>
       <NavigationBar toggleNavbar={toggleNavbar} />
       <NavigationMenu showNavbar={showNavbar} toggleNavbar={toggleNavbar} />
+      <div id='detail'>
+        <Outlet />
+      </div>
     </>
   );
 }

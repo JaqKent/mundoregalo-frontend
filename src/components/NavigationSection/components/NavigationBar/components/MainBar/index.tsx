@@ -3,10 +3,9 @@ import { useNavigate } from 'react-router-dom';
 import { faBars, faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import Logo from '~assets/logoBlanco.pgn';
-
 import styles from './styles.module.scss';
 
+import Logo from '../../../../../../assets/logoBlanco.png';
 import UserContext from '../../../../../../context/UserContext/UserContext';
 
 interface Props {
