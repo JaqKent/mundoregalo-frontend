@@ -59,12 +59,7 @@ module.exports = {
     sourceType: 'module',
     project: ['./tsconfig.json', 'release.config.js'],
   },
-  plugins: [
-    '@typescript-eslint',
-    'react',
-    'simple-import-sort',
-    'prettier',
-  ],
+  plugins: ['@typescript-eslint', 'react', 'simple-import-sort', 'prettier'],
   rules: {
     'react/react-in-jsx-scope': 'off',
     'import/extensions': [

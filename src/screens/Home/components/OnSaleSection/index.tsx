@@ -1,5 +1,5 @@
 import { useContext, useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 import sale from '~assets/etiqueta.svg';
 import CustomCard from '~components/CustomCard';
@@ -11,7 +11,6 @@ function OnSaleSection() {
   const { allProducts } = useContext(ProductContext);
   const [viewMore, setViewMore] = useState(false);
   const navigate = useNavigate();
-  const { id } = useParams<string>();
 
   const handleView = () => {
     setViewMore((prevState) => !prevState);
@@ -29,18 +28,7 @@ function OnSaleSection() {
       </p>
       <div className={styles.product}>
         {slicedData.map((product) => (
-          <CustomCard
-            image={product.imageURL}
-            name={product.description}
-            price={product.prices.web.value}
-            onSale={product.onSale || undefined}
-            moreSold={product.moreSold || undefined}
-            delivery={product.delivery || undefined}
-            discountPrice={product.discountPrice || undefined}
-            key={product.id}
-            _id={product.id}
-            stock={product.stock}
-          />
+          <CustomCard product={product} key={product.id} />
         ))}
       </div>
       <div

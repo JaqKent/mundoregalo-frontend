@@ -1,16 +1,17 @@
 import { useCallback, useState } from 'react';
 import { FirebaseError } from 'firebase/app';
 import { collection, doc, getDoc, onSnapshot } from 'firebase/firestore';
-import { useSnackbar } from 'notistack';
 
 import { FirestoreCollections } from '~configs/enums';
 import { database } from '~configs/firebaseConfig';
 
-function useFirestore<T>(collectionName: FirestoreCollections) {
+function useFirestore<T>(
+  collectionName: FirestoreCollections,
+  onErrorCallback: (message: string) => void
+) {
   type DataWithId = { id: string } & T;
   type Callback = (data: DataWithId[]) => void;
 
-  const { enqueueSnackbar } = useSnackbar();
   const [fetchLoading, setFetchLoading] = useState(true);
 
   const subscribeToData = useCallback(
@@ -32,16 +33,14 @@ function useFirestore<T>(collectionName: FirestoreCollections) {
           setFetchLoading(false);
 
           if (err instanceof FirebaseError) {
-            enqueueSnackbar(err.message, { variant: 'error' });
+            onErrorCallback(err.message);
+          } else {
+            onErrorCallback('Ocurrió un error inesperado.');
           }
-
-          enqueueSnackbar('Ocurrió un error inesperado.', {
-            variant: 'error',
-          });
         }
       });
     },
-    [collectionName, enqueueSnackbar]
+    [collectionName, onErrorCallback]
   );
 
   const getDocument = async (documentId: string) => {
@@ -58,4 +57,5 @@ function useFirestore<T>(collectionName: FirestoreCollections) {
     subscribeToData,
   };
 }
+
 export default useFirestore;

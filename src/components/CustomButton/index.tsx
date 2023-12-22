@@ -10,6 +10,7 @@ interface Props {
   onClick?: () => void;
   secondary?: boolean;
   small?: boolean;
+  customStyle?: string;
 }
 
 function CustomButton({
@@ -20,14 +21,16 @@ function CustomButton({
   isSubmit,
   disabled,
   secondary,
+  customStyle,
 }: Props) {
+  const buttonStyle =
+    customStyle || (secondary ? styles.secondaryButton : styles.primaryButton);
+
   return (
     <div className={className}>
       <button
         disabled={disabled}
-        className={`${small ? styles.small : styles.big}  ${
-          secondary ? styles.secondaryButton : styles.primaryButton
-        }`}
+        className={`${small ? styles.small : styles.big} ${buttonStyle}`}
         type={isSubmit ? 'submit' : 'button'}
         onClick={isSubmit ? undefined : onClick}
       >
@@ -39,4 +42,14 @@ function CustomButton({
 
 export default CustomButton;
 
-// FIXME: https://www.youtube.com/watch?v=MSq_DCRxOxw&t=24s Open Close Principle!
+CustomButton.defaultProps = {
+  className: '',
+  disabled: false,
+  isSubmit: false,
+  secondary: false,
+  small: false,
+  onClick: () => null,
+  customStyle: '',
+};
+
+// TODO: estudiar mas para comprender mejor como usarlo https://www.youtube.com/watch?v=MSq_DCRxOxw&t=24s Open Close Principle!

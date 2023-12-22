@@ -22,18 +22,7 @@ function ProductSearchScreen() {
     <div className={styles.container}>
       {filteredProducts.map((product) => (
         <div className={styles.card} key={product.id}>
-          <CustomCard
-            image={product.imageURL}
-            name={product.description}
-            price={product.prices.web.value}
-            onSale={product.onSale}
-            moreSold={product.moreSold}
-            delivery={product.delivery}
-            discountPrice={product.discountPrice}
-            key={product.id}
-            _id={product.id}
-            stock={product.stock}
-          />
+          <CustomCard product={product} key={product.id} />
         </div>
       ))}
     </div>
