@@ -56,7 +56,7 @@ function CustomCard({ product, small }: Props) {
         <div className={dynamicStyles.data}>
           <div className={styles.price}>
             <div>
-              <span className={dynamicStyles.rating}>
+              <span>
                 <StarRating initialValue={4} readonly size={15.34} />
               </span>{' '}
             </div>
