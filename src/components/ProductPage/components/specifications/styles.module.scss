@@ -6,33 +6,32 @@
 
 .container {
     @include flex(center, center, column);
+    width: 100%;
 }
 
 .specifications {
     @include flex(flex-start, flex-start, column);
+    width: 100%;
+
     background-color: $white;
 }
 
 .specsContainer {
-    width: 37rem;
+    width: 100%;
     padding-top: 1.6rem;
 
-    @include responsive(xs) {
-        width: 41.4rem;
-    }
+
 }
 
 .specsTitle {
-    min-width: 100%;
+    width: 100%;
 
     font-weight: 500;
     font-size: 1.4rem;
 
     border-bottom: 0.1rem solid $gray;
 
-    h3 {
-        padding-left: 1.6rem;
-    }
+
 }
 
 .specsData {
@@ -89,32 +88,24 @@
 
 .description {
     @include flex(flex-start, flex-start, column);
-    width: 37.5rem;
+    width: 100%;
 
     background-color: $white;
 
-    @include responsive(xs) {
-        width: 41.4rem;
-    }
-
-
-
     .text {
-        width: 34.5rem;
+        width: 100%;
         margin: 1.6rem;
 
         font-weight: 400;
         font-size: 1.28rem;
 
-        @include responsive(xs) {
-            width: 38.5rem;
-        }
+
     }
 
     .hide {
         display: -webkit-box;
-        width: 34.5rem;
-        margin: 1.6rem;
+        width: 100%;
+        margin-left: 0.8rem;
         overflow: hidden;
 
         font-weight: 400;
@@ -124,15 +115,13 @@
         -webkit-line-clamp: 6;
         -webkit-box-orient: vertical;
 
-        @include responsive(xs) {
-            width: 38.5rem;
-        }
+
     }
 }
 
 .borderLine {
     @include flex(center, center, column);
-    width: 100vw;
+    width: 100%;
 
-    border-bottom: 0.6rem solid $gray;
+    border-bottom: 0.1rem solid $gray;
 }

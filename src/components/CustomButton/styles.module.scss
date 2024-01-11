@@ -60,25 +60,11 @@
 
 .big {
     @include flex(center, center, row);
+    width: 100%;
     height: 4.5rem;
 
     font-size: 1.2em;
 
     border-radius: 1.5rem;
-
-    @include responsive(xxs) {
-        width: 35rem;
-        margin: 0 1.6rem;
-    }
-
-    @include responsive(xxxs) {
-        width: 35rem;
-        margin: 0 1.6rem;
-    }
-
-    @include responsive(xs) {
-        width: 38.4rem;
-
-    }
 
 }
