@@ -2,234 +2,160 @@
 @import '~scss/mixins';
 @import '~scss/variable';
 
-.containerLarge {
-  @include flex(space-between, center, row);
-  width: 37rem;
-  height: 13.3rem;
 
-  background-color: $white;
-  border: none;
-  outline: none;
-  cursor: pointer;
+.container {
+    background-color: $white;
+    border: none;
+    outline: none;
+    cursor: pointer;
 
-  @include responsive(xs) {
-    width: 39.6rem;
-  }
+    &.large {
+        @include flex(space-between, center, row);
+        width: 37rem;
+        height: 13.3rem;
+
+        @include responsive(xs) {
+            width: 39.6rem;
+        }
+    }
+
+    &.small {
+        @include flex(space-between, center, column);
+        width: 18rem;
+        height: 32.25rem;
+
+        @include responsive(xs) {
+            width: 19.78rem;
+        }
+    }
+
 }
 
-.containerSmall {
-  @include flex(space-between, center, column);
-  width: 18rem;
-  height: 32.25rem;
+.description {
+    @include flex(flex-start, flex-start, column);
 
-  background-color: $white;
-
-  border: none;
-  outline: none;
-  cursor: pointer;
-
-  @include responsive(xs) {
-    width: 19.78rem;
-  }
+    &.small {
+        gap: 0.7rem;
+    }
 }
 
-.imgLarge {
-  @include flex(center, center, row);
-  width: 12.1rem;
-  height: 12.1rem;
-  margin: 0.9rem;
-  object-fit: fill;
+.title {
+    display: -webkit-box;
+    overflow: hidden;
+
+    font-weight: 500;
+    font-size: 1.4rem;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+
+    &.large {
+        width: 22rem;
+        height: 4.4rem;
+
+        text-align: flex-start;
+
+
+        @include responsive(xs) {
+            width: 24.4rem;
+
+            font-size: 1.5rem;
+        }
+    }
+
+    &.small {
+        width: 17.7rem;
+        height: 4rem;
+
+        text-align: center;
+
+        @include responsive(md) {
+            width: 20rem;
+        }
+    }
 }
 
-.imgSmall {
-  @include flex(space-between, flex-start, column);
-  width: 15.5rem;
-  height: 15.5rem;
-  margin: 0.8rem;
-  object-fit: cover;
+.img {
+    &.large {
+        @include flex(center, center, row);
+        width: 12.1rem;
+        height: 12.1rem;
+        margin: 0.9rem;
+        object-fit: fill;
+    }
 
-  @include responsive(xs) {
-    width: 18.2rem;
-    height: 18.2rem;
-  }
+    &.small {
+        @include flex(space-between, flex-start, column);
+        width: 15.5rem;
+        height: 15.5rem;
+        margin: 0.8rem;
+        object-fit: cover;
+
+        @include responsive(xs) {
+            width: 18.2rem;
+            height: 18.2rem;
+        }
+    }
+
 }
 
-.largeDescription {
-  @include flex(flex-start, flex-start, column);
+.data {
+    &.large {
+        @include flex(space-between, space-between, row);
+        width: 22.5rem;
+        margin-top: 5px;
+    }
+
+    &.small {
+        @include flex(space-between, center, row);
+        width: 17rem;
+        margin-top: 5px;
+
+        text-align: center;
+    }
 }
 
-.smallDescription {
-  @include flex(flex-start, flex-start, column);
-  gap: 0.7rem;
+.section {
+    &.large {
+        @include flex(center, flex-start, column);
+        width: 24.4rem;
+        margin-top: 0.5rem;
+    }
+
+    &.small {
+        @include flex(center, center, column);
+    }
 }
 
-.titleLarge {
-  display: -webkit-box;
-  width: 22rem;
-  height: 4.4rem;
-  overflow: hidden;
-
-  font-weight: 500;
-  font-size: 1.4rem;
-  text-align: flex-start;
-  text-overflow: ellipsis;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
-
-  @include responsive(xs) {
-    width: 24.4rem;
-
-    font-size: 1.5rem;
-  }
-}
-
-.titleSmall {
-  display: -webkit-box;
-  width: 17.7rem;
-  height: 4rem;
-  overflow: hidden;
-
-  font-weight: 500;
-  font-size: 1.4rem;
-  text-align: center;
-  text-overflow: ellipsis;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
-
-  @include responsive(md) {
-    width: 20rem;
-  }
-}
-
-.dataLarge {
-  @include flex(space-between, space-between, row);
-  width: 22.5rem;
-  margin-top: 5px;
-}
-
-.dataSmall {
-  @include flex(space-between, center, row);
-  width: 17rem;
-  margin-top: 5px;
-
-  text-align: center;
-}
-
-.smallSection {
-  @include flex(center, center, column);
-}
-
-.price {
-  @include flex(space-between, flex-start, column);
-}
-
-.smallPrice {
-  font-weight: 700;
-  font-size: 1.8rem;
-}
-
-.discountPrice {
-  color: #858688; //FIXME: Tenes un archivo colors.scss... usalo.
-  font-weight: 300;
-  font-size: 1.4rem;
-  text-decoration-line: line-through;
-}
-
-// FIXME: wtf?? el nombre no corresponde con el valor
-
-.block {
-  display: none;
-}
-
-.info {
-  @include flex(center, space-between, column);
-  gap: 0.3rem;
-}
-
-.largeSection {
-  @include flex(center, flex-start, column);
-  width: 24.4rem;
-  margin-top: 0.5rem;
-}
-
-// FIXME: Porque tenes el dos clases con lo mismo?
-
-.largeVotes {
-  font-size: 1.2rem;
-}
-
-.smallVotes {
-  font-size: 1.2rem;
-}
-
-/* FIXME:ES LA MISMA CLASE 3 VECES!!
-
-si queres cambiar solamente el color para cada una, podes hacerlo asi: 
 
 .badge {
-@include flex(center, center, row);
+    @include flex(center, center, row);
     width: 6.8rem;
     height: 2rem;
 
-    color: $white;
     font-weight: 600;
     font-size: 0.9rem;
 
     border-radius: 0.38rem;
 
-    & .danger {
-        background-color: #DB3646;
+    &.danger {
+        color: $white;
+
+        background-color: $danger;
     }
 
-    & .warning {
-            background-color: #FCC10B;
+    &.warning {
+        background-color: $warning;
     }
 
-    & .success {
-            background-color: #188754;
+    &.success {
+        color: $white;
+
+        background-color: $success;
     }
 
 }
-y switchear entre danger, warning y success con un prop de variante en el componente
-*/
 
-.delivery {
-  @include flex(center, center, row);
-  width: 6.8rem;
-  height: 2rem;
-
-  color: $white;
-  font-weight: 600;
-  font-size: 0.9rem;
-
-  background-color: #188754;
-  border-radius: 0.38rem;
+.price {
+    @include flex(space-between, flex-start, column);
 }
-
-.moreSold {
-  @include flex(center, center, row);
-  width: 6.8rem;
-  height: 2rem;
-
-  color: $white;
-  font-weight: 600;
-  font-size: 0.9rem;
-
-  background-color: #db3646;
-  border-radius: 0.38rem;
-}
-
-.onSale {
-  @include flex(center, center, row);
-  width: 6.8rem;
-  height: 2rem;
-
-  font-weight: 600;
-  font-size: 1.2rem;
-
-  background-color: #fcc10b;
-  border-radius: 0.38rem;
-}
-
-// FIXME: Mata esto y comenza de nuevo... es demasiado codigo repetido y al pedo. Referencia para refactor > https://codesandbox.io/p/sandbox/silent-night-rfcqq3
-// dejo solo de referencia, este archivo va a ser eliminado y creado de nuevo con los nuevos diseños tomando en cuanta todas las recomendaciones y fix sugeridos

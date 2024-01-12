@@ -1,5 +1,3 @@
-// FIXME:Fix default props on this file
-
 import styles from './styles.module.scss';
 
 interface Props {

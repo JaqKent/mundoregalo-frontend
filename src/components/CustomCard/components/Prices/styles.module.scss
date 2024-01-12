@@ -1,0 +1,16 @@
+@import '~scss/colors';
+@import '~scss/mixins';
+@import '~scss/variable';
+
+.price {
+    font-weight: 700;
+    font-size: 1.8rem;
+}
+
+
+.discountPrice {
+    color: $disabled;
+    font-weight: 300;
+    font-size: 1.4rem;
+    text-decoration-line: line-through;
+}

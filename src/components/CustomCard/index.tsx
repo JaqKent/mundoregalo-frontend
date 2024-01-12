@@ -8,7 +8,6 @@ import styles from './styles.module.scss';
 
 import Prices from './components/Prices';
 import Tags from './components/Tags';
-import { customStyles } from './constants';
 
 interface Props {
   product: Product;
@@ -35,28 +34,33 @@ function CustomCard({ product, small }: Props) {
 
   const handleNoStock = () => toast.error('Sin Stock');
 
-  const dynamicStyles = customStyles[small ? 'small' : 'large'];
+  const dynamicStyles = (style: string) =>
+    `${style} ${small ? styles.small : styles.large}`;
 
   return (
     <button
-      className={dynamicStyles.container}
+      className={dynamicStyles(styles.container)}
       onClick={stock <= 0 ? handleNoStock : handleViewProduct}
       onKeyDown={handleViewProduct}
       type='button'
     >
       <div>
-        <img className={dynamicStyles.img} src={imageURL[0]} alt={name} />
+        <img
+          className={dynamicStyles(styles.img)}
+          src={imageURL[0]}
+          alt={name}
+        />
       </div>
-      <div className={dynamicStyles.section}>
+      <div className={dynamicStyles(styles.section)}>
         <div>
-          <div className={dynamicStyles.title}>
+          <div className={dynamicStyles(styles.title)}>
             <span>{name}</span>
           </div>
         </div>
-        <div className={dynamicStyles.data}>
+        <div className={dynamicStyles(styles.data)}>
           <div className={styles.price}>
             <div>
-              <span className={dynamicStyles.rating}>
+              <span>
                 <StarRating initialValue={4} readonly size={15.34} />
               </span>{' '}
             </div>

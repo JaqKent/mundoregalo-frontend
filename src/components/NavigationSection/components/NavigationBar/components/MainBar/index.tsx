@@ -3,10 +3,10 @@ import { useNavigate } from 'react-router-dom';
 import { faBars, faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import styles from './styles.module.scss';
+import Logo from '~assets/logoBlanco.png';
+import UserContext from '~context/UserContext/UserContext';
 
-import Logo from '../../../../../../assets/logoBlanco.png';
-import UserContext from '../../../../../../context/UserContext/UserContext';
+import styles from './styles.module.scss';
 
 interface Props {
   toggleNavbar: () => void;

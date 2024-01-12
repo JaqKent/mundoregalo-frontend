@@ -13,7 +13,7 @@ import StarRating from '../StarRating';
 import { COMMENTS } from './constant';
 
 function ProductComments() {
-  const [data, setData] = useState(COMMENTS);
+  const [data] = useState(COMMENTS);
   const [viewMore, setViewMore] = useState(false);
 
   const handleView = () => {
@@ -32,7 +32,7 @@ function ProductComments() {
       </div>
       <div className={styles.commentbox}>
         {output.map((item) => (
-          <div key={item.id}>
+          <div className={styles.commentSection} key={item.id}>
             <div className={styles.user}>
               <img src={item.img} alt={item.user} className={styles.img} />
               <p className={styles.username}>{item.user}</p>
@@ -69,12 +69,12 @@ function ProductComments() {
         >
           {viewMore ? (
             <>
-              <span>Ver Menos</span>
+              <span>Ver Menos Opiniones</span>
               <FontAwesomeIcon icon={faChevronUp} />
             </>
           ) : (
             <>
-              <span>Ver Más</span>
+              <span>Ver Más Opiniones</span>
               <FontAwesomeIcon icon={faChevronDown} />
             </>
           )}

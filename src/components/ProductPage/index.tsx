@@ -44,7 +44,7 @@ function ProductPage({ product }: Props) {
           />
         </div>
 
-        <div>
+        <div className={styles.dropdown}>
           <SelectDropdown variant={product.variants} />
         </div>
         <div className={styles.price}>
@@ -57,25 +57,22 @@ function ProductPage({ product }: Props) {
             <p>Gratis</p>
           </div>
         </div>
-        <div>
+        <div className={styles.selector}>
           <QuantitySelector QUANTITY={product.stock} />
         </div>
         <div className={styles.buttons}>
-          <div>
-            <CustomButton
-              className={styles.buttonCart}
-              label='Agregar al Carrito'
-              onClick={handleAddToCart}
-            />
-          </div>
-          <div>
-            <CustomButton
-              className={styles.buttonNow}
-              label='Comprar ahora'
-              secondary
-              onClick={handleBuyNow}
-            />
-          </div>
+          <CustomButton
+            className={styles.buttonCart}
+            label='Agregar al Carrito'
+            onClick={handleAddToCart}
+          />
+
+          <CustomButton
+            className={styles.buttonNow}
+            label='Comprar ahora'
+            secondary
+            onClick={handleBuyNow}
+          />
         </div>
       </div>
       <div className={styles.specifications}>
@@ -84,10 +81,10 @@ function ProductPage({ product }: Props) {
           description={product.description}
         />
       </div>
-      <div>
+      <div className={styles.RelatedProducts}>
         <RelatedProducts />
       </div>
-      <div>
+      <div className={styles.ProductComments}>
         <ProductComments />
       </div>
     </div>
