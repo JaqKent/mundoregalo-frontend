@@ -1,5 +1,6 @@
 import ProductSearchScreen from '~components/ProductPage/components/ProductSearchScreen';
 import ProductScreen from '~components/ProductPage/ProductScreen';
+import SupportPage from '~components/SupportCenter/SupportPage';
 
 import App from '../App/App';
 import NotFound from '../App/NotFound';
@@ -17,5 +18,9 @@ export const ROUTES = [
   {
     path: '/productSearch/:searchTerm',
     element: <ProductSearchScreen />,
+  },
+  {
+    path: '/supportCenter',
+    element: <SupportPage />,
   },
 ];
