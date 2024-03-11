@@ -27,15 +27,19 @@ function ProductComments() {
         <p>Opiniones de nuestros clientes</p>
         <div className={styles.stars}>
           <StarRating initialValue={4} readonly size={19.95} />
-          <span className={styles.rating}>51.215</span>
+          <span className={styles.rating}>52.000</span>
         </div>
       </div>
       <div className={styles.commentbox}>
         {output.map((item) => (
           <div className={styles.commentSection} key={item.id}>
             <div className={styles.user}>
-              <img src={item.img} alt={item.user} className={styles.img} />
-              <p className={styles.username}>{item.user}</p>
+              <img
+                src={item.userImg}
+                alt={item.userImg}
+                className={styles.img}
+              />
+              <p className={styles.username}>{item.userName}</p>
             </div>
             <div className={styles.commentText}>{item.comment}</div>
             <div className={styles.like}>

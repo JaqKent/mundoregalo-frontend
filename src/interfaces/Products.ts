@@ -31,6 +31,7 @@ export interface Product {
   onSale: string;
   discountPrice: number;
   variants: Variants[];
+  comment?: Comment[];
 }
 
 export interface Variants {
@@ -52,4 +53,10 @@ export interface Category {
     internalId: string;
     name: string;
   }[];
+}
+export interface Comment {
+  id: number;
+  userName: string;
+  userImg: string[];
+  comment: string;
 }

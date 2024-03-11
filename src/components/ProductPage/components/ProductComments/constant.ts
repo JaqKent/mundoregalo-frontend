@@ -6,17 +6,19 @@ export const COMMENTS = [
     id: 1,
     comment:
       'Woof woof woof Woof woof woof Woof woof woof Woof woof woof Woof woof woof  woof woof Woof woof woof Woof woof woof Woof woof woof Woof woof woof',
-    img: pierre,
-    user: 'Pierre de Bernel',
+    userImg: pierre,
+    ususerNameer: 'Pierre de Bernel',
     help: 8,
     like: true,
+    rating: 52300,
   },
   {
     id: 2,
     comment: 'Miau miau miau miau Miau miau miau miau',
-    img: Lina,
-    user: 'Selina Kent',
+    userImg: Lina,
+    userName: 'Selina Kent',
     help: 10,
     like: false,
+    rating: 30025,
   },
 ];
