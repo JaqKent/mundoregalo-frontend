@@ -11,6 +11,7 @@ export const SECTIONS = [
     alt: 'envios',
     img: envios,
     text: 'Seguimiento - Demoras - Cálculo de entregas - Costos',
+    url: '/supportCenter/envios',
   },
   {
     id: 2,
@@ -18,6 +19,7 @@ export const SECTIONS = [
     alt: 'pedidos',
     img: pedidos,
     text: 'Modificaciones - Devoluciones - Facturación',
+    url: '/',
   },
   {
     id: 3,
@@ -25,6 +27,7 @@ export const SECTIONS = [
     alt: 'pagos',
     img: pagos,
     text: 'Medios de Pagos - Rechazo de pago - Estafas',
+    url: '/',
   },
   {
     id: 4,
@@ -32,6 +35,7 @@ export const SECTIONS = [
     alt: 'productos',
     img: productos,
     text: 'Precio publicado - Soporte y ayuda de productos',
+    url: '/',
   },
   {
     id: 5,
@@ -39,5 +43,6 @@ export const SECTIONS = [
     alt: 'nuestra informacion',
     img: info,
     text: 'Términos y condiciones - Sucursales - Contacto - Información',
+    url: '/',
   },
 ];

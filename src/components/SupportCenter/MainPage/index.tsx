@@ -1,12 +1,18 @@
+import { useNavigate } from 'react-router-dom';
+
 import bannerSoporte from '~assets/Centro de soporte 2.png';
-import { toBeImplemented } from '~utils/logicNotImplemented';
 
 import styles from './styles.module.scss';
 
-import { SECTIONS } from './constants';
+import { SECTIONS } from '../constants';
 
 function SupportPage() {
-  const HandleRedirect = toBeImplemented;
+  const navigate = useNavigate();
+
+  const HandleRedirect = (url: string) => {
+    navigate(url);
+  };
+
   return (
     <div className={styles.container}>
       <div className={styles.banner}>
@@ -19,7 +25,7 @@ function SupportPage() {
       <div className={styles.sectionLayout}>
         {SECTIONS.map((item) => (
           <button
-            onClick={HandleRedirect}
+            onClick={() => HandleRedirect(item.url)}
             type='button'
             key={item.id}
             className={styles.section}

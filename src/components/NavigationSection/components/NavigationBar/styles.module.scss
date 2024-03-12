@@ -3,6 +3,7 @@
 
 .container {
     @include flex(center, center, column);
+
     height: 8.6rem;
     padding: 1rem;
 
