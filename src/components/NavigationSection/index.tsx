@@ -25,13 +25,13 @@ function NavigationSection() {
   }, [showNavbar]);
 
   return (
-    <>
+    <div>
       <NavigationBar toggleNavbar={toggleNavbar} />
       <NavigationMenu showNavbar={showNavbar} toggleNavbar={toggleNavbar} />
       <div id='detail'>
         <Outlet />
       </div>
-    </>
+    </div>
   );
 }
 
