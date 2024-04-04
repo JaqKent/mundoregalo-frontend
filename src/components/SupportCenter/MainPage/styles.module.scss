@@ -1,0 +1,108 @@
+@import '~scss/colors';
+@import '~scss/mixins';
+@import '~scss/variable';
+
+.container {
+    @include flex(flex-start, center, column);
+    height: 90vh;
+    padding: 4rem 1.6rem 0;
+
+    background-color: $anothergray;
+
+    @include responsive(md) {
+        height: 100vh;
+        padding: 10rem;
+    }
+}
+
+.banner {
+    margin-bottom: 4.74rem;
+}
+
+.imgBanner {
+    width: 100%;
+}
+
+.sectionLayout {
+    @include responsive(md) {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+
+    }
+}
+
+.section {
+    @include flex(flex-start, center, row);
+    width: 100%;
+    height: 7.5rem;
+    margin-bottom: 1rem;
+    padding: 1rem 1.7rem;
+
+    background-color: $white;
+    border: 0.1rem solid $gray;
+    border-radius: 1rem;
+    cursor: pointer;
+
+    &:hover {
+        background-color: $selectedyellow;
+        box-shadow: $itemShadow;
+    }
+
+    @include responsive(md) {
+        @include flex(flex-start, center, column);
+
+        width: 20rem;
+        height: 23rem;
+
+        box-shadow: $itemShadow;
+    }
+
+
+}
+
+.img {
+    padding: 1.9rem 1.9rem 1.9rem 2.9rem;
+
+    @include responsive(md) {
+        padding-top: 1rem;
+    }
+}
+
+.icon {
+    @include responsive(md) {
+        width: 6rem;
+    }
+}
+
+.info {
+    @include flex(flex-start, flex-start, column);
+
+    @include responsive(md) {
+        @include flex(center, center, column);
+    }
+}
+
+.title {
+    margin: 0 0 1rem;
+
+    font-weight: 600;
+    font-size: 1.4rem;
+
+    @include responsive(md) {
+        font-size: 1.8rem;
+    }
+}
+
+.text {
+    @include flex(flex-start, flex-start, row);
+    margin: 0;
+
+    font-size: 1.2rem;
+
+    @include responsive(md) {
+        font-size: 1.4rem;
+        text-align: left;
+        word-break: break-all;
+    }
+}
