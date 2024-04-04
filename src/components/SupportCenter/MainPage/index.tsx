@@ -9,7 +9,7 @@ import { SECTIONS } from '../constants';
 function SupportPage() {
   const navigate = useNavigate();
 
-  const HandleRedirect = (url: string) => {
+  const handleRedirect = (url: string) => {
     navigate(url);
   };
 
@@ -25,7 +25,7 @@ function SupportPage() {
       <div className={styles.sectionLayout}>
         {SECTIONS.map((item) => (
           <button
-            onClick={() => HandleRedirect(item.url)}
+            onClick={() => handleRedirect(item.url)}
             type='button'
             key={item.id}
             className={styles.section}
