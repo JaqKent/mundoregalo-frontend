@@ -50,7 +50,7 @@ function ProductPage({ product }: Props) {
         <div className={styles.price}>
           <div className={styles.priceNumber}>
             <h4>Precio:</h4>
-            <h3>{product.prices.web.value || 'Precio no disponible'}</h3>
+            <h3>{product.prices.online?.value || 'Precio no disponible'}</h3>
           </div>
           <div className={styles.delivery}>
             <h4>Envio: </h4>

@@ -13,7 +13,7 @@ export interface Product {
   specifications: Specifications[];
   prices: {
     cost: number;
-    web: {
+    online: {
       value: number;
       lastModified: string;
     };

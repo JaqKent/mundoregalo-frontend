@@ -66,7 +66,7 @@ function CustomCard({ product, small }: Props) {
             </div>
             <Prices
               discountPrice={discountPrice}
-              prices={prices.web.value}
+              prices={prices?.online.value}
               onSale={onSale}
             />
           </div>
