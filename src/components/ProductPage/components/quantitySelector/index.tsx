@@ -4,11 +4,20 @@ import { getFormattedQuantity } from '~constants/utils';
 
 import styles from './styles.module.scss';
 
-interface Props {
-  QUANTITY: number;
+interface Stock {
+  current?: number;
+  minStock: number;
+  maxStock: number;
+  noPhysicalStock: boolean;
 }
 
-function QuantitySelector({ QUANTITY }: Props) {
+interface Props {
+  stock?: Stock;
+  QUANTITY?: number;
+}
+
+function QuantitySelector({ stock }: Props) {
+  const availableQuantity = stock?.current ?? 0;
   const [quantity, setQuantity] = useState(1);
   const [customQuantity, setCustomQuantity] = useState(quantity.toString());
   const inputRef = useRef<HTMLInputElement>(null);
@@ -17,20 +26,20 @@ function QuantitySelector({ QUANTITY }: Props) {
     if (value) {
       const newValue = parseInt(value, 10);
       if (!Number.isNaN(newValue)) {
-        const newQuantity = Math.min(newValue, QUANTITY);
+        const newQuantity = Math.min(newValue, availableQuantity);
         setQuantity(newQuantity);
-        setCustomQuantity(newValue.toString());
+        setCustomQuantity(newQuantity.toString());
       }
     } else {
       setQuantity((prevQuantity) =>
-        operation && prevQuantity < QUANTITY
+        operation && prevQuantity < availableQuantity
           ? prevQuantity + 1
-          : prevQuantity - 1
+          : Math.max(1, prevQuantity - 1)
       );
       setCustomQuantity((prevQuantity) =>
-        operation && parseInt(prevQuantity, 10) < QUANTITY
+        operation && parseInt(prevQuantity, 10) < availableQuantity
           ? (parseInt(prevQuantity, 10) + 1).toString()
-          : (parseInt(prevQuantity, 10) - 1).toString()
+          : Math.max(1, parseInt(prevQuantity, 10) - 1).toString()
       );
     }
   };
@@ -38,7 +47,7 @@ function QuantitySelector({ QUANTITY }: Props) {
   const handleCustomQuantityChange = (event: ChangeEvent<HTMLInputElement>) => {
     const { value } = event.target;
     if (/^[0-9]*$/.test(value)) {
-      const newQuantity = Math.min(parseInt(value, 10), QUANTITY);
+      const newQuantity = Math.min(parseInt(value, 10), availableQuantity);
       setCustomQuantity(newQuantity.toString());
     }
   };
@@ -50,6 +59,7 @@ function QuantitySelector({ QUANTITY }: Props) {
       updateQuantity(false, customQuantity);
     }
   };
+
   const handleInputFocus = () => {
     if (inputRef.current) {
       inputRef.current.select();
@@ -60,7 +70,13 @@ function QuantitySelector({ QUANTITY }: Props) {
     <div className={styles.container}>
       <div className={styles.stock}>
         Cantidad
-        <span className={styles.spanStock}>({QUANTITY} disponibles)</span>
+        {availableQuantity > 0 ? (
+          <span className={styles.spanStock}>
+            ({availableQuantity} disponibles)
+          </span>
+        ) : (
+          <span className={styles.spanStock}>(0 disponibles)</span>
+        )}
       </div>
       <div className={styles.selector}>
         <button
@@ -93,3 +109,8 @@ function QuantitySelector({ QUANTITY }: Props) {
 }
 
 export default QuantitySelector;
+
+QuantitySelector.defaultProps = {
+  stock: false,
+  QUANTITY: 0,
+};
