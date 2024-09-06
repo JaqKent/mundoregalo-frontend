@@ -5,18 +5,18 @@ import { getFormattedQuantity } from '~constants/utils';
 import styles from './styles.module.scss';
 
 interface Stock {
-  current?: number; // Hacemos current opcional
+  current?: number;
   minStock: number;
   maxStock: number;
   noPhysicalStock: boolean;
 }
 
 interface Props {
-  stock?: Stock; // Hacemos que stock sea opcional
+  stock?: Stock;
+  QUANTITY?: number;
 }
 
 function QuantitySelector({ stock }: Props) {
-  // Definimos availableQuantity con 0 si stock o current no están definidos
   const availableQuantity = stock?.current ?? 0;
   const [quantity, setQuantity] = useState(1);
   const [customQuantity, setCustomQuantity] = useState(quantity.toString());
@@ -66,14 +66,10 @@ function QuantitySelector({ stock }: Props) {
     }
   };
 
-  console.log('Valor de stock:', stock); // Log para verificar que stock no es undefined
-  console.log('Valor de availableQuantity:', availableQuantity); // Verificar availableQuantity
-
   return (
     <div className={styles.container}>
       <div className={styles.stock}>
         Cantidad
-        {/* Mostrar "0 disponibles" si availableQuantity es 0, o nada si no hay stock */}
         {availableQuantity > 0 ? (
           <span className={styles.spanStock}>
             ({availableQuantity} disponibles)
@@ -113,3 +109,8 @@ function QuantitySelector({ stock }: Props) {
 }
 
 export default QuantitySelector;
+
+QuantitySelector.defaultProps = {
+  stock: false,
+  QUANTITY: 0,
+};
