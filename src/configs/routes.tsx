@@ -74,6 +74,7 @@ export const aboutUsQuestionRoutes = AboutUsQuestions.map((question) => ({
       respuesta={question.respuesta}
       text={question.text}
       handleback={question.handleback}
+      contact={question.contact}
     />
   ),
 }));

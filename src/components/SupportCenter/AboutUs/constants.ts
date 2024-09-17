@@ -58,6 +58,7 @@ Si tiene alguna pregunta sobre las condiciones de uso, por favor póngase en con
       ' En M R Tienda comprendemos lo importante que es para ti estar informado sobre el estado de tu pedido y su entrega. Te ofrecemos la capacidad de realizar un seguimiento en tiempo real de tu envío de manera sencilla. En la página de seguimiento, encontrarás un campo donde puedes ingresar el número de seguimiento proporcionado en el correo electrónico de confirmación de pedido. ',
     url: '/supportCenter/sobreNosotros/contactos',
     handleback: '/supportCenter/sobreNosotros',
+    contact: true,
   },
   {
     id: 4,
