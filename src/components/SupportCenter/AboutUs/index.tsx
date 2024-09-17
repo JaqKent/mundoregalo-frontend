@@ -6,9 +6,9 @@ import banner from '~assets/envios 2.png';
 import styles from './styles.module.scss';
 
 import QuestionSection from '../QuestionSection';
-import { DeliveryQuestions } from './constants';
+import { AboutUsQuestions } from './constants';
 
-function DeliveryPage() {
+function AboutUs() {
   const navigate = useNavigate();
 
   const handleBack = () => {
@@ -31,9 +31,9 @@ function DeliveryPage() {
         <img className={styles.bannerImg} src={banner} alt='envios' />
       </div>
 
-      <QuestionSection questions={DeliveryQuestions} />
+      <QuestionSection questions={AboutUsQuestions} />
     </div>
   );
 }
 
-export default DeliveryPage;
+export default AboutUs;

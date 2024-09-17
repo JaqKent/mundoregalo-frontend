@@ -7,7 +7,14 @@ import * as firebase from 'firebase/app';
 import Footer from '~components/Footer';
 import NavigationSection from '~components/NavigationSection';
 import { firebaseConfig } from '~configs/firebaseConfig';
-import { ROUTES } from '~configs/routes';
+import {
+  aboutUsQuestionRoutes,
+  deliveryQuestionRoutes,
+  OrderQuestionRoutes,
+  pagosQuestionRoutes,
+  productsQuestionRoutes,
+  ROUTES,
+} from '~configs/routes';
 import ProductProvider from '~context/ProductContext';
 import { UserProvider } from '~context/UserContext/UserContext';
 
@@ -26,7 +33,29 @@ const router = createHashRouter([
         <Footer />
       </UserProvider>
     ),
-    children: ROUTES.map(({ path, element }) => ({ path, element })),
+    children: [
+      ...ROUTES,
+      {
+        path: '/supportCenter/envios',
+        children: deliveryQuestionRoutes,
+      },
+      {
+        path: '/supportCenter/sobreNosotros',
+        children: aboutUsQuestionRoutes,
+      },
+      {
+        path: '/supportCenter/pagos',
+        children: pagosQuestionRoutes,
+      },
+      {
+        path: '/supportCenter/productos',
+        children: productsQuestionRoutes,
+      },
+      {
+        path: '/supportCenter/pedidos',
+        children: OrderQuestionRoutes,
+      },
+    ],
   },
 ]);
 
