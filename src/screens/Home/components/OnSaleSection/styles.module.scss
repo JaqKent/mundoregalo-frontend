@@ -4,16 +4,18 @@
 
 .container {
     @include flex(center, center, column);
+    width: 100%;
     margin: 0.5rem;
 
-    background-color: $gray;
+    background-color: $white;
 
     .onSale {
-        @include flex(center, center, row);
-        gap: 0.5rem;
+        @include flex(space-between, center, row);
+
         width: 100%;
         height: 3rem;
-        margin: 0.5rem;
+        margin: 0;
+        padding-bottom: 1.6rem;
 
         font-weight: bold;
         font-size: 1.8rem;
@@ -23,11 +25,36 @@
 
     .product {
         @include flex(center, center, column);
-        gap: 10px;
-        margin-bottom: 0.5rem;
+        gap: 0.1rem;
+        width: 100%;
+        margin-bottom: 0.1rem;
+
+        @include responsive(md) {
+            @include flex(center, center, row);
+            gap: 0;
+        }
+
+        @include responsive(lg) {
+
+            gap: 2.4rem;
+        }
     }
 
-    .button {
+    .buttonTop {
+        display: none;
+
+        font-size: 1.6rem;
+        text-decoration: underline;
+
+        cursor: pointer;
+
+        @include responsive(md) {
+            display: block;
+        }
+    }
+
+    .buttonBottom {
+        display: block;
         width: 100%;
         height: 3rem;
         padding: 5px;
@@ -35,8 +62,14 @@
         font-size: 1.2rem;
 
         background-color: $white;
+        border: 1px solid $gray;
+        border-radius: 1rem;
         cursor: pointer;
         @include flex(center, center, row);
+
+        @include responsive(md) {
+            display: none;
+        }
 
 
     }
