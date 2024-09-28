@@ -4,6 +4,8 @@
 
 .container {
     @include flex(center, center, column);
+    width: 100%;
+
     background-color: $white;
 
     .slider {

@@ -2,27 +2,50 @@
 @import '~scss/mixins';
 @import '~scss/variable';
 
+
+.container {
+    @include flex(center, center, column);
+    width: 100%;
+
+}
+
 .image {
-    width: 100vw;
+    width: 378px;
     height: 20rem;
 
     background-repeat: no-repeat;
     background-size: cover;
+    border-radius: 1rem;
 
     @include responsive(sm) {
         height: 25rem;
     }
 
     @include responsive(md) {
-        height: 30rem;
+        width: 38.4rem;
+        height: 20rem;
     }
 
     @include responsive(lg) {
-        height: 35rem;
+        width: 85.3rem;
+        height: 40rem;
     }
 
     @include responsive(xlg) {
-        height: 65rem;
+        width: 110rem;
+        height: 60rem;
+    }
+
+
+}
+
+.upperSection {
+
+    width: 100%;
+
+    @include responsive(md) {
+        gap: 3.6rem;
+        @include flex(center, center, row);
     }
 }
 
@@ -55,22 +78,22 @@
     opacity: 0.5;
 
     @include responsive(sm) {
-        top: 31.5rem;
+        top: 33.5rem;
     }
 
     @include responsive(md) {
-        top: 36.5rem;
+        top: 28.5rem;
 
         width: 18rem;
         height: 3.5rem;
     }
 
     @include responsive(lg) {
-        top: 41rem;
+        top: 48rem;
     }
 
     @include responsive(xlg) {
-        top: 70rem;
+        top: 68rem;
     }
 
     &:hover {
@@ -130,28 +153,62 @@
 
 .services {
     @include flex(space-around, center, row);
-    margin: 0 0.5rem;
-    padding: 1rem;
+    gap: 0.8rem;
+    width: 100%;
+    padding: 1.6rem 0;
 
     background-color: $white;
+
+    @include responsive(md) {
+        gap: 1.6rem;
+    }
+
+    @include responsive(lg) {
+        gap: 3.5rem;
+    }
 }
 
 .bannerContainer {
     @include flex(center, center, row);
-    gap: 0.4rem;
-    margin: 0.5rem;
+    gap: 1.5rem;
+    margin-top: 1.6rem;
+
+    @include responsive(md) {
+        @include flex(center, center, column);
+        width: 100%;
+        margin-top: 0;
+    }
+
+    @include responsive(lg) {
+        gap: 3.5rem;
+    }
 
     .bannerImage {
-        width: 50%;
+        width: 48%;
         height: 10rem;
 
+
+        border-radius: 1rem;
+
+        @include responsive(sm) {
+            width: 50%;
+
+        }
+
         @include responsive(md) {
-            width: 49%;
-            height: 20rem;
+            width: 100%;
+
         }
 
         @include responsive(lg) {
-            height: 30rem;
+            height: 18.2rem;
         }
+
+        @include responsive(xlg) {
+
+            height: 28rem;
+        }
+
+
     }
 }

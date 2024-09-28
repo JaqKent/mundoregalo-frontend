@@ -1,24 +1,36 @@
-import delivery from '~assets/fast-delivery.svg';
-import articulo1 from '~assets/middleBaner1.png';
-import articulo2 from '~assets/middleBaner2.png';
-import payment from '~assets/payment-method.svg';
-import store from '~assets/tienda.svg';
+import articulo2 from '~assets/banner.bic.png';
+import articulo1 from '~assets/banner.naranja.png';
+import delivery from '~assets/caja-de-entrega 1.svg';
+import variety from '~assets/lista-de-verificacion 1.svg';
+import savings from '~assets/rebaja 1.svg';
+import payment from '~assets/tarjeta-de-debito 1.svg';
+import nuevo from '~assets/tendencia 1.svg';
 
 export const SERVICES = [
   {
     id: 1,
-    image: store,
-    text1: 'Retiro de sucursal',
+    image: nuevo,
+    text1: 'Nuevo y Trending',
   },
   {
     id: 2,
-    image: delivery,
-    text1: 'Envio a domicilio',
+    image: savings,
+    text1: 'Ahorros',
   },
   {
     id: 3,
+    image: variety,
+    text1: 'Nuestra variedad',
+  },
+  {
+    id: 4,
     image: payment,
-    text1: 'Pago con tarjeta y transferencia',
+    text1: 'Medios de pago',
+  },
+  {
+    id: 5,
+    image: delivery,
+    text1: 'Envios a domicilio',
   },
 ];
 
