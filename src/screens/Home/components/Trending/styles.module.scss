@@ -11,8 +11,9 @@
   background-color: $white;
 
   .title {
-    @include flex(center, center, row);
+    @include flex(flex-start, center, row);
     gap: 0.5rem;
+    width: 100%;
     padding-bottom: 0.5rem;
 
     font-weight: bold;
@@ -24,6 +25,7 @@
   }
 
   .arrow {
+
     padding: 1rem;
 
     color: $primary;

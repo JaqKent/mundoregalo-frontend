@@ -8,25 +8,27 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import trending from '~assets/Mask group.png';
 
 import styles from './styles.module.scss';
+import useTrending from '../Trending/components/CardsContainer/index.hooks';
+import CardsContainer from '../Trending/components/CardsContainer';
 
-import CardsContainer from './components/CardsContainer';
-import useTrending from './components/CardsContainer/index.hooks';
+
+
 
 interface Props {
   hide?: boolean;
 }
 
-function Trending({ hide }: Props) {
+function BestSellers({ hide }: Props) {
   const { slideLength, allProducts, itemsPerSlide } = useTrending();
   const [current, setCurrent] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
   const [touchStartX, setTouchStartX] = useState(0);
   const [touchEndX, setTouchEndX] = useState(0);
 
-  // Detectar si es una pantalla móvil
+
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768); // Cambiar según el tamaño de tu breakpoint móvil
+      setIsMobile(window.innerWidth <= 768); 
     };
 
     handleResize();
@@ -100,8 +102,8 @@ function Trending({ hide }: Props) {
   );
 }
 
-Trending.defaultProps = {
+BestSellers.defaultProps = {
   hide: false,
 };
 
-export default Trending;
+export default BestSellers;

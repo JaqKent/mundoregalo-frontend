@@ -30,4 +30,19 @@ export const CATEGORY = [
     image: category5,
     name: 'categoria 5',
   },
+  {
+    id: 6,
+    image: category3,
+    name: 'categoria 6',
+  },
+  {
+    id: 7,
+    image: category4,
+    name: 'categoria 7',
+  },
+  {
+    id: 8,
+    image: category5,
+    name: 'categoria 8',
+  },
 ];
