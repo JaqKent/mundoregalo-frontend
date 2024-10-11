@@ -7,27 +7,35 @@ interface Props {
   slideLength: number;
   currentSlide: number;
   products: Product[];
+  itemsPerSlide: number;
 }
 
-function CardsContainer({ slideLength, currentSlide, products }: Props) {
-  return Array.from({ length: Math.floor(slideLength / 2) }).map((_, index) => {
-    const firstItem = products[index * 2];
-    const secondItem = products[index * 2 + 1];
+function CardsContainer({
+  slideLength,
+  currentSlide,
+  products,
+  itemsPerSlide,
+}: Props) {
+  const visibleItems = products.slice(
+    currentSlide,
+    currentSlide + itemsPerSlide
+  );
 
-    return (
-      <div
-        key={secondItem.id}
-        className={index === currentSlide ? styles.slideActive : styles.slide}
-      >
-        <div className={styles.card}>
-          <CustomCard small product={firstItem} key={firstItem.id} />
-          {secondItem && (
-            <CustomCard small product={secondItem} key={secondItem.id} />
-          )}
-        </div>
-      </div>
+  if (visibleItems.length < itemsPerSlide) {
+    visibleItems.push(
+      ...products.slice(0, itemsPerSlide - visibleItems.length)
     );
-  });
+  }
+
+  return (
+    <div className={styles.slideActive}>
+      <div className={styles.card}>
+        {visibleItems.map((item) => (
+          <CustomCard small product={item} key={item.id} />
+        ))}
+      </div>
+    </div>
+  );
 }
 
 export default CardsContainer;

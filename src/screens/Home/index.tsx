@@ -1,9 +1,9 @@
 import styles from './styles.module.scss';
 
 import BannerSection from './components/BannerSection';
+import BestSellers from './components/BestSellers';
 import CategorySection from './components/Category';
 import OnSaleSection from './components/OnSaleSection';
-import PublicityFooter from './components/PublicityFooter';
 import PublicityHeader from './components/PublicityHeader';
 import Trending from './components/Trending';
 
@@ -13,9 +13,9 @@ function HomePage() {
       <PublicityHeader />
       <OnSaleSection />
       <BannerSection />
-      <Trending hide />
+      <Trending />
       <CategorySection />
-      <PublicityFooter />
+      <BestSellers />
     </div>
   );
 }

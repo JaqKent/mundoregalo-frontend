@@ -3,32 +3,48 @@
 @import '~scss/variable';
 
 .container {
-    height: 12rem;
-    margin: 0.5rem;
+
+    margin: 0.5rem 0 1.5rem;
+
 
     background-color: $white;
 
     .title {
-        @include flex(space-around, center, Row);
-        padding: 1rem;
+        @include flex(space-between, center, row);
+        padding: 1rem 0;
 
-        font-size: 1.8rem;
+
+        p {
+            font-weight: 600;
+            font-size: 1.8rem;
+        }
+
+
     }
 
     .category {
-        @include flex(center, center, Row);
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
         gap: 2rem;
 
-        .img {
-            width: 5rem;
-            height: 5rem;
 
-            border-radius: 50%;
+
+        @include responsive(lg) {
+            @include flex(center, center, row);
+            gap: 3rem;
+        }
+
+        .img {
+            width: 7rem;
+            height: 7rem;
+            margin-bottom: 0.8rem;
+
+
             cursor: pointer;
 
-            @include responsive(xs) {
-                width: 6rem;
-                height: 6rem;
+            @include responsive(md) {
+                width: 8rem;
+                height: 8rem;
             }
 
             &:hover {
@@ -40,12 +56,61 @@
     }
 }
 
-.button {
+
+
+.buttonCategory {
+    @include flex(center, center, column);
+
     margin: 0;
-    padding: 0;
+    padding: 1rem 0;
+
+
+    font-weight: 400;
+    font-size: 1rem;
 
     background: transparent;
 
     border: none;
     outline: none;
+
+    @include responsive(md) {
+        width: 13rem;
+        height: 13rem;
+
+        font-size: 1.4rem;
+    }
+
+}
+
+.buttonBottom {
+    display: block;
+    width: 100%;
+    height: 3rem;
+    margin-top: 1.1rem;
+    padding: 0.5rem;
+
+    font-size: 1.2rem;
+
+    background-color: $white;
+    border: 1px solid $gray;
+    border-radius: 1rem;
+    cursor: pointer;
+    @include flex(center, center, row);
+
+    @include responsive(md) {
+        display: none;
+    }
+}
+
+.buttonTop {
+    display: none;
+
+    font-size: 1.6rem;
+    text-decoration: underline;
+
+    cursor: pointer;
+
+    @include responsive(md) {
+        display: block;
+    }
 }

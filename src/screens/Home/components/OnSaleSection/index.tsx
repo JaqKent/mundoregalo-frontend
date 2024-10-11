@@ -64,9 +64,9 @@ function OnSaleSection() {
           onKeyDown={viewMore ? handleOfert : handleView}
           role='button'
           tabIndex={0}
-          onClick={viewMore ? handleOfert : handleView}
+          onClick={handleOfert}
         >
-          {viewMore ? <span>Ir a Ofertas</span> : <span>Ver Mas</span>}
+          <span>Ver Mas</span>
         </span>
       </div>
       <div className={styles.product}>

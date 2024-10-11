@@ -40,18 +40,6 @@ function Carousel({
 
   const slideLength = slides.length;
 
-  useEffect(() => {
-    const timeOut = auto
-      ? setTimeout(() => {
-          nextSlide();
-        }, 2500)
-      : undefined;
-
-    return () => {
-      clearTimeout(timeOut);
-    };
-  });
-
   const nextSlide = () => {
     setCurrent((prevState) =>
       prevState === slideLength - 1 ? 0 : current + 1
@@ -63,6 +51,18 @@ function Carousel({
       prevState === 0 ? slideLength - 1 : current - 1
     );
   };
+
+  useEffect(() => {
+    const timeOut = auto
+      ? setTimeout(() => {
+          nextSlide();
+        }, 2500)
+      : undefined;
+
+    return () => {
+      clearTimeout(timeOut);
+    };
+  });
 
   if (!Array.isArray(slides) || slides.length <= 0) {
     return null;

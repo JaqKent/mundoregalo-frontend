@@ -7,19 +7,34 @@ function useTrending() {
   const { allProducts } = useContext(ProductContext);
 
   const slideLength = allProducts.length;
-
   const [current, setCurrent] = useState(0);
+  const [itemsPerSlide, setItemsPerSlide] = useState(2);
+
+  const updateItemsPerSlide = () => {
+    if (window.innerWidth <= 767) {
+      setItemsPerSlide(2);
+    } else if (window.innerWidth <= 1365) {
+      setItemsPerSlide(4);
+    } else {
+      setItemsPerSlide(6);
+    }
+  };
+
+  useEffect(() => {
+    updateItemsPerSlide();
+    window.addEventListener('resize', updateItemsPerSlide);
+
+    return () => {
+      window.removeEventListener('resize', updateItemsPerSlide);
+    };
+  }, []);
 
   const nextSlide = useCallback(() => {
-    setCurrent((prevIndex) =>
-      prevIndex === Math.floor(slideLength / 2) - 1 ? 0 : prevIndex + 1
-    );
+    setCurrent((prevIndex) => (prevIndex + 1) % slideLength);
   }, [slideLength]);
 
   const prevSlide = () => {
-    setCurrent((prevIndex) =>
-      prevIndex === 0 ? Math.floor(slideLength / 2) - 1 : prevIndex - 1
-    );
+    setCurrent((prevIndex) => (prevIndex - 1 + slideLength) % slideLength);
   };
 
   useEffect(() => {
@@ -36,6 +51,15 @@ function useTrending() {
     };
   }, [current, auto, nextSlide]);
 
-  return { slideLength, current, allProducts, setAuto, prevSlide, nextSlide };
+  return {
+    slideLength,
+    current,
+    allProducts,
+    setAuto,
+    prevSlide,
+    nextSlide,
+    itemsPerSlide,
+  };
 }
+
 export default useTrending;

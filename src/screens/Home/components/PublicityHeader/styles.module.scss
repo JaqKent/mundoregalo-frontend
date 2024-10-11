@@ -50,18 +50,31 @@
 }
 
 .slider {
+
+    overflow: hidden;
+
+    border-radius: 1rem;
+
     .slide {
-        transform: scale(0.9);
+        transform: translateX(100%);
+
+
         opacity: 0;
 
-        transition-duration: 2s ease;
+        transition: transform 2s ease, opacity 2s ease;
+
+
     }
 
     .slideActive {
-        transform: scale(1);
+        transform: translateX(0);
+
+
         opacity: 1;
 
-        transition-duration: 2s;
+        transition: transform 2s ease, opacity 2s ease;
+
+
     }
 }
 
@@ -170,6 +183,7 @@
 
 .bannerContainer {
     @include flex(center, center, row);
+    flex: 1;
     gap: 1.5rem;
     margin-top: 1.6rem;
 
