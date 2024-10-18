@@ -8,11 +8,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import trending from '~assets/Mask group.png';
 
 import styles from './styles.module.scss';
-import useTrending from '../Trending/components/CardsContainer/index.hooks';
+
 import CardsContainer from '../Trending/components/CardsContainer';
-
-
-
+import useTrending from '../Trending/components/CardsContainer/index.hooks';
 
 interface Props {
   hide?: boolean;
@@ -25,10 +23,9 @@ function BestSellers({ hide }: Props) {
   const [touchStartX, setTouchStartX] = useState(0);
   const [touchEndX, setTouchEndX] = useState(0);
 
-
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768); 
+      setIsMobile(window.innerWidth <= 768);
     };
 
     handleResize();
@@ -67,7 +64,7 @@ function BestSellers({ hide }: Props) {
   return (
     <div className={styles.container}>
       <div className={styles.title}>
-        Tendencias <img src={trending} alt='tendencias' />
+        Mas Vendidos <img src={trending} alt='Mas Vendidos' />
       </div>
       <div
         className={styles.slider}
