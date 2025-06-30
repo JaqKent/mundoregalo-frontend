@@ -15,7 +15,10 @@ export const DEFAULT_PRODUCT: Product = {
   specifications: [],
   variants: [],
   prices: {
-    cost: 0,
+    cost: {
+      value: 0,
+      lastModified: '',
+    },
     online: {
       value: 0,
       lastModified: '',
@@ -33,4 +36,6 @@ export const DEFAULT_PRODUCT: Product = {
   moreSold: '',
   onSale: '',
   discountPrice: 0,
+  department: '',
+  subSubCategories: '',
 };

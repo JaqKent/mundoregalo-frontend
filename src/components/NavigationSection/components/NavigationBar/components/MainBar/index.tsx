@@ -8,6 +8,8 @@ import UserContext from '~context/UserContext/UserContext';
 
 import styles from './styles.module.scss';
 
+import SearchBar from '../SearchBar';
+
 interface Props {
   toggleNavbar: () => void;
 }
@@ -36,7 +38,8 @@ function MainBar({ toggleNavbar }: Props) {
       </button>
       <button onClick={handleHome} type='button' className={styles.button}>
         <img src={Logo} alt='Mundo Regalo' className={styles.logoIcon} />
-      </button>
+      </button>{' '}
+      <SearchBar />
       <div>
         {isLoggedIn && (
           <img

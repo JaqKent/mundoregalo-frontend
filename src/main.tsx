@@ -15,6 +15,7 @@ import {
   productsQuestionRoutes,
   ROUTES,
 } from '~configs/routes';
+import DepartmentProvider from '~context/DepartamentContext';
 import ProductProvider from '~context/ProductContext';
 import { UserProvider } from '~context/UserContext/UserContext';
 
@@ -27,8 +28,10 @@ const router = createHashRouter([
     element: (
       <UserProvider>
         <ProductProvider>
-          <ToastContainer />
-          <NavigationSection />
+          <DepartmentProvider>
+            <ToastContainer />
+            <NavigationSection />
+          </DepartmentProvider>
         </ProductProvider>
         <Footer />
       </UserProvider>
