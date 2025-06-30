@@ -2,13 +2,21 @@ import { useContext } from 'react';
 
 import trending from '~assets/Mask group.png';
 import { DepartmentContext } from '~context/DepartamentContext';
+import { Department } from '~interfaces/interfaces';
 import { toBeImplemented } from '~utils/logicNotImplemented';
 
 import styles from './styles.module.scss';
 
 function DepartmentSection() {
   const { departments, isLoading } = useContext(DepartmentContext);
-  const handleDepartmentClick = toBeImplemented;
+
+  const handleSeeAllClick = () => {
+    toBeImplemented();
+  };
+
+  const handleDepartmentClick = (dep: Department) => {
+    toBeImplemented(dep);
+  };
 
   return (
     <div className={styles.container}>
@@ -20,8 +28,8 @@ function DepartmentSection() {
           className={styles.buttonTop}
           role='button'
           tabIndex={0}
-          onClick={handleDepartmentClick}
-          onKeyDown={handleDepartmentClick}
+          onClick={handleSeeAllClick}
+          onKeyDown={handleSeeAllClick}
         >
           Ver Todos
         </span>
@@ -55,8 +63,8 @@ function DepartmentSection() {
         className={styles.buttonBottom}
         role='button'
         tabIndex={0}
-        onClick={handleDepartmentClick}
-        onKeyDown={handleDepartmentClick}
+        onClick={handleSeeAllClick}
+        onKeyDown={handleSeeAllClick}
       >
         Ver Todos
       </div>
