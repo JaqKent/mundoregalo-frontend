@@ -33,6 +33,7 @@ function UserBar() {
         className={
           isLoggedIn ? styles.buttonWithSession : styles.buttonWithoutSession
         }
+        disabled
       >
         {isLoggedIn ? 'Cerrar sesión' : 'Inicia sesión'}
       </button>

@@ -1,10 +1,13 @@
 export interface Product {
   id: string;
   name: string;
+  ecommerceName?: string;
   description: string;
   stock: number;
+  department: string;
   category: string; // Reference to categories.id
   subCategory: string; // Reference to categories.subCategories[n].id
+  subSubCategories: string;
   barcode: string;
   brand: string;
   businessOwner: string;
@@ -12,7 +15,10 @@ export interface Product {
   weight: number;
   specifications: Specifications[];
   prices: {
-    cost: number;
+    cost: {
+      value: number;
+      lastModified: string;
+    };
     online: {
       value: number;
       lastModified: string;

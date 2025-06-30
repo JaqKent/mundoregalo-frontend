@@ -4,7 +4,7 @@
 .container {
     @include flex(center, center, column);
 
-    height: 8.6rem;
+    height: 5rem;
     padding: 1rem;
 
     background-color: $primary;

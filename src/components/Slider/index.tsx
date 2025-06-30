@@ -1,9 +1,13 @@
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
+/* eslint-disable react/no-array-index-key */
 import { useEffect, useState } from 'react';
 import {
   faChevronLeft,
   faChevronRight,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+import imgDefault from '~assets/imgDefault.jpg';
 
 import styles from './styles.module.scss';
 
@@ -38,17 +42,18 @@ function Carousel({
 }: Props) {
   const [current, setCurrent] = useState(0);
 
-  const slideLength = slides.length;
+  const finalSlides = slides.length > 0 ? slides : [imgDefault];
+  const slideLength = finalSlides.length;
 
   const nextSlide = () => {
     setCurrent((prevState) =>
-      prevState === slideLength - 1 ? 0 : current + 1
+      prevState === slideLength - 1 ? 0 : prevState + 1
     );
   };
 
   const prevSlide = () => {
     setCurrent((prevState) =>
-      prevState === 0 ? slideLength - 1 : current - 1
+      prevState === 0 ? slideLength - 1 : prevState - 1
     );
   };
 
@@ -63,10 +68,6 @@ function Carousel({
       clearTimeout(timeOut);
     };
   });
-
-  if (!Array.isArray(slides) || slides.length <= 0) {
-    return null;
-  }
 
   return (
     <div className={styles.container}>
@@ -86,11 +87,8 @@ function Carousel({
             onClick={prevSlide}
           />
         )}
-        {slides.map((slider, index) => (
-          <div
-            key={index - 1}
-            className={index === current ? slideActive : slide}
-          >
+        {finalSlides.map((slider, index) => (
+          <div key={index} className={index === current ? slideActive : slide}>
             {index === current && (
               <div
                 className={className}
@@ -108,10 +106,10 @@ function Carousel({
             onClick={nextSlide}
           />
         )}
-        {slides.length >= 2 && (
+        {slideLength >= 2 && (
           <div className={minClassName}>
             <ul>
-              {slides.map((slider, index) => (
+              {finalSlides.map((_, index) => (
                 <li
                   key={index}
                   className={index === current ? miniActive : mini}
@@ -131,8 +129,8 @@ export default Carousel;
 
 Carousel.defaultProps = {
   arrowClassLeft: '',
-  hide: false,
   arrowClassRight: '',
   auto: false,
+  hide: false,
   setAuto: false,
 };
