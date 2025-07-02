@@ -1,28 +1,56 @@
 import { useContext } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 import CustomCard from '~components/CustomCard';
+import { filterProducts } from '~constants/utils';
+import { DepartmentContext } from '~context/DepartamentContext';
 import { ProductContext } from '~context/ProductContext';
 
 import styles from './styles.module.scss';
 
 function ProductSearchScreen() {
   const { allProducts } = useContext(ProductContext);
+  const { departments } = useContext(DepartmentContext);
   const { searchTerm } = useParams();
 
-  if (searchTerm === undefined) {
-    return <div>No se ha especificado un término de búsqueda.</div>;
+  const navigate = useNavigate();
+
+  if (!searchTerm) {
+    return (
+      <div className={styles.emptyState}>
+        No se ha especificado un término de búsqueda.
+      </div>
+    );
   }
 
-  const filteredProducts = allProducts.filter((item) =>
-    item.name.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  const filteredProducts = filterProducts(allProducts, searchTerm, departments);
+
+  const handleHome = () => {
+    navigate('/');
+  };
+
+  if (filteredProducts.length === 0) {
+    return (
+      <div className={styles.emptyStateComponent}>
+        <div className={styles.emptyState}>
+          El producto o departamento buscado no se encuentra disponible.
+          <br />
+          Intente con otra búsqueda.
+        </div>
+        <div>
+          <button className={styles.button} type='button' onClick={handleHome}>
+            home
+          </button>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className={styles.container}>
       {filteredProducts.map((product) => (
         <div className={styles.card} key={product.id}>
-          <CustomCard product={product} key={product.id} />
+          <CustomCard product={product} />
         </div>
       ))}
     </div>

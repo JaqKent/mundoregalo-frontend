@@ -3,6 +3,9 @@
 @import '~scss/variable';
 
 .container {
+    .pagination {
+        @include flex(space-between, center, row);
+    }
 
     margin: 0.5rem 0 1.5rem;
 
@@ -24,14 +27,13 @@
 
     .category {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(8, 1fr);
         gap: 2rem;
 
 
 
-        @include responsive(lg) {
-            @include flex(center, center, row);
-            gap: 3rem;
+        &.three-columns {
+            grid-template-columns: repeat(3, 1fr)
         }
 
         .img {
@@ -53,6 +55,23 @@
                 transition-duration: 0.7s;
             }
         }
+    }
+}
+
+.arrow {
+
+    padding: 1rem;
+
+    color: $primary;
+    font-size: 3rem;
+
+    cursor: pointer;
+    opacity: 0.2;
+
+    &:hover {
+        opacity: 1;
+
+        transition: 0.6s;
     }
 }
 

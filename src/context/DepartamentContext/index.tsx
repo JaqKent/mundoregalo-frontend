@@ -11,7 +11,7 @@ import { collection, onSnapshot } from 'firebase/firestore';
 
 import { FirestoreCollections } from '~configs/enums';
 import { database } from '~configs/firebaseConfig';
-import { Category, Department } from '~interfaces/interfaces';
+import { Category, Department } from '~interfaces/Products';
 
 interface DepartmentContextProps {
   departments: Department[];

@@ -81,7 +81,7 @@
 .miniatures {
     @include flex(center, center, column);
     position: absolute;
-    top: 27rem;
+    top: 25rem;
 
     width: 15rem;
     height: 3.2rem;
@@ -95,18 +95,18 @@
     }
 
     @include responsive(md) {
-        top: 28.5rem;
+        top: 25.5rem;
 
         width: 18rem;
         height: 3.5rem;
     }
 
     @include responsive(lg) {
-        top: 48rem;
+        top: 44rem;
     }
 
     @include responsive(xlg) {
-        top: 68rem;
+        top: 63rem;
     }
 
     &:hover {

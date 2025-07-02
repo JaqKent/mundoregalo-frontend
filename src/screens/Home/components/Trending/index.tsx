@@ -1,4 +1,5 @@
-import { useEffect, useState } from 'react';
+/* eslint-disable react-hooks/exhaustive-deps */
+import { useEffect, useRef, useState } from 'react';
 import {
   faChevronLeft,
   faChevronRight,
@@ -6,6 +7,7 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import trending from '~assets/Mask group.png';
+import { useMediaQuery } from '~hooks/useBreakpoint';
 
 import styles from './styles.module.scss';
 
@@ -18,47 +20,41 @@ interface Props {
 
 function Trending({ hide }: Props) {
   const { slideLength, allProducts, itemsPerSlide } = useTrending();
+  const isMobile = useMediaQuery('(max-width: 768px)');
   const [current, setCurrent] = useState(0);
-  const [isMobile, setIsMobile] = useState(false);
-  const [touchStartX, setTouchStartX] = useState(0);
-  const [touchEndX, setTouchEndX] = useState(0);
 
-  // Detectar si es una pantalla móvil
+  const touchStartXRef = useRef(0);
+  const touchEndXRef = useRef(0);
+
   useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768); // Cambiar según el tamaño de tu breakpoint móvil
-    };
-
-    handleResize();
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
+    if (current >= slideLength) {
+      setCurrent(0);
+    }
+  }, [slideLength]);
 
   const nextSlide = () => {
-    setCurrent((prevState) => (prevState + 1) % slideLength);
+    setCurrent((prev) => (prev + 1) % slideLength);
   };
 
   const prevSlide = () => {
-    setCurrent((prevState) => (prevState - 1 + slideLength) % slideLength);
+    setCurrent((prev) => (prev - 1 + slideLength) % slideLength);
   };
 
   const handleTouchStart = (e: React.TouchEvent) => {
-    setTouchStartX(e.touches[0].clientX);
+    touchStartXRef.current = e.touches[0].clientX;
   };
 
   const handleTouchMove = (e: React.TouchEvent) => {
-    setTouchEndX(e.touches[0].clientX);
+    touchEndXRef.current = e.touches[0].clientX;
   };
 
   const handleTouchEnd = () => {
-    if (touchStartX - touchEndX > 50) {
-      nextSlide();
-    } else if (touchEndX - touchStartX > 50) {
-      prevSlide();
-    }
+    const diff = touchStartXRef.current - touchEndXRef.current;
+    if (diff > 50) nextSlide();
+    else if (diff < -50) prevSlide();
   };
 
-  if (!Array.isArray(allProducts) || allProducts.length <= 0) {
+  if (!Array.isArray(allProducts) || allProducts.length === 0) {
     return null;
   }
 
