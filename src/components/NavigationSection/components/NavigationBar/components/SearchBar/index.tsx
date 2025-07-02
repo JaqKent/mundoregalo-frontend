@@ -4,16 +4,19 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { filterProducts } from '~constants/utils';
+import { DepartmentContext } from '~context/DepartamentContext';
 import { ProductContext } from '~context/ProductContext';
 
 import styles from './styles.module.scss';
 
 function SearchBar() {
   const { allProducts } = useContext(ProductContext);
+  const { departments } = useContext(DepartmentContext);
+
   const [search, setSearch] = useState('');
   const navigate = useNavigate();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const filteredProducts = filterProducts(allProducts, search);
+  const filteredProducts = filterProducts(allProducts, search, departments);
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { value } = e.target;

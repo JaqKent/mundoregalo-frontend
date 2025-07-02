@@ -9,3 +9,31 @@
 .card {
     margin: 0.5rem;
 }
+
+.emptyStateComponent {
+    @include flex(center, center, column);
+
+    .emptyState {
+        padding: 4rem 2rem;
+
+        color: $black;
+        font-size: 1.6rem;
+        text-align: center;
+    }
+
+    .button {
+        width: 10rem;
+        height: 4.5rem;
+
+        color: $white;
+
+        background-color: $selectedblue;
+        border: none;
+        border-radius: 0.5rem;
+        cursor: pointer;
+
+        &:hover {
+            background-color: darken($selectedblue, 10%);
+        }
+    }
+}

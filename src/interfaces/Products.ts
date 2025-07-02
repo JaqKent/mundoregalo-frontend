@@ -59,3 +59,11 @@ export interface Category {
     name: string;
   }[];
 }
+
+export interface Department {
+  id: string;
+  name: string;
+  internalId: string;
+  imageURL?: string;
+  categories: Category[];
+}

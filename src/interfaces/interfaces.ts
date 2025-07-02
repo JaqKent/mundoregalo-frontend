@@ -17,17 +17,3 @@ export interface ImportMetaEnv {
   readonly VITE_FIREBASE_MESSAGING_MEASURAMENT_ID: string;
   readonly VITE_LOCAL_ENV: boolean;
 }
-
-export interface Category {
-  id: string;
-  name: string;
-  imageURL?: string;
-}
-
-export interface Department {
-  id: string;
-  name: string;
-  internalId: string;
-  imageURL?: string;
-  categories: Category[];
-}
