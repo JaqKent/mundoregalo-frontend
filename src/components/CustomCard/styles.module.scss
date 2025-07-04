@@ -53,7 +53,7 @@
         width: 22rem;
         height: 4.4rem;
 
-        text-align: flex-start;
+        text-align: left;
 
 
         @include responsive(xs) {
@@ -64,14 +64,18 @@
     }
 
     &.small {
-        width: 17.7rem;
+
+        width: 17rem;
         height: 4rem;
 
-        text-align: center;
+
+        text-align: left;
 
         @include responsive(md) {
             width: 20rem;
         }
+
+
     }
 }
 
@@ -113,7 +117,7 @@
         width: 17rem;
         margin-top: 5px;
 
-        text-align: center;
+
     }
 }
 
@@ -122,10 +126,14 @@
         @include flex(center, flex-start, column);
         width: 24.4rem;
         margin-top: 0.5rem;
+
     }
 
     &.small {
-        @include flex(center, center, column);
+        @include flex(center, left, column);
+        width: 100%;
+
+
     }
 }
 
@@ -159,5 +167,6 @@
 }
 
 .price {
-    @include flex(space-between, flex-start, column);
+    @include flex(flex-start, flex-start, column);
+
 }

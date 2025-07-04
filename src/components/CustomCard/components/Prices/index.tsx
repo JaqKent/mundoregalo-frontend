@@ -1,6 +1,3 @@
-import { faDollarSign } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
 import styles from './styles.module.scss';
 
 interface Props {
@@ -13,17 +10,11 @@ function Prices({ discountPrice, prices, onSale }: Props) {
   return (
     <>
       <div>
-        <span className={styles.price}>
-          <FontAwesomeIcon icon={faDollarSign} />
-          {prices}
-        </span>
+        <span className={styles.price}>${prices}</span>
       </div>
       <div>
         {onSale ? (
-          <span className={styles.discountPrice}>
-            <FontAwesomeIcon icon={faDollarSign} />
-            {discountPrice}
-          </span>
+          <span className={styles.discountPrice}>${discountPrice}</span>
         ) : (
           ''
         )}
