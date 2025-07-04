@@ -11,6 +11,7 @@ html {
     min-height: 100%;
 
     font-size: 10px;
+    font-family: Poppins, sans-serif;
 }
 
 body {
@@ -25,4 +26,8 @@ body {
     background-color: $anothergray;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+    font-family: inherit;
 }

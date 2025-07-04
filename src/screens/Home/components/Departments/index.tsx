@@ -19,7 +19,7 @@ function DepartmentSection() {
   const { departments, isLoading } = useContext(DepartmentContext);
   const navigate = useNavigate();
 
-  const isMobile = useMediaQuery('(max-width: 540px)');
+  const isMobile = useMediaQuery('(max-width: 1024px)');
   const itemsPerPage = isMobile ? 3 : 8;
 
   const [currentPage, setCurrentPage] = useState(0);
