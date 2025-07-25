@@ -67,3 +67,10 @@ export interface Department {
   imageURL?: string;
   categories: Category[];
 }
+
+export interface BannerDocument {
+  id: string;
+  images: string[];
+  tag?: string | null;
+  updatedAt: Date;
+}

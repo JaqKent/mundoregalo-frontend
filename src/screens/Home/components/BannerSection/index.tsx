@@ -1,32 +1,51 @@
-import banner3 from '~assets/banner.cuaderno.png';
-import banner1 from '~assets/banner.mochila.webp';
-import banner2 from '~assets/banner.potosi.png';
-import banner4 from '~assets/banner.utiles.webp';
+import { useContext } from 'react';
+
+import { BannerContext } from '~context/BannerContext';
 
 import styles from './styles.module.scss';
 
 function BannerSection() {
+  const { banners, isLoading } = useContext(BannerContext);
+
+  if (isLoading) return null;
+
+  const mid1 = banners.find((b) => b.id === 'mid1');
+  const mid2 = banners.find((b) => b.id === 'mid2');
+  const bottom = banners.find((b) => b.id === 'bottom');
+
   return (
     <div className={styles.container}>
       <div className={styles.top}>
         <div className={styles.banner1}>
-          <img className={styles.imgBanner1} src={banner1} alt='mochilas' />
+          {mid1?.images[0] && (
+            <img
+              className={styles.imgBanner1}
+              src={mid1.images[0]}
+              alt='mid1'
+            />
+          )}
         </div>
         <div className={styles.banner2}>
-          <img
-            className={styles.imgBanner2}
-            src={banner2}
-            alt='cuadernos-tapa-dura'
-          />
-          <img
-            className={styles.imgBanner2}
-            src={banner3}
-            alt='cuadernos-oficio'
-          />
+          {mid2?.images
+            .slice(0, 2)
+            .map((img, i) => (
+              <img
+                key={img}
+                className={styles.imgBanner2}
+                src={img}
+                alt={`mid2-${i}`}
+              />
+            ))}
         </div>
       </div>
       <div className={styles.banner3}>
-        <img className={styles.imgBanner3} src={banner4} alt='utiles' />
+        {bottom?.images[0] && (
+          <img
+            className={styles.imgBanner3}
+            src={bottom.images[0]}
+            alt='bottom'
+          />
+        )}
       </div>
     </div>
   );
