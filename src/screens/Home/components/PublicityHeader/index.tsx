@@ -1,15 +1,19 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 
 import Slider from '~components/Slider';
-import { ITEMS } from '~constants/constants';
+import { BannerContext } from '~context/BannerContext';
 
 import styles from './styles.module.scss';
 
 import InsideInfo from './components';
-import { BANNER, SERVICES } from './constants';
+import { SERVICES } from './constants';
 
 function PublicityHeader() {
   const [auto, setAuto] = useState(true);
+  const { slider, header, isLoading } = useContext(BannerContext);
+
+  if (isLoading) return null;
+
   return (
     <div className={styles.container}>
       <div className={styles.upperSection}>
@@ -18,7 +22,7 @@ function PublicityHeader() {
             hide
             auto={auto}
             setAuto={setAuto}
-            slides={ITEMS.map((item) => item.img)}
+            slides={slider}
             className={styles.image}
             minClassName={styles.miniatures}
             mini={styles.mini}
@@ -29,16 +33,17 @@ function PublicityHeader() {
         </div>
 
         <div className={styles.bannerContainer}>
-          {BANNER.map((header) => (
+          {header.map((src, index) => (
             <img
               className={styles.bannerImage}
-              key={header.id}
-              src={header.image}
-              alt='publicidad'
+              key={src}
+              src={src}
+              alt={`header-${index}`}
             />
           ))}
         </div>
       </div>
+
       <div className={styles.services}>
         {SERVICES.map((service) => (
           <InsideInfo

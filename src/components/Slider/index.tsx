@@ -61,7 +61,7 @@ function Carousel({
     const timeOut = auto
       ? setTimeout(() => {
           nextSlide();
-        }, 2500)
+        }, 4000)
       : undefined;
 
     return () => {
