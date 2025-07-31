@@ -16,8 +16,10 @@ interface BannerItem {
   tag?: string;
 }
 
+type SlideType = string | BannerItem;
+
 interface Props {
-  slides: BannerItem[];
+  slides: SlideType[];
   className: string;
   minClassName: string;
   arrowClassLeft?: string;
@@ -47,19 +49,22 @@ function Carousel({
 }: Props) {
   const [current, setCurrent] = useState(0);
 
-  const finalSlides = slides.length > 0 ? slides : [{ url: imgDefault }];
-  const slideLength = finalSlides.length;
+  const normalizedSlides: BannerItem[] = (
+    slides.length > 0 ? slides : [imgDefault]
+  ).map((item) =>
+    typeof item === 'string'
+      ? { url: item }
+      : { url: item.url ?? imgDefault, tag: item.tag ?? '' }
+  );
+
+  const slideLength = normalizedSlides.length;
 
   const nextSlide = () => {
-    setCurrent((prevState) =>
-      prevState === slideLength - 1 ? 0 : prevState + 1
-    );
+    setCurrent((prev) => (prev === slideLength - 1 ? 0 : prev + 1));
   };
 
   const prevSlide = () => {
-    setCurrent((prevState) =>
-      prevState === 0 ? slideLength - 1 : prevState - 1
-    );
+    setCurrent((prev) => (prev === 0 ? slideLength - 1 : prev - 1));
   };
 
   useEffect(() => {
@@ -78,12 +83,8 @@ function Carousel({
     <div className={styles.container}>
       <div
         className={styles.slider}
-        onMouseEnter={() => {
-          if (setAuto) setAuto(false);
-        }}
-        onMouseLeave={() => {
-          if (setAuto) setAuto(true);
-        }}
+        onMouseEnter={() => setAuto?.(false)}
+        onMouseLeave={() => setAuto?.(true)}
       >
         {!hide && slideLength >= 2 && (
           <FontAwesomeIcon
@@ -92,21 +93,23 @@ function Carousel({
             onClick={prevSlide}
           />
         )}
-        {finalSlides.map((slider, index) => (
+
+        {normalizedSlides.map((item, index) => (
           <div
-            key={`slide-${slider.url}-${index}`}
+            key={`slide-${index}-${item.url}`}
             className={index === current ? slideActive : slide}
           >
             {index === current && (
               <div
                 className={className}
                 style={{
-                  backgroundImage: `url(${slider.url})`,
+                  backgroundImage: `url(${item.url})`,
                 }}
               />
             )}
           </div>
         ))}
+
         {!hide && slideLength >= 2 && (
           <FontAwesomeIcon
             icon={faChevronRight}
@@ -114,12 +117,13 @@ function Carousel({
             onClick={nextSlide}
           />
         )}
+
         {slideLength >= 2 && (
           <div className={minClassName}>
             <ul>
-              {finalSlides.map((slider, index) => (
+              {normalizedSlides.map((item, index) => (
                 <li
-                  key={`mini-${slider.url}-${index}`}
+                  key={`mini-${index}-${item.url}`}
                   className={index === current ? miniActive : mini}
                   onClick={() => setCurrent(index)}
                   onKeyDown={() => setCurrent(index)}
