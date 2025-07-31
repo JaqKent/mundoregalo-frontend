@@ -36,8 +36,8 @@ function PublicityHeader() {
           {header.map((src, index) => (
             <img
               className={styles.bannerImage}
-              key={src}
-              src={src}
+              key={src.url}
+              src={src.url}
               alt={`header-${index}`}
             />
           ))}

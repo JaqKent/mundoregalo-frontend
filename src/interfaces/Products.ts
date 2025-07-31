@@ -68,9 +68,14 @@ export interface Department {
   categories: Category[];
 }
 
+interface BannerItem {
+  url: string;
+  tag: string;
+}
+
 export interface BannerDocument {
   id: string;
-  images: string[];
+  images: BannerItem[];
   tag?: string | null;
   updatedAt: Date;
 }
