@@ -11,8 +11,13 @@ import imgDefault from '~assets/imgDefault.jpg';
 
 import styles from './styles.module.scss';
 
+interface BannerItem {
+  url: string;
+  tag?: string;
+}
+
 interface Props {
-  slides: string[];
+  slides: BannerItem[];
   className: string;
   minClassName: string;
   arrowClassLeft?: string;
@@ -42,7 +47,7 @@ function Carousel({
 }: Props) {
   const [current, setCurrent] = useState(0);
 
-  const finalSlides = slides.length > 0 ? slides : [imgDefault];
+  const finalSlides = slides.length > 0 ? slides : [{ url: imgDefault }];
   const slideLength = finalSlides.length;
 
   const nextSlide = () => {
@@ -88,12 +93,15 @@ function Carousel({
           />
         )}
         {finalSlides.map((slider, index) => (
-          <div key={index} className={index === current ? slideActive : slide}>
+          <div
+            key={`slide-${slider.url}-${index}`}
+            className={index === current ? slideActive : slide}
+          >
             {index === current && (
               <div
                 className={className}
                 style={{
-                  backgroundImage: `url(${slider})`,
+                  backgroundImage: `url(${slider.url})`,
                 }}
               />
             )}
@@ -109,9 +117,9 @@ function Carousel({
         {slideLength >= 2 && (
           <div className={minClassName}>
             <ul>
-              {finalSlides.map((_, index) => (
+              {finalSlides.map((slider, index) => (
                 <li
-                  key={index}
+                  key={`mini-${slider.url}-${index}`}
                   className={index === current ? miniActive : mini}
                   onClick={() => setCurrent(index)}
                   onKeyDown={() => setCurrent(index)}
@@ -132,5 +140,5 @@ Carousel.defaultProps = {
   arrowClassRight: '',
   auto: false,
   hide: false,
-  setAuto: false,
+  setAuto: undefined,
 };

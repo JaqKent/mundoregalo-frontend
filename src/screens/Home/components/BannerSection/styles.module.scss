@@ -21,13 +21,12 @@
     @include flex(center, center, row);
     gap: 1.6rem;
 
-    padding-bottom: 1.6rem;
-
     border-radius: 1rem;
 
     @include responsive(md) {
         gap: 2.9rem;
         width: 50%;
+
     }
 
 }
