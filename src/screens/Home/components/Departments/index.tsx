@@ -19,11 +19,16 @@ function DepartmentSection() {
   const { departments, isLoading } = useContext(DepartmentContext);
   const navigate = useNavigate();
 
+  const activeDepartments = useMemo(() => {
+    return departments.filter((dep) => dep.active);
+  }, [departments]);
+
   const isMobile = useMediaQuery('(max-width: 1024px)');
   const itemsPerPage = isMobile ? 3 : 8;
 
   const [currentPage, setCurrentPage] = useState(0);
-  const totalPages = Math.ceil(departments.length / itemsPerPage);
+
+  const totalPages = Math.ceil(activeDepartments.length / itemsPerPage);
 
   useEffect(() => {
     if (currentPage >= totalPages) {
@@ -33,8 +38,9 @@ function DepartmentSection() {
 
   const visibleDepartments = useMemo(() => {
     const start = currentPage * itemsPerPage;
-    return departments.slice(start, start + itemsPerPage);
-  }, [departments, currentPage, itemsPerPage]);
+
+    return activeDepartments.slice(start, start + itemsPerPage);
+  }, [activeDepartments, currentPage, itemsPerPage]);
 
   const nextPage = () => {
     setCurrentPage((prev) => (prev + 1) % totalPages);
@@ -81,7 +87,7 @@ function DepartmentSection() {
         onTouchMove={isMobile ? handleTouchMove : undefined}
         onTouchEnd={isMobile ? handleTouchEnd : undefined}
       >
-        {departments.length > 0 && (
+        {activeDepartments.length > 0 && (
           <div className={styles.pagination}>
             {totalPages > 1 && (
               <FontAwesomeIcon
