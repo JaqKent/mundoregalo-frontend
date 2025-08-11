@@ -35,7 +35,7 @@ function SearchBar() {
   };
 
   return (
-    <>
+    <div className={styles.searchWrapper}>
       <div className={styles.container}>
         <input
           placeholder='Buscar'
@@ -54,7 +54,7 @@ function SearchBar() {
           <FontAwesomeIcon icon={faSearch} />
         </button>
       </div>
-      {isDropdownOpen && (
+      {isDropdownOpen && filteredProducts.length > 0 && (
         <div className={styles.dropdown}>
           {filteredProducts.map((item) => (
             <button
@@ -65,11 +65,12 @@ function SearchBar() {
               key={item.id}
             >
               {item.name}
+              <span className={styles.divider} />
             </button>
           ))}
         </div>
       )}
-    </>
+    </div>
   );
 }
 export default SearchBar;

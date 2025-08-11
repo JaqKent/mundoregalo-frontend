@@ -66,6 +66,7 @@ export interface Department {
   internalId: string;
   imageURL?: string;
   categories: Category[];
+  active: boolean;
 }
 
 interface BannerItem {
